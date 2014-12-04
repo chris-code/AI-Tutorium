@@ -1166,17 +1166,17 @@ Aus der Aufgabenstellung ist bekannt:
 f(x) = 
 \begin{cases}
 	0.2, & x = 0 \\
-	, & x = 1 \\
+	& x = 1 \\
 	0.2, & x = 2 \\
-	, & x = 3 \\
-	, & x = 4 \\
+	& x = 3 \\
+	& x = 4 \\
 \end{cases}, \qquad
 F(y) =
 \begin{cases}
 	0, & y < 0 \\
 	0.2, & 0 \leq y < 1 \\
-	, & 1 \leq y < 2 \\
-	, & 2 \leq y < 3 \\
+	& 1 \leq y < 2 \\
+	& 2 \leq y < 3 \\
 	0.8, & 3 \leq y < 4 \\
 	1, & 4 \leq y \\
 \end{cases}
@@ -1191,80 +1191,80 @@ Weiterhin können wir herleiten:
 f(x) = 
 \begin{cases}
 	0.2, & x = 0 \\
-	, & x = 1 \\
+	& x = 1 \\
 	0.2, & x = 2 \\
-	, & x = 3 \\
-	, & x = 4 \\
+	& x = 3 \\
+	& x = 4 \\
 \end{cases}, \qquad
 F(y) =
 \begin{cases}
 	0, & y < 0 \\
 	0.2, & 0 \leq y < 1 \\
 	0.6, & 1 \leq y < 2 \\
-	, & 2 \leq y < 3 \\
+	& 2 \leq y < 3 \\
 	0.8, & 3 \leq y < 4 \\
 	1, & 4 \leq y \\
 \end{cases}
 \]
-Damit ist folgende Berechnung möglich: $W(X == 1) = F(1) - F(0) = 0.6 - 0.2 = 0.3$
+Damit ist folgende Berechnung möglich: $W(X == 1) = F(1) - F(0) = 0.6 - 0.2 = 0.4$
 \[
 f(x) = 
 \begin{cases}
 	0.2, & x = 0 \\
-	0.3, & x = 1 \\
+	0.4, & x = 1 \\
 	0.2, & x = 2 \\
-	, & x = 3 \\
-	, & x = 4 \\
+	& x = 3 \\
+	& x = 4 \\
 \end{cases}, \qquad
 F(y) =
 \begin{cases}
 	0, & y < 0 \\
 	0.2, & 0 \leq y < 1 \\
 	0.6, & 1 \leq y < 2 \\
-	, & 2 \leq y < 3 \\
+	& 2 \leq y < 3 \\
 	0.8, & 3 \leq y < 4 \\
 	1, & 4 \leq y \\
 \end{cases}
 \]
-Um $F(2)$, also $W(X \leq 2)$ zu bekommen, können wir die Wahrscheinlichkeiten für $x = q \text{ mit } q \in \{0,1,2\}$ aufaddieren: $W(X \leq 2) = W(X = 0) + W(X = 1) + W(X = 2) = 0.2 + 0.3 + 0.2 = 0.7$
+Um $F(2)$, also $W(X \leq 2)$ zu bekommen, können wir die Wahrscheinlichkeiten für $x = q \text{ mit } q \in \{0,1,2\}$ aufaddieren: $W(X \leq 2) = W(X = 0) + W(X = 1) + W(X = 2) = 0.2 + 0.4 + 0.2 = 0.8$
 \[
 f(x) = 
 \begin{cases}
 	0.2, & x = 0 \\
-	0.3, & x = 1 \\
+	0.4, & x = 1 \\
 	0.2, & x = 2 \\
-	, & x = 3 \\
-	, & x = 4 \\
+	& x = 3 \\
+	& x = 4 \\
 \end{cases}, \qquad
 F(y) =
 \begin{cases}
 	0, & y < 0 \\
 	0.2, & 0 \leq y < 1 \\
 	0.6, & 1 \leq y < 2 \\
-	0.7, & 2 \leq y < 3 \\
+	0.8, & 2 \leq y < 3 \\
 	0.8, & 3 \leq y < 4 \\
 	1, & 4 \leq y \\
 \end{cases}
 \]
 f(3) kann nun berechnet werden wie oben schon f(1):
 \begin{align*}
-	W(X == 3) = F(3) - F(2) = 0.8 - 0.7 = 0.1
+	W(X == 3) = F(3) - F(2) = 0.8 - 0.8 = 0
 \end{align*}
 \[
 f(x) = 
 \begin{cases}
 	0.2, & x = 0 \\
-	0.3, & x = 1 \\
+	0.4, & x = 1 \\
 	0.2, & x = 2 \\
-	0.1, & x = 3 \\
-	, & x = 4 \\
+	0, & x = 3 \\
+	& x = 4 \\
 \end{cases}, \qquad
 F(y) =
 \begin{cases}
 	0, & y < 0 \\
 	0.2, & 0 \leq y < 1 \\
 	0.6, & 1 \leq y < 2 \\
-	0.7, & 2 \leq y < 3 \\
+	0.8, & 2 \leq y < 3 \\
 	0.8, & 3 \leq y < 4 \\
 	1, & 4 \leq y \\
 \end{cases}
@@ -1274,9 +1274,9 @@ Genau so könnten wir auf f(4) errechnen, aber da sich die Wahrscheinlichkeiten 
 f(x) = 
 \begin{cases}
 	0.2, & x = 0 \\
-	0.3, & x = 1 \\
+	0.4, & x = 1 \\
 	0.2, & x = 2 \\
-	0.1, & x = 3 \\
+	0, & x = 3 \\
 	0.2, & x = 4 \\
 \end{cases}, \qquad
 F(y) =
@@ -1284,7 +1284,7 @@ F(y) =
 	0, & y < 0 \\
 	0.2, & 0 \leq y < 1 \\
 	0.6, & 1 \leq y < 2 \\
-	0.7, & 2 \leq y < 3 \\
+	0.8, & 2 \leq y < 3 \\
 	0.8, & 3 \leq y < 4 \\
 	1, & 4 \leq y \\
 \end{cases}
