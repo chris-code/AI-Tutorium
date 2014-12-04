@@ -1133,21 +1133,23 @@ Prof. Müller liest die Vorlesung Thermodynamik zwei mal in der Woche, Montags u
 	0.25 & 0.05 & 0.2 & 0.08 & 0.402 & 0.002 & 0.015 & 0.002
 \end{tabular}\\
 \\
-Hängt die Hörerzahl tatsächlich von der Uhrzeit bzw. vom Regen ab?
-
+Hängt die Hörerzahl tatsächlich von der Uhrzeit bzw. vom Regen ab? \\
+\\
+Statistische Unabhängigkeit ist gegeben genau dann wenn gilt: $W(X \cap Y) \overset{!}{=} W(X) \cdot W(Y)$
+\paragraph{Wenig Hörer und Morgens} Wir wählen also $W(W \cap M)$ als alle Fälle, in denen es sowohl Wenig Hörer gibt als auch die Vorlesungs Morgens statt findet. Dies wird mit den Einzelwahrscheinlichkeiten für $W(X) \cdot W(Y)$ gleich gesetzt.
 \begin{align*}
-	W(X \cap Y) \overset{!}{=} W(X) \cdot W(Y)
-	\shortintertext{Wenig Hörer und Morgens}
 	WM + WMR &\overset{!}{=} W \cdot M \\
 	0.402 + 0.002 &= 0.05 \cdot 0.02 \\
 	0.404 &\neq 0.001
-	\shortintertext{Die Hörerzahl und die Uhrzeit sind also abhängig.}
-	\shortintertext{Wenig Hörer und Regen}
+\end{align*}
+Die Hörerzahl und die Uhrzeit sind also abhängig.
+\paragraph{Wenig Hörer und Regen} Selbes Spiel. Alle Fälle, in denen es Wenig Hörer und Regen gibt gleichsetzten mit dem Produkt der Einzelwahrscheinlichkeiten.
+\begin{align*}
 	WR + WMR &\overset{!}{=} W \cdot R \\
 	0.002 + 0.002 &= 0.05 \cdot 0.08 \\
 	0.004 &= 0,004
-	\shortintertext{Die Hörerzahl und das Wetter sind also unabhängig.}
 \end{align*}
+Die Hörerzahl und das Wetter sind also unabhängig.
 
 \subsection{Zufallsvariablen}
 Für die Zufallsvariable X seien folgende Wahrscheinlichkeiten bekannt, Werte $X > 4$ gibt es nicht:
