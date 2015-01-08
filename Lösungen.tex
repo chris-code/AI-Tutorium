@@ -1468,12 +1468,12 @@ Herr B. geht davon aus, 14.000 Verpackungseinheiten mit jeweils 20 Büchern verk
 \end{enumerate}
 
 \subsection{Äquivalenzziffernrechnung}
-Der Lebensmittelhersteller Krafft vertreibt 4 Sorten Energy-Drinks. Die Kosten pro Palette ergeben sich zum Großteil aus der Herstellungsdauer. Die folgende Tabelle sind die Herstellungszahlen und Produktionszeiten pro Palette und Typ angegeben. Die gesammten Herstellungskosten betragen 320.000 \euro.
+Der Lebensmittelhersteller Krafft vertreibt 4 Sorten Energy-Drinks. Die Kosten pro Palette ergeben sich zum Großteil aus der Herstellungsdauer. In der folgenden Tabelle sind die Herstellungszahlen und Produktionszeiten pro Palette und Typ angegeben. Die gesammten Herstellungskosten betragen 320.000 \euro.
 
 \begin{tabular}{lcc}
 	Energy-Drink & Produktionszahlen (in Paletten) & Hertellungsdauer (in Minuten) \\ \hline
 	Ungehäuer & 2400 & 24 \\
-	Red Donkey & 1200 & 32 \\
+	Blue Donkey & 1200 & 32 \\
 	Rhinozeros & 600 & 18 \\
 	Rockikone & 2000 & 20
 \end{tabular}
@@ -1482,10 +1482,17 @@ Der Lebensmittelhersteller Krafft vertreibt 4 Sorten Energy-Drinks. Die Kosten p
 Wie groß sind die Herstellungskosten in vollen Tausend \euro \ pro Produkttyp, wenn man die einstufige Äquivalenzziffernrechnung anwendet?
 
 \vspace{\baselineskip}
+Da die Herstellungsdauer den Hauptanteil an den Kosten ausmachen, sind die die Kosten für einen Produkttyp proportional zur Herstellungsdauer pro Palette mal Anzahl der hergestellten Paletten. Diese rechnen wir zunächst aus ('Palettenminuten').
+
+Der Anteil der Kosten, den ein Produkttyp an den Gesammtkosten hat, entspricht nun dem Anteil der Palettenminuten an der Summe aller Palettenminuten. Diesen Anteil rechnen wir aus indem wir die Palettenminuten eines Produkttyps durch die Summe der Palettenminuten dividieren, das Ergebnis wird dann 'Äquivalenzziffer' genannt.
+
+Die Kosten, die auf einen Produkttyp entfallen, ergeben sich dann dadurch, dass wir die Gesammtkosten mit der jeweiligen Äquivalenzziffer multiplizieren.
+
+\vspace{\baselineskip}
 \begin{tabular}{lrrrrr}
 	Energy-Drink & Paletten & Minuten & Palettenminuten & Äquivalenzziffer & Kosten \\ \hline
 	Ungehäuer & 2400 & 24 & 57600 & 0.3924 & 125' \\
-	Red Donkey & 1200 & 32 & 38400 & 0.2616 & 83' \\
+	Blue Donkey & 1200 & 32 & 38400 & 0.2616 & 83' \\
 	Rhinozeros & 600 & 18 & 10800 & 0.0736 & 23' \\
 	Rockikone & 2000 & 20 & 40000 & 0.2725 & 87' \\ \hline
 	$\sum$ & & & 146800 & 1.0001 & 318'
