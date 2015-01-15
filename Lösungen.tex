@@ -1372,7 +1372,20 @@ Ein Programm soll das Alter von Personen überprüfen. Dazu geben sie ihr Geburt
 \end{lstlisting}
 \lstinputlisting[language=C]{src/altersabfrage.c}
 
-\subsection{Input, Output und Strings}
+\subsection{Strings}
+Gegeben sei folgender Test:
+\begin{quote}
+	N'Gasta! Kvata! Kvakis! ahkstas so novajxletero (oix jhemile) so Ranetauw. Ricevas gxin pagintaj membrauw kaj aliaj individuauw, kiujn iamaniere tusxas so raneta aktivado. En gxi aperas informauw unuavice pri so lokauw so cxiumonataj kunvenauw, sed nature ankoix pri aliaj aktuasoj aktivecauw so societo. Ne malofte enahkstas krome plej diversaspekta materialo eduka oix distra.
+\end{quote}
+\begin{enumerate}
+	\item Nimm an, der Text liegt als \texttt{cstring (char array)} vor. Gib den Text und die Anzahl Zeichen des Textes aus.
+	\item Das Programm soll nun jedes Vorkommen des \textbf{Wortes} \glqq so\grqq\ durch \glqq AI\grqq\ ersetzen (wenn die Zeichenfolge \glqq so\grqq\ innerhalb eines anderen Wortes vorkommt, soll sie nicht verändert werden). Gib den neuen Text und seine Länge aus. Erkläre ggf. das Ergebnis.
+	\item Gib die Position aus, an der das erste \glqq AI\grqq\ im neuen Text beginnt.
+	\item Wie lang ist nun der ursprüngliche Text? Erkläre ggf. das Ergebnis.
+\end{enumerate}
+\lstinputlisting[language=C]{src/strings.c}
+
+\subsection{Input, Output}
 
 \subsection{Zeiger}
 \label{zeigerAufgabe}
@@ -1385,7 +1398,7 @@ Wende die Funktion auf das folgende Array an:
 \lstinputlisting[language=C]{src/zeiger.c}
 
 \subsection{Const Correctness}
-Das Keyword \texttt{const} dient dazu, Variablen als Konstant zu deklarieren, sie dürfen vom Programmierer also nicht verändert werden. Ergänze das Programm aus \ref{zeigerAufgabe} um \texttt{const}-Markierungen, wo es angemessen ist. Was bewirkt es an den jeweiligen Stellen?
+Das Keyword \texttt{const} dient dazu, Variablen als Konstant zu deklarieren, sie dürfen vom Programmierer also nicht verändert werden. Ergänze das Programm aus \ref{zeigerAufgabe} um \texttt{const}-Markierungen, wo es möglich ist. Was bewirkt es an den jeweiligen Stellen?
 \lstinputlisting[language=C]{src/constCorrectness.c}
 
 \newpage
