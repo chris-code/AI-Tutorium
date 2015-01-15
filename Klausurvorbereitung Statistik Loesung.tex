@@ -11,6 +11,7 @@
 \usepackage{eurosym}
 \usepackage[ngerman]{babel}
 \usepackage{cancel} %Kürzen
+\usepackage{enumitem}
 
 \providecommand{\abs}[1]{\left\lvert#1\right\rvert}
 \providecommand{\norm}[1]{\left\lVert#1\right\rVert}
@@ -30,12 +31,12 @@ Bei der Auswertung der Statistikklausuren aus den letzten 4 Jahren haben sich f�
 
 \begin{tabular}{r|l|r|r}
 	ID 	&	Thema 										& Häufigkeit 	& Wahrscheinlichkeit\\ \hline
-	1	& Anwendungen von Verteilungen 					& 7 			& \\
-	2	& Stichproben 									& 8				& \\
-	3	& Dichte- und Verteilungsfunktionen 			& 7 			& \\
-	4	& Wahrscheinlichkeitstabelle / Abhängigkeiten 	& 4 			& \\
-	5	& Urnenmodell / Kombinatorik 					& 4 			& \\
-	6	& Erwartungswert und Varianz 					& 2 			& \\
+	1	& Anwendungen von Verteilungen 					& 7 			& 7/32 = 0.21875\\
+	2	& Stichproben 									& 8				& 8/32 = 0.25000\\
+	3	& Dichte- und Verteilungsfunktionen 			& 7 			& 7/32 = 0.21875\\
+	4	& Wahrscheinlichkeitstabelle / Abhängigkeiten 	& 4 			& 4/32 = 0.12500\\
+	5	& Urnenmodell / Kombinatorik 					& 4 			& 4/32 = 0.12500\\
+	6	& Erwartungswert und Varianz 					& 2 			& 2/32 = 0.06250\\
 \end{tabular}\\
 
 \begin{enumerate}
@@ -48,25 +49,27 @@ Bei der Auswertung der Statistikklausuren aus den letzten 4 Jahren haben sich f�
 \setlength\extrarowheight{5pt}
 \begin{tabular}{r|cccccc|r}
 	  		& 1 	& 2 	& 3 	& 4 	& 5 	& 6 	& $\sum$\\ \hline
-	1 		& 0 	& 5/32 	&  		& 0  	& 0  	& 0 	& 7/32 \\
-	2 		& 5/32	& 0		& 1/32 	& 0 	&   	&   	& 8/32 \\
-	3 		& 		& 1/32 	& 0 	& 3/32 	& 1/32 	& 0  	& 7/32 \\
-	4 		& 0		& 0 	& 3/32 	& 0 	& 0  	&   	& 4/32 \\
-	5 		& 0  	&   	& 1/32 	& 0 	& 0  	& 1/32 	& 4/32 \\
-	6 		& 0 	&   	& 0  	&  		& 1/32 	& 0 	& 2/32 \\ \hline
+	1 		& 0 	& 5/32 	& 2/32 	& 0  	& 0  	& 0 	& 7/32 \\
+	2 		& 5/32	& 0		& 1/32 	& 0 	& 2/32 	& 0 	& 8/32 \\
+	3 		& 2/32	& 1/32 	& 0 	& 3/32 	& 1/32 	& 0  	& 7/32 \\
+	4 		& 0		& 0 	& 3/32 	& 0 	& 0  	& 1/32 	& 4/32 \\
+	5 		& 0  	& 2/32 	& 1/32 	& 0 	& 0  	& 1/32 	& 4/32 \\
+	6 		& 0 	& 0 	& 0  	& 1/32 	& 1/32 	& 0 	& 2/32 \\ \hline
 	$\sum$ 	& 7/32 	& 8/32 	& 7/32 	& 4/32 	& 4/32 	& 2/33  & 1\\
 \end{tabular}
 \end{figure}
 
-\item Ist das Auftreten der Aufgaben statistisch unabhängig?
+\item Ist das Auftreten der Aufgaben statistisch unabhängig? Nein, da $P(1 \land 2) \neq P(1) \cdot P(2)$
 \item Bestimmen Sie folgende Wahrscheinlichkeiten:
 
 	\begin{tabular}{ll}
-	a) $P(5)$ \hspace{5cm} 				& c) $P(1|3)$\\
-	b) $P(3 \land 5)$ 					& d) $P((2 \land 5) \lor (3 \land 4))$
+	a) $P(5) = \dfrac{4}{32}$ \hspace{4cm} 				& c) $P(1|3) = \dfrac{2/32}{7/32} = \dfrac{2}{7}$ \\
+	b) $P(3 \land 5) = \dfrac{1}{32}$ 					& d) $P((2 \land 5) \lor (3 \land 4)) = \dfrac{2}{32} + \dfrac{3}{32} = \dfrac{5}{32}$
 	\end{tabular}
 
 \end{enumerate}
+
+\newpage
 
 \section{Urnenmodell}
 Chrisbot
