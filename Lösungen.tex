@@ -933,10 +933,21 @@ Berechne mittels PBZ:
 \end{enumerate}
 
 \subsubsection{Substitution}
-\[ \int_s^t \mathrm{f}( \ \underbrace{\mathrm{g}(x)}_z \ ) \mathrm{dx} = \int_{\mathrm{g}(s)}^{\mathrm{g(t)}} \mathrm{f}(z) \mathrm{dz} \]
+\[ \int_a^b \mathrm{f}( \ \underbrace{\mathrm{g}(x)}_t \ ) \dx = \int_{\mathrm{g}(a)}^{\mathrm{g(b)}} \mathrm{f}(t) \dt \]
 Berechne mittels Substitution:
 \begin{enumerate}
-	\item $\int_1^e \frac{\sqrt{\ln(x)}}{x} \mathrm{dx}$
+	\item $\int_{-\pi}^\pi \sin{x} \cdot \cos{x} \dx$
+		\begin{align*}
+			\shortintertext{Substituiere: $\sin{x} = t$}
+			\shortintertext{$\frac{dt}{dx} = \cos{x} \Leftrightarrow \dx = \frac{\dt}{\cos{x}}$}
+			\int_{-\pi}^\pi \sin{x} \cdot \cos{x} \dx &= \int_{\sin{-\pi}}^{\sin{\pi}} t\ \cancel{\cos{x}}\ \frac{\dt}{\cancel{\cos{x}}} \\
+			&= \int_{\sin{-\pi}}^{\sin{\pi}} t \dt \\
+			&= \left[ \frac{1}{2} t^2 \right]_{\sin{-\pi}}^{\sin{\pi}} \\
+			&= \frac{1}{2} \left[ t^2 \right]_0^0 \\
+			&= \frac{1}{2} \left( 0^2 - 0^2 \right) \\
+			&= 0
+		\end{align*}
+	\item $\int_1^e \frac{\sqrt{\ln(x)}}{x} \dx$
 		\begin{align*}
 			\shortintertext{Substituiere: $\ln(x) = t$}
 			\shortintertext{$\frac{\dt}{\dx} = \frac{1}{x} \Leftrightarrow \dx = x \dt$}
