@@ -21,6 +21,12 @@
 \providecommand{\asin}{\mathrm{asin}}
 \providecommand{\dx}{\ \mathrm{dx}}
 \providecommand{\dt}{\ \mathrm{dt}}
+\providecommand\setequal{\overset{!}{=}}
+\renewcommand\equiv{\Leftrightarrow}
+\providecommand\ev[1]{\mathbb{E}\left(#1\right)}
+\providecommand\br[1]{\left(#1\right)}
+
+\allowdisplaybreaks
 
 \title{Klausurvorbereitung Statistik \\ Lösungen}
 \author{Yannick Schrör \and Christian Mielers}
@@ -43,30 +49,33 @@ Bei der Auswertung der Statistikklausuren aus den letzten 4 Jahren haben sich f�
 
 \begin{enumerate}
 \item Gehen Sie davon aus, dass Sie zu Übungszwecken zufällig eine Aufgabe aus den Altklausuren aussuchen und bearbeiten möchten. Berechnen Sie für jedes einzelne Thema die Wahrscheinlichkeit, dass Sie eine Aufgabe seines Typs auswählen.
+
+\textbf{Lösung:} Siehe rechteste Spalte der Tabelle
 \item Nehmen Sie an, eine Klausur bestünde aus zwei Aufgaben. Der nachfolgenden Tabelle können Sie entnehmen, mit welcher Wahrscheinlichkeit ein Thema in einer Altklausur drankam, wenn eines der anderen Thema ebenfalls drankam. Vervollständigen Sie die Tabelle.
 
-
+\textbf{Lösung:}
 \begin{figure}[h!]
 \centering
 \setlength\extrarowheight{5pt}
 \begin{tabular}{r|cccccc|r}
-	  		& 1 	& 2 	& 3 	& 4 	& 5 	& 6 	& $\sum$\\ \hline
+	P(a,b)	& 1 	& 2 	& 3 	& 4 	& 5 	& 6 	& $\sum$\\ \hline
 	1 		& 0 	& 5/32 	& 2/32 	& 0  	& 0  	& 0 	& 7/32 \\
 	2 		& 5/32	& 0		& 1/32 	& 0 	& 2/32 	& 0 	& 8/32 \\
 	3 		& 2/32	& 1/32 	& 0 	& 3/32 	& 1/32 	& 0  	& 7/32 \\
 	4 		& 0		& 0 	& 3/32 	& 0 	& 0  	& 1/32 	& 4/32 \\
 	5 		& 0  	& 2/32 	& 1/32 	& 0 	& 0  	& 1/32 	& 4/32 \\
 	6 		& 0 	& 0 	& 0  	& 1/32 	& 1/32 	& 0 	& 2/32 \\ \hline
-	$\sum$ 	& 7/32 	& 8/32 	& 7/32 	& 4/32 	& 4/32 	& 2/33  & 1\\
+	$\sum$ 	& 7/32 	& 8/32 	& 7/32 	& 4/32 	& 4/32 	& 2/32  & 1\\
 \end{tabular}
 \end{figure}
 
-\item Ist das Auftreten der Aufgaben statistisch unabhängig? Nein, da $P(1 \land 2) \neq P(1) \cdot P(2)$
+\item Ist das Auftreten der Aufgaben statistisch unabhängig?\\
+\textbf{Lösung:} Nein, da $P(1, 2) \neq P(1) \cdot P(2)$
 \item Bestimmen Sie folgende Wahrscheinlichkeiten:
 
 	\begin{tabular}{ll}
 	a) $P(5) = \dfrac{4}{32}$ \hspace{4cm} 				& c) $P(1|3) = \dfrac{2/32}{7/32} = \dfrac{2}{7}$ \\
-	b) $P(3 \land 5) = \dfrac{1}{32}$ 					& d) $P((2 \land 5) \lor (3 \land 4)) = \dfrac{2}{32} + \dfrac{3}{32} = \dfrac{5}{32}$
+	b) $P(3, 5) = \dfrac{1}{32}$ 					& d) $P((2, 5) \cup (3, 4)) = \dfrac{2}{32} + \dfrac{3}{32} = \dfrac{5}{32}$
 	\end{tabular}
 
 \end{enumerate}
@@ -78,7 +87,7 @@ Die Übung zur Vorlesung Statistik wird von 42 Leuten besucht, von denen 35 die 
 	\item keiner der Studenten auffliegt
 	\item genau zwei der Studenten auffliegen
 \end{enumerate}
-wenn wir von Ziehen mit (ohne) Zurücklegen mit (ohne) Beachtung der Reihenfolge ausgehen?
+wenn wir von Ziehen mit/ohne Zurücklegen und mit/ohne Beachtung der Reihenfolge ausgehen?
 
 \vspace{\baselineskip}
 \begin{tabular}{|c||c|c|}
@@ -135,7 +144,96 @@ Mögliche Ereignisse: $\binom{n+k-1}{k} = \binom{42+3-1}{3} = 13244$
 
 \newpage
 \section{Dichte- und Verteilungsfunktion}
-Yannick
+
+Ein tüchtiger Professor lässt jährlich 20000 Bücher drucken. Die Anzahl der verkauften Bücher pro Jahr (in tsd.) kann als Zufallsvariable X mit folgender Dichtefunktion angesehen werden:
+
+\begin{align*}
+f(x) = \begin{cases}a \cdot x^2 & , \quad 0 \leq x \leq 20\\ 0 & , \quad \text{sonst}\end{cases}
+\end{align*}
+
+\begin{enumerate}[label=\alph*)]
+\item 	Bestimmen Sie $a$!\\
+		\textbf{Lösung:} Damit $f(x)$ eine gültige Dichtefunktion ist, muss ihr Integral 1 ergeben!
+		\begin{align*}
+		&\int_{-\infty}^{\infty} f(x) \dx \setequal 1\\
+		\intertext{Da $f(x)$ außerhalb vom Interval $[0,20]$ den Wert $0$ hat, folgt:}
+		\equiv &\int_{0}^{20} f(x) \dx = 1\\
+		\equiv &\int_0^{20} a \cdot x^2 \dx = 1\\
+		\equiv &a \cdot \frac{1}{3} \cdot x^3 \Big\vert_0^{20} = 1\\
+		\equiv &a \cdot \frac{1}{3} \cdot 20^3 = 1\\
+		\equiv &a \cdot \frac{8000}{3} = 1\\
+		\equiv &a = \frac{3}{8000}
+		\intertext{Somit ergibt sich $f(x)$ zu:}
+		f(x&) = \begin{cases}\frac{3}{8000} \cdot x^2 & , \quad 0 \leq x \leq 20\\ 0 & , \quad \text{sonst}\end{cases}
+		\end{align*}
+\item   Über den jährlichen Verkauf wie vieler Bücher kann sich der Professor im Durchschnitt freuen?\\
+		\textbf{Lösung:} Um die Anzahl der durchschnittlich pro Jahr verkauften Bücher zu ermitteln müssen wir den Erwartungswert der Zufallsvariablen X berechnen!
+		\begin{align*}
+		\ev{X} &= \int_{-\infty}^\infty x \cdot f(x) \dx\\
+		&= \int_0^{20} x \cdot f(x) \dx\\
+		&= \int_0^{20} x \cdot \frac{3}{8000} \cdot x^2 \dx\\
+		&= \int_0^{20} \frac{3}{8000} \cdot x^3 \dx\\
+		&= \frac{3}{8000} \cdot\int_0^{20} x^3 \dx\\
+		&= \frac{3}{8000} \cdot \br{\frac{1}{4} x^4 \Big\vert_0^{20}}\\
+		&= \frac{3}{8000} \cdot \br{\br{\frac{1}{4} \cdot 20^4} - \br{\frac{1}{4} \cdot 0^4}}\\
+		&= \frac{3}{8000} \cdot \br{\br{\frac{1}{4} \cdot 20^4} - 0}\\
+		&= \frac{3}{8000} \cdot \br{\frac{1}{4} \cdot 160000}\\
+		&= \frac{3}{8000} \cdot 40000\\
+		&= 15
+		\end{align*}
+\item   Berechnen Sie die Standardabweichung der Verteilung der Zufallsvariablen X!\\
+		\textbf{Lösung:} Die Varianz einer Zufallsvariablen wird mit der folgenden Formel berechnet:
+		\begin{align*}
+		\mathbb{V}(A) &:= \int_{-\infty}^\infty \br{a - \ev{A}} \cdot f(a) \text{ da}
+		\intertext{Somit erhalten wir:}
+		\mathbb{V}(X) &= \int_0^{20} \br{x - \mathbb{E}(X)}^2 \cdot f(x) \dx\\
+		&= \int_0^{20} \br{x - 15}^2 \cdot \frac{3}{8000} \cdot x^2 \dx\\
+		&= \frac{3}{8000} \cdot \int_0^{20} \br{x - 15}^2 \cdot x^2 \dx\\
+		&= \frac{3}{8000} \cdot\int_0^{20} \br{x^2 - 30x + 225} \cdot x^2 \dx\\
+		&= \frac{3}{8000} \cdot \br{\int_0^{20} x^2 \cdot x^2 \dx - \int_0^{20} 30x \cdot x^2 \dx + \int_0^{20} 225 \cdot x^2 \dx}\\
+		&= \frac{3}{8000} \cdot \br{\int_0^{20} x^4 \dx - \int_0^{20} 30x^3 \dx + \int_0^{20} 225  x^2 \dx}\\
+		&= \frac{3}{8000} \cdot \br{\int_0^{20} x^4 \dx - 30 \cdot \int_0^{20} x^3 \dx + 225 \cdot \int_0^{20} x^2 \dx}\\
+		&= \frac{3}{8000} \cdot \br{\frac{1}{5} x^5 \Big\vert_0^{20} - 30 \cdot \br{\frac{1}{4} x^4 \Big\vert_0^{20}} + 225 \cdot \br{\frac{1}{3} x^3 \Big\vert_0^{20}}}\\
+		&= \frac{3}{8000} \cdot \br{(640000 - 0) - 30 \cdot \br{40000 - 0} + 225 \cdot \br{\frac{8000}{3} - 0}}\\
+		&= \frac{3}{8000} \cdot \br{640000 - 1200000 + 600000}\\
+		&= \frac{3}{8000} \cdot 40000\\
+		&= 3 \cdot 5\\
+		&= 15
+		\intertext{Um die Standardabweichung zu erhalten, müssen wir die Wurzel der Varianz berechnen:}
+		\sigma &= \sqrt{15}\\
+		&\approx 3,873
+		\end{align*}
+\item   Mit welcher Wahrscheinlichkeit verkauft der tüchtige Professor mehr als 18000 Bücher in einem Jahr?\\
+		\textbf{Lösung:} Zur Lösung dieser Frage, müssen wir zunächst ausrechnen, wie groß die Wahrscheinlichkeit ist, dass der Professor mehr als 18000 Bücher in einem Jahr verkauft. Anschließend berechnen wir die Gegenwahrscheinlichkeit, um auf den gesuchten Wert zu kommen.
+		\begin{align*}
+		W(X \leq 18) &= F(18)
+		\intertext{F(x) ist die Verteilungsfunktion der Zufallsvariablen X. Diese wird wie folgt berechnet:}
+		F(x) &= \int f(x) \dx\\
+		&= \int \frac{3}{8000} \cdot x^2 \dx\\
+		&= \frac{3}{8000} \cdot \int x^2 \dx\\
+		&= \frac{3}{8000} \cdot \frac{1}{3} \cdot x^3\\
+		&= \frac{1}{8000} \cdot x^3
+		\intertext{Nun können wir $W(X \leq 18)$ berechnen:}
+		W(X \leq 18) &= F(18)\\
+		&= \frac{1}{8000} \cdot 18^3\\
+		&= \frac{1}{8000} \cdot 5832\\
+		&= \frac{729}{1000}\\
+		&= 0.729
+		\intertext{Die Wahrscheinlichkeit $W(X > 18)$ berechnet sich nun aus der Gegenwahrscheinlichkeit von $W(X \leq 18)$:}
+		W(X > 18) &= 1 - W(X < 18)\\
+		&= 1 - 0.729\\
+		&= 0.271
+		\end{align*}
+\item   Wie viele Bücher müsste der Professor pro Jahr drucken lassen, um mit 80\%iger Wahrscheinlichkeit ausreichend Bücher für alle Kunden auf Vorrat zu haben?\\
+		\textbf{Lösung:} Zur Beantwortung dieser Frage müssen wir das 0,8-Faktil berechnen. Dieses erhalten wir durch Gleichsetzung der Verteilungsfunktion mit dem Wert 0.8:
+		\begin{align*}
+		0.8 \setequal \frac{1}{8000} \cdot x^3\\
+		6400 = x^3\\
+		x = \sqrt[3]{6400}\\
+		x = 18,566
+		\intertext{In 80\% der Fälle ist die Produktion von 18.566 Bücher also ausreichend.}
+		\end{align*}
+\end{enumerate}
 
 \newpage
 \section{Anwendung von Verteilungen}
