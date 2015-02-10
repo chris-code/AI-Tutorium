@@ -4,6 +4,8 @@
 \usepackage{fullpage}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
+\usepackage{xcolor}
+\definecolor{AI-BLUE}{rgb}{0,0.57,0.87}
 \usepackage{tabularx}
 \usepackage{listings}
 \usepackage{mathtools}
@@ -137,8 +139,37 @@ Yannick
 
 \newpage
 \section{Anwendung von Verteilungen}
-Chrisbot
+Anne Imberg hat vor Kurzem angefangen, \textcolor{AI-BLUE}{[AI]} an der RUB zu studieren. Von Komilitonen in höheren Semestern hat sie gehört, dass die Wahrscheinlichkeit, auf dem Weg von Hattingen zur Uni in einen Stau zu geraten 25\% beträgt. Sie interessiert sich für die Frage, wie groß die Wahrscheinlichkeit ist, in ihren 6 Semestern mehr als 300 mal im Stau zu stehen.
 
+\begin{enumerate}
+	\item Gib eine Verteilung an sammt Parametern an, die dem Problem entspricht. Es kann angenommen werden, dass Staus statistisch unabhängig sind.
+	
+	\textbf{Lösung:} $\emph{B}(1095;0.25)$ \\
+	Mit einer gewissen Wahrscheinlichkeit p in einen Stau zu geraten kann als Bernoulli-Experiment gesehen werden (YES-NO trial). Eine Verkettung mehrerer solcher Experimente beschreibt die Binomialverteilung. Diese ist parametrisiert über die Anzahl der Experimente \texttt{n} und die Erfolgswahrscheinlichkeit \texttt{p} (ob \emph{in den Stau kommen} ein Erfolg ist, darüber kann gestritten werden). Das Problem lässt sich also beschreiben mittels einer Binomialverteilung mit 6 Semester = 1095 Tage Experimenten und einer Erfolgswahrscheinlichkeit von 0.25.
+	
+	\item Berechne die Wahrscheinlichkeit, öfter als 300 mal im Stau zu stehen.
+		\textbf{Lösung:} Wir wollen $W(X > 300)$ berechnen. In der Formelsammlung ist allerdings keine Tabelle für Binomialverteilung mit $p=0.25$ gegeben (und schon gar nicht mit $n=1095$). Wir nähern die Verteilung also zunächst über eine Normalverteilung an:
+		\begin{align*}
+			X \sim \emph{B}(1095;0.25) &\approx \mathcal{N} \left(273.75;\sqrt{273.75 \cdot (1-0.25)} \right) \\
+			&= \mathcal{N}\left(273.75;14.3287\right) \\
+			\intertext{Aber auch für diese Verteilung findet sich keine Tabelle in der Formelsammlung. Wir nähern diese Verteilung wiederum durch eine Standardnormalverteilung (Erwartungswert 0, Standardabweichung 1) an.}
+			Y = \frac{X - 273.75}{14.3287} &\sim \mathcal{N}(0;1)
+			\intertext{Nun können wir die Wahrscheinlichkeit berechnen}
+			W(X > 300) &= 1 - W(X \leq 300) \\
+			&= 1 - W(Y \leq 1.8320) \tag{in Tabelle nachschlagen} \\
+			&= 1 - 0.9664 \\
+			&= 0.0336
+		\end{align*}
+		Die Wahrscheinlichkeit beträgt also etwas über 3\%.
+		\item Berechne die Wahrscheinlichkeit, öfter als 256 mal im Stau zu stehen.
+		\begin{align*}
+			W(X > 256) &= 1 - W(X \leq 256) \\
+			&= 1 - W(Y \leq -1.2387) \tag{Nutze Symmetrie der Normalverteilung} \\
+			&= 1 - \left( 1 - W(Y \leq 1.2387) \right) \tag{in Tabelle nachschlagen} \\
+			&= 1 - \left( 1 - 0.8925 \right) \\
+			&= 0.8925
+		\end{align*}
+\end{enumerate}
 \newpage
 \section{Stichproben}
 
