@@ -267,6 +267,16 @@ Anne Imberg hat vor Kurzem angefangen, \textcolor{AI-BLUE}{[AI]} an der RUB zu s
 			&= 1 - \left( 1 - 0.8925 \right) \\
 			&= 0.8925
 		\end{align*}
+	\item Welche Anzahl an Staus wird Anne mit 90\% Wahrscheinlichkeit nicht überschreiten?
+	
+	\textbf{Lösung:} Gefragt ist hier nach dem 0.9-Fraktil. Wir haben die Verteilung auf eine $\mathcal{N}(0;1)$-Verteilung reduziert, und von der sind die Fraktile bekannt.
+	\begin{align*}
+		\Phi^{-1}(0.9) &= 1.2816
+		\intertext{Dies ist aber eben nur das 0.9-Fraktil der $\mathcal{N}(0;1)$-Verteilung. Daher müssen wir diesen Wert nun auf die nicht-standardisierte Normalverteilung $\mathcal{N}(273.75;14.3287)$ zurück transformieren.}
+		1.2816 &= \frac{X - 273.75}{14.3287} \\
+		292.1137 &= X
+	\end{align*}
+	Das 0.9-Fraktil ist also 292.1137. Anne Imberg wird mit 90\%iger Wahrscheinlichkeit nicht mehr als 292.1137 Staus durchfahren müssen.
 \end{enumerate}
 \newpage
 \section{Stichproben}
