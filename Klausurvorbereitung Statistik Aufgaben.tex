@@ -4,6 +4,8 @@
 \usepackage{fullpage}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
+\usepackage{xcolor}
+\definecolor{AI-BLUE}{rgb}{0,0.57,0.87}
 \usepackage{tabularx}
 \usepackage{listings}
 \usepackage{mathtools}
@@ -12,6 +14,7 @@
 \usepackage[ngerman]{babel}
 \usepackage{cancel} %Kürzen
 \usepackage{enumitem}
+
 
 \providecommand{\abs}[1]{\left\lvert#1\right\rvert}
 \providecommand{\norm}[1]{\left\lVert#1\right\rVert}
@@ -41,7 +44,7 @@ Bei der Auswertung der Statistikklausuren aus den letzten 4 Jahren haben sich f�
 	6	& Erwartungswert und Varianz 					& 2 			& \\
 \end{tabular}\\
 
-\begin{enumerate}
+\begin{enumerate}[label=\alph*)]
 \item Gehen Sie davon aus, dass Sie zu Übungszwecken zufällig eine Aufgabe aus den Altklausuren aussuchen und bearbeiten möchten. Berechnen Sie für jedes einzelne Thema die Wahrscheinlichkeit, dass Sie eine Aufgabe seines Typs auswählen.
 \item Nehmen Sie an, eine Klausur bestünde aus zwei Aufgaben. Der nachfolgenden Tabelle können Sie entnehmen, mit welcher Wahrscheinlichkeit ein Thema in einer Altklausur drankam, wenn eines der anderen Thema ebenfalls drankam. Vervollständigen Sie die Tabelle.
 
@@ -112,10 +115,26 @@ f(x) = \begin{cases}a \cdot x^2 & , \quad 0 \leq x \leq 20\\ 0 & , \quad \text{s
 
 \newpage
 \section{Anwendung von Verteilungen}
-Chrisbot
+Anne Imberg hat vor Kurzem angefangen, \textcolor{AI-BLUE}{[AI]} an der RUB zu studieren. Von Kommilitonen in höheren Semestern hat sie gehört, dass die Wahrscheinlichkeit, auf dem Weg von Hattingen zur Uni in einen Stau zu geraten 25\% beträgt. Sie interessiert sich für die Frage, wie groß die Wahrscheinlichkeit ist, in ihren 6 Semestern mehr als 300 mal im Stau zu stehen.
+
+\begin{enumerate}[label=\alph*)]
+	\item Gib eine Verteilung an sammt Parametern an, die dem Problem entspricht. Es kann angenommen werden, dass Staus statistisch unabhängig sind.
+	\item Berechne die Wahrscheinlichkeit, öfter als 300 mal im Stau zu stehen.
+	\item Berechne die Wahrscheinlichkeit, öfter als 256 mal im Stau zu stehen.
+	\item Welche Anzahl an Staus wird Anne mit 90\% Wahrscheinlichkeit nicht überschreiten?
+\end{enumerate}
 
 \newpage
 \section{Stichproben}
+
+Im Folgenden nehmen wir an, dass die Anzahl der Personen in einem öffentlichen Nahverkehrsfahrzeug normalverteilt ist. Die U-Bahnen der Bogestra vom Typ Tango fassen nominell 175 Personen. Da die Vermutung besteht, dass die Bahnen teilweise überladen fahren, soll in den Stoßzeiten eine Stichprobe durchgeführt werden, die die Nullhypothese testen soll, ob die Bahnen im Durchschnitt tatsächlich überfüllt sind. Die Varianz ist aus vorherigen Messungen bekannt und beträgt 225.
+
+\begin{enumerate}[label=\alph*)]
+\item Es soll das Intervall für den Erwartungswert $\mu$ geschätzt werden, wobei wir uns zu 92\% sicher sein wollen. Das Intervall soll nicht länger als 3 sein. Wie groß müssen wir den Stichprobenumfang $n$ wählen?\\
+\item Wie lautet der Name des Tests, der hier durchgeführt werden muss?\\
+\item Mit einer Stichprobe von $n = 30$ wurde ein Mittelwert $\overline{x} = 173$ errechnet. Als Signifikanzniveau wählen wir $\alpha = 0.04$. Berechne den Testfunktionswert. Wie lautet die Testentscheidung?\\
+\item Wie wäre unsere Entscheidung in Aufgabenteil c) ausgefallen, wenn die Stichprobe einen Mittelwert $\overline{x} = 170$ ergeben hätte?\\
+\end{enumerate}
 
 \end{document}
 
