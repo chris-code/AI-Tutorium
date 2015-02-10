@@ -281,6 +281,44 @@ Anne Imberg hat vor Kurzem angefangen, \textcolor{AI-BLUE}{[AI]} an der RUB zu s
 \newpage
 \section{Stichproben}
 
+Im Folgenden nehmen wir an, dass die Anzahl der Personen in einem öffentlichen Nahverkehrsfahrzeug normalverteilt ist. Die U-Bahnen der Bogestra vom Typ Tango fassen nominell 175 Personen. Da die Vermutung besteht, dass die Bahnen teilweise überladen fahren, soll in den Stoßzeiten eine Stichprobe durchgeführt werden, die die Nullhypothese testen soll, ob die Bahnen im Durchschnitt tatsächlich überfüllt sind. Die Varianz ist aus vorherigen Messungen bekannt und beträgt 225.
+
+\begin{enumerate}[label=\alph*)]
+\item Es soll das Intervall für den Erwartungswert $\mu$ geschätzt werden, wobei wir uns zu 92\% sicher sein wollen. Das Intervall soll nicht länger als 3 sein. Wie groß müssen wir den Stichprobenumfang $n$ wählen?\\
+\textbf{Lösung:} Wir möchten den Stichprobenumfang n berechnen und $\sigma = 15$ ist bekannt. $n$ muss mindestens $\br{\frac{2c\cdot \sigma}{L}}^2$ groß sein, wobei $L$ die Länge des Intervalls bezeichnet und $c$ das $(1-\frac{\alpha}{2})$-Fraktil der $\mathcal N (0,1)$-Verteilung ist. $\alpha$ wiederum berechnet sich aus der Gleichung $\text{Konfidenzniveau} = 1 - \alpha$.
+\begin{align*}
+\text{Konfidenzniveau} &= 1 - \alpha\\
+\alpha &= 1 - \text{Konfidenzniveau}\\
+\alpha &= 1 - 0.98\\
+\alpha &= 0.02
+\intertext{$c$ ergibt sich zu}
+c &= \br{1 - \frac{\alpha}{2}}\text{-Fraktil}\\
+c &= 0.99\text{-Fraktil}\\
+c &= 2.3263
+\intertext{Nun können wir den Stichprobenumfang $n$ anhand folgender Ungleichung bestimmen}
+n &\geq \br{\frac{2c \cdot \sigma}{L}}^2\\
+&\geq  \br{\frac{2 \cdot 2.3263 \cdot 15}{3}}^2\\
+&\geq 22.363
+\shortintertext{Unsere Stichprobe muss also mindestens den Umfang 23 haben.}
+\end{align*}
+\item Wie lautet der Name des Tests, der hier durchgeführt werden muss?\\
+\textbf{Lösung:} Einstichproben-GAUSS-Test, da Standardabweichung $\sigma$ bekannt ist.
+\item Mit einer Stichprobe von $n = 30$ wurde ein Mittelwert $\overline{x} = 180$ errechnet (Signifikanzniveau $\alpha = 0.04$). Berechne den Testfunktionswert. Wie lautet die Testentscheidung?\\
+\textbf{Lösung:} Wir betrachten die Nullhypothese b): $H_0 : \mu \underset{(>)}{=} \mu_0$ gegen $H_1 : \mu < \mu_0$.\\
+Zunächst berechnen wir den Testfunktionswert z:
+\begin{align*}
+z &= \frac{\overline{x} - \mu_0}{\sigma} \cdot \sqrt{n}\\
+&= \frac{180 - 175}{15} \cdot \sqrt{30}\\
+&\approx 1.8257
+\intertext{Als nächstes ist der Verwerfungsbereich $B$ zu bestimmen mit $x_{1-\alpha} $ als $ (1-\alpha)$-Fraktil der $\mathcal N(0,1)$-Verteilung:}
+B &\overset{\text{b)}}{=} (-\infty, -x_{1-\alpha})\\
+&= (-\infty, -x_{1-0.04})\\
+&= (-\infty, -x_{0.96})\\
+&= (-\infty, -1.7507)
+\end{align*}
+.\end{enumerate}
+Wir stellen fest, dass der Testfunktionswert $z \approx 1.8257$ nicht im Intervall B ist. Somit verwerfen wir unsere Nullhypothese nicht. Die Bahnen sind tatsächlich im Durchschnitt überfüllt.
+
 \end{document}
 
 
