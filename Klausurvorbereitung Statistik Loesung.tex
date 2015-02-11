@@ -35,54 +35,61 @@
 
 \begin{document}
 \maketitle
-\section{Wahrscheinlichkeiten}
+\section{Wahrscheinlichkeiten} % 15 Minuten
 Bei der Auswertung der Statistikklausuren aus den letzten 4 Jahren haben sich für folgende Themenbereiche folgende Häufigkeiten ergeben:\\
 
-\begin{tabular}{r|l|r|r}
+\begin{tabular}{c|l|r|r}
 	ID 	&	Thema 										& Häufigkeit 	& Wahrscheinlichkeit\\ \hline
-	1	& Anwendungen von Verteilungen 					& 7 			& 7/32 = 0.21875\\
-	2	& Stichproben 									& 8				& 8/32 = 0.25000\\
-	3	& Dichte- und Verteilungsfunktionen 			& 7 			& 7/32 = 0.21875\\
-	4	& Wahrscheinlichkeitstabelle / Abhängigkeiten 	& 4 			& 4/32 = 0.12500\\
-	5	& Urnenmodell / Kombinatorik 					& 4 			& 4/32 = 0.12500\\
-	6	& Erwartungswert und Varianz 					& 2 			& 2/32 = 0.06250\\
+	A	& Anwendungen von Verteilungen 					& 7 			& 7/32 = 0.21875\\
+	S	& Stichproben 									& 8				& 8/32 = 0.25000\\
+	D	& Dichte- und Verteilungsfunktionen 			& 7 			& 7/32 = 0.21875\\
+	W	& Wahrscheinlichkeitstabelle / Abhängigkeiten 	& 4 			& 4/32 = 0.12500\\
+	U	& Urnenmodell / Kombinatorik 					& 4 			& 4/32 = 0.12500\\
+	E	& Erwartungswert und Varianz 					& 2 			& 2/32 = 0.06250\\
 \end{tabular}\\
 
 \begin{enumerate}[label=\alph*)]
-\item Gehen Sie davon aus, dass Sie zu Übungszwecken zufällig eine Aufgabe aus den Altklausuren aussuchen und bearbeiten möchten. Berechnen Sie für jedes einzelne Thema die Wahrscheinlichkeit, dass Sie eine Aufgabe seines Typs auswählen.
+\item Gehe  davon aus, dass du zu Übungszwecken zufällig eine Aufgabe aus den Altklausuren aussuchen und bearbeiten möchtest. Berechne für jedes einzelne Thema die Wahrscheinlichkeit, dass du eine Aufgabe seines Typs auswählst.
 
-\textbf{Lösung:} Siehe rechteste Spalte der Tabelle
-\item Nehmen Sie an, eine Klausur bestünde aus zwei Aufgaben. Der nachfolgenden Tabelle können Sie entnehmen, mit welcher Wahrscheinlichkeit ein Thema in einer Altklausur drankam, wenn eines der anderen Thema ebenfalls drankam. Vervollständigen Sie die Tabelle.
+\textbf{Lösung:} Siehe rechteste Spalte der obigen Tabelle.
+\item Nimm an, eine Klausur bestünde aus zwei Aufgaben. Der nachfolgenden Tabelle kann entnommen werden, mit welcher Wahrscheinlichkeit zwei Themen gleichzeitig in einer Altklausur drankamen. Die unten angegebene Tabelle enthält somit die Verbundwahrscheinlichkeiten $P(X \cap Y)$. Vervollständige die Tabelle!
 
 \textbf{Lösung:}
 \begin{figure}[h!]
 \centering
 \setlength\extrarowheight{5pt}
 \begin{tabular}{r|cccccc|r}
-	P(a,b)	& 1 	& 2 	& 3 	& 4 	& 5 	& 6 	& $\sum$\\ \hline
-	1 		& 0 	& 5/32 	& 2/32 	& 0  	& 0  	& 0 	& 7/32 \\
-	2 		& 5/32	& 0		& 1/32 	& 0 	& 2/32 	& 0 	& 8/32 \\
-	3 		& 2/32	& 1/32 	& 0 	& 3/32 	& 1/32 	& 0  	& 7/32 \\
-	4 		& 0		& 0 	& 3/32 	& 0 	& 0  	& 1/32 	& 4/32 \\
-	5 		& 0  	& 2/32 	& 1/32 	& 0 	& 0  	& 1/32 	& 4/32 \\
-	6 		& 0 	& 0 	& 0  	& 1/32 	& 1/32 	& 0 	& 2/32 \\ \hline
+	X \textbackslash	Y	& A 	& S 	& D 	& W 	& U 	& E 	& $\sum$\\ \hline
+	A 		& 0 	& 5/32 	& \textcolor{AI-BLUE}{2/32} 	& 0  	& 0  	& 0 	& 7/32 \\
+	S 		& 5/32	& 0		& 1/32 	& 0 	& \textcolor{AI-BLUE}{2/32} 	& \textcolor{AI-BLUE}{0} 	& 8/32 \\
+	D 		& \textcolor{AI-BLUE}{2/32}	& 1/32 	& 0 	& 3/32 	& 1/32 	& 0  	& 7/32 \\
+	W 		& 0		& 0 	& 3/32 	& 0 	& 0  	& \textcolor{AI-BLUE}{1/32} 	& 4/32 \\
+	U 		& 0  	& \textcolor{AI-BLUE}{2/32} 	& 1/32 	& 0 	& 0  	& 1/32 	& 4/32 \\
+	E 		& 0 	& \textcolor{AI-BLUE}{0} 	& 0  	& \textcolor{AI-BLUE}{1/32} 	& 1/32 	& 0 	& 2/32 \\ \hline
 	$\sum$ 	& 7/32 	& 8/32 	& 7/32 	& 4/32 	& 4/32 	& 2/32  & 1\\
 \end{tabular}
 \end{figure}
 
+% Tabelle kleiner machen und dafür sorgen, dass SUDOKU zur Lösung der Aufgabe nicht ausreicht.
+
 \item Ist das Auftreten der Aufgaben statistisch unabhängig?\\
-\textbf{Lösung:} Nein, da $P(1, 2) \neq P(1) \cdot P(2)$
-\item Bestimmen Sie folgende Wahrscheinlichkeiten:
+\textbf{Lösung:} Nein, da $P(1 \cup 2) \neq P(1) \cdot P(2)$
+\item Bestimme folgende Wahrscheinlichkeiten:
 
 	\begin{tabular}{ll}
 	a) $P(5) = \dfrac{4}{32}$ \hspace{4cm} 				& c) $P(1|3) = \dfrac{2/32}{7/32} = \dfrac{2}{7}$ \\
-	b) $P(3, 5) = \dfrac{1}{32}$ 					& d) $P((2, 5) \cup (3, 4)) = \dfrac{2}{32} + \dfrac{3}{32} = \dfrac{5}{32}$
+	b) $P(3 \cap 5) = \dfrac{1}{32}$ 					& d) $P((2\cap 5) \cup (3\cap 4)) = \dfrac{2}{32} + \dfrac{3}{32} = \dfrac{5}{32}$\\
 	\end{tabular}
+	
+	\begin{flushright}Theoretisch muss hier auf das\\ Inklusions-Exklusions-Prinzip\\ geachtet werden, da die Ereig-\\nisse jedoch disjunkt sind, ent-\\fällt dies hier.\hspace{2.8cm}\textcolor{white}{.}\end{flushright}
 
 \end{enumerate}
 
 \newpage
-\section{Urnenmodell}
+\section{Urnenmodell} % 25 Minuten
+
+% TODO Nur zwei der 4 Fälle vorrechnen: Einen mit Reihenfolge, einen ohne
+
 Die Übung zur Vorlesung Statistik wird von 42 Leuten besucht, von denen 35 die Aufgaben vorbereitet haben, die restlichen 7 sind unvorbereitet. Es werden zufällig 3 Stundenten ausgewählt, die die Aufgaben vorrechnen sollen. Wie groß ist die Wahrscheinlichkeit, dass
 \begin{enumerate}
 	\item keiner der Studenten auffliegt
@@ -144,16 +151,16 @@ Mögliche Ereignisse: $\binom{n+k-1}{k} = \binom{42+3-1}{3} = 13244$
 \end{description}
 
 \newpage
-\section{Dichte- und Verteilungsfunktion}
+\section{Dichte- und Verteilungsfunktion} % 30 Minuten + 5 Minuten für Erklärung PDF und CDF (auch grafisch)
 
-Ein tüchtiger Professor lässt jährlich 20000 Bücher drucken. Die Anzahl der verkauften Bücher pro Jahr (in tsd.) kann als Zufallsvariable X mit folgender Dichtefunktion angesehen werden:
+Ein tüchtiger Professor lässt jährlich 20000 Bücher drucken. Die Anzahl der verkauften Bücher pro Jahr (in tsd.) kann als \textbf{stetige} Zufallsvariable X mit folgender Dichtefunktion angesehen werden:
 
 \begin{align*}
 f(x) = \begin{cases}a \cdot x^2 & , \quad 0 \leq x \leq 20\\ 0 & , \quad \text{sonst}\end{cases}
 \end{align*}
 
 \begin{enumerate}[label=\alph*)]
-\item 	Bestimmen Sie $a$!\\
+\item 	Bestimme $a$!\\
 		\textbf{Lösung:} Damit $f(x)$ eine gültige Dichtefunktion ist, muss ihr Integral 1 ergeben!
 		\begin{align*}
 		&\int_{-\infty}^{\infty} f(x) \dx \setequal 1\\
@@ -178,7 +185,6 @@ f(x) = \begin{cases}a \cdot x^2 & , \quad 0 \leq x \leq 20\\ 0 & , \quad \text{s
 		&= \frac{3}{8000} \cdot \br{\frac{1}{4} x^4 \Big\vert_0^{20}}\\
 		&= \frac{3}{8000} \cdot \br{\br{\frac{1}{4} \cdot 20^4} - \br{\frac{1}{4} \cdot 0^4}}\\
 		&= \frac{3}{8000} \cdot \br{\br{\frac{1}{4} \cdot 20^4} - 0}\\
-		&= \frac{3}{8000} \cdot \br{\frac{1}{4} \cdot 160000}\\
 		&= \frac{3}{8000} \cdot 40000\\
 		&= 15
 		\end{align*}
@@ -194,12 +200,12 @@ f(x) = \begin{cases}a \cdot x^2 & , \quad 0 \leq x \leq 20\\ 0 & , \quad \text{s
 		&= \frac{3}{8000} \cdot \br{\int_0^{20} x^2 \cdot x^2 \dx - \int_0^{20} 30x \cdot x^2 \dx + \int_0^{20} 225 \cdot x^2 \dx}\\
 		&= \frac{3}{8000} \cdot \br{\int_0^{20} x^4 \dx - 30 \cdot \int_0^{20} x^3 \dx + 225 \cdot \int_0^{20} x^2 \dx}\\
 		&= \frac{3}{8000} \cdot \br{\frac{1}{5} x^5 \Big\vert_0^{20} - 30 \cdot \br{\frac{1}{4} x^4 \Big\vert_0^{20}} + 225 \cdot \br{\frac{1}{3} x^3 \Big\vert_0^{20}}}\\
-		&= \frac{3}{8000} \cdot \br{(640000 - 0) - 30 \cdot \br{40000 - 0} + 225 \cdot \br{\frac{8000}{3} - 0}}\\
-		&= \frac{3}{8000} \cdot \br{640000 - 1200000 + 600000}\\
+		&= \frac{3}{8000} \cdot \br{(\frac{1}{5} \cdot 20^5 - 0) - 30 \cdot \br{\frac{1}{4}\cdot 20^4 - 0} + 225 \cdot \br{\frac{1}{3}\cdot 20^3 - 0}}\\
+%		&= \frac{3}{8000} \cdot \br{640000 - 1200000 + 600000}\\
 		&= 15
 		\intertext{Um die Standardabweichung zu erhalten, müssen wir die Wurzel der Varianz berechnen:}
 		\sigma &= \sqrt{15}\\
-		&\approx 3,873
+		&\approx 3,8730
 		\end{align*}
 \item   Mit welcher Wahrscheinlichkeit verkauft der tüchtige Professor mehr als 18000 Bücher in einem Jahr?\\
 		\textbf{Lösung:} Zur Lösung dieser Frage, müssen wir zunächst ausrechnen, wie groß die Wahrscheinlichkeit ist, dass der Professor weniger als 18000 Bücher in einem Jahr verkauft. Anschließend berechnen wir die Gegenwahrscheinlichkeit, um auf den gesuchten Wert zu kommen.
@@ -214,13 +220,11 @@ f(x) = \begin{cases}a \cdot x^2 & , \quad 0 \leq x \leq 20\\ 0 & , \quad \text{s
 		\intertext{Nun können wir $W(X \leq 18)$ berechnen:}
 		W(X \leq 18) &= F(18)\\
 		&= \frac{1}{8000} \cdot 18^3\\
-		&= \frac{1}{8000} \cdot 5832\\
-		&= \frac{729}{1000}\\
-		&= 0.729
+		&= 0.7290
 		\intertext{Die Wahrscheinlichkeit $W(X > 18)$ berechnet sich nun aus der Gegenwahrscheinlichkeit von $W(X \leq 18)$:}
-		W(X > 18) &= 1 - W(X < 18)\\
-		&= 1 - 0.729\\
-		&= 0.271
+		W(X > 18) &= 1 - W(X \leq 18)\\
+		&= 1 - 0.7290\\
+		&= 0.2710
 		\end{align*}
 \item   Wie viele Bücher müsste der Professor pro Jahr drucken lassen, um mit 80\%iger Wahrscheinlichkeit ausreichend Bücher für alle Kunden auf Vorrat zu haben?\\
 		\textbf{Lösung:} Zur Beantwortung dieser Frage müssen wir das 0,8-Faktil berechnen. Dieses erhalten wir durch Gleichsetzung der Verteilungsfunktion mit dem Wert 0.8:
@@ -228,14 +232,14 @@ f(x) = \begin{cases}a \cdot x^2 & , \quad 0 \leq x \leq 20\\ 0 & , \quad \text{s
 		0.8 \setequal \frac{1}{8000} \cdot x^3\\
 		6400 = x^3\\
 		x = \sqrt[3]{6400}\\
-		x = 18,566
-		\intertext{In 80\% der Fälle ist die Produktion von 18.566 Bücher also ausreichend.}
+		x = 18,5664
+		\intertext{In 80\% der Fälle ist die Produktion von 18.567 Büchern (aufrunden!) also ausreichend.}
 		\end{align*}
 \end{enumerate}
 
 \newpage
-\section{Anwendung von Verteilungen}
-Anne Imberg hat vor Kurzem angefangen, \textcolor{AI-BLUE}{[AI]} an der RUB zu studieren. Von Kommilitonen in höheren Semestern hat sie gehört, dass die Wahrscheinlichkeit, auf dem Weg von Hattingen zur Uni in einen Stau zu geraten 25\% beträgt. Sie interessiert sich für die Frage, wie groß die Wahrscheinlichkeit ist, in ihren 6 Semestern mehr als 300 mal im Stau zu stehen.
+\section{Anwendung von Verteilungen} % 30 Minuten
+Anne Imberg hat vor Kurzem angefangen, \textcolor{AI-BLUE}{[AI]} an der RUB zu studieren. Von Kommilitonen in höheren Semestern hat sie gehört, dass die Wahrscheinlichkeit, auf dem Weg von Hattingen zur Uni in einen Stau zu geraten 25\% beträgt. Sie interessiert sich für die Frage, wie groß die Wahrscheinlichkeit ist, in ihren 6 Semestern mehr als 300 mal im Stau zu stehen, wenn sie jeden Tag zur Uni fährt.
 
 \begin{enumerate}[label=\alph*)]
 	\item Gib eine Verteilung samt Parametern an, die dem Problem entspricht. Es kann angenommen werden, dass Staus statistisch unabhängig sind.
@@ -243,13 +247,27 @@ Anne Imberg hat vor Kurzem angefangen, \textcolor{AI-BLUE}{[AI]} an der RUB zu s
 	\textbf{Lösung:} $\emph{B}(1095;0.25)$ \\
 	Mit einer gewissen Wahrscheinlichkeit p in einen Stau zu geraten kann als Bernoulli-Experiment gesehen werden (YES-NO trial). Eine Verkettung mehrerer solcher Experimente beschreibt die Binomialverteilung. Diese ist parametrisiert über die Anzahl der Experimente \texttt{n} und die Erfolgswahrscheinlichkeit \texttt{p} (ob \emph{in den Stau kommen} ein Erfolg ist, darüber kann gestritten werden). Das Problem lässt sich also beschreiben mittels einer Binomialverteilung mit 6 Semester = 1095 Tage Experimenten und einer Erfolgswahrscheinlichkeit von 0.25.
 	
-	\item Berechne die Wahrscheinlichkeit, öfter als 300 mal im Stau zu stehen.
+	\item Berechne die Wahrscheinlichkeit, öfter als 300 mal im Stau zu stehen.\\
 		\textbf{Lösung:} Wir wollen $W(X > 300)$ berechnen. In der Formelsammlung ist allerdings keine Tabelle für Binomialverteilung mit $p=0.25$ gegeben (und schon gar nicht mit $n=1095$). Wir nähern die Verteilung also zunächst über eine Normalverteilung an:
+		\begin{figure}[h!]
+			\centering
+			\begin{tabular}{|c|c|c|}
+			\hline
+				Verteilung & kann approximiert werden durch & unter den Voraussetzungen\\
+			\hline
+				$B(n;p)$ & $\mathcal N\br{np; \sqrt{np(1-p)}}$ & $np \geq 5, \quad n(1-p) \geq 5$\\
+			\hline
+			\end{tabular}
+		\end{figure}		
 		\begin{align*}
+			n \cdot p &= 1095 \cdot 0.25 = 273.75\\
+			n \cdot (1-p) &= 1095 \cdot (1 - 0.25) = 821.25\\
+			\intertext{Die Voraussetzungen sind erfüllt. Die Approximation ergibt:}
 			X \sim \emph{B}(1095;0.25) &\approx \mathcal{N} \left(273.75;\sqrt{273.75 \cdot (1-0.25)} \right) \\
 			&= \mathcal{N}\left(273.75;14.3287\right) \\
 			\intertext{Aber auch für diese Verteilung findet sich keine Tabelle in der Formelsammlung. Wir nähern diese Verteilung wiederum durch eine Standardnormalverteilung (Erwartungswert 0, Standardabweichung 1) an.}
-			Y = \frac{X - 273.75}{14.3287} &\sim \mathcal{N}(0;1)
+			Y &= \frac{X - \mu}{\sigma} \sim \mathcal N(0;1)\\
+			Y &= \frac{X - 273.75}{14.3287} \sim \mathcal{N}(0;1)
 			\intertext{Nun können wir die Wahrscheinlichkeit berechnen}
 			W(X > 300) &= 1 - W(X \leq 300) \\
 			&= 1 - W(Y \leq 1.8320) \tag{in Tabelle nachschlagen} \\
@@ -276,32 +294,33 @@ Anne Imberg hat vor Kurzem angefangen, \textcolor{AI-BLUE}{[AI]} an der RUB zu s
 	\end{align*}
 	Das 0.9-Fraktil ist also 292.1137. Anne Imberg wird mit 90\%iger Wahrscheinlichkeit nicht mehr als 292.1137 Staus durchfahren müssen.
 \end{enumerate}
+
 \newpage
-\section{Stichproben}
+\section{Stichproben} % 30 Minuten
 
 Im Folgenden nehmen wir an, dass die Anzahl der Personen in einem öffentlichen Nahverkehrsfahrzeug normalverteilt ist. Die U-Bahnen der Bogestra vom Typ Tango fassen nominell 175 Personen. Da die Vermutung besteht, dass die Bahnen teilweise überladen fahren, soll in den Stoßzeiten eine Stichprobe durchgeführt werden, die die Nullhypothese testen soll, ob die Bahnen im Durchschnitt tatsächlich überfüllt sind. Die Varianz ist aus vorherigen Messungen bekannt und beträgt 225.
 
 \begin{enumerate}[label=\alph*)]
-\item Es soll das Intervall für den Erwartungswert $\mu$ geschätzt werden, wobei wir uns zu 92\% sicher sein wollen. Das Intervall soll nicht länger als 3 sein. Wie groß müssen wir den Stichprobenumfang $n$ wählen?\\
+\item Es soll ein Intervall für den Erwartungswert $\mu$ geschätzt werden, wobei wir uns zu 92\% sicher sein wollen, dass der Erwartungswert dieses Intervall nicht verlässt. Das Intervall soll nicht länger als 10 sein. Wie groß müssen wir den Stichprobenumfang $n$ wählen?\\
 \textbf{Lösung:} Wir möchten den Stichprobenumfang n berechnen und $\sigma = 15$ ist bekannt. $n$ muss mindestens $\br{\frac{2c\cdot \sigma}{L}}^2$ groß sein, wobei $L$ die Länge des Intervalls bezeichnet und $c$ das $(1-\frac{\alpha}{2})$-Fraktil der $\mathcal N (0,1)$-Verteilung ist. $\alpha$ wiederum berechnet sich aus der Gleichung $\text{Konfidenzniveau} = 1 - \alpha$.
 \begin{align*}
 \text{Konfidenzniveau} &= 1 - \alpha\\
 \alpha &= 1 - \text{Konfidenzniveau}\\
-\alpha &= 1 - 0.98\\
-\alpha &= 0.02
+\alpha &= 1 - 0.92\\
+\alpha &= 0.08
 \intertext{$c$ ergibt sich zu}
 c &= \br{1 - \frac{\alpha}{2}}\text{-Fraktil}\\
-c &= 0.99\text{-Fraktil}\\
-c &= 2.3263
+c &= 0.96\text{-Fraktil}\\
+c &= 1.7507
 \intertext{Nun können wir den Stichprobenumfang $n$ anhand folgender Ungleichung bestimmen}
 n &\geq \br{\frac{2c \cdot \sigma}{L}}^2\\
-&\geq  \br{\frac{2 \cdot 2.3263 \cdot 15}{3}}^2\\
-&\geq 22.363
-\shortintertext{Unsere Stichprobe muss also mindestens den Umfang 23 haben.}
+&\geq  \br{\frac{2 \cdot 1.7507 \cdot 15}{10}}^2\\
+&\geq 27.5846
+\shortintertext{Unsere Stichprobe muss also mindestens den Umfang 28 (aufrunden!) haben.}
 \end{align*}
 \item Wie lautet der Name des Tests, der hier durchgeführt werden muss?\\
 \textbf{Lösung:} Einstichproben-GAUSS-Test, da Standardabweichung $\sigma$ bekannt ist.
-\item Mit einer Stichprobe von $n = 30$ wurde ein Mittelwert $\overline{x} = 173$ errechnet. Als Signifikanzniveau wählen wir $\alpha = 0.04$. Berechne den Testfunktionswert. Wie lautet die Testentscheidung?\\
+\item Mit einer Stichprobe von $n = 30$ wurde ein Mittelwert $\overline{x} = 172$ errechnet. Als Signifikanzniveau wählen wir $\alpha = 0.04$. Berechne den Testfunktionswert. Wie lautet die Testentscheidung?\\
 \textbf{Lösung:} Wir betrachten die Nullhypothese b): $H_0 : \mu \underset{(>)}{=} \mu_0$ gegen $H_1 : \mu < \mu_0$.\\
 Zunächst berechnen wir den Testfunktionswert z:
 \begin{align*}
@@ -323,6 +342,11 @@ z &= \frac{170-175}{15} \cdot \sqrt{30}\\
 \end{align*}
 Wir stellen fest, dass dieser im Verwerfungsintervall $B$ liegt. Somit hätten wir bei diesem Mittelwert die Nullhypothese verworfen.\end{enumerate}
 
+%\newpage
+% TODO Tschebitschev Aufgabe ausdenken
+
+%\newpage
+% TODO Frage zu Begriffen ausdenken, die wir stellen können, wenn die Leute am Ende keine Fragen mehr haben.
 
 \end{document}
 

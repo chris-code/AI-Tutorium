@@ -14,7 +14,7 @@
 \usepackage[ngerman]{babel}
 \usepackage{cancel} %Kürzen
 \usepackage{enumitem}
-
+\usepackage{comment}
 
 \providecommand{\abs}[1]{\left\lvert#1\right\rvert}
 \providecommand{\norm}[1]{\left\lVert#1\right\rVert}
@@ -22,60 +22,64 @@
 \providecommand{\asin}{\mathrm{asin}}
 \providecommand{\dx}{\ \mathrm{dx}}
 \providecommand{\dt}{\ \mathrm{dt}}
+\providecommand\setequal{\overset{!}{=}}
+\renewcommand\equiv{\Leftrightarrow}
+\providecommand\ev[1]{\mathbb{E}\left(#1\right)}
+\providecommand\br[1]{\left(#1\right)}
 
 \allowdisplaybreaks
 
 \title{Klausurvorbereitung Statistik \\ Aufgaben}
 \author{Yannick Schrör \and Christian Mielers}
-\date{\today}
+\date{11. Februar 2015}
 
 \begin{document}
 \maketitle
 \section{Wahrscheinlichkeiten}
 Bei der Auswertung der Statistikklausuren aus den letzten 4 Jahren haben sich für folgende Themenbereiche folgende Häufigkeiten ergeben:\\
 
-\begin{tabular}{r|l|r|r}
+\begin{tabular}{c|l|r|r}
 	ID 	&	Thema 										& Häufigkeit 	& Wahrscheinlichkeit\\ \hline
-	1	& Anwendungen von Verteilungen 					& 7 			& \\
-	2	& Stichproben 									& 8				& \\
-	3	& Dichte- und Verteilungsfunktionen 			& 7 			& \\
-	4	& Wahrscheinlichkeitstabelle / Abhängigkeiten 	& 4 			& \\
-	5	& Urnenmodell / Kombinatorik 					& 4 			& \\
-	6	& Erwartungswert und Varianz 					& 2 			& \\
+	A	& Anwendungen von Verteilungen 					& 7 			& \\
+	S	& Stichproben 									& 8				& \\
+	D	& Dichte- und Verteilungsfunktionen 			& 7 			& \\
+	W	& Wahrscheinlichkeitstabelle / Abhängigkeiten 	& 4 			& \\
+	U	& Urnenmodell / Kombinatorik 					& 4 			& \\
+	E	& Erwartungswert und Varianz 					& 2 			& \\
 \end{tabular}\\
 
 \begin{enumerate}[label=\alph*)]
-\item Gehen Sie davon aus, dass Sie zu Übungszwecken zufällig eine Aufgabe aus den Altklausuren aussuchen und bearbeiten möchten. Berechnen Sie für jedes einzelne Thema die Wahrscheinlichkeit, dass Sie eine Aufgabe seines Typs auswählen.
-\item Nehmen Sie an, eine Klausur bestünde aus zwei Aufgaben. Der nachfolgenden Tabelle können Sie entnehmen, mit welcher Wahrscheinlichkeit ein Thema in einer Altklausur drankam, wenn eines der anderen Thema ebenfalls drankam. Vervollständigen Sie die Tabelle.
-
+\item Gehe  davon aus, dass du zu Übungszwecken zufällig eine Aufgabe aus den Altklausuren aussuchen und bearbeiten möchtest. Berechne für jedes einzelne Thema die Wahrscheinlichkeit, dass du eine Aufgabe seines Typs auswählst.
+\item Nimm an, eine Klausur bestünde aus zwei Aufgaben. Der nachfolgenden Tabelle kann entnommen werden, mit welcher Wahrscheinlichkeit zwei Themen gleichzeitig in einer Altklausur drankamen. Die unten angegebene Tabelle enthält somit die Verbundwahrscheinlichkeiten $P(X \cap Y)$. Vervollständige die Tabelle!
 
 \begin{figure}[h!]
 \centering
 \setlength\extrarowheight{5pt}
 \begin{tabular}{r|cccccc|r}
-	P(a,b)	& 1 	& 2 	& 3 	& 4 	& 5 	& 6 	& $\sum$\\ \hline
-	1 		& 0 	& 5/32 	&  		& 0  	& 0  	& 0 	& 7/32 \\
-	2 		& 5/32	& 0		& 1/32 	& 0 	&   	&   	& 8/32 \\
-	3 		& 		& 1/32 	& 0 	& 3/32 	& 1/32 	& 0  	& 7/32 \\
-	4 		& 0		& 0 	& 3/32 	& 0 	& 0  	&   	& 4/32 \\
-	5 		& 0  	&   	& 1/32 	& 0 	& 0  	& 1/32 	& 4/32 \\
-	6 		& 0 	&   	& 0  	&  		& 1/32 	& 0 	& 2/32 \\ \hline
+	X \textbackslash	Y	& A 	& S 	& D 	& W 	& U 	& E 	& $\sum$\\ \hline
+	A 		& 0 	& 5/32 	&		& 0  	& 0  	& 0 	& 7/32 \\
+	S 		& 5/32	& 0		& 1/32 	& 0 	& 		&		& 8/32 \\
+	D 		& 		& 1/32 	& 0 	& 3/32 	& 1/32 	& 0  	& 7/32 \\
+	W 		& 0		& 0 	& 3/32 	& 0 	& 0  	& 		& 4/32 \\
+	U 		& 0  	& 	 	& 1/32 	& 0 	& 0  	& 1/32 	& 4/32 \\
+	E 		& 0 	& 		& 0  	& 		& 1/32 	& 0 	& 2/32 \\ \hline
 	$\sum$ 	& 7/32 	& 8/32 	& 7/32 	& 4/32 	& 4/32 	& 2/32  & 1\\
 \end{tabular}
 \end{figure}
 
-\item Ist das Auftreten der Aufgaben statistisch unabhängig?
-\item Bestimmen Sie folgende Wahrscheinlichkeiten:
+\item Ist das Auftreten der Aufgaben statistisch unabhängig?\\
+\item Bestimme folgende Wahrscheinlichkeiten:
 
 	\begin{tabular}{ll}
-	a) $P(5)$ \hspace{5cm} 				& c) $P(1|3)$\\
-	b) $P(3, 5)$ 					& d) $P((2, 5) \cup (3, 4))$
+	a) $P(5)$			\hspace{4cm}	& c) $P(1|3)$ \\
+	b) $P(3 \cap 5)$ 	\hspace{4cm}	& d) $P((2\cap 5) \cup (3\cap 4))$\\
 	\end{tabular}
 
 \end{enumerate}
 
 \newpage
 \section{Urnenmodell}
+
 Die Übung zur Vorlesung Statistik wird von 42 Leuten besucht, von denen 35 die Aufgaben vorbereitet haben, die restlichen 7 sind unvorbereitet. Es werden zufällig 3 Stundenten ausgewählt, die die Aufgaben vorrechnen sollen. Wie groß ist die Wahrscheinlichkeit, dass
 \begin{enumerate}
 	\item keiner der Studenten auffliegt
@@ -99,14 +103,14 @@ wenn wir von Ziehen mit/ohne Zurücklegen und mit/ohne Beachtung der Reihenfolge
 \newpage
 \section{Dichte- und Verteilungsfunktion}
 
-Ein tüchtiger Professor lässt jährlich 20000 Bücher drucken. Die Anzahl der verkauften Bücher pro Jahr (in tsd.) kann als Zufallsvariable X mit folgender Dichtefunktion angesehen werden:
+Ein tüchtiger Professor lässt jährlich 20000 Bücher drucken. Die Anzahl der verkauften Bücher pro Jahr (in tsd.) kann als \textbf{stetige} Zufallsvariable X mit folgender Dichtefunktion angesehen werden:
 
 \begin{align*}
 f(x) = \begin{cases}a \cdot x^2 & , \quad 0 \leq x \leq 20\\ 0 & , \quad \text{sonst}\end{cases}
 \end{align*}
 
 \begin{enumerate}[label=\alph*)]
-\item 	Bestimmen Sie $a$!
+\item 	Bestimme $a$!\\
 \item   Über den jährlichen Verkauf wie vieler Bücher kann sich der Professor im Durchschnitt freuen?
 \item   Berechnen Sie die Standardabweichung der Verteilung der Zufallsvariablen X!
 \item   Mit welcher Wahrscheinlichkeit verkauft der tüchtige Professor mehr als 18000 Bücher in einem Jahr?
@@ -115,25 +119,25 @@ f(x) = \begin{cases}a \cdot x^2 & , \quad 0 \leq x \leq 20\\ 0 & , \quad \text{s
 
 \newpage
 \section{Anwendung von Verteilungen}
-Anne Imberg hat vor Kurzem angefangen, \textcolor{AI-BLUE}{[AI]} an der RUB zu studieren. Von Kommilitonen in höheren Semestern hat sie gehört, dass die Wahrscheinlichkeit, auf dem Weg von Hattingen zur Uni in einen Stau zu geraten 25\% beträgt. Sie interessiert sich für die Frage, wie groß die Wahrscheinlichkeit ist, in ihren 6 Semestern mehr als 300 mal im Stau zu stehen.
+Anne Imberg hat vor Kurzem angefangen, \textcolor{AI-BLUE}{[AI]} an der RUB zu studieren. Von Kommilitonen in höheren Semestern hat sie gehört, dass die Wahrscheinlichkeit, auf dem Weg von Hattingen zur Uni in einen Stau zu geraten 25\% beträgt. Sie interessiert sich für die Frage, wie groß die Wahrscheinlichkeit ist, in ihren 6 Semestern mehr als 300 mal im Stau zu stehen, wenn sie jeden Tag zur Uni fährt.
 
 \begin{enumerate}[label=\alph*)]
-	\item Gib eine Verteilung an sammt Parametern an, die dem Problem entspricht. Es kann angenommen werden, dass Staus statistisch unabhängig sind.
+	\item Gib eine Verteilung samt Parametern an, die dem Problem entspricht. Es kann angenommen werden, dass Staus statistisch unabhängig sind.
 	\item Berechne die Wahrscheinlichkeit, öfter als 300 mal im Stau zu stehen.
 	\item Berechne die Wahrscheinlichkeit, öfter als 256 mal im Stau zu stehen.
 	\item Welche Anzahl an Staus wird Anne mit 90\% Wahrscheinlichkeit nicht überschreiten?
 \end{enumerate}
 
 \newpage
-\section{Stichproben}
+\section{Stichproben} % 30 Minuten
 
 Im Folgenden nehmen wir an, dass die Anzahl der Personen in einem öffentlichen Nahverkehrsfahrzeug normalverteilt ist. Die U-Bahnen der Bogestra vom Typ Tango fassen nominell 175 Personen. Da die Vermutung besteht, dass die Bahnen teilweise überladen fahren, soll in den Stoßzeiten eine Stichprobe durchgeführt werden, die die Nullhypothese testen soll, ob die Bahnen im Durchschnitt tatsächlich überfüllt sind. Die Varianz ist aus vorherigen Messungen bekannt und beträgt 225.
 
 \begin{enumerate}[label=\alph*)]
-\item Es soll das Intervall für den Erwartungswert $\mu$ geschätzt werden, wobei wir uns zu 92\% sicher sein wollen. Das Intervall soll nicht länger als 3 sein. Wie groß müssen wir den Stichprobenumfang $n$ wählen?\\
-\item Wie lautet der Name des Tests, der hier durchgeführt werden muss?\\
-\item Mit einer Stichprobe von $n = 30$ wurde ein Mittelwert $\overline{x} = 173$ errechnet. Als Signifikanzniveau wählen wir $\alpha = 0.04$. Berechne den Testfunktionswert. Wie lautet die Testentscheidung?\\
-\item Wie wäre unsere Entscheidung in Aufgabenteil c) ausgefallen, wenn die Stichprobe einen Mittelwert $\overline{x} = 170$ ergeben hätte?\\
+\item Es soll ein Intervall für den Erwartungswert $\mu$ geschätzt werden, wobei wir uns zu 92\% sicher sein wollen, dass der Erwartungswert dieses Intervall nicht verlässt. Das Intervall soll nicht länger als 10 sein. Wie groß müssen wir den Stichprobenumfang $n$ wählen?
+\item Wie lautet der Name des Tests, der hier durchgeführt werden muss?
+\item Mit einer Stichprobe von $n = 30$ wurde ein Mittelwert $\overline{x} = 172$ errechnet. Als Signifikanzniveau wählen wir $\alpha = 0.04$. Berechne den Testfunktionswert. Wie lautet die Testentscheidung?
+\item Wie wäre unsere Entscheidung in Aufgabenteil c) ausgefallen, wenn die Stichprobe einen Mittelwert $\overline{x} = 170$ ergeben hätte?
 \end{enumerate}
 
 \end{document}
