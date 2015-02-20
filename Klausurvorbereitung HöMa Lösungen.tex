@@ -11,6 +11,7 @@
 \usepackage{eurosym}
 \usepackage[ngerman]{babel}
 \usepackage{cancel} %Kürzen
+\usepackage{comment}
 
 %TODO
 %Hinweisen auf: Körperaufgabe, Statistik-Material zur Kombinatorik
@@ -21,6 +22,8 @@
 \providecommand{\asin}{\mathrm{asin}}
 \providecommand{\dx}{\ \mathrm{dx}}
 \providecommand{\dt}{\ \mathrm{dt}}
+\providecommand\br[1]{\left(#1\right)}
+\providecommand\ubr[2]{\underbrace{#1}_{#2}}
 
 \title{Klausurvorbereitung Statistik \\ Aufgaben}
 \author{Yannick Schrör \and Christian Mielers}
@@ -44,8 +47,54 @@ Yannick
 Yannick
 \section{Partialbruchzerlegung und Substitution}
 Chrisbot
+
+\newpage
 \section{Partielle Integration}
-Yannick
+
+Löse folgendes Integral:
+
+\newcommand{\lowerBorder}{{0}}
+\newcommand{\upperBorder}{{\frac{1}{3}}}
+
+\begin{align*}
+& \int_\lowerBorder^\upperBorder e^{3x} \cdot (2x - 5) \dx\\
+\intertext{\textbf{Lösung:}}
+=& \int_\lowerBorder^\upperBorder  2xe^{3x} - 5e^{3x} \dx\\
+=& \int_\lowerBorder^\upperBorder  2xe^{3x} \dx - \int_\lowerBorder^\upperBorder 5e^{3x} \dx\\
+=& 2\int_\lowerBorder^\upperBorder  xe^{3x} \dx - 5\int_\lowerBorder^\upperBorder e^{3x} \dx
+\intertext{Lösen wir zunächst das hintere Integral:}
+=& 2\int_\lowerBorder^\upperBorder xe^{3x} \dx - 5 \br{\frac{1}{3}e^{3x}\Big\vert_\lowerBorder^\upperBorder}\\
+=& 2\int_\lowerBorder^\upperBorder xe^{3x} \dx - 5 \br{\frac{1}{3}e^{3\frac{1}{3}} - \frac{1}{3}e^0}\\
+=& 2\int_\lowerBorder^\upperBorder xe^{3x} \dx - 5 \br{\frac{1}{3}e - \frac{1}{3}}\\
+\intertext{Kümmern wir uns nun um das vordere Integral. Hier multiplizieren wir ein Polynom mit einer Exponentialfunktion. In diesem Falle bietet sich die partielle Integration an. Um die Berechnungen möglichst kurz zu halten, betrachten wir das hintere -- bereits gelöste -- Integral nicht weiter, behalten es aber im Hinterkopf.}
+\intertext{Die Formel für die partielle Integration lautet:}
+\int_a^b f'(x) \cdot g(x) \dx =& f(x) \cdot g(x)\vert_a^b - \int_a^b f(x) \cdot g'(x) \dx
+\intertext{Wähle $f' = e^{3x}$ und $g = x$:}
+& \int_\lowerBorder^\upperBorder \ubr{x}{g} \cdot \ubr{e^{3x}}{f'}\dx
+\intertext{Um die Formel anwenden zu können, benötigen wir die Stammfunktion $f$ von $f'$ und die Ableitung $g'$ von $g$.}
+f =&\int f' \dx\\
+=&\int e^{3x} \dx\\
+=&\ \frac{1}{3} e^{3x}\\
+g' =&\ \frac{\partial}{\partial x}\ g\\
+=&\ 1
+\intertext{Da wir nun $f, f', g$ und $g'$ haben, müssen wir die Komponenten nur noch in die Formel einsetzen. Dabei ignorieren wir zunächst den Vorfaktor 2. Diesen müssen wir später jedoch wieder berücksichtigen. Wir erhalten:}
+& \int_\lowerBorder^\upperBorder \ubr{x}{g} \cdot \ubr{e^{3x}}{f'} \dx\\
+=& \br{\frac{1}{3}e^{3x} \cdot x}\Big\vert_\lowerBorder^\upperBorder - \int_\lowerBorder^\upperBorder \frac{1}{3}e^{3x} \cdot 1 \dx\\
+=& \br{\br{\frac{1}{3}e^{3 \frac{1}{3}} \cdot \frac{1}{3}} - \br{\frac{1}{3}e^0 \cdot 0}} - \frac{1}{3} \int_\lowerBorder^\upperBorder e^{3x} \dx\\
+=& \frac{1}{9} e - \frac{1}{3}\br{\frac{1}{3}e^{3x}}\Big\vert_\lowerBorder^\upperBorder\\
+=& \frac{1}{9} e - \frac{1}{3}\br{\frac{1}{3}e^{3\frac{1}{3}} - \frac{1}{3}e^0}\\
+=& \frac{1}{9} e - \frac{1}{3}\br{\frac{1}{3}e - \frac{1}{3}}\\
+=& \frac{1}{9} e - \frac{1}{9}e + \frac{1}{9}\\
+=& \frac{1}{9}
+\intertext{Vergessen wir nicht die Multiplikation mit 2!}
+=& \frac{2}{9}
+\intertext{Ingesamt erhalten wir also:}
+=& \frac{2}{9} - 5 \br{\frac{1}{3}e - \frac{1}{3}}\\
+=& \frac{2}{9} - \frac{5}{3}e + \frac{5}{3}\\
+=& \frac{2}{9} - \frac{5}{3}e  + \frac{15}{9}\\
+=& \frac{17}{9} - \frac{5}{3}e\\
+\approx& -2.6416
+\end{align*}
 
 \end{document}
 
