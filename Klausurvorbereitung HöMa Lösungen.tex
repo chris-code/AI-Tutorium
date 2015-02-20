@@ -30,7 +30,45 @@
 \maketitle
 
 \section{Ungleichungen}
-Chrisbot
+Bestimme die Lösungen für folgende Ungleichungen
+\begin{enumerate}
+	\item $\frac{\abs{x+2}}{2} > \frac{x}{3} + 1$
+		\begin{align*}
+			\frac{\abs{x+2}}{2} > \frac{x}{3} + 1 &\Leftrightarrow \abs{x+2} > \frac{2x}{3} + 2 \\
+			&\Leftrightarrow \abs{x+2} > \frac{2x+6}{3}
+			\intertext{Fall 1: $x \in \left( -\infty, -2 \right)$}
+			-(x+2) > \frac{2x + 6}{3} &\Leftrightarrow -x -2 > \frac{2x + 6}{3} \\
+			&\Leftrightarrow -3x -6 > 2x + 6 \\
+			&\Leftrightarrow -12 > 5x \\
+			&\Leftrightarrow \frac{-12}{5} > x
+			\intertext{Lösung im Fall 1: $\left( -\infty, -2 \right) \cap \left( -\infty, \frac{-12}{5} \right) = \left( -\infty, \frac{-12}{5} \right)$}
+			\intertext{Fall 2: $x \in \left[ -2, \infty \right)$}
+			(x+2) > \frac{2x + 6}{3} &\Leftrightarrow 3x + 6 > 2x + 6 \\
+			&\Leftrightarrow x > 0
+			\intertext{Lösung im Fall 3: $\left[ -2, \infty \right) \cap \left( 0, \infty \right) = \left( 0, \infty \right)$}
+		\end{align*}
+	\item $\sqrt{x^2 - 4x + 4} < \frac{\abs{x+1}}{2}$
+		\begin{align*}
+			\sqrt{x^2 - 4x + 4} < \frac{\abs{x+1}}{2} &\Leftrightarrow \sqrt{(x-2)^2} < \frac{\abs{x+1}}{2} \\
+			&\Leftrightarrow \abs{x-2} < \frac{\abs{x+1}}{2}
+			\intertext{Fall 1: $x \in \left( -\infty, -1 \right)$}
+			-(x-2) < \frac{-(x+1)}{2} &\Leftrightarrow x-2 > \frac{x+1}{2} \\
+			&\Leftrightarrow 2x-4 > x+1 \\
+			&\Leftrightarrow x > 5
+			\intertext{Lösung im Fall 1: $\left( -\infty, -1 \right) \cap \left( 5, \infty \right) = \emptyset$}
+			\intertext{Fall 2: $x \in \left[ -1, 2 \right)$}
+			-(x-2) < \frac{(x+1)}{2} &\Leftrightarrow -x+2 < \frac{x+1}{2} \\
+			&\Leftrightarrow -2x+4 < x+1 \\
+			&\Leftrightarrow 3 < 3x \\
+			&\Leftrightarrow 1 < x
+			\intertext{Lösung im Fall 2: $\left[ -1, 2 \right) \cap \left( 1, \infty \right) = \left( 1,2 \right)$}
+			\intertext{Fall 3: $x \in \left[ 2, \infty \right)$}
+			(x-2) < \frac{(x+1)}{2} &\Leftrightarrow 2x-4 < x+1 \\
+			&\Leftrightarrow x < 5
+			\intertext{Lösung im Fall 3: $\left[ 2, \infty \right) \cap \left( -\infty, 5 \right) = \left[ 2,5 \right)$}
+		\end{align*}
+		Damit ist die Gesammtlösung: $\emptyset \cup \left( 1,2 \right) \cup \left[ 2,5 \right) = \left( 1, 5 \right)$
+\end{enumerate}
 \section{Vollständige Induktion}
 Yannick
 \section{Komplexe Zahlen}
