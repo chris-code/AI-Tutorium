@@ -82,8 +82,28 @@ Bestimme die Lösungen für folgende Ungleichungen
 \section{Vollständige Induktion}
 Yannick
 \section{Komplexe Zahlen}
+	Betrag: $\abs{x+yi} = \sqrt{x^2 + y^2}$ \\
+	Polarkoordinaten: $x+yi = r \left( \cos{\alpha} + i \sin{\alpha} \right) \text{mit } r=\abs{x+yi}, \alpha = \acos{\frac{x}{r}} = \asin{\frac{y}{r}}$
+	\begin{enumerate}
+		\item Bestimme den Realteil, Imaginärteil, Betrag und die komplex Konjugierte von $\frac{2+i}{1-i}$
+			\begin{align*}
+				\frac{2+i}{1-i} &= \frac{(2+i) \cdot (\overline{1-i})}{(1-i) \cdot (\overline{1-i})} \\
+				&= \frac{(2+i) \cdot (1+i)}{(1-i) \cdot (1+i)} \\
+				&= \frac{2 + 3i + i^2}{1 - i^2} \\
+				&= \frac{1 + 3i}{2} \\
+				&= \frac{1}{2} + \frac{3}{2} i
+			\end{align*}
+			Realteil: $\frac{1}{2}$, Imaginärteil: $\frac{3}{2}$ \\
+			Betrag: $\abs{\frac{1}{2} + \frac{3}{2} i} = \sqrt{(\frac{1}{2})^2 + (\frac{3}{2})^2} = \sqrt{\frac{1}{4} + \frac{9}{4}} = \sqrt{\frac{5}{2}}$ \\
+			Komplex Konjugierte: $\overline{\frac{1}{2} + \frac{3}{2} i} = \frac{1}{2} - \frac{3}{2} i$
+	\item Berechne $(1-i)^{32}$
+		\begin{align*}
+			\intertext{Zunächst $1-i$ in Polarkoordinaten umrechnen.}
+			r &= \abs{1-i} = \sqrt{1^2 + (-1)^2} = \sqrt{2} \\
+			\alpha &= \acos{\frac{1}{\sqrt{2}}} = \asin{\frac{-1}{\sqrt{2}}}
+		\end{align*}
+	\end{enumerate}
 \subsection{Wurzelziehen}
-Chrisbot
 \section{Folgen}
 Chrisbot
 \section{Reihen}
