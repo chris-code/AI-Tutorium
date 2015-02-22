@@ -15,6 +15,8 @@
 \usepackage{comment}
 \usepackage{color}
 \usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
 
 \definecolor{DarkGreen}{rgb}{0,0.53,0}
 
@@ -29,6 +31,9 @@
 \providecommand{\dt}{\ \mathrm{dt}}
 \providecommand\br[1]{\left(#1\right)}
 \providecommand\ubr[2]{\underbrace{#1}_{#2}}
+\providecommand\setequal{\overset{!}{=}}
+
+\allowdisplaybreaks
 
 \title{Klausurvorbereitung Statistik \\ Aufgaben}
 \author{Yannick Schrör \and Christian Mielers}
@@ -139,8 +144,91 @@ Chrisbot
 Chrisbot
 \section{Reihen}
 Yannick
+\newpage
 \section{Differentialrechnung}
-Yannick
+Bestimme den maximalen Definitionsbereich in $\mathbb{R}$, die Nullstellen, die Grenzwerte an den Randpunkten des Definitionsbereichs, die lokalen und globalen Extrema sowie die Monotonie folgender Funktion:
+\begin{align*}
+	f(x) &= (x+4) \cdot (2-x^2)^{-\frac{1}{2}} - 3
+	\intertext{\textbf{Lösung:}}
+	\intertext{Zur Bestimmung des maximalen Definitionsbereichs vereinfachen wir die Funktion zunächst:}
+	&= (x+4) \cdot \frac{1}{(2-x^2)^\frac{1}{2}} - 3\\
+	&= (x+4) \cdot \frac{1}{\sqrt{2 - x^2}} - 3
+	\intertext{Zunächst betrachten wir $\sqrt{2-x^2}$. Die Wurzel darf nicht negativ werden, da wir sonst komplexe Zahlen erhalten. Somit können wir den maximalen Definitionsbereich zunächst auf $D = [-\sqrt{2},\sqrt{2}]$ einschränken. Hierbei lassen wir jedoch $0$ als Ergebnis der Wurzel zu. Da die Wurzel jedoch im Nenner steht, müssen wir $0$ ausschließen. Somit erhalten wir $D = (-\sqrt{2},\sqrt{2})$.}
+	 \intertext{Als nächstes bestimmen wir die Nullstellen durch Gleichsetung von $f(x)$ mit $0$:}
+	 0 &\setequal f(x)\\
+	 0 &= (x+4) \cdot \frac{1}{\sqrt{2 - x^2}} - 3\\
+	 3 &= (x+4) \cdot \frac{1}{\sqrt{2 - x^2}}\\
+	 3\sqrt{2 - x^2} &= x + 4 \tag{Nun quadrieren wir!}\\
+	 9 (2 - x^2) &= (x + 4)^2\\
+	 18 - 9x^2 &= x^2 + 8x + 16\\
+	 0 &= 10x^2 + 8x -2
+	 \intertext{Zur Ermittlung der Nullstellen wenden wir die Mitternachtsformel an:}
+	 x_{1,2} &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\\
+	 &= \frac{-8 \pm \sqrt{8^2 - 4 \cdot 10 \cdot (-2)}}{2 \cdot 10}\\
+	 &= \frac{-8 \pm \sqrt{64 + 80}}{20}\\
+	 &= \frac{-8 \pm \sqrt{144}}{20}\\
+	 &= \frac{-8 \pm 12}{20}\\
+	 x_1 &= -1 \qquad \qquad x_2 = \frac{1}{5}\\
+	 \\
+	 \intertext{Als nächstes berechnen wir die Grenzwerte an den Randpunkten des Definitionsbereichs}
+	 \lim_{x \rightarrow -\sqrt{2}} f(x) &= \lim_{x \rightarrow -\sqrt{2}} (x+4) \cdot \frac{1}{\sqrt{2 - x^2}} - 3\\
+	 &= (-\sqrt{2} + 4) \cdot \frac{1}{0} - 3\\
+	 &= +\infty - 3\\
+	 &= +\infty\\
+	 \lim_{x \rightarrow \sqrt{2}} f(x) &= \lim_{x \rightarrow \sqrt{2}} (x+4) \cdot \frac{1}{\sqrt{2 - x^2}} - 3\\
+	 &= (\sqrt{2} + 4) \cdot \frac{1}{0} - 3\\
+	 &= +\infty - 3\\
+	 &= +\infty
+	 \intertext{Als nächstes berechnen wir die lokalen und globalen Extrema. Dazu berechnen wir die Ableitung von $f(x)$ und setzen sie gleich $0$:}
+	 \frac{\partial}{\partial x} f(x) &= \frac{\partial}{\partial x} \br{(x+4) \cdot (2-x^2)^{-\frac{1}{2}} - 3}\\
+	 &= \frac{\partial}{\partial x} \br{(x+4) \cdot (2-x^2)^{-\frac{1}{2}}}\\
+	 \intertext{Wir wenden nun die Produktregel $(f(x)\cdot g(x))' = f'(x)g(x) + f(x)g'(x)$ an:}
+	 &= 1 \cdot (2-x^2)^{-\frac{1}{2}} + (x+4) \cdot \br{-\frac{1}{2}} \cdot (2-x^2)^{-\frac{3}{2}} \cdot (-2x)\\
+	 &= (2-x^2)^{-\frac{1}{2}} + (x+4) \cdot x \cdot (2-x^2)^{-\frac{3}{2}}\\
+	 &= (2-x^2)^{-\frac{1}{2}} + (x^2+4x) \cdot \br{(2-x^2)^{-\frac{1}{2}}}^3\\
+	 &= (2-x^2)^{-\frac{1}{2}} + (x^2+4x) \cdot \br{(2-x^2)^{-\frac{1}{2}}}^2 \cdot (2-x^2)^{-\frac{1}{2}}\\
+	 &= (2-x^2)^{-\frac{1}{2}} + (x^2+4x) \cdot (2-x^2)^{-1} \cdot (2-x^2)^{-\frac{1}{2}}\\
+	 &= (2-x^2)^{-\frac{1}{2}} \cdot \br{1 + (x^2+4x) \cdot \frac{1}{2-x^2}}\\
+	 &= \frac{1}{\sqrt{2-x^2}} \cdot \br{1 + \frac{x^2 + 4x}{2-x^2}}\\
+	 &= \frac{1}{\sqrt{2-x^2}} \cdot \br{\frac{2-x^2}{2-x^2} + \frac{x^2 + 4x}{2-x^2}}\\
+	 &= \frac{1}{\sqrt{2-x^2}} \cdot \br{\frac{4x + 2}{2-x^2}}\\
+	 \intertext{Nun setzen wir die Ableitung gleich 0:}
+	 0 &\setequal \frac{1}{\sqrt{2-x^2}} \cdot \br{\frac{4x + 2}{2-x^2}}\\
+	 \intertext{Wir stellen fest, dass der linke Faktor nicht 0 werden kann. Somit erhalten wir:}
+	 0 &= \frac{4x + 2}{2-x^2}
+	 \intertext{Setzt man einen Bruch gleich 0, muss nur der Zähler betrachtet werden:}
+	 0 &= 4x + 2\\
+	 -2 &= 4x\\
+	 -1 &= 2x\\
+	 x &= -\frac{1}{2}
+	 \intertext{Nun kennen wir also alle Kandidaten für lokale oder globale Extrema. Da das Berechnen der zweiten Ableitung von $f(x)$ recht aufwändig wäre, betrachten wir den Globalverlauf von $f(x)$.}
+\end{align*}
+\vspace{-1cm}
+\begin{figure}[h!]
+\centering
+\begin{tabular}{c|ccccc}
+	$x$ & $-\sqrt{2}$ &  & $-\frac{1}{2}$ &   & $\sqrt{2}$\\ \hline
+	$f(x)$ & $+\infty$ &   & $\approx -2,0646$ &   & $+\infty$\\
+	$f'(x)$ & $-$ & $\backslash$ & 0 & / & $+$\\
+\end{tabular}
+\end{figure}\\
+Wir stellen fest, dass am linken Rand von $D$ $f(x)$ sehr groß ist, es immer kleiner wird, bis wir bei $x = -\frac{1}{2}$ das globale Minimum erreicht haben, und es anschließend bis zum rechten Rand von $D$ immer größer wird.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[yscale=0.3,xscale=3.0]
+		\draw[->] (-2,0) -- (2,0) node[right] {$x_1$};
+		\draw[shift={(1.41,0)},color=black] (0pt,3pt) -- (0pt,-3pt) node[below] {$\sqrt{2}$};
+		\draw[shift={(-1.41,0)},color=black] (0pt,3pt) -- (0pt,-3pt) node[below] {$-\sqrt{2}$};
+		\draw[shift={(-0.5,0)},color=black] (0pt,3pt) -- (0pt,-3pt) node[below] {$-\frac{1}{2}$};
+		\draw[shift={(-1,0)},color=black] (0pt,3pt) -- (0pt,-3pt) node[below] {$-1$};
+		\draw[shift={(0.2,0)},color=black] (0pt,3pt) -- (0pt,-3pt) node[below] {$\frac{1}{5}$};
+		\draw[->] (0,-4) --(0,32) node[above] {$f(x)$};
+		\draw[domain=-1.412:1.405,samples=1000,variable=\x,red] plot ({\x},{((\x + 4) * (1/(sqrt(2 - (\x * \x)))) - 3});
+	\end{tikzpicture}
+\end{figure}
+
+\newpage
 \section{Partialbruchzerlegung und Substitution}
 Chrisbot
 
