@@ -77,7 +77,7 @@ f =&\int f' \dx\\
 =&\ \frac{1}{3} e^{3x}\\
 g' =&\ \frac{\partial}{\partial x}\ g\\
 =&\ 1
-\intertext{Da wir nun $f, f', g$ und $g'$ haben, müssen wir die Komponenten nur noch in die Formel einsetzen. Dabei ignorieren wir zunächst den Vorfaktor 2. Diesen müssen wir später jedoch wieder berücksichtigen. Wir erhalten:}
+\intertext{Da wir nun $f, f', g$ und $g'$ kennen, müssen wir die Komponenten nur noch in die Formel einsetzen. Dabei ignorieren wir zunächst den Vorfaktor 2. Diesen müssen wir später jedoch wieder berücksichtigen. Wir erhalten:}
 & \int_\lowerBorder^\upperBorder \ubr{x}{g} \cdot \ubr{e^{3x}}{f'} \dx\\
 =& \br{\frac{1}{3}e^{3x} \cdot x}\Big\vert_\lowerBorder^\upperBorder - \int_\lowerBorder^\upperBorder \frac{1}{3}e^{3x} \cdot 1 \dx\\
 =& \br{\br{\frac{1}{3}e^{3 \frac{1}{3}} \cdot \frac{1}{3}} - \br{\frac{1}{3}e^0 \cdot 0}} - \frac{1}{3} \int_\lowerBorder^\upperBorder e^{3x} \dx\\
@@ -93,7 +93,24 @@ g' =&\ \frac{\partial}{\partial x}\ g\\
 =& \frac{2}{9} - \frac{5}{3}e + \frac{5}{3}\\
 =& \frac{2}{9} - \frac{5}{3}e  + \frac{15}{9}\\
 =& \frac{17}{9} - \frac{5}{3}e\\
-\approx& -2.6416
+\approx& -2.6416\\
+\intertext{\textbf{Alternative Lösung:} Anstatt das Integral in zwei Integrale aufzuteilen, können wir auch direkt das ursprüngliche Integral mittels partieller Integration lösen.}
+& \int_\lowerBorder^\upperBorder \ubr{e^{3x}}{f'} \cdot \ubr{\br{2x - 5}}{g}\dx\\
+\intertext{Nun müssen wir wieder $f$ und $g'$ berechnen:}
+f =& \frac{1}{3}e^{3x} \tag{siehe oben}\\
+g' =& \frac{\partial}{\partial x} (2x - 5)\\
+=& 2\\
+\intertext{In der folgenden Formel müssen wir nur noch die entsprechenden Ersetzungen machen:}
+&f(x) \cdot g(x)\vert_a^b - \int_a^b f(x) \cdot g'(x) \dx\\
+=& \br{\frac{1}{3} e^{3x} \cdot \br{2x - 5}}\Big\vert_\lowerBorder^\upperBorder - \int_\lowerBorder^\upperBorder \frac{1}{3} e^{3x} \cdot 2 \dx\\
+=& \br{\br{\frac{1}{3} e^1 \cdot \br{2\cdot \frac{1}{3} - 5}} - \br{\frac{1}{3}e^0 \cdot \br{0 - 5}}} - \frac{2}{3} \int_\lowerBorder^\upperBorder e^{3x} \dx\\
+=& \br{\br{\frac{1}{3}e \cdot \br{-\frac{13}{3}}} - \br{-\frac{5}{3}}} - \frac{2}{3}\br{\frac{1}{3}e^{3x}\Big\vert_\lowerBorder^\upperBorder}\\
+=& \br{-\frac{13}{9}e + \frac{5}{3}} - \frac{2}{9} \br{e^{3x}\Big\vert_\lowerBorder^\upperBorder}\\
+=& -\frac{13}{9}e + \frac{5}{3} - \frac{2}{9} \br{e^1 - e^0}\\
+=& -\frac{13}{9}e + \frac{5}{3} - \frac{2}{9} \br{e - 1}\\
+=& -\frac{13}{9}e + \frac{15}{9} - \frac{2}{9}e + \frac{2}{9}\\
+=& -\frac{15}{9}e + \frac{17}{9}\\
+=& \frac{17}{9} - \frac{5}{3}e
 \end{align*}
 
 \end{document}
