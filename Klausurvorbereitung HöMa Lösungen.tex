@@ -138,8 +138,12 @@ Bestimme die Lösungen für folgende Ungleichungen
 \end{enumerate}
 \newpage
 \section{Komplexe Zahlen}
-	Betrag: $\abs{x+yi} = \sqrt{x^2 + y^2}$ \\
-	Polarkoordinaten: $x+yi = r \left( \cos{\alpha} + i \sin{\alpha} \right) \text{mit } r=\abs{x+yi}, \alpha = \acos{\frac{x}{r}} = \asin{\frac{y}{r}}$
+	\begin{description}
+		\item[Betrag] $\abs{x+yi} = \sqrt{x^2 + y^2}$
+		\item[Polarkoordinatenform] $x+yi = r \left( \cos{\alpha} + i \sin{\alpha} \right) \text{mit } r=\abs{x+yi}, \alpha = \acos{\frac{x}{r}} = \asin{\frac{y}{r}}$
+		\item[Polarkoordinaten potenzieren] $\left( r \left( \cos{\alpha} + i \sin{\alpha} \right) \right)^{p} = r^p \left( \cos \left( p \alpha \right) + i \sin \left(p \alpha \right) \right)$
+		\item[Polarkoordinaten n-te Wurzel ziehen] $w_k = \sqrt[n]{r} \left( \cos \frac{\alpha + 2k\pi}{n} + i \sin \frac{\alpha + 2k\pi}{n} \right)$ \\ für $k = 0 \dots n-1$
+	\end{description}
 	\begin{enumerate}
 		\item Bestimme den Realteil, Imaginärteil, Betrag und die komplex Konjugierte von $\frac{2+i}{1-i}$
 			\begin{align*}
@@ -152,14 +156,33 @@ Bestimme die Lösungen für folgende Ungleichungen
 			Realteil: $\frac{1}{2}$, Imaginärteil: $\frac{3}{2}$ \\
 			Betrag: $\abs{\frac{1}{2} + \frac{3}{2} i} = \sqrt{(\frac{1}{2})^2 + (\frac{3}{2})^2} = \sqrt{\frac{1}{4} + \frac{9}{4}} = \sqrt{\frac{5}{2}}$ \\
 			Komplex Konjugierte: $\overline{\frac{1}{2} + \frac{3}{2} i} = \frac{1}{2} - \frac{3}{2} i$
-	\item Berechne $(1-i)^{32}$
-		\begin{align*}
-			\intertext{Zunächst $1-i$ in Polarkoordinaten umrechnen.}
-			r &= \abs{1-i} = \sqrt{1^2 + (-1)^2} = \sqrt{2} \\
-			\alpha &= \acos{\frac{1}{\sqrt{2}}} = \asin{\frac{-1}{\sqrt{2}}}
-		\end{align*}
+		\item Berechne $(1-i)^{32}$
+			\begin{align*}
+				\intertext{Zunächst $1-i$ in Polarkoordinaten umrechnen.}
+				r &= \abs{1-i} = \sqrt{1^2 + (-1)^2} = \sqrt{2} \\
+				\alpha &= \acos{\frac{1}{\sqrt{2}}} = \asin{\frac{-1}{\sqrt{2}}} = \frac{7\pi}{4}
+				\intertext{Es gilt also: $1-i = \sqrt{2} \left( \cos{\frac{7\pi}{4} + i \sin{\frac{7\pi}{4}}} \right)$. Potenzieren ist mit Polarkoordinaten einfach:}
+				\left( \sqrt{2} \left( \cos{\frac{7\pi}{4} + i \sin{\frac{7\pi}{4}}} \right) \right)^{32} &= \sqrt{2}^{32} \left( \cos \left( 32 \cdot \frac{7\pi}{4} \right) + i \sin \left( 32 \cdot \frac{7\pi}{4} \right) \right) \\
+				&= 2^{16} \left( \cos \left( 56\pi \right) + i \sin \left( 56\pi \right) \right) \\
+				&= 2^{16} \left( \cos \left( 0 \right) + i \sin \left( 0 \right) \right) \\
+				&= 2^{16} \left( 1 + 0i \right) \\
+				&= 2^{16}
+			\end{align*}
+		\item Für welche $p\in\mathbb{C}$ gilt $p^4 + 4 = 0$?
+			\begin{align*}
+				p^4 + 4 = 0 &\Leftrightarrow p^4 = -4 \\
+				&\Leftrightarrow p = \sqrt[4]{-4}
+				\intertext{Um die Wurzel zu ziehen, wandeln wir $-4$ in Polarkoordinaten um}
+				r &= 4 \\
+				\alpha &= \acos \frac{-4}{4} = \asin \frac{0}{4} = \pi
+				\intertext{Nun berechnen wir}
+				\sqrt[4]{4 \left( \cos \pi + i \sin \pi \right)} &\overset{k=0}{=} \sqrt[4]{4} \left( \cos \frac{\pi + 0\pi}{4} + i \sin \frac{\pi + 0\pi}{4} \right) = \sqrt{2} \left( \frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right) = 1+i \\
+				&\overset{k=1}{=} \sqrt[4]{4} \left( \cos \frac{\pi + 2\pi}{4} + i \sin \frac{\pi + 2\pi}{4} \right) = \sqrt{2} \left( -\frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right) = -1+i \\
+				\intertext{(An dieser Stelle könnten wir aufhören, die anderen beiden Lösungen sind die komplex konjugierten der bereits berechneten)}
+				&\overset{k=2}{=} \sqrt[4]{4} \left( \cos \frac{\pi + 4\pi}{4} + i \sin \frac{\pi + 4\pi}{4} \right) = \sqrt{2} \left( -\frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} \right) = -1-i \\
+				&\overset{k=3}{=} \sqrt[4]{4} \left( \cos \frac{\pi + 6\pi}{4} + i \sin \frac{\pi + 6\pi}{4} \right) = \sqrt{2} \left( \frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} \right) = 1-i 
+			\end{align*}
 	\end{enumerate}
-\subsection{Wurzelziehen}
 \section{Folgen}
 Chrisbot
 \section{Reihen}
