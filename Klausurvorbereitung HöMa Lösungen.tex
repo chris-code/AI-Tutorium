@@ -12,11 +12,11 @@
 \usepackage{eurosym}
 \usepackage[ngerman]{babel}
 \usepackage{cancel} %Kürzen
-\usepackage{comment}
-\usepackage{color}
-\usepackage{xcolor}
+%\usepackage{comment}
+%\usepackage{color}
+%\usepackage{xcolor}
 \usepackage{tikz}
-\usepackage{tkz-euclide}
+%\usepackage{tkz-euclide}
 
 \definecolor{DarkGreen}{rgb}{0,0.53,0}
 
@@ -187,7 +187,23 @@ Bestimme die Lösungen für folgende Ungleichungen
 \section{Folgen}
 Finde eine explizite Darstellung für $a_n$. Gib auch den Grenzwert $\displaystyle\lim_{n \mapsto \infty} a_n$ an.
 \begin{enumerate}
-	\item $a_{n+1} = $
+	\item $2 \cdot a_{n+3} = 10 \cdot a_{n+2} + 16, \qquad a_1 = 28$
+		\begin{align*}
+			\intertext{Zunächst ist die Gleichung in die Form $a_{n+1} = q \cdot a_n + d$ zu bringen}
+			2 \cdot a_{n+3} = 10 \cdot a_{n+2} + 16 &\Leftrightarrow a_{n+3} = 5 \cdot a_{n+2} + 8 \tag{:2} \\
+			&\Leftrightarrow a_{n+1} = 5 \cdot a_{n} + 8 \tag{Index-Shift}
+			\intertext{Nun ist $a_0$ auszurechnen. Dazu kann in diesem Fall $n=0$ gesetzt werden.}
+			a_1 &= 5 \cdot a_0 + 8 \\
+			\Leftrightarrow 28 &= 5 \cdot a_0 + 8 \\
+			\Leftrightarrow 4 &= a_0
+			\intertext{Die Gleichung hat also die Form $a_{n+1} = 5 \cdot a_{n} + 8, \qquad a_0 = 4$. Damit gehen wir in die Lösungsgleichung} \\
+			a_n &= a_0 \cdot q^n + d \cdot \frac{1-q^n}{1-q} \tag{da $q \neq 1$} \\
+			&= 4 \cdot 5^n + 8 \cdot \frac{1-5^n}{1-5} \\
+			&= 4 \cdot 5^n - 2 \cdot \left( 1-5^n \right) \\
+			&= 4 \cdot 5^n - 2 + 2 \cdot 5^n \\
+			&= 6 \cdot 5^n - 2
+		\end{align*}
+		Es gilt: $\lim_{n \mapsto \infty} 6 \cdot 5^n - 2 = +\infty$
 	\item 
 \end{enumerate}
 Chrisbot
