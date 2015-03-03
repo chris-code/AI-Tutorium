@@ -183,10 +183,18 @@ Bestimme die Lösungen für folgende Ungleichungen
 				&\overset{k=3}{=} \sqrt[4]{4} \left( \cos \frac{\pi + 6\pi}{4} + i \sin \frac{\pi + 6\pi}{4} \right) = \sqrt{2} \left( \frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} \right) = 1-i 
 			\end{align*}
 	\end{enumerate}
+
 \section{Folgen}
+Finde eine explizite Darstellung für $a_n$. Gib auch den Grenzwert $\displaystyle\lim_{n \mapsto \infty} a_n$ an.
+\begin{enumerate}
+	\item $a_{n+1} = $
+	\item 
+\end{enumerate}
 Chrisbot
+
 \section{Reihen}
 Yannick
+
 \newpage
 \section{Differentialrechnung}
 Bestimme den maximalen Definitionsbereich in $\mathbb{R}$, die Nullstellen, die Grenzwerte an den Randpunkten des Definitionsbereichs, die lokalen und globalen Extrema sowie die Monotonie folgender Funktion:
@@ -225,7 +233,7 @@ Bestimme den maximalen Definitionsbereich in $\mathbb{R}$, die Nullstellen, die 
 	 \intertext{Als nächstes berechnen wir die lokalen und globalen Extrema. Dazu berechnen wir die Ableitung von $f(x)$ und setzen sie gleich $0$:}
 	 \frac{\partial}{\partial x} f(x) &= \frac{\partial}{\partial x} \br{(x+4) \cdot (2-x^2)^{-\frac{1}{2}} - 3}\\
 	 &= \frac{\partial}{\partial x} \br{(x+4) \cdot (2-x^2)^{-\frac{1}{2}}}\\
-	 \intertext{Wir wenden nun die Produktregel $(f(x)\cdot g(x))' = f'(x)g(x) + f(x)g'(x)$ an:}
+	 \intertext{Wir wenden nun die Produktregel $(f(x)\cdot g(x))' = f'(x)g(x) + f(x)g'(x)$ an:} %TODO hart kürzen
 	 &= 1 \cdot (2-x^2)^{-\frac{1}{2}} + (x+4) \cdot \br{-\frac{1}{2}} \cdot (2-x^2)^{-\frac{3}{2}} \cdot (-2x)\\
 	 &= (2-x^2)^{-\frac{1}{2}} + (x+4) \cdot x \cdot (2-x^2)^{-\frac{3}{2}}\\
 	 &= (2-x^2)^{-\frac{1}{2}} + (x^2+4x) \cdot \br{(2-x^2)^{-\frac{1}{2}}}^3\\
@@ -241,7 +249,7 @@ Bestimme den maximalen Definitionsbereich in $\mathbb{R}$, die Nullstellen, die 
 	 0 &= \frac{4x + 2}{2-x^2}
 	 \intertext{Setzt man einen Bruch gleich 0, muss nur der Zähler betrachtet werden:}
 	 0 &= 4x + 2\\
-	 -2 &= 4x\\
+	 -2 &= 4x\\ %TODO Zwischenschritte sparen
 	 -1 &= 2x\\
 	 x &= -\frac{1}{2}
 	 \intertext{Nun kennen wir also alle Kandidaten für lokale oder globale Extrema. Da das Berechnen der zweiten Ableitung von $f(x)$ recht aufwändig wäre, betrachten wir den Globalverlauf von $f(x)$.}
@@ -249,7 +257,7 @@ Bestimme den maximalen Definitionsbereich in $\mathbb{R}$, die Nullstellen, die 
 \vspace{-1cm}
 \begin{figure}[h!]
 \centering
-\begin{tabular}{c|ccccc}
+\begin{tabular}{c|ccccc} %TODO wie ist die f'-Zeile zu lesen?
 	$x$ & $-\sqrt{2}$ &  & $-\frac{1}{2}$ &   & $\sqrt{2}$\\ \hline
 	$f(x)$ & $+\infty$ &   & $\approx -2,0646$ &   & $+\infty$\\
 	$f'(x)$ & $-$ & $\backslash$ & 0 & / & $+$\\
@@ -270,6 +278,7 @@ Wir stellen fest, dass am linken Rand von $D$ $f(x)$ sehr groß ist, es immer kl
 		\draw[domain=-1.412:1.405,samples=1000,variable=\x,red] plot ({\x},{((\x + 4) * (1/(sqrt(2 - (\x * \x)))) - 3});
 	\end{tikzpicture}
 \end{figure}
+%TODO was ist mit Monotonie?
 
 \newpage
 \section{Partialbruchzerlegung und Substitution}
