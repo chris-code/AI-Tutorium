@@ -174,7 +174,7 @@ Bestimme die Lösungen für folgende Ungleichungen
 				&\Leftrightarrow p = \sqrt[4]{-4}
 				\intertext{Um die Wurzel zu ziehen, wandeln wir $-4$ in Polarkoordinaten um}
 				r &= 4 \\
-				\alpha &= \acos \frac{-4}{4} = \asin \frac{0}{4} = \pi
+				\alpha &= \acos{\frac{-4}{4}} = \asin \frac{0}{4} = \pi
 				\intertext{Nun berechnen wir}
 				\sqrt[4]{4 \left( \cos \pi + i \sin \pi \right)} &\overset{k=0}{=} \sqrt[4]{4} \left( \cos \frac{\pi + 0\pi}{4} + i \sin \frac{\pi + 0\pi}{4} \right) = \sqrt{2} \left( \frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right) = 1+i \\
 				&\overset{k=1}{=} \sqrt[4]{4} \left( \cos \frac{\pi + 2\pi}{4} + i \sin \frac{\pi + 2\pi}{4} \right) = \sqrt{2} \left( -\frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right) = -1+i \\
@@ -185,6 +185,24 @@ Bestimme die Lösungen für folgende Ungleichungen
 	\end{enumerate}
 
 \section{Folgen}
+\begin{description}
+	\item[Folgen 1. Ordnung] $a_{n+1} = q \cdot a_n + d$
+		\begin{align*}
+			a_n = \begin{cases}
+				a_0 \cdot q^n + d \cdot \frac{1-q^n}{1-q}, &\text{ falls } q \in \mathbb{R} \setminus \{1\} \\
+				a_0 + d \cdot n &\text{ falls } q=1
+					\end{cases}
+		\end{align*}
+	\item[Folgen 2. Ordnung] $a_{n+1} = b a_n + c a_{n-1}$ \vspace{0.3cm} \\
+		Charakteristisches Polynom bilden: $q^2 = bq+c$ \vspace{0.3cm} \\
+		\begin{tabular}{|c|l|}
+			\hline
+			Diskriminante & Explizite Darstellung \\ \hline
+			$>0$ & $a_n = C_1 q_1^n + C_2 q_2^n$ \\
+			$=0$ & $a_n = C_1 q_1^n + C_2 n \cdot q_2^n$ \\
+			$<0$ & $a_n = C_1 r^n \cos(n\alpha) + C_2 r^n \sin(n\alpha)$ \\ \hline
+		\end{tabular}
+\end{description}
 Finde eine explizite Darstellung für $a_n$. Gib auch den Grenzwert $\displaystyle\lim_{n \mapsto \infty} a_n$ an.
 \begin{enumerate}
 	\item $2 \cdot a_{n+3} = 10 \cdot a_{n+2} + 16, \qquad a_1 = 28$
@@ -204,9 +222,35 @@ Finde eine explizite Darstellung für $a_n$. Gib auch den Grenzwert $\displaysty
 			&= 6 \cdot 5^n - 2
 		\end{align*}
 		Es gilt: $\lim_{n \mapsto \infty} 6 \cdot 5^n - 2 = +\infty$
-	\item 
+	\item $a_{n+1} = 0 \cdot a_n - 4 \cdot a_{n-1}, \qquad a_0 = 1, a_1 = 3$
+		\begin{align*}
+			\intertext{Zunächst bilden wir das charakteristische Polynom mit $b=0, c=-4$}
+			q^2 &= 0q - 4 \\
+			q_{1,2} &= \sqrt{-4} \\
+			\intertext{Die Diskriminante ist also $< 0$. Wir bestimmen die komplexen Lösungen und bestimmen r und $\alpha$ der Polarkoordinaten.}
+			q_{1,2} &= \pm 2i \\
+			r &= \sqrt{0^2 + 2^2} = 2 \\
+			\alpha &= \acos \left( \frac{0}{r} \right) = \asin \left( \frac{2}{r} \right) = \frac{\pi}{2}
+			\intertext{Diese Werte für r und $\alpha$ setzen wir in die Formel ein}
+			a_n &= C_1 2^n \cos \left(n \frac{\pi}{2} \right) + C_2 2^n \sin \left( n \frac{\pi}{2} \right)
+			\intertext{Abschließend bestimmen wir $C_1$ und $C_2$ aus den Anfangsbedingungen}
+			&\begin{cases}
+				a_0 = C_1 r^0 \cos \left( 0 \cdot \frac{\pi}{2} \right) + C_2 r^0 \sin \left( 0 \cdot \frac{\pi}{2} \right) \\
+				a_1 = C_1 r^1 \cos \left( 1 \cdot \frac{\pi}{2} \right) + C_2 r^1 \sin \left( 1 \cdot \frac{\pi}{2} \right)
+			\end{cases} \tag{Variablen einsetzen} \\
+			&\begin{cases}
+				1 = C_1 \cos \left( 0 \right) + C_2 \sin \left( 0 \right) \\
+				3 = C_1 \cdot 2 \cdot \cos \left( \frac{\pi}{2} \right) + C_2 \cdot 2 \cdot \sin \left( \frac{\pi}{2} \right)
+			\end{cases} \tag{Manche Terme ergeben sich zu 0} \\
+			&\begin{cases}
+				1 = C_1 \\
+				\frac{3}{2} = C_2
+			\end{cases}
+			\intertext{Da wir nun $C_1$ und $C_2$ kennen, können wir die explizite Form angeben}
+			a_n &= 2^n \cos \left( n \frac{\pi}{2} \right) + \frac{3}{2} \cdot 2^n \sin \left( n \frac{\pi}{2} \right)
+		\end{align*}
+		Es gilt: $\lim_{n \mapsto \infty} 2^n \cos \left( n \frac{\pi}{2} \right) + \frac{3}{2} \cdot 2^n \sin \left( n \frac{\pi}{2} \right) = \tilde{\infty}$ (alternierend divergent)
 \end{enumerate}
-Chrisbot
 
 \section{Reihen}
 Yannick
