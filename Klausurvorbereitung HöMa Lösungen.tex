@@ -253,7 +253,31 @@ Finde eine explizite Darstellung für $a_n$. Gib auch den Grenzwert $\displaysty
 \end{enumerate}
 
 \section{Reihen}
-Yannick
+Sind die folgenden Reihen konvergent oder divergent?
+\begin{enumerate}
+	\item $\sum_{k=0}^\infty \frac{(k-1)(k+3)}{2(k-2)(k-4)}$
+		\begin{align*}
+			\sum_{k=0}^\infty \frac{(k-1)(k+3)}{2(k-2)(k-4)} &= \sum_{k=0}^\infty \frac{k^2 + 2k - 3}{2(k^2 - 6k + 8)} \\
+			&= \sum_{k=0}^\infty \frac{k^2 + 2k - 3}{2k^2 - 12k + 16}
+		\end{align*}
+		Die Reihe ist divergent, da $\displaystyle{\lim_{k \mapsto \infty} a_k = \frac{1}{2} \neq 0}$, wobei $a_k$ die Reihenglieder sind.
+	\item $\sum_{k=0}^\infty \frac{(-1)^k 2^{k-1} - 6 \cdot 5^k}{3^{2k+1}}$
+		\begin{align*}
+			\intertext{Wir konzentrieren uns zunächst auf die Reihenglieder}
+			a_k = \frac{(-1)^k 2^{k-1} - 3 \cdot 5^k}{3^{2k+1}} &= \frac{(-1)^k \frac{2^k}{2} - \frac{3\cdot2}{2} \cdot 5^k}{3^{2k} \cdot 3} \\
+			&= \frac{(-1)^k 2^k - 6 \cdot 5^k}{3^{2k} \cdot 6} \\
+			&= \frac{(-2)^k - 6 \cdot 5^k}{9^k \cdot 6} \\
+			&= \frac{(-2)^k}{9^k \cdot 6} - \frac{\cancel{6} \cdot 5^k}{9^k \cdot \cancel{6}} \\
+			&= \frac{1}{6} \cdot \left(\frac{-2}{9}\right)^k - \left(\frac{5}{9}\right)^k
+			\intertext{Zurück zur Reihe}
+			\sum_{k=0}^\infty \frac{(-1)^k 2^{k-1} - 6 \cdot 5^k}{3^{2k+1}} &= \sum_{k=0}^\infty \frac{1}{6} \cdot \left(\frac{-2}{9}\right)^k - \left(\frac{5}{9}\right)^k \\
+			&= \frac{1}{6} \underbrace{\sum_{k=0}^\infty \left(\frac{-2}{9}\right)^k}_{geom. Reihe} - \underbrace{\sum_{k=0}^\infty \left(\frac{5}{9}\right)^k}_{geom. Reihe}
+			\intertext{Für die geometrische Reihe gilt $\sum_{k=0}^\infty q^k = \frac{1}{1-q}$ bei $\abs{q} < 1$}
+			= \frac{1}{6} \sum_{k=0}^\infty \left(\frac{-2}{9}\right)^k - \sum_{k=0}^\infty \left(\frac{5}{9}\right)^k &= \frac{1}{6} \cdot \frac{1}{1 - \frac{-2}{9}} - \frac{1}{1 - \frac{5}{9}} \\
+			&= \frac{1}{6} \cdot \frac{1}{\frac{11}{9}} - \frac{1}{\frac{4}{9}} \\
+			&= - \frac{93}{44}
+		\end{align*}
+\end{enumerate}
 
 \newpage
 \section{Differentialrechnung}
