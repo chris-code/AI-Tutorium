@@ -45,7 +45,7 @@
 \section{Ungleichungen}
 Bestimme die Lösungen für folgende Ungleichungen
 \begin{enumerate}
-	\item $\frac{\abs{x+2}}{2} > \frac{x}{3} + 1$
+	\item $\displaystyle \frac{\abs{x+2}}{2} > \frac{x}{3} + 1$
 		\begin{align*}
 			\frac{\abs{x+2}}{2} > \frac{x}{3} + 1 &\Leftrightarrow \abs{x+2} > \frac{2x}{3} + 2 \\
 			&\Leftrightarrow \abs{x+2} > \frac{2x+6}{3}
@@ -60,7 +60,7 @@ Bestimme die Lösungen für folgende Ungleichungen
 			&\Leftrightarrow x > 0
 			\intertext{Lösung im Fall 3: $\left[ -2, \infty \right) \cap \left( 0, \infty \right) = \left( 0, \infty \right)$}
 		\end{align*}
-	\item $\sqrt{x^2 - 4x + 4} < \frac{\abs{x+1}}{2}$
+	\item $\displaystyle \sqrt{x^2 - 4x + 4} < \frac{\abs{x+1}}{2}$
 		\begin{align*}
 			\sqrt{x^2 - 4x + 4} < \frac{\abs{x+1}}{2} &\Leftrightarrow \sqrt{(x-2)^2} < \frac{\abs{x+1}}{2} \\
 			&\Leftrightarrow \abs{x-2} < \frac{\abs{x+1}}{2}
@@ -81,7 +81,7 @@ Bestimme die Lösungen für folgende Ungleichungen
 			\intertext{Lösung im Fall 3: $\left[ 2, \infty \right) \cap \left( -\infty, 5 \right) = \left[ 2,5 \right)$}
 		\end{align*}
 		Damit ist die Gesammtlösung: $\emptyset \cup \left( 1,2 \right) \cup \left[ 2,5 \right) = \left( 1, 5 \right)$
-	\item $\abs{x+5} > 4 + \sqrt{x^2 + 6x + 9}$
+	\item $\displaystyle \abs{x+5} > 4 + \sqrt{x^2 + 6x + 9}$
 		\begin{align*}
 			\abs{x+5} > 4 + \sqrt{x^2 + 6x + 9} &\Leftrightarrow \abs{x+5} > 4 + \sqrt{(x+3)^2} \\
 			&\Leftrightarrow \abs{x+5} > 4 + \abs{x+3} \\
@@ -92,50 +92,49 @@ Bestimme die Lösungen für folgende Ungleichungen
 \newpage
 \section{Vollständige Induktion}
 \begin{enumerate}[label=\alph*)]
-\item
-	Zeige mittels vollständiger Induktion, dass die folgende Gleichung für alle $n \in \mathbb{N}$ gilt:
-	\begin{align*}
-		\sum_{i=1}^n 4i - 1 &= 2n^2 + n \tag{Induktionsannahme}\\
-		\intertext{\textbf{Lösung:}}
-		\intertext{\textbf{Induktionsanfang:} Wir zeigen, dass die Gleichung für $n = 1$ gilt:}
-		\sum_{i=1}^1 4i - 1 &= 2 \cdot 1^2 + 1\\
-		4 \cdot 1 - 1 &= 2 + 1\\
-		3 &= 3 \qquad \quad \textcolor{DarkGreen}{\checkmark}
-		\intertext{\textbf{Induktionsschritt:} Nun müssen wir zeigen, dass die Gleichung auch für $n + 1$ gilt:}
-		\sum_{i=1}^{n+1} 4i - 1 &= 2(n+1)^2 + (n+1)\\
-		\intertext{Die Summe bis $n+1$ können wir in die Summe bis $n$ und den $(n+1)$ten Summanden aufteilen:}
-		\br{\sum_{i=1}^n 4i - 1} + \br{4(n+1) - 1} &= 2(n+1)^2 + (n+1)\\
-		\intertext{Nach der Induktionsannahme können wir die Summe bis $n$ wie folgt ersetzen:}
-		(2n^2 + n) + (4(n+1) -1) &= 2(n+1)^2 + (n+1)\\
-		\intertext{Nun erhalten wir durch Vereinfachen beider Seiten:}
-		2n^2 + n + 4n + 4 - 1 &= 2(n^2 + 2n + 1) + n + 1\\
-		2n^2 + 5n + 3 &= 2n^2 + 4n + 2 + n + 1\\
-		2n^2 + 5n + 3 &= 2n^2 + 5n + 3 \qquad \quad \textcolor{DarkGreen}{\checkmark}
-	\end{align*}
+	\item Zeige mittels vollständiger Induktion, dass die folgende Gleichung für alle $n \in \mathbb{N}$ gilt: \\
+		$\displaystyle \sum_{i=1}^n 4i - 1 = 2n^2 + n$
+		\begin{align*}
+			\intertext{\textbf{Lösung:}}
+			\intertext{\textbf{Induktionsanfang:} Wir zeigen, dass die Gleichung für $n = 1$ gilt:}
+			\sum_{i=1}^1 4i - 1 &= 2 \cdot 1^2 + 1\\
+			4 \cdot 1 - 1 &= 2 + 1\\
+			3 &= 3 \qquad \quad \textcolor{DarkGreen}{\checkmark}
+			\intertext{\textbf{Induktionsschritt:} Nun müssen wir zeigen, dass die Gleichung auch für $n + 1$ gilt:}
+			\sum_{i=1}^{n+1} 4i - 1 &= 2(n+1)^2 + (n+1)\\
+			\intertext{Die Summe bis $n+1$ können wir in die Summe bis $n$ und den $(n+1)$ten Summanden aufteilen:}
+			\br{\sum_{i=1}^n 4i - 1} + \br{4(n+1) - 1} &= 2(n+1)^2 + (n+1)\\
+			\intertext{Nach der Induktionsannahme (Aufgabenstellung) können wir die Summe bis $n$ wie folgt ersetzen:}
+			(2n^2 + n) + (4(n+1) -1) &= 2(n+1)^2 + (n+1)\\
+			\intertext{Nun erhalten wir durch Vereinfachen beider Seiten:}
+			2n^2 + n + 4n + 4 - 1 &= 2(n^2 + 2n + 1) + n + 1\\
+			2n^2 + 5n + 3 &= 2n^2 + 4n + 2 + n + 1\\
+			2n^2 + 5n + 3 &= 2n^2 + 5n + 3 \qquad \quad \textcolor{DarkGreen}{\checkmark}
+		\end{align*}
 	\newpage
-	\item
-	Zeige mittels vollständiger Induktion, dass folgende Gleichung für alle $n \in \mathbb{N}$ gilt:
-	\begin{align*}
-		\sum_{i=1}^n i \cdot (i + 1) &= \frac{n\cdot(n+1)\cdot(n+2)}{3} \tag{Induktionsannahme}
-		\intertext{\textbf{Lösung:}}
-		\intertext{\textbf{Induktionsanfang:} Wir zeigen, dass die Gleichung für $n = 1$ gilt:}
-		\sum_{i=1}^1 i \cdot (i + 1) &= \frac{1 \cdot (1 + 1) \cdot (1 + 2)}{3}\\
-		1 \cdot 2 &= \frac{1 \cdot 2 \cdot \cancel{3}}{\cancel{3}}\\
-		2 &= 2 \qquad \quad \textcolor{DarkGreen}{\checkmark}
-		\intertext{\textbf{Induktionsschritt:} Nun müssen wir zeigen, dass die Gleichung auch für $n + 1$ gilt:}
-		\sum_{i=1}^{n+1} i \cdot (i + 1) &= \frac{(n + 1)\cdot((n+1) + 1)\cdot((n+1)+2)}{3}\\
-		\sum_{i=1}^{n+1} i \cdot (i + 1) &= \frac{(n + 1)\cdot(n + 2)\cdot(n + 3)}{3}\\
-		\intertext{Die Summe bis $n+1$ können wir in die Summe bis $n$ und den $(n+1)$ten Summanden aufteilen:}
-		\br{\sum_{i=1}^{n} i \cdot (i + 1)} + (n+1) \cdot (n+2) &= \frac{(n + 1)\cdot(n + 2)\cdot(n + 3)}{3}\\
-		\intertext{Nach der Induktionsannahme können wir die Summe bis $n$ wie folgt ersetzen:}
-		\frac{n \cdot (n + 1) \cdot (n + 2)}{3} + (n+1) \cdot (n+2) &= \frac{(n + 1)\cdot(n + 2)\cdot(n + 3)}{3}\\
-		\intertext{Durch Multiplikation mit Faktor 3 erhalten wir:}
-		%\frac{n \cdot (n + 1) \cdot (n + 2)}{3} + \frac{3 \cdot (n+1) \cdot (n+2)}{3} &= \frac{(n + 1)\cdot(n + 2)\cdot(n + 3)}{3}\\
-		n \cdot (n + 1) \cdot (n + 2) + 3 \cdot (n+1) \cdot (n+2) &= (n + 1)\cdot(n + 2)\cdot(n + 3)\\
-		\intertext{Da $n \geq 1$ können wir nun auf beiden Seiten durch $(n+1) \cdot (n+2)$ dividieren:}
-		n + 3 &= n + 3 \qquad \quad \textcolor{DarkGreen}{\checkmark}
-	\end{align*}
+	\item Zeige mittels vollständiger Induktion, dass folgende Gleichung für alle $n \in \mathbb{N}$ gilt: \\
+		$\displaystyle \sum_{i=1}^n i \cdot (i + 1) = \frac{n\cdot(n+1)\cdot(n+2)}{3}$
+		\begin{align*}
+			\intertext{\textbf{Lösung:}}
+			\intertext{\textbf{Induktionsanfang:} Wir zeigen, dass die Gleichung für $n = 1$ gilt:}
+			\sum_{i=1}^1 i \cdot (i + 1) &= \frac{1 \cdot (1 + 1) \cdot (1 + 2)}{3}\\
+			1 \cdot 2 &= \frac{1 \cdot 2 \cdot \cancel{3}}{\cancel{3}}\\
+			2 &= 2 \qquad \quad \textcolor{DarkGreen}{\checkmark}
+			\intertext{\textbf{Induktionsschritt:} Nun müssen wir zeigen, dass die Gleichung auch für $n + 1$ gilt:}
+			\sum_{i=1}^{n+1} i \cdot (i + 1) &= \frac{(n + 1)\cdot((n+1) + 1)\cdot((n+1)+2)}{3}\\
+			\sum_{i=1}^{n+1} i \cdot (i + 1) &= \frac{(n + 1)\cdot(n + 2)\cdot(n + 3)}{3}\\
+			\intertext{Die Summe bis $n+1$ können wir in die Summe bis $n$ und den $(n+1)$ten Summanden aufteilen:}
+			\br{\sum_{i=1}^{n} i \cdot (i + 1)} + (n+1) \cdot (n+2) &= \frac{(n + 1)\cdot(n + 2)\cdot(n + 3)}{3}\\
+			\intertext{Nach der Induktionsannahme (Aufgabenstellung) können wir die Summe bis $n$ wie folgt ersetzen:}
+			\frac{n \cdot (n + 1) \cdot (n + 2)}{3} + (n+1) \cdot (n+2) &= \frac{(n + 1)\cdot(n + 2)\cdot(n + 3)}{3}\\
+			\intertext{Durch Multiplikation mit Faktor 3 erhalten wir:}
+			%\frac{n \cdot (n + 1) \cdot (n + 2)}{3} + \frac{3 \cdot (n+1) \cdot (n+2)}{3} &= \frac{(n + 1)\cdot(n + 2)\cdot(n + 3)}{3}\\
+			n \cdot (n + 1) \cdot (n + 2) + 3 \cdot (n+1) \cdot (n+2) &= (n + 1)\cdot(n + 2)\cdot(n + 3)\\
+			\intertext{Da $n \geq 1$ können wir nun auf beiden Seiten durch $(n+1) \cdot (n+2)$ dividieren:}
+			n + 3 &= n + 3 \qquad \quad \textcolor{DarkGreen}{\checkmark}
+		\end{align*}
 \end{enumerate}
+
 \newpage
 \section{Komplexe Zahlen}
 	\begin{description}
@@ -145,7 +144,7 @@ Bestimme die Lösungen für folgende Ungleichungen
 		\item[Polarkoordinaten n-te Wurzel ziehen] $w_k = \sqrt[n]{r} \left( \cos \frac{\alpha + 2k\pi}{n} + i \sin \frac{\alpha + 2k\pi}{n} \right)$ \\ für $k = 0 \dots n-1$
 	\end{description}
 	\begin{enumerate}
-		\item Bestimme den Realteil, Imaginärteil, Betrag und die komplex Konjugierte von $\frac{2+i}{1-i}$
+		\item Bestimme den Realteil, Imaginärteil, Betrag und die komplex Konjugierte von $\displaystyle \frac{2+i}{1-i}$
 			\begin{align*}
 				\frac{2+i}{1-i} &= \frac{(2+i) \cdot (\overline{1-i})}{(1-i) \cdot (\overline{1-i})} \\
 				&= \frac{(2+i) \cdot (1+i)}{(1-i) \cdot (1+i)} \\
@@ -156,7 +155,7 @@ Bestimme die Lösungen für folgende Ungleichungen
 			Realteil: $\frac{1}{2}$, Imaginärteil: $\frac{3}{2}$ \\
 			Betrag: $\abs{\frac{1}{2} + \frac{3}{2} i} = \sqrt{(\frac{1}{2})^2 + (\frac{3}{2})^2} = \sqrt{\frac{1}{4} + \frac{9}{4}} = \sqrt{\frac{5}{2}}$ \\
 			Komplex Konjugierte: $\overline{\frac{1}{2} + \frac{3}{2} i} = \frac{1}{2} - \frac{3}{2} i$
-		\item Berechne $(1-i)^{32}$
+		\item Berechne $\displaystyle (1-i)^{32}$
 			\begin{align*}
 				\intertext{Zunächst $1-i$ in Polarkoordinaten umrechnen.}
 				r &= \abs{1-i} = \sqrt{1^2 + (-1)^2} = \sqrt{2} \\
@@ -168,7 +167,7 @@ Bestimme die Lösungen für folgende Ungleichungen
 				&= 2^{16} \left( 1 + 0i \right) \\
 				&= 2^{16}
 			\end{align*}
-		\item Für welche $p\in\mathbb{C}$ gilt $p^4 + 4 = 0$?
+		\item Für welche $\displaystyle p\in\mathbb{C}$ gilt $p^4 + 4 = 0$?
 			\begin{align*}
 				p^4 + 4 = 0 &\Leftrightarrow p^4 = -4 \\
 				&\Leftrightarrow p = \sqrt[4]{-4}
@@ -253,16 +252,17 @@ Finde eine explizite Darstellung für $a_n$. Gib auch den Grenzwert $\displaysty
 		Es gilt: $\lim_{n \mapsto \infty} 2^n \cos \left( n \frac{\pi}{2} \right) + \frac{3}{2} \cdot 2^n \sin \left( n \frac{\pi}{2} \right) = \tilde{\infty}$ (alternierend divergent)
 \end{enumerate}
 
+\newpage
 \section{Reihen}
 Sind die folgenden Reihen konvergent oder divergent?
 \begin{enumerate}
-	\item $\sum_{k=0}^\infty \frac{(k-1)(k+3)}{2(k-2)(k-4)}$
+	\item $\displaystyle \sum_{k=0}^\infty \frac{(k-1)(k+3)}{2(k-2)(k-4)}$
 		\begin{align*}
 			\sum_{k=0}^\infty \frac{(k-1)(k+3)}{2(k-2)(k-4)} &= \sum_{k=0}^\infty \frac{k^2 + 2k - 3}{2(k^2 - 6k + 8)} \\
 			&= \sum_{k=0}^\infty \frac{k^2 + 2k - 3}{2k^2 - 12k + 16}
 		\end{align*}
 		Die Reihe ist divergent, da $\displaystyle{\lim_{k \mapsto \infty} a_k = \frac{1}{2} \neq 0}$, wobei $a_k$ die Reihenglieder sind.
-	\item $\sum_{k=0}^\infty \frac{(-1)^k 2^{k-1} - 6 \cdot 5^k}{3^{2k+1}}$
+	\item $\displaystyle \sum_{k=0}^\infty \frac{(-1)^k 2^{k-1} - 3 \cdot 5^k}{3^{2k+1}}$
 		\begin{align*}
 			\intertext{Wir konzentrieren uns zunächst auf die Reihenglieder}
 			a_k = \frac{(-1)^k 2^{k-1} - 3 \cdot 5^k}{3^{2k+1}} &= \frac{(-1)^k \frac{2^k}{2} - \frac{3\cdot2}{2} \cdot 5^k}{3^{2k} \cdot 3} \\
@@ -285,6 +285,9 @@ Sind die folgenden Reihen konvergent oder divergent?
 Bestimme den maximalen Definitionsbereich in $\mathbb{R}$, die Nullstellen, die Grenzwerte an den Randpunkten des Definitionsbereichs, die lokalen und globalen Extrema sowie die Monotonie folgender Funktion:
 \begin{align*}
 	f(x) &= (x+4) \cdot (2-x^2)^{-\frac{1}{2}} - 3
+\end{align*}
+
+\begin{align*}
 	\intertext{\textbf{Lösung:}}
 	\intertext{Zur Bestimmung des maximalen Definitionsbereichs vereinfachen wir die Funktion zunächst:}
 	&= (x+4) \cdot \frac{1}{(2-x^2)^\frac{1}{2}} - 3\\
@@ -307,36 +310,33 @@ Bestimme den maximalen Definitionsbereich in $\mathbb{R}$, die Nullstellen, die 
 	 x_1 &= -1 \qquad \qquad x_2 = \frac{1}{5}\\
 	 \intertext{Beide Werte liegen innerhalb des Definitionsbereichs. Durch Einsetzen sieht man ein, dass beide Werte gültige Lösungen sind:}
 	 f(x_1) = f(-1) &= (-1+4) \cdot (2-(-1)^2)^{-\frac{1}{2}} - 3\\
-	 &= 3 \cdot \frac{1}{\sqrt{2}} - 3\\
+	 &= 3 \cdot 1 - 3\\
 	 &= 0\\
 	 f(x_1) = f\br{\frac{1}{5}} &= \br{\frac{1}{5} + 4} \cdot \br{2-\br{\frac{1}{5}}^2}^{-\frac{1}{2}} - 3\\
-	 &= 4.2 \cdot \br{\frac{49}{25}}^{-\frac{1}{2}} - 3\\
-	 &= 4.2 \cdot \frac{1}{\sqrt{\frac{49}{25}}} -3\\
-	 &= 4.2 \cdot \frac{1}{\frac{7}{5}} - 3\\
-	 &= 4. 2 \cdot \frac{5}{7} - 3\\
+	 &= \frac{21}{5} \cdot \br{\frac{49}{25}}^{-\frac{1}{2}} - 3\\
+	 &= \frac{21}{5} \cdot \sqrt{\frac{25}{49}} - 3 \\
+	 &= \frac{21}{5} \cdot \frac{5}{7} - 3 \\
 	 &= 0
 	 \\
 	 \intertext{Als nächstes berechnen wir die Grenzwerte an den Randpunkten des Definitionsbereichs}
-	 \lim_{x \rightarrow -\sqrt{2}} f(x) &= \lim_{x \rightarrow -\sqrt{2}} (x+4) \cdot \frac{1}{\sqrt{2 - x^2}} - 3\\
-	 &= (-\sqrt{2} + 4) \cdot \frac{1}{0} - 3\\
+	 \lim_{x \rightarrow {-\sqrt{2}}_+} f(x) &= \lim_{x \rightarrow {-\sqrt{2}}_+} (x+4) \cdot \frac{1}{\sqrt{2 - x^2}} - 3\\
+	 &= (-\sqrt{2} + 4) \cdot \frac{1}{0_+} - 3\\
 	 &= +\infty - 3\\
 	 &= +\infty\\
-	 \lim_{x \rightarrow \sqrt{2}} f(x) &= \lim_{x \rightarrow \sqrt{2}} (x+4) \cdot \frac{1}{\sqrt{2 - x^2}} - 3\\
-	 &= (\sqrt{2} + 4) \cdot \frac{1}{0} - 3\\
+	 \lim_{x \rightarrow {\sqrt{2}}_-} f(x) &= \lim_{x \rightarrow {\sqrt{2}}_-} (x+4) \cdot \frac{1}{\sqrt{2 - x^2}} - 3\\
+	 &= (\sqrt{2} + 4) \cdot \frac{1}{0_+} - 3\\
 	 &= +\infty - 3\\
 	 &= +\infty
 	 \intertext{Als nächstes berechnen wir die lokalen und globalen Extrema. Dazu berechnen wir die Ableitung von $f(x)$ und setzen sie gleich $0$:}
-	 \frac{\partial}{\partial x} f(x) &= \frac{\partial}{\partial x} \br{(x+4) \cdot (2-x^2)^{-\frac{1}{2}} - 3}\\
-	 &= \frac{\partial}{\partial x} \br{(x+4) \cdot (2-x^2)^{-\frac{1}{2}}}\\
+	 \frac{\text{d}}{\dx} f(x) &= \frac{\text{d}}{\dx} \br{(x+4) \cdot (2-x^2)^{-\frac{1}{2}} - 3}\\
+	 &= \frac{\text{d}}{\dx} \br{(x+4) \cdot (2-x^2)^{-\frac{1}{2}}}\\
 	 \intertext{Wir wenden nun die Produktregel $(f(x)\cdot g(x))' = f'(x)g(x) + f(x)g'(x)$ an:} %TODO hart kürzen
 	 &= 1 \cdot (2-x^2)^{-\frac{1}{2}} + (x+4) \cdot \br{-\frac{1}{2}} \cdot (2-x^2)^{-\frac{3}{2}} \cdot (-2x)\\
-	 %&= (2-x^2)^{-\frac{1}{2}} + (x+4) \cdot x \cdot (2-x^2)^{-\frac{3}{2}}\\
 	 &= (2-x^2)^{-\frac{1}{2}} + (x^2+4x) \cdot \br{(2-x^2)^{-\frac{1}{2}}}^3\\
 	 &= (2-x^2)^{-\frac{1}{2}} + (x^2+4x) \cdot \br{(2-x^2)^{-\frac{1}{2}}}^2 \cdot (2-x^2)^{-\frac{1}{2}}\\
-	 &= (2-x^2)^{-\frac{1}{2}} + (x^2+4x) \cdot (2-x^2)^{-1} \cdot (2-x^2)^{-\frac{1}{2}}\\
+	 &= (2-x^2)^{-\frac{1}{2}} \cdot \br{1 + (x^2+4x) \cdot \br{(2-x^2)^{-\frac{1}{2}}}^2}\\
 	 &= (2-x^2)^{-\frac{1}{2}} \cdot \br{1 + (x^2+4x) \cdot \frac{1}{2-x^2}}\\
 	 &= \frac{1}{\sqrt{2-x^2}} \cdot \br{1 + \frac{x^2 + 4x}{2-x^2}}\\
-	 %&= \frac{1}{\sqrt{2-x^2}} \cdot \br{\frac{2-x^2}{2-x^2} + \frac{x^2 + 4x}{2-x^2}}\\
 	 &= \frac{1}{\sqrt{2-x^2}} \cdot \br{\frac{4x + 2}{2-x^2}}\\
 	 \intertext{Nun setzen wir die Ableitung gleich 0:}
 	 0 &\setequal \frac{1}{\sqrt{2-x^2}} \cdot \br{\frac{4x + 2}{2-x^2}}\\
@@ -352,8 +352,8 @@ Bestimme den maximalen Definitionsbereich in $\mathbb{R}$, die Nullstellen, die 
 \centering
 \begin{tabular}{c|ccccc} %TODO wie ist die f'-Zeile zu lesen?
 	$x$ & $-\sqrt{2}$ &  & $-\frac{1}{2}$ &   & $\sqrt{2}$\\ \hline
-	$f(x)$ & $+\infty$ & $\backslash$ & $\approx -2,0646$ & / & $+\infty$\\
-	$f'(x)$ & $-$ &  & 0 &  & $+$\\
+	$f(x)$ & $+\infty$ & $\searrow$ & $\approx -2,0646$ & $\nearrow$ & $+\infty$\\
+	$f'(x)$ & & $-$ & 0 & $+$ & \\
 \end{tabular}
 \end{figure}\\
 Wir stellen fest, dass am linken Rand von $D$ $f(x)$ sehr groß ist und monoton fällt, bis wir bei $x = -\frac{1}{2}$ das globale Minimum erreicht haben. Anschließend steigt die Funktion monoton bis zum rechten Rand von $D$.
@@ -373,13 +373,16 @@ Wir stellen fest, dass am linken Rand von $D$ $f(x)$ sehr groß ist und monoton 
 		\draw[domain=-1.412:1.405,samples=1000,variable=\x,red] plot ({\x},{((\x + 4) * (1/(sqrt(2 - (\x * \x)))) - 3});
 	\end{tikzpicture}
 \end{figure}
+
 \newpage
 \section{Partialbruchzerlegung und Substitution}
 \begin{align}
 	\int_a^b \mathrm{f}( \ \underbrace{\mathrm{g}(x)}_t \ ) \dx = \int_{\mathrm{g}(a)} ^{\mathrm{g(b)}} \mathrm{f}(t) \dt
+	\label{eq:substitution}
 \end{align}
 
-Berechne $\int_2^3 \frac{6 \sin(x) \cos(x)}{\sin^2(x) + \sin(x) - 2 } dx$
+Berechne $\displaystyle \int_2^3 \frac{6 \sin(x) \cos(x)}{\sin^2(x) + \sin(x) - 2 } dx$
+
 \begin{align*}
 	\intertext{Zunächst substituieren wir $\sin(x)$.}
 	t &= \sin(x) \\
@@ -401,27 +404,27 @@ Berechne $\int_2^3 \frac{6 \sin(x) \cos(x)}{\sin^2(x) + \sin(x) - 2 } dx$
 	 \int_{\sin(2)}^{\sin(3)} \frac{6 \ t}{(t-1)(t+2)} \dt &=  \int_{\sin(2)}^{\sin(3)} \frac{2}{t-1} + \frac{4}{t+2} \dt \\
 	 &= \int_{\sin(2)}^{\sin(3)} \frac{2}{t-1} \dt + \int_{\sin(2)}^{\sin(3)} \frac{4}{t+2} \dt \\
 	 &= 2 \int_{\sin(2)}^{\sin(3)} \frac{1}{t-1} \dt + 4 \int_{\sin(2)}^{\sin(3)} \frac{1}{t+2} \dt \\
-	 &= 2 \left[ \ln\abs{t-1} \right]_{\sin(2)}^{\sin(3)} + 4 \left[ \ln\abs{t+2} \right]_{\sin(2)}^{\sin(3)} \\
+	 &= 2 \left. \left( \ln\abs{t-1} \right) \right\vert_{\sin(2)}^{\sin(3)} + 4 \left. \left( \ln\abs{t+2} \right) \right\vert_{\sin(2)}^{\sin(3)} \\
 	 &= 2 \left( \ln\abs{\sin(3)-1} - \ln\abs{\sin(2)-1} \right) + 4 \left( \ln\abs{\sin(3) + 2} - \ln\abs{\sin(2) + 2} \right) \\
+	 %&= 2 \left( \ln{0.8589} \right) \\
 	 &= 2 \left( \ln \frac{\abs{\sin(3)-1}}{\abs{\sin(2)-1}} \right) + 4 \left( \ln \frac{\abs{\sin(3) + 2}}{\abs{\sin(2) + 2}} \right) \\
 	 &= 2 \left( \ln \abs{\frac{\sin(3)-1}{\sin(2)-1}} \right) + 4 \left( \ln \abs{\frac{\sin(3) + 2}{\sin(2) + 2}} \right) \\
-	 &\approx 2 \left( \ln 9.4692 \right) + 4 \left( \ln 0.7360 \right) \\
 	 &\approx 3.2698
 \end{align*}
 
 \newpage
 \section{Partielle Integration}
-
-Löse folgendes Integral:
+\begin{align}
+	\int_a^b f'(x) \cdot g(x) \dx =& f(x) \cdot g(x)\vert_a^b - \int_a^b f(x) \cdot g'(x) \dx
+	\label{eq:partielleIntegration}
+\end{align}
 
 \newcommand{\lowerBorder}{{0}}
 \newcommand{\upperBorder}{{\frac{1}{3}}}
+Löse folgendes Integral: $\displaystyle \int_\lowerBorder^\upperBorder e^{3x} \cdot (2x - 5) \dx$
 
 \begin{align*}
-	& \int_\lowerBorder^\upperBorder e^{3x} \cdot (2x - 5) \dx\\
 	\intertext{\textbf{Lösung:}}
-		\intertext{Die Formel für die partielle Integration lautet:}
-	\int_a^b f'(x) \cdot g(x) \dx =& f(x) \cdot g(x)\vert_a^b - \int_a^b f(x) \cdot g'(x) \dx\\
 	\intertext{Wähle $f'$ und $g$ wie folgt:}
 	& \int_\lowerBorder^\upperBorder \ubr{e^{3x}}{f'} \cdot \ubr{\br{2x - 5}}{g}\dx\\
 	\intertext{Um die Formel anwenden zu können, benötigen wir die Stammfunktion $f$ von $f'$ und die Ableitung $g'$ von $g$.}
@@ -430,7 +433,7 @@ Löse folgendes Integral:
 	=&\ \frac{1}{3} e^{3x}\\
 	g' =& \frac{\partial}{\partial x} (2x - 5)\\
 	=& 2\\
-	\intertext{In der folgenden Formel müssen wir nur noch die entsprechenden Ersetzungen machen:}
+	\intertext{In Formel \eqref{eq:partielleIntegration} müssen wir nur noch die entsprechenden Ersetzungen machen:}
 	&f(x) \cdot g(x)\vert_a^b - \int_a^b f(x) \cdot g'(x) \dx\\
 	=& \br{\frac{1}{3} e^{3x} \cdot \br{2x - 5}}\Big\vert_\lowerBorder^\upperBorder - \int_\lowerBorder^\upperBorder \frac{1}{3} e^{3x} \cdot 2 \dx\\
 	=& \br{\br{\frac{1}{3} e^1 \cdot \br{2\cdot \frac{1}{3} - 5}} - \br{\frac{1}{3}e^0 \cdot \br{0 - 5}}} - \frac{2}{3} \int_\lowerBorder^\upperBorder e^{3x} \dx\\
