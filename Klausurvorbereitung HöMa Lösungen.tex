@@ -35,7 +35,7 @@
 
 \allowdisplaybreaks
 
-\title{Klausurvorbereitung Statistik \\ Aufgaben}
+\title{Klausurvorbereitung Höhere Mathematik \\ Aufgaben}
 \author{Yannick Schrör \and Christian Mielers}
 \date{5. März 2015}
 
@@ -271,7 +271,7 @@ Sind die folgenden Reihen konvergent oder divergent?
 			&= \frac{1}{6} \cdot \left(\frac{-2}{9}\right)^k - \left(\frac{5}{9}\right)^k
 			\intertext{Zurück zur Reihe}
 			\sum_{k=0}^\infty \frac{(-1)^k 2^{k-1} - 6 \cdot 5^k}{3^{2k+1}} &= \sum_{k=0}^\infty \frac{1}{6} \cdot \left(\frac{-2}{9}\right)^k - \left(\frac{5}{9}\right)^k \\
-			&= \frac{1}{6} \underbrace{\sum_{k=0}^\infty \left(\frac{-2}{9}\right)^k}_{geom. Reihe} - \underbrace{\sum_{k=0}^\infty \left(\frac{5}{9}\right)^k}_{geom. Reihe}
+			&= \frac{1}{6} \underbrace{\sum_{k=0}^\infty \left(\frac{-2}{9}\right)^k}_{\text{geom. Reihe}} - \underbrace{\sum_{k=0}^\infty \left(\frac{5}{9}\right)^k}_{\text{geom. Reihe}}
 			\intertext{Für die geometrische Reihe gilt $\sum_{k=0}^\infty q^k = \frac{1}{1-q}$ bei $\abs{q} < 1$}
 			= \frac{1}{6} \sum_{k=0}^\infty \left(\frac{-2}{9}\right)^k - \sum_{k=0}^\infty \left(\frac{5}{9}\right)^k &= \frac{1}{6} \cdot \frac{1}{1 - \frac{-2}{9}} - \frac{1}{1 - \frac{5}{9}} \\
 			&= \frac{1}{6} \cdot \frac{1}{\frac{11}{9}} - \frac{1}{\frac{4}{9}} \\
@@ -374,10 +374,14 @@ Wir stellen fest, dass am linken Rand von $D$ $f(x)$ sehr groß ist und monoton 
 \end{figure}
 \newpage
 \section{Partialbruchzerlegung und Substitution}
+\begin{align}
+	\int_a^b \mathrm{f}( \ \underbrace{\mathrm{g}(x)}_t \ ) \dx = \int_{\mathrm{g}(a)} ^{\mathrm{g(b)}} \mathrm{f}(t) \dt
+\end{align}
+
 Berechne $\int_2^3 \frac{6 \sin(x) \cos(x)}{\sin^2(x) + \sin(x) - 2 } dx$
 \begin{align*}
 	\intertext{Zunächst substituieren wir $\sin(x)$.}
-	\sin(x) &= t \\
+	t &= \sin(x) \\
 	\frac{\dt}{\dx} &= \cos(x) \Leftrightarrow \dx = \frac{\dt}{\cos(x)} \\
 	\int_2^3 \frac{6 \sin(x) \cos(x)}{\sin^2(x) + \sin(x) - 2 } \dx &= \int_{\sin(2)}^{\sin(3)} \frac{6 \ t \ \cancel{\cos(x)}}{t^2 + t - 2} \ \frac{\dt}{\cancel{\cos(x)}} \\
 	&= \int_{\sin(2)}^{\sin(3)} \frac{6 \ t}{t^2 + t - 2} \dt \tag{PQ-Formel} \\
