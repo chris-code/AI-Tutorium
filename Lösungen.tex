@@ -2,6 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{fullpage}
+\usepackage[parfill]{parskip} % Empty line instead of indentation
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 \usepackage{color}
@@ -31,7 +32,7 @@
 	showspaces=false
 }
 
-\title{Tutorium WS 14/15 \\ Lösungen}
+\title{Tutorium WS 15/16 \\ Lösungen}
 \author{Christian Mielers}
 \date{\today}
 
@@ -42,43 +43,50 @@
 \newpage
 \section{Höhere Mathematik}
 \subsection{Wahrheitstabellen}
-$(a \lor b) \lor (a \land b) \Leftrightarrow (a \lor b)$ \\
-\begin{tabular}{|c|c|c|c|c|}
-	\hline
-	a & b & $\underline{a \lor b}$ & $a \land b$ & $\underline{(a \lor b) \lor (a \land b)}$ \vphantom{\Big(}\\
-	\hline
-  0 & 0 & 0 & 0 & 0\\
-  0 & 1 & 1 & 0 & 1\\
-  1 & 0 & 1 & 0 & 1\\
-  1 & 1 & 1 & 1 & 1\\
-   \hline
-\end{tabular}
+Prüfe, ob folgende Aussagen gelten
 
-$(a \lor b) \land (a \lor \lnot b) \Leftrightarrow a \lor (b \land \lnot a)$ \\
-\begin{tabular}{|c|c|c|c|c||c|c|c|c|}
-	\hline
-	a & b & $a \lor b$ & $a \lor \lnot b$ & $\underline{(a \lor b) \land (a \lor \lnot b)}$ &
-	$\underline{a \lor (b \land \lnot a)}$ & $b \land \lnot a$ & a & b \vphantom{\Big(} \\
-	\hline
-	0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0\\
-  0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1\\
-  1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 0\\
-  1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1\\
-  \hline
-\end{tabular}
+\begin{enumerate}
+	\item $(a \lor b) \lor (a \land b) \Leftrightarrow (a \lor b)$
 
-$\left((a \lor b) \Rightarrow (a \land b) \right) \Leftrightarrow (a \land b) \lor (\lnot a \land \lnot b)$ \\
-\begin{tabular}{|c|c|c|c|c||c|c|}
-	\hline
-	a & b & $a \lor b$ & $a \land b$ & $\underline{(a \lor b) \Rightarrow (a \land b)}$ &
-	$\underline{(a \land b) \lor (\lnot a \land \lnot b)}$ & $\lnot a \land \lnot b$ \vphantom{\Big(} \\
-	\hline
-  0 & 0 & 0 & 0 & 1 & 1 & 1\\
-  0 & 1 & 1 & 0 & 0 & 0 & 0\\
-  1 & 0 & 1 & 0 & 0 & 0 & 0\\
-  1 & 1 & 1 & 1 & 1 & 1 & 0\\
-  \hline
-\end{tabular}
+	\begin{tabular}{|c|c||c|c|c||c|}
+		\hline
+		a & b & $a \lor b$ & $a \land b$ & $(a \lor b) \lor (a \land b)$ & Gesammtterm \vphantom{\Big(}\\
+		\hline
+		0 & 0 & 0 & 0 & 0 & 1 \\
+		0 & 1 & 1 & 0 & 1 & 1 \\
+		1 & 0 & 1 & 0 & 1 & 1 \\
+		1 & 1 & 1 & 1 & 1 & 1 \\
+	   \hline
+	\end{tabular}
+
+	\item $(a \lor b) \land (a \lor \lnot b) \Leftrightarrow a \lor (b \land \lnot a)$
+
+	\begin{tabular}{|c|c||c|c|c||c|c||c|}
+		\hline
+		a & b & $a \lor b$ & $a \lor \lnot b$ & $(a \lor b) \land (a \lor \lnot b)$ &
+		$b \land \lnot a$ & $a \lor (b \land \lnot a)$ & Gesammtterm \vphantom{\Big(} \\
+		\hline
+		0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\
+		0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 \\
+		1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 \\
+		1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 \\
+	  \hline
+	\end{tabular}
+
+	\item $\left((a \lor b) \Rightarrow (a \land b) \right) \Leftrightarrow (a \land b) \lor (\lnot a \land \lnot b)$
+
+	\begin{tabular}{|c|c||c|c|c||c|c||c|}
+		\hline
+		a & b & $a \lor b$ & $a \land b$ & $(a \lor b) \Rightarrow (a \land b)$ &
+		$(a \land b) \lor (\lnot a \land \lnot b)$ & $\lnot a \land \lnot b$ & Gesammtterm \vphantom{\Big(} \\
+		\hline
+		0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+		0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 \\
+		1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 \\
+		1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 \\
+	  \hline
+	\end{tabular}
+\end{enumerate}
 
 \subsection{Mengenlehre}
 Gelten die folgenden Beziehungen für beliebige Mengen X, Y und Z?
@@ -90,6 +98,7 @@ Gelten die folgenden Beziehungen für beliebige Mengen X, Y und Z?
 			\includegraphics[height=3cm]{MengenlehreAufgabe1a}
 			\caption{Linke Seite}
 		\end{subfigure}
+		\hspace{2cm}
 		\begin{subfigure}{3cm}
 			\includegraphics[height=3cm]{MengenlehreAufgabe1b}
 			\caption{Rechte Seite}
@@ -98,16 +107,26 @@ Gelten die folgenden Beziehungen für beliebige Mengen X, Y und Z?
 	Gegenbeispiel finden: $X \cup Y$ oder $X \cup Z$ darf nicht leer sein. \\
 	Sei $X = \{1,2,3\}, Y = \{2,4,6\}$ und $Z = \{7,8,9\}$ \\
 	Dann ist $X \setminus (Y \cap Z) = \{1,2,3\} \quad \neq \quad \{1,3\} = (X \setminus Y) \cap (X \setminus Z)$
-	\item $(X \cup Y) \setminus Z = \big((X \setminus Z) \cup (Y \setminus Z)\big) \setminus (Y \cap Z)$
+	\item $(X \cup Y) \setminus Z = \Big((X \setminus Z) \cup (Y \setminus Z)\Big) \setminus (Y \cap Z)$
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[height=3cm]{MengenlehreAufgabe2}
 		\caption{linke / rechte Seite}
 	\end{figure} \\
 	\begin{align*}
-		(X \cup Y) \setminus Z &= \big((X \setminus Z) \cup (Y \setminus Z)\big) \setminus (Y \cap Z) \\
-		(X \cup Y) \setminus Z &= (X \setminus Z) \cup (Y \setminus Z) \\
+		(X \cup Y) \setminus Z &= \Big((X \setminus Z) \cup (Y \setminus Z)\Big) \setminus (Y \cap Z) \\
+		(X \cup Y) \setminus Z &= \Big( (X \cup Y) \setminus Z \Big) \setminus (Y \cap Z) \\
 		(X \setminus Z) \cup (Y \setminus Z) &= (X \setminus Z) \cup (Y \setminus Z)
+	\end{align*}
+	\item $X \cup (Y \cap Z) = (X \cup Y) \cap (X \cup Z)$
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[height=3cm]{MengenlehreAufgabe3}
+		\caption{linke / rechte Seite}
+	\end{figure} \\
+	\begin{align*}
+		X \cup (Y \cap Z) &= (X \cup Y) \cap (X \cup Z) \\
+		X \cup (Y \cap Z) &= X \cup (Y \cap Z) \tag{Distributivitätsgesetz}
 	\end{align*}
 \end{enumerate}
 
@@ -116,7 +135,7 @@ Sind die folgenden Funktionen injektiv, surjektiv, bijektiv?
 \begin{enumerate}
 	\item $\mathrm{f}(x) = x^4+2 \qquad \mathrm{f}: \mathrm{R} \mapsto \mathrm{R}$ \\
 	nicht injektiv: $\mathrm{f}(1) = \mathrm{f}(-1)$ \\
-	nicht surjectiv: $\forall x: \mathrm{f}(x) \geq 2$. Alternativ: $\nexists x: \mathrm{f}(x) = 0$ \\
+	nicht surjektiv: $\forall x: \mathrm{f}(x) \geq 2$. Alternativ: $\nexists x: \mathrm{f}(x) = 0$ \\
 	Somit ist f nicht bijektiv.
 	\item $\mathrm{f}(x) = x^4+2 \qquad \mathrm{f}: \mathrm{R} \mapsto (2, + \infty)$ \\
 	nicht injektiv: $\mathrm{f}(1) = \mathrm{f}(-1)$ \\
@@ -182,8 +201,6 @@ Zum invertieren tausche x und f(x) bzw. x und y und löse nach f(x) bzw. y auf. 
 \end{enumerate}
 
 \subsection{Algebraische Strukturen}
-Sind folgende Mengen-Abbildungspaare Gruppen, Ringe, Körper oder nichts davon?
-
 Eine Algebraische Struktur kann (u.A.) folgende Eigenschaften aufweisen:
 \begin{description}
 	\item[A1] Assoziativität (Addition)
@@ -198,67 +215,68 @@ Eine Algebraische Struktur kann (u.A.) folgende Eigenschaften aufweisen:
 \end{description}
 Sind A1 - A4 erfüllt handelt es sich um eine Kommutative Gruppe, bei A1-M2 und D um einen Kommutativen Ring und ein Körper ist die Struktur dann, wenn alle Eigenschaften erfüllt sind.
 
+Sind folgende Mengen-Abbildungspaare Gruppen, Ringe, Körper oder nichts davon?
+
 \begin{enumerate}
 	\item $\left( \mathbb{N}_0, + \right)$ ist nichts \\
-	Kein inverses Element bzgl. +: $\nexists x \in \mathbb{N}_0: 3+x=0$
+		Kein inverses Element bzgl. +: $\nexists x \in \mathbb{N}_0: 3+x=0$
 	\item $\left( \mathbb{Z}, + \right)$ ist eine Gruppe \label{ZGruppe} \\
-	Addition ist Assoziativ \\
-	Addition ist Kommutativ \\
-	0 ist das neutrale Element der Addition und $0 \in \mathbb{Z}$ \\
-	Das inverse Element zu a ist $-a$
+		Addition ist Assoziativ \\
+		Addition ist Kommutativ \\
+		0 ist das neutrale Element der Addition und $0 \in \mathbb{Z}$ \\
+		Das inverse Element zu a ist $-a$
 	\item $\left( \mathbb{Z}, +, \cdot \right)$ ist ein Ring \label{ZRing} \\
-	Axiome für die Addition gelten (siehe \ref{ZGruppe}.) \\
-	Multiplikation ist Assoziativ: $(a \cdot b) \cdot c = a \cdot (b \cdot c)$ \\
-	Multiplikation ist Kommutativ: $a \cdot b = b \cdot a$ \\
-	Das Distributivgesetzt gilt für Addition und Multiplikation: $a(b+c) = ab + ac$ \\ \\
-	Aber: $\left( \mathbb{Z}, +, \cdot \right)$ ist kein Körper! \\
-	Es gibt zwar ein neutrales Element der Multiplikation (die 1), aber es gibt nicht für jedes Element eine Inverse, für die 3 z.B. nicht: $\nexists x \in \mathbb{Z}: 3\cdot x = 1$
+		Axiome für die Addition gelten (siehe \ref{ZGruppe}.) \\
+		Multiplikation ist Assoziativ: $(a \cdot b) \cdot c = a \cdot (b \cdot c)$ \\
+		Multiplikation ist Kommutativ: $a \cdot b = b \cdot a$ \\
+		Das Distributivgesetzt gilt für Addition und Multiplikation: $a(b+c) = ab + ac$ \\ \\
+		Aber: $\left( \mathbb{Z}, +, \cdot \right)$ ist kein Körper! \\
+		Es gibt zwar ein neutrales Element der Multiplikation (die 1), aber es gibt nicht für jedes Element eine Inverse, für die 3 z.B. nicht: $\nexists x \in \mathbb{Z}: 3\cdot x = 1$
 	\item $\left( \mathbb{R}, +, \cdot \right)$ ist ein Körper \\
-	Axiome für Addition gelten (siehe \ref{ZGruppe}.) \\
-	Assoziativität und Kommutativität der Multiplikation gelten (siehe \ref{ZRing}.) \\
-	Distributivität gilt (siehe \ref{ZRing}.) \\
-	1 ist das neutrale Element der Multiplikation. \\
-	Das inverse Element zu a ist $\frac{1}{a}$ (und jeder Bruch ist $\in \mathbb{R}$).
+		Axiome für Addition gelten (siehe \ref{ZGruppe}.) \\
+		Assoziativität und Kommutativität der Multiplikation gelten (siehe \ref{ZRing}.) \\
+		Distributivität gilt (siehe \ref{ZRing}.) \\
+		1 ist das neutrale Element der Multiplikation. \\
+		Das inverse Element zu a ist $\frac{1}{a}$ (und jeder Bruch ist $\in \mathbb{R}$).
 	\item $\left( \mathrm{M}, +, \cdot \right)$ mit $\mathrm{M} = \{ -2,0,\frac{1
 	}{2},1,2 \}$ ist nichts \\
-	Verletzung der Abgeschlossenheit: $1+2 \notin \mathrm{M}$, somit gilt nicht: $\mathrm{M} \times \mathrm{M} \mapsto \mathrm{M}$ \\
-	Kein additives Inverses zu 1: $\nexists x \in \mathrm{M}: 1+x=0$ \\
-	Kein multiplikatives Inverses zu -2: $\nexists x \in \mathrm{M}: -2 \cdot x = 1$
+		Verletzung der Abgeschlossenheit: $1+2 \notin \mathrm{M}$, somit gilt nicht: $\mathrm{M} \times \mathrm{M} \mapsto \mathrm{M}$ \\
+		Kein additives Inverses zu 1: $\nexists x \in \mathrm{M}: 1+x=0$ \\
+		Kein multiplikatives Inverses zu -2: $\nexists x \in \mathrm{M}: -2 \cdot x = 1$
 	\item $\left( \mathbb{R}, +, \circ \right)$ mit $a \circ b = 3a + b$ ist nichts \\
-	$\circ$ ist nicht assoziativ:
-	\begin{align*}
-		(a \circ b) \circ c &= a \circ (b \circ c) \\
-		(3a + b) \circ c &= a \circ (3b + c) \\
-		3(3a + b) + c &= 3a + (3b + c) \\
-		9a + 3b + c &= 3a + 3b + c \\
-		9a &\neq 3a
-	\end{align*}
+		$\circ$ ist nicht assoziativ:
+		\begin{align*}
+			(a \circ b) \circ c &= a \circ (b \circ c) \\
+			(3a + b) \circ c &= a \circ (3b + c) \\
+			3(3a + b) + c &= 3a + (3b + c) \\
+			9a &\neq 3a
+		\end{align*}
 \end{enumerate}
 
 \subsubsection{Kommutative Gruppen}
-Zeige, dass $(G,*)$ eine kommutative Gruppe ist mit $G=\mathbb{R} \setminus \{1\}$ und $x * y = x+y-xy$. Was ist das neutrale Element, und wie bildet sich das inverse Element?
+Zeige, dass $(G,\circ)$ mit $G=\mathbb{R} \setminus \{1\}$ und $x \circ y = x+y-xy$ eine kommutative Gruppe ist. Was ist das neutrale Element, und wie bildet sich das inverse Element?
 \begin{enumerate}
-	\item[(A1)] $(x * y) * z = x * (y * z)$
+	\item[(A1)] $(x \circ y) \circ z = x \circ (y \circ z)$
 		\begin{align*}
-			(x+y-xy) * z &= x * (y+z-yz) \\
+			(x+y-xy) \circ z &= x \circ (y+z-yz) \\
 			x+y-xy + z - z(x+y-xy) &= x+ y+z-yz - x(y+z-yz) \tag*{$-x-y-z$} \\
 			-xy - (zx+zy-xyz)&= -yz - (xy+xz-xyz) \\
 			-xy - zx - zy + xyz &= -yz - xy - xz + xyz \tag*{- xyz + xy} \\
 			- zx - zy &= -yz - xz \tag*{sichtbar gleich}
 		\end{align*}
-	\item[(A2)] $x * y = y * x$
+	\item[(A2)] $x \circ y = y \circ x$
 		\begin{align*}
 			x+y-xy &= y+x-xy \\
 			x+y-xy &= x+y-xy
 		\end{align*}
-	\item[(A3)] $"0" * x = x$ (neutrales Element, hier n)
+	\item[(A3)] $"0" \circ x = x$ (neutrales Element, hier n)
 		\begin{align*}
-			n * x &= x \\
+			n \circ x &= x \\
 			n+x-nx &= x \\
 			\underbrace{(1-n)}_{=1}x &= x \\
 			n &= 0
 		\end{align*}
-	\item[(A4)] $x * (-x) = 0$ bzw. $x * i = n$
+	\item[(A4)] $x \circ (-x) = 0$ bzw. $x \circ i = n$
 		\begin{align*}
 			x + i - xi &= 0 \\
 			i - xi &= -x \\
@@ -329,8 +347,10 @@ Berechne folgende Produkte:
 \end{enumerate}
 
 \subsection{Binomialkoeffizient}
-$\binom{n}{k} = \frac{n!}{k!(n-k)!}$ \\
-Welchen Wert hat n?
+Für den Binomialkoeffizienten gilt:
+$\binom{n}{k} = \frac{n!}{k!(n-k)!}$ \qquad $\binom{n}{n-k} = \binom{n}{k}$ (Symmetrie)
+
+Welchen Wert hat $n$ in den folgenden Gleichungen?
 \begin{enumerate}
 	\item $ n = \binom{6}{3} = \frac{6!}{3!(6-3)!} = \frac{\cancel{1\cdot2\cdot3}\cdot4\cdot5\cdot6}{\cancel{(1\cdot2\cdot3)}3!} = \frac{4\cdot5\cdot\cancel{6}}{1\cdot\cancel{2\cdot3}} = 4\cdot5 = 20$
 	\item $n = \binom{10}{7} = \frac{10!}{7!(10-7)!} = \frac{8 \cdot 9 \cdot 10}{3!} = \frac{720}{6} = 120$
@@ -346,7 +366,7 @@ Welchen Wert hat n?
 			n^2+3n-40 &= 0 \tag{PQ-Formel} \\
 			x_1 = -8, \quad x_2 &= 5 \tag{Probe!}
 		\end{align*}
-		Der Einfache Binomialkoeffizient ist nur für positive Zahlen definiert, die Lösung ist also $x=1$.
+		Der einfache Binomialkoeffizient ist nur für positive Zahlen definiert, die Lösung ist also $x=1$.
 \end{enumerate}
 
 \subsection{Ordnungsrelationen}
@@ -364,7 +384,7 @@ Ergänze bei folgenden Ausdrücken die Relationszeichen $\subset, \subseteq, \su
 \end{tabular}
 
 \subsection{Ungleichungen}
-Für welche $x$ gelten die folgenden Ungleichungen?
+Für welche Werte von $x$ gelten die folgenden Ungleichungen?
 \begin{enumerate}
 	\item $5x-3 < \dfrac{2x^2+3x}{x}$
 		\begin{align*}
@@ -513,14 +533,13 @@ Beweise per vollständiger Induktion:
 			\item[Annahme] $3 \mid (n^3 - n)$
 			\item[Schritt] 
 			\begin{align*}
-				3 &\mid (n+1)^3 - (n+1) \\
-				3 &\mid (n^2+2n+1)(n+1) - n-1) \\
-				3 &\mid (n^3+3n^2+3n+1) - n-1) \\
-				3 &\mid n^3+3n^2+2n \\
-				3 &\mid (n^2+3n+2)n \\
+				3 &\mid (n+1)^3 - (n+1) \tag{Ausmultiplizieren} \\
+				3 &\mid n^3+3n^2+2n \tag{$n$ ausklammern} \\
+				3 &\mid (n^2+3n+2)n \tag{Linearfaktorzerlegung} \\
 				3 &\mid (n-2)(n-1)n \\
 				3 &\mid (n-2) \lor 3 \mid (n-1) \lor 3 \mid n
 			\end{align*}
+			Die Aussage gilt also, da von $3$ aufeinanderfolgenden Zahlen eine immer durch $3$ teilbar ist.
 		\end{description}
 	\item $\forall n \geq 4 : \quad 2^n \geq n^2$
 		\begin{description}
@@ -545,7 +564,7 @@ Beweise per vollständiger Induktion:
 \subsection{Einheitskreis}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[height=\textwidth]{Einheitskreis.png}
+	\includegraphics[width=0.5\textwidth]{Einheitskreis.png}
 	\caption{Einheitskreis: (cos, sin)}
 	\label{einheitskreis}
 \end{figure}
@@ -558,34 +577,34 @@ Lese aus dem Einheitskreis (Abbildung \ref{einheitskreis}) ab:
 \end{enumerate}
 
 \subsection{Komplexe Zahlen}
-Gegeben seien folgende Zahlen $\in \mathbb{C}$. Bestimme den Real- und Imaginärteil, die komplex konjugierte so wie den Betrag: \\
+Gegeben seien folgende Zahlen aus $\mathbb{C}$. Bestimme den Real- und Imaginärteil, die komplex konjugierte so wie den Betrag: \\
 Betrag: $\abs{x+yi} = \sqrt{x^2+y^2}$
 \begin{enumerate}
 	\item $2i - (2 + i) + (7 - 4i) = i-2 + (7-4i) = 5-3i$ \\
-	Realteil: $5$ \\
-	Imaginärteil: $-3$ \\
-	Komplex Konjugierte: $5+3i$ \\
-	Betrag: $\sqrt{5^2 + (-3)^2} = \sqrt{25+9} = \sqrt{34}$
+		Realteil: $5$ \\
+		Imaginärteil: $-3$ \\
+		Komplex Konjugierte: $5+3i$ \\
+		Betrag: $\sqrt{5^2 + (-3)^2} = \sqrt{25+9} = \sqrt{34}$
 	\item $(1-i)^2 = 1-2i+i^2 = 1-2i-1 = -2i$ \\
-	Realteil: $0$ \\
-	Imaginärteil: $-2$ \\
-	Komplex Konjugierte: $2i$ \\
-	Betrag: $\sqrt{(-2)^2} = \sqrt{4} = 2$
+		Realteil: $0$ \\
+		Imaginärteil: $-2$ \\
+		Komplex Konjugierte: $2i$ \\
+		Betrag: $\sqrt{(-2)^2} = \sqrt{4} = 2$
 	\item $\frac{3-i}{2+2i} = \frac{(3-i) \ \overline{(2+2i)}}{(2+2i) \ \overline{(2+2i)}} = \frac{(3-i)(2-2i)}{(2+2i)(2-2i)} = \frac{6-8i+2i^2}{4-4i^2} = \frac{6-8i-2}{4+4} = \frac{4-8i}{8} = \frac{1}{2}-i$ \\
-	Realteil: $\frac{1}{2}$ \\
-	Imaginärteil: $-1$ \\
-	Komplex Konjugierte: $\frac{1}{2}+i$ \\
-	Betrag: $\sqrt{\left(\frac{1}{2}\right)^2+(-1)^2} = \sqrt{\frac{1}{4}+1} = \frac{\sqrt{5}}{2}$
+		Realteil: $\frac{1}{2}$ \\
+		Imaginärteil: $-1$ \\
+		Komplex Konjugierte: $\frac{1}{2}+i$ \\
+		Betrag: $\sqrt{\left(\frac{1}{2}\right)^2+(-1)^2} = \sqrt{\frac{1}{4}+1} = \frac{\sqrt{5}}{2}$
 	\item $(2-i) + (3+i)(3-i) = (2-i) + (9-3i+3i-i^2) = 12-i$ \\
-	Realteil: $12$ \\
-	Imaginärteil: $-1$ \\
-	Komplex Konjugierte: $12+i$ \\
-	Betrag: $\sqrt{12^2 + (-1)^2} = \sqrt{145}$
-	\item $i^{\ 2014} = i^{\ 503 \cdot 4 + 2} = i^{503 \cdot 4} \cdot i^2 = i = i^4 \cdot i^2 = 1 \cdot (-1) = -1$ \\
-	Realteil: $-1$ \\
-	Imaginärteil: $0$ \\
-	Komplex Konjugierte: $-1$ \\
-	Betrag: $\sqrt{(-1)^2} = 1$
+		Realteil: $12$ \\
+		Imaginärteil: $-1$ \\
+		Komplex Konjugierte: $12+i$ \\
+		Betrag: $\sqrt{12^2 + (-1)^2} = \sqrt{145}$
+	\item $i^{\ 2015} = i^{\ 503 \cdot 4 + 3} = i^{503 \cdot 4} \cdot i^3 = i^4 \cdot i^3 = 1 \cdot (-i) = 0-i$ \\
+		Realteil: $0$ \\
+		Imaginärteil: $-1$ \\
+		Komplex Konjugierte: $0+i$ \\
+		Betrag: $\sqrt{(-1)^2} = 1$
 \end{enumerate}
 
 \subsubsection{Polarkoordinaten und Exponentialdarstellung Umwandlung}
@@ -1006,10 +1025,11 @@ Ein fairer Würfel wird geworfen. Wie groß ist die Wahrscheinlichkeit, dass \do
 $\Omega = \{1,2,3,4,5,6\}, \quad \abs{\Omega} = 6$
 \begin{enumerate}
 	\item eine 3 geworfen wird? \\
-	$\abs{3} = 1 \rightarrow P(3) = \frac{1}{6}$
+	$\abs{\{3\}} = 1 \rightarrow P(3) = \frac{1}{6}$
 	\item eine 3 oder eine 4 geworfen wird? \\
-	$\abs{3, 4} = 2 \rightarrow P(3 \cup 4) = \frac{2}{6}$
-	\item eine Primzahl $> 3$ geworfen wird?
+	$\abs{\{3, 4\}} = 2 \rightarrow P(3 \cup 4) = \frac{2}{6}$
+	\item eine Primzahl $> 3$ geworfen wird? \\
+	$\abs{\{5\}} = 1 \rightarrow P(\text{Primzahl} > 3) = \frac{1}{6}$
 	\item eine Primzahl oder eine Zahl $> 3$ geworfen wird? \\
 	Primzahlen: $\{2,3,5\}$, $\quad$ Zahlen $> 3: \{4,5,6\}$ \\
 	Vereinigung: $\{2,3,5\} \cup \{4,5,6\} = \{2,3,4,5,6\}$ \\
@@ -1030,24 +1050,25 @@ $\Omega = \left\{(1,1)\ (1,2)\dots (6,5)\ (6,6)\ (6,6)\ (5,6)\dots (2,1)\ (1,1)\
 	$\frac{\abs{E_{\text{gesammt}}}}{\abs{\Omega}} = \frac{9}{36} = \frac{1}{4}$
 \end{enumerate}
 
-\subsubsection{Urne}
+\subsubsection{Das Urnenmodell}
+\begin{tabular}{|c|c|c|}
+	\hline
+	\multicolumn{3}{|c|}{Aus Menge mit \textbf{n} Elementen \textbf{k} ziehen} \\
+	\hline
+	 & \textbf{mit} Beachtung der Reihenfolge & \textbf{ohne} Beachtung der Reihenfolge \\
+	\hline
+	\textbf{mit} Zurücklegen & $n^k$ & $\dbinom{n+k-1}{k} = \dfrac{(n+k-1)!}{k!\cdot (n-1)!}$ \\
+	\hline
+	\textbf{ohne} Zurücklegen & $\dfrac{n!}{(n-k)!}$ & $\dbinom{n}{k} = \dfrac{n!}{k!\cdot (n-k)!}$ \\
+	\hline
+\end{tabular}
+
 In einer Urne liegen 12 Kugeln: 9 blaue und 3 rote. Aus dieser ziehen wir 3 Kugeln. Wie groß ist dann die Wahrscheinlichkeit (mit/ohne) Zurücklegen und (mit/ohne) Reihenfolge, dass \dots
 \begin{enumerate}
 	\item alle Kugeln blau sind?
 	\item zwei blaue und eine rote Kugeln gezogen werden?
 	\item höchstens eine rote Kugel gezogen wird?
 \end{enumerate}
-\begin{tabular}{|c||c|c|}
-	\hline
-	\multicolumn{3}{|c|}{Aus Menge mit \textbf{n} Elementen \textbf{k} ziehen} \\
-	\hline
-	 & \textbf{mit} Beachtung der Reihenfolge & \textbf{ohne} Beachtung der Reihenfolge \\
-	\hline \hline
-	\textbf{mit} Zurücklegen & $n^k$ & $\dbinom{n+k-1}{k} = \dfrac{(n+k-1)!}{k!\cdot (n-1)!}$ \\
-	\hline
-	\textbf{ohne} Zurücklegen & $\dfrac{n!}{(n-k)!}$ & $\dbinom{n}{k} = \dfrac{n!}{k!\cdot (n-k)!}$ \\
-\hline
-\end{tabular}
 
 \paragraph{Mit Reihenfolge, mit Zurücklegen}
 Mögliche Ereignisse: $n^k = 12^3 = 1728$
@@ -1066,12 +1087,12 @@ Mögliche Ereignisse: $n^k = 12^3 = 1728$
 \paragraph{Mit Reihenfolge, ohne Zurücklegen}
 Mögliche Ereignisse: $\frac{n!}{(n-k)!} = \frac{12!}{(12-3)!} = 1320$
 \begin{description}
-	\item[alle blau] $\frac{9!}{6!} = 504$
+	\item[alle blau] $\frac{9!}{(9-3)!} = \frac{9!}{6!} = 504$
 	\item[zwei blau, eine rot] \
 		\begin{itemize}
-			\item (BBR) $\frac{9!}{7!} \cdot \frac{3!}{2!} = 72 \cdot 3 = 216$
-			\item (BRB) $\frac{9!}{7!} \cdot \frac{3!}{21} = 72 \cdot 3 = 216$
-			\item (RBB) $\frac{9!}{7!} \cdot \frac{3!}{2!} = 72 \cdot 3 = 216$
+			\item (BBR) $\frac{9!}{(9-2)!} \cdot \frac{3!}{(3-1)!} = \frac{9!}{7!} \cdot \frac{3!}{2!} = 72 \cdot 3 = 216$
+			\item (BRB) $\frac{9!}{(9-2)!} \cdot \frac{3!}{(3-1)!} = \frac{9!}{7!} \cdot \frac{3!}{21} = 72 \cdot 3 = 216$
+			\item (RBB) $\frac{9!}{(9-2)!} \cdot \frac{3!}{(3-1)!} = \frac{9!}{7!} \cdot \frac{3!}{2!} = 72 \cdot 3 = 216$
 		\end{itemize}
 		$216 \cdot 3 = 648$
 	\item[höchstens eine rot] keine rot $\cup$ eine rot $= 504 + 648 = 1152$

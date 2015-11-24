@@ -2,6 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{fullpage}
+\usepackage[parfill]{parskip} % Empty line instead of indentation
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 \usepackage{tabularx}
@@ -22,7 +23,7 @@
 \newcommand{\dx}{\ \mathrm{dx}}
 \newcommand{\dt}{\ \mathrm{dt}}
 
-\everymath{\displaystyle} %Force displaystyle everywhere
+%\everymath{\displaystyle} %Force displaystyle everywhere
 
 \lstset{
 	tabsize=4,
@@ -30,7 +31,7 @@
 	showspaces=false
 }
 
-\title{Tutorium WS 14/15 \\ Aufgaben}
+\title{Tutorium WS 15/16 \\ Aufgaben}
 \author{Christian Mielers}
 \date{\today}
 
@@ -79,6 +80,20 @@ Invertiere folgende Funktionen
 \end{enumerate}
 
 \subsection{Algebraische Strukturen}
+Eine Algebraische Struktur kann (u.A.) folgende Eigenschaften aufweisen:
+\begin{description}
+	\item[A1] Assoziativität (Addition)
+	\item[A2] Kommutativität (Addition)
+	\item[A3] Neutrales Element (Addition)
+	\item[A4] Inverses Element (Addition)
+	\item[M1] Assoziativität (Multiplikation)
+	\item[M2] Kommutativität (Multiplikation)
+	\item[M3] Neutrales Element (Multiplikation)
+	\item[M4] Inverses Element (Multiplikation)
+	\item[D] Distributivität
+\end{description}
+Sind A1 - A4 erfüllt handelt es sich um eine Kommutative Gruppe, bei A1-M2 und D um einen Kommutativen Ring und ein Körper ist die Struktur dann, wenn alle Eigenschaften erfüllt sind.
+
 Sind folgende Mengen-Abbildungspaare Gruppen, Ringe, Körper oder nichts davon?
 \begin{enumerate}
 	\item $\left( \mathbb{N}_0, + \right)$
@@ -91,7 +106,7 @@ Sind folgende Mengen-Abbildungspaare Gruppen, Ringe, Körper oder nichts davon?
 \end{enumerate}
 
 \subsubsection{Kommutative Gruppen}
-Zeige, dass $(G,*)$ eine kommutative Gruppe ist mit $G=\mathbb{R} \setminus \{1\}$ und $x * y = x+y-xy$. Was ist das neutrale Element, und wie bildet sich das inverse Element?
+Zeige, dass $(G,\circ)$ mit $G=\mathbb{R} \setminus \{1\}$ und $x \circ y = x+y-xy$ eine kommutative Gruppe ist. Was ist das neutrale Element, und wie bildet sich das inverse Element?
 
 \subsubsection{Körper}
 Vervollständige folgende Tabellen für den Körper $K = \left\{\{0,1,a,b,c\right\}, +, \cdot\} $. 0 ist das neutrale Element der Addition, 1 der Multiplikation
@@ -151,8 +166,10 @@ Berechne folgende Produkte:
 \end{enumerate}
 
 \subsection{Binomialkoeffizient}
-$\binom{n}{k} = \frac{n!}{k!(n-k)!}$ \qquad $\binom{n}{n-k} = \binom{n}{k}$ (Symmetrie) \\
-Welchen Wert hat n?
+Für den Binomialkoeffizienten gilt:
+$\binom{n}{k} = \frac{n!}{k!(n-k)!}$ \qquad $\binom{n}{n-k} = \binom{n}{k}$ (Symmetrie)
+
+Welchen Wert hat $n$ in den folgenden Gleichungen?
 \begin{enumerate}
 	\item $ n = \binom{6}{3}$
 	\item $n = \binom{10}{7}$
@@ -174,7 +191,7 @@ Ergänze bei folgenden Ausdrücken die Relationszeichen $\subset, \subseteq, \su
 \end{tabular}
 
 \subsection{Ungleichungen}
-Für welche $x$ gelten die folgenden Ungleichungen?
+Für welche Werte von $x$ gelten die folgenden Ungleichungen?
 \begin{enumerate}
 	\item $5x-3 < \dfrac{2x^2+3x}{x}$
 	\item $\dfrac{x+1}{2} \geq \abs{2x-3}$
@@ -196,10 +213,11 @@ Beweise per vollständiger Induktion:
 \subsection{Einheitskreis}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[height=\textwidth]{Einheitskreis.png}
+	\includegraphics[width=0.5\textwidth]{Einheitskreis.png}
 	\caption{Einheitskreis: (cos, sin)}
 	\label{einheitskreis}
 \end{figure}
+
 Lese aus dem Einheitskreis (Abbildung \ref{einheitskreis}) ab:
 \begin{enumerate}
 	\item $\cos \frac{\pi}{4}$
@@ -209,13 +227,13 @@ Lese aus dem Einheitskreis (Abbildung \ref{einheitskreis}) ab:
 \end{enumerate}
 
 \subsection{Komplexe Zahlen}
-Gegeben seien folgende Zahlen $\in \mathbb{C}$. Bestimme den Real- und Imaginärteil, die komplex konjugierte so wie den Betrag:
+Gegeben seien folgende Zahlen aus $\mathbb{C}$. Bestimme den Real- und Imaginärteil, die komplex konjugierte so wie den Betrag:
 \begin{enumerate}
 	\item $2i - (2 + i) + (7 - 4i)$
 	\item $(1-i)^2$
 	\item $\frac{3 - i}{2 + 2i}$
 	\item $(2 - i) + (3 + i)(3-i)$
-	\item $i^{\ 2014}$
+	\item $i^{\ 2015}$
 \end{enumerate}
 
 \subsubsection{Polarkoordinaten und Exponentialdarstellung}
@@ -342,7 +360,19 @@ Nun wird mit 2 Würfeln geworden. Wie groß ist die Wahrscheinlichkeit, dass \do
 	\item die Augensumme durch 4 teilbar ist?
 \end{enumerate}
 
-\subsubsection{Urne}
+\subsubsection{Das Urnenmodell}
+\begin{tabular}{|c|c|c|}
+	\hline
+	\multicolumn{3}{|c|}{Aus Menge mit \textbf{n} Elementen \textbf{k} ziehen} \\
+	\hline
+	 & \textbf{mit} Beachtung der Reihenfolge & \textbf{ohne} Beachtung der Reihenfolge \\
+	\hline
+	\textbf{mit} Zurücklegen & $n^k$ & $\dbinom{n+k-1}{k} = \dfrac{(n+k-1)!}{k!\cdot (n-1)!}$ \\
+	\hline
+	\textbf{ohne} Zurücklegen & $\dfrac{n!}{(n-k)!}$ & $\dbinom{n}{k} = \dfrac{n!}{k!\cdot (n-k)!}$ \\
+	\hline
+\end{tabular}
+
 In einer Urne liegen 12 Kugeln: 9 blaue und 3 rote. Aus dieser ziehen wir 3 Kugeln. Wie groß ist dann die Wahrscheinlichkeit (mit/ohne) Zurücklegen und (mit/ohne) Reihenfolge, dass \dots
 \begin{enumerate}
 	\item alle Kugeln blau sind?
