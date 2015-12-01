@@ -21,16 +21,12 @@
 \newcommand\brackets[1]{\left[#1\right]}
 \renewcommand{\vec}[1]{\underline{#1}}
 \newcommand{\mat}[1]{\underline{\underline{#1}}}
-%\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
 \newcommand{\abs}[1]{\left\lvert#1\right\rvert}
-%\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand\tr[1]{\mathrm{tr}\br{#1}}
 \newcommand\average[1]{\left\langle#1\right\rangle}
-%\newcommand{\acos}[1]{\mathrm{acos}\braces{#1}}
-\newcommand{\acos}{\mathrm{acos}}
-%\newcommand{\asin}[1]{\mathrm{asin}\braces{#1}}
-\newcommand{\asin}{\mathrm{asin}}
+\newcommand{\acos}[1]{\mathrm{acos}\braces{#1}}
+\newcommand{\asin}[1]{\mathrm{asin}\braces{#1}}
 \newcommand{\intend}[1][]{\ \mathrm{d}#1}
 \newcommand{\derivative}[2][]{\ \frac{\mathrm{d}#1}{\mathrm{d}#2}} %\derivative[a]{b}
 \newcommand\expectedValue[1]{\mathbb{E}\braces{#1}}
@@ -162,7 +158,7 @@ Sind die folgenden Funktionen injektiv, surjektiv, bijektiv?
 	Somist ist f bijektiv.
 	\item $\mathrm{f}(x) = \sin(x) \qquad \mathrm{f}: \mathrm{R} \mapsto [-1, 1]$ \\
 	nicht injektiv: $\sin(\pi) = \sin(2 \pi)$ \\
-	surjektiv: $\sin\left(-\frac{\pi}{2}\right) = -1$, $\sin\left(\frac{\pi}{2}\right) = 1$ und $\sin(x)$ steigt auf dem stetigen Intervall $\left[-\frac{\pi}{2},-\frac{\pi}{2}\right]$ monoton. \\
+	surjektiv: $\sin \braces{-\frac{\pi}{2}} = -1$, $\sin \braces{\frac{\pi}{2}} = 1$ und $\sin(x)$ steigt auf dem stetigen Intervall $\brackets{-\frac{\pi}{2},-\frac{\pi}{2}}$ monoton. \\
 	Somit ist f nicht bijektiv.
 	\item $\mathrm{f}(x) = x^4 - x^2 \qquad \mathrm{f}: \mathrm{R} \mapsto \mathrm{R}$ \\
 	nicht injektiv: $\mathrm{f}(1) = \mathrm{f}(-1)$ \\
@@ -232,32 +228,32 @@ Sind A1 - A4 erfüllt handelt es sich um eine Kommutative Gruppe, bei A1-M2 und 
 Sind folgende Mengen-Abbildungspaare Gruppen, Ringe, Körper oder nichts davon?
 
 \begin{enumerate}
-	\item $\left( \mathbb{N}_0, + \right)$ ist nichts \\
+	\item $\braces{\mathbb{N}_0, +}$ ist nichts \\
 		Kein inverses Element bzgl. +: $\nexists x \in \mathbb{N}_0: 3+x=0$
-	\item $\left( \mathbb{Z}, + \right)$ ist eine Gruppe \label{ZGruppe} \\
+	\item $\braces{\mathbb{Z}, +}$ ist eine Gruppe \label{ZGruppe} \\
 		Addition ist Assoziativ \\
 		Addition ist Kommutativ \\
 		0 ist das neutrale Element der Addition und $0 \in \mathbb{Z}$ \\
 		Das inverse Element zu a ist $-a$
-	\item $\left( \mathbb{Z}, +, \cdot \right)$ ist ein Ring \label{ZRing} \\
+	\item $\braces{\mathbb{Z}, +, \cdot}$ ist ein Ring \label{ZRing} \\
 		Axiome für die Addition gelten (siehe \ref{ZGruppe}.) \\
 		Multiplikation ist Assoziativ: $(a \cdot b) \cdot c = a \cdot (b \cdot c)$ \\
 		Multiplikation ist Kommutativ: $a \cdot b = b \cdot a$ \\
 		Das Distributivgesetzt gilt für Addition und Multiplikation: $a(b+c) = ab + ac$ \\ \\
-		Aber: $\left( \mathbb{Z}, +, \cdot \right)$ ist kein Körper! \\
+		Aber: $\braces{\mathbb{Z}, +, \cdot}$ ist kein Körper! \\
 		Es gibt zwar ein neutrales Element der Multiplikation (die 1), aber es gibt nicht für jedes Element eine Inverse, für die 3 z.B. nicht: $\nexists x \in \mathbb{Z}: 3\cdot x = 1$
-	\item $\left( \mathbb{R}, +, \cdot \right)$ ist ein Körper \\
+	\item $\braces{\mathbb{R}, +, \cdot}$ ist ein Körper \\
 		Axiome für Addition gelten (siehe \ref{ZGruppe}.) \\
 		Assoziativität und Kommutativität der Multiplikation gelten (siehe \ref{ZRing}.) \\
 		Distributivität gilt (siehe \ref{ZRing}.) \\
 		1 ist das neutrale Element der Multiplikation. \\
 		Das inverse Element zu a ist $\frac{1}{a}$ (und jeder Bruch ist $\in \mathbb{R}$).
-	\item $\left( \mathrm{M}, +, \cdot \right)$ mit $\mathrm{M} = \{ -2,0,\frac{1
+	\item $\braces{\mathrm{M}, +, \cdot}$ mit $\mathrm{M} = \{ -2,0,\frac{1
 	}{2},1,2 \}$ ist nichts \\
 		Verletzung der Abgeschlossenheit: $1+2 \notin \mathrm{M}$, somit gilt nicht: $\mathrm{M} \times \mathrm{M} \mapsto \mathrm{M}$ \\
 		Kein additives Inverses zu 1: $\nexists x \in \mathrm{M}: 1+x=0$ \\
 		Kein multiplikatives Inverses zu -2: $\nexists x \in \mathrm{M}: -2 \cdot x = 1$
-	\item $\left( \mathbb{R}, +, \circ \right)$ mit $a \circ b = 3a + b$ ist nichts \\
+	\item $\braces{\mathbb{R}, +, \circ}$ mit $a \circ b = 3a + b$ ist nichts \\
 		$\circ$ ist nicht assoziativ:
 		\begin{align*}
 			(a \circ b) \circ c &= a \circ (b \circ c) \\
@@ -394,7 +390,7 @@ Ergänze bei folgenden Ausdrücken die Relationszeichen $\subset, \subseteq, \su
 	$\mathbb{R}$ & $\supset$ & $\mathbb{Q} \setminus {\pi, e}$ \\
 	$\mathbb{N}_0$ & $\supset$ & $\mathbb{N}$ \\
 	$\mathbb{I}$ & $\subset$ & $\mathbb{R}$ \\
-	$\mathbb{C} \setminus \mathbb{I}$ & nichts & $\left(\mathbb{Q} \setminus \mathbb{N}\right) \cup \{2,4,6\}$ \\ \hline
+	$\mathbb{C} \setminus \mathbb{I}$ & nichts & $\braces{\mathbb{Q} \setminus \mathbb{N}} \cup \{2,4,6\}$ \\ \hline
 \end{tabular}
 
 \subsection{Ungleichungen}
@@ -409,22 +405,22 @@ Für welche Werte von $x$ gelten die folgenden Ungleichungen?
 	\item $\dfrac{x+1}{2} \geq \abs{2x-3}$
 		\begin{align*}
 			\dfrac{x+1}{2} &\geq 2 \abs{x-\frac{3}{2}}
-			\shortintertext{Fall 1: $x \in \left(-\infty, \frac{3}{2}\right)$}
-			\dfrac{x+1}{2} &\geq 2 (-1) \left(x-\frac{3}{2}\right) \\
-			\dfrac{x+1}{2} &\geq 2 \left(\frac{3}{2} - x\right) \\
+			\shortintertext{Fall 1: $x \in \braces{-\infty, \frac{3}{2}}$}
+			\dfrac{x+1}{2} &\geq 2 (-1) \braces{x-\frac{3}{2}} \\
+			\dfrac{x+1}{2} &\geq 2 \braces{\frac{3}{2} - x} \\
 			\dfrac{x+1}{2} &\geq 3 - 2x \\
 			x+1 &\geq 6 - 4x \\
 			5x &\geq 5 \\
 			x &\geq 1
-			\intertext{Also Lösung im Fall 1: $x \in \left(-\infty, \frac{3}{2}\right) \cap \left[1,+\infty\right) = \left[ 1, \frac{3}{2} \right)$}
+			\intertext{Also Lösung im Fall 1: $x \in \braces{-\infty, \frac{3}{2}} \cap \left[1,+\infty\right) = \left[ 1, \frac{3}{2} \right)$}
 			\shortintertext{Fall 2: $x \in \left[ \frac{3}{2}, +\infty \right)$}
-			\dfrac{x+1}{2} &\geq 2 \left(x-\frac{3}{2}\right) \\
+			\dfrac{x+1}{2} &\geq 2 \braces{x-\frac{3}{2}} \\
 			x+1 &\geq 4x - 6 \\
 			7 &\geq 3x \\
 			\frac{7}{3} &\geq x
-			\intertext{Also Lösung im Fall 2: $x \in \left[ \frac{3}{2}, +\infty \right) \cap \left( -\infty, \frac{7}{3} \right] = \left[ \frac{3}{2}, \frac{7}{3} \right]$}
+			\intertext{Also Lösung im Fall 2: $x \in \left[ \frac{3}{2}, +\infty \right) \cap \left( -\infty, \frac{7}{3} \right] = \brackets{\frac{3}{2}, \frac{7}{3} }$}
 		\end{align*}
-		Das Gesammtergebnis ergibt sich also aus $\left[ 1, \frac{3}{2} \right) \cup \left[ \frac{3}{2}, \frac{7}{3} \right] = \left[ 1, \frac{7}{3} \right]$
+		Das Gesammtergebnis ergibt sich also aus $\left[ 1, \frac{3}{2} \right) \cup \brackets{\frac{3}{2}, \frac{7}{3}} = \brackets{1, \frac{7}{3}}$
 	\item $\sqrt{x^2-2x+1} > 3 - \abs{x-2}$
 		\begin{align*}
 			\sqrt{(x-1)^2} &> 3 - \abs{x-2} \\
@@ -586,8 +582,8 @@ Lese aus dem Einheitskreis (Abbildung \ref{einheitskreis}) ab:
 \begin{enumerate}
 	\item $\cos \frac{\pi}{4} = \frac{\sqrt{2}}{2}$
 	\item $\sin \frac{5\pi}{4} = -\frac{\sqrt{2}}{2}$
-	\item $\acos -\frac{\sqrt{3}}{2} = \frac{5\pi}{6} \text{ bzw. } \frac{7\pi}{6}$
-	\item $\asin -\frac{1}{2} = \frac{7\pi}{6} \text{ bzw. } \frac{11\pi}{6}$
+	\item $\acos{-\frac{\sqrt{3}}{2}} = \frac{5\pi}{6} \text{ bzw. } \frac{7\pi}{6}$
+	\item $\asin{-\frac{1}{2}} = \frac{7\pi}{6} \text{ bzw. } \frac{11\pi}{6}$
 \end{enumerate}
 
 \subsection{Komplexe Zahlen}
@@ -608,7 +604,7 @@ Betrag: $\abs{x+yi} = \sqrt{x^2+y^2}$
 		Realteil: $\frac{1}{2}$ \\
 		Imaginärteil: $-1$ \\
 		Komplex Konjugierte: $\frac{1}{2}+i$ \\
-		Betrag: $\sqrt{\left(\frac{1}{2}\right)^2+(-1)^2} = \sqrt{\frac{1}{4}+1} = \frac{\sqrt{5}}{2}$
+		Betrag: $\sqrt{\braces{\frac{1}{2}}^2+(-1)^2} = \sqrt{\frac{1}{4}+1} = \frac{\sqrt{5}}{2}$
 	\item $(2-i) + (3+i)(3-i) = (2-i) + (9-3i+3i-i^2) = 12-i$ \\
 		Realteil: $12$ \\
 		Imaginärteil: $-1$ \\
@@ -624,43 +620,43 @@ Betrag: $\abs{x+yi} = \sqrt{x^2+y^2}$
 \subsubsection{Polarkoordinaten und Exponentialdarstellung Umwandlung}
 Schreibe als Polarkoordinaten- und Exponentialdarstellung
 
-Polarkoordinaten: $r(\cos \alpha + i \sin \alpha)$ mit $r=\sqrt{x^2+y^2}$ und $\acos \frac{x}{r} = \alpha = \asin \frac{y}{r}$
+Polarkoordinaten: $r(\cos \alpha + i \sin \alpha)$ mit $r=\sqrt{x^2+y^2}$ und $\acos{\frac{x}{r}} = \alpha = \asin{\frac{y}{r}}$
 
 \begin{enumerate}
 	\item $\sqrt{2}+\sqrt{2}i$ \\
 	$r = \sqrt{(\sqrt{2})^2 + (\sqrt{2})^2} = \sqrt{4} = 2$ \\
-	$\cos \alpha = \frac{\sqrt{2}}{2} \quad \Rightarrow \quad \alpha = \acos \frac{\sqrt{2}}{2} \quad \Rightarrow \quad \alpha = \frac{\pi}{4} \lor \alpha = \frac{7\pi}{4}$ \\
-	$\sin \alpha = \frac{\sqrt{2}}{2} \quad \Rightarrow \quad \alpha = \asin \frac{\sqrt{2}}{2} \quad \Rightarrow \quad \alpha = \frac{\pi}{4} \lor \alpha = \frac{3\pi}{4}$ \\
-	Polarkoordinaten: $2 \left( \cos \frac{\pi}{4} + i \sin \frac{\pi}{4} \right)$ \\
+	$\cos \alpha = \frac{\sqrt{2}}{2} \quad \Rightarrow \quad \alpha = \acos{\frac{\sqrt{2}}{2}} \quad \Rightarrow \quad \alpha = \frac{\pi}{4} \lor \alpha = \frac{7\pi}{4}$ \\
+	$\sin \alpha = \frac{\sqrt{2}}{2} \quad \Rightarrow \quad \alpha = \asin{\frac{\sqrt{2}}{2}} \quad \Rightarrow \quad \alpha = \frac{\pi}{4} \lor \alpha = \frac{3\pi}{4}$ \\
+	Polarkoordinaten: $2 \braces{\cos \frac{\pi}{4} + i \sin \frac{\pi}{4}}$ \\
 	Exponential: $2 e^{i \frac{\pi}{4}}$
 	
 	\item $-4i$ \\
 	$r = \sqrt{(-4)^2} = 4$ \\
 	$\cos \alpha = -\frac{0}{4} \quad \Rightarrow \quad \alpha = \acos{(0)} \quad \Rightarrow \quad \alpha = \frac{\pi}{2} \lor \alpha = \frac{3\pi}{2}$ \\
 	$\sin \alpha = -\frac{4}{4} \quad \Rightarrow \quad \alpha = \asin{(-1)} \quad \Rightarrow \quad \alpha = \frac{3\pi}{2}$ \\
-	Polarkoordinaten: $4 \left( \cos \frac{3\pi}{2} + i \sin \frac{3\pi}{2} \right)$ \\
+	Polarkoordinaten: $4 \braces{\cos \frac{3\pi}{2} + i \sin \frac{3\pi}{2}}$ \\
 	Exponential: $4 e^{i \frac{3\pi}{2}}$
 	
 	\item $6+2\sqrt{3}i$ \\
 	$r = \sqrt{6^2 + (2\sqrt{3})^2} = \sqrt{36 + 4 \cdot 3} = \sqrt{48} = 4 \sqrt{3}$ \\
-	$\cos \alpha = \frac{6}{4\sqrt{3}} = \frac{\sqrt{3}}{2} \quad \Rightarrow \quad \alpha = \acos \frac{\sqrt{3}}{2} \quad \Rightarrow \quad \alpha = \frac{\pi}{6} \lor \alpha = \frac{11\pi}{6}$ \\
-	$\sin \alpha = \frac{2\sqrt{3}}{4\sqrt{3}} = \frac{1}{2} \quad \Rightarrow \quad \alpha = \asin \frac{1}{2} \quad \Rightarrow \quad \alpha = \frac{\pi}{6} \lor \alpha = \frac{5\pi}{6}$ \\
-	Polarkoordinaten: $4\sqrt{3} \left( \cos \frac{\pi}{6} + i \sin \frac{\pi}{6} \right)$ \\
+	$\cos \alpha = \frac{6}{4\sqrt{3}} = \frac{\sqrt{3}}{2} \quad \Rightarrow \quad \alpha = \acos{\frac{\sqrt{3}}{2}} \quad \Rightarrow \quad \alpha = \frac{\pi}{6} \lor \alpha = \frac{11\pi}{6}$ \\
+	$\sin \alpha = \frac{2\sqrt{3}}{4\sqrt{3}} = \frac{1}{2} \quad \Rightarrow \quad \alpha = \asin{\frac{1}{2}} \quad \Rightarrow \quad \alpha = \frac{\pi}{6} \lor \alpha = \frac{5\pi}{6}$ \\
+	Polarkoordinaten: $4\sqrt{3} \braces{\cos \frac{\pi}{6} + i \sin \frac{\pi}{6} }$ \\
 	Exponential: $4\sqrt{3} \cdot e^{i \frac{\pi}{6}}$
 \end{enumerate}
 
 Schreibe als Summe von Real- und Imaginärteil (karthesische Darstellung: $x + yi$)
 
 \begin{enumerate}
-	\item $7 \left( \cos \pi + i \sin \pi \right)$ \\
-	$7 \left( -1 + i 0 \right)$ \\
+	\item $7 \braces{\cos \pi + i \sin \pi}$ \\
+	$7 \braces{-1 + i 0}$ \\
 	$-7$
-	\item $\sqrt{3} \left( \cos \frac{\pi}{3} + i \sin \frac{\pi}{3} \right)$ \\
-	$\sqrt{3} \left( \frac{1}{2} + i \frac{\sqrt{3}}{2} \right)$ \\
+	\item $\sqrt{3} \braces{\cos \frac{\pi}{3} + i \sin \frac{\pi}{3}}$ \\
+	$\sqrt{3} \braces{\frac{1}{2} + i \frac{\sqrt{3}}{2}}$ \\
 	$\frac{\sqrt{3}}{2} + i \frac{3}{2}$
 	\item $2 \cdot e^{i \frac{5 \pi}{3}}$ \\
-	$2 \left( \cos \frac{5\pi}{3} + i \sin \frac{5\pi}{3} \right) $ \\
-	$2 \left( \frac{1}{2} - i \frac{\sqrt{3}}{2} \right)$ \\
+	$2 \braces{\cos \frac{5\pi}{3} + i \sin \frac{5\pi}{3}}$ \\
+	$2 \braces{\frac{1}{2} - i \frac{\sqrt{3}}{2}}$ \\
 	$1 - i \sqrt{3}$
 \end{enumerate}
 
@@ -674,18 +670,18 @@ $\sqrt[n]{z_1} = w_k$ mit $w_k = \sqrt[n]{r_1} \braces{\cos \frac{\alpha_1 + 2k\
 
 Berechne in Polarkoordinaten:
 \begin{enumerate}
-	\item $3 \left( \cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3} \right) \cdot \sqrt{4} \left( \cos \pi + i \sin \pi \right)$ \\
-		$3 \sqrt{4} \left( \cos \left( \frac{2\pi}{3}+\pi \right) + i \sin \left( \frac{2\pi}{3} + \pi \right) \right)$ \\
-		$6 \left( \cos \frac{5\pi}{3} + i \sin \frac{5\pi}{3} \right)$
-	\item $4 \left( \cos \frac{7\pi}{6} + i \sin \frac{7\pi}{6} \right) \div 2 \left( \cos \pi + i \sin \pi \right)$ \\
-		$\frac{4}{2} \left( \cos \left( \frac{7\pi}{6} - \pi \right) + i \sin \left( \frac{7\pi}{6} - \pi \right) \right)$ \\
-		$2 \left( \cos \frac{\pi}{6} + i \sin \frac{\pi}{6} \right)$
-	\item $\left( 3+\sqrt{3}i \right)^4$ \\
-		$r = \sqrt{3^2 + \sqrt{3}^2} = \sqrt{12}, \quad \alpha = \acos \frac{3}{\sqrt{12}} = \acos \frac{\sqrt{3}}{2} = \frac{\pi}{6}$ \\
-		$\left( \sqrt{12} \left( \cos \frac{\pi}{6} + i \sin \frac{\pi}{6} \right) \right)^4$ \\
-		$\sqrt{12}^4 \left( \cos \frac{4\pi}{6} + i \sin \frac{4\pi}{6} \right)$ \\
-		$12^2 \left( \cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3} \right)$ \\
-		$12^2 \left( - \frac{1}{2} + i \frac{\sqrt{3}}{2} \right)$ \\
+	\item $3 \braces{\cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3}} \cdot \sqrt{4} \braces{\cos \pi + i \sin \pi}$ \\
+		$3 \sqrt{4} \braces{ \cos \braces{\frac{2\pi}{3}+\pi} + i \sin \braces{\frac{2\pi}{3} + \pi} }$ \\
+		$6 \braces{ \cos \frac{5\pi}{3} + i \sin \frac{5\pi}{3} }$
+	\item $4 \braces{ \cos \frac{7\pi}{6} + i \sin \frac{7\pi}{6} } \div 2 \braces{ \cos \pi + i \sin \pi }$ \\
+		$\frac{4}{2} \braces{ \cos \braces{\frac{7\pi}{6} - \pi} + i \sin \braces{\frac{7\pi}{6} - \pi} }$ \\
+		$2 \braces{\cos \frac{\pi}{6} + i \sin \frac{\pi}{6}}$
+	\item $\braces{3+\sqrt{3}i}^4$ \\
+		$r = \sqrt{3^2 + \sqrt{3}^2} = \sqrt{12}, \quad \alpha = \acos{\frac{3}{\sqrt{12}}} = \acos {\frac{\sqrt{3}}{2}} = \frac{\pi}{6}$ \\
+		$\braces{ \sqrt{12} \braces{\cos \frac{\pi}{6} + i \sin \frac{\pi}{6}} }^4$ \\
+		$\sqrt{12}^4 \braces{ \cos \frac{4\pi}{6} + i \sin \frac{4\pi}{6} }$ \\
+		$12^2 \braces{ \cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3} }$ \\
+		$12^2 \braces{ - \frac{1}{2} + i \frac{\sqrt{3}}{2} }$ \\
 		$72 + 72\sqrt{3}i$
 		
 	%TODO weitere Aufgabe zum Potenzieren und Wurzelziehen (mit besseren Zahlen)
@@ -696,14 +692,14 @@ Berechne in Polarkoordinaten:
 			p^4 &= -16 \\
 			p &= \sqrt[4]{-16} \\
 			\intertext{Wandle Radikanten in Polarkoordinaten um}
-			r &= 16, \quad \alpha = \acos \frac{-16}{16} = \acos -1 = \pi \\
+			r &= 16, \quad \alpha = \acos{\frac{-16}{16}} = \acos{-1} = \pi \\
 			p &= \sqrt[4]{16 (\cos \pi + i \sin \pi)} \\
 			\intertext{Nun können mit der Formel von oben die 4 Nullstellen bestimmt werden}
-			w_0 &= \sqrt[4]{16} \left(\cos \frac{\pi + 0\pi}{4} + i \sin \frac{\pi + 0\pi}{4} \right) = 2 \left( \frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right) = \sqrt{2} + i \sqrt{2} \\
-			w_1 &= \sqrt[4]{16} \left(\cos \frac{\pi + 2\pi}{4} + i \sin \frac{\pi + 2\pi}{4} \right) = 2 \left( -\frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right) = -\sqrt{2} + i \sqrt{2} \\
+			w_0 &= \sqrt[4]{16} \braces{\cos \frac{\pi + 0\pi}{4} + i \sin \frac{\pi + 0\pi}{4} } = 2 \braces{ \frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} } = \sqrt{2} + i \sqrt{2} \\
+			w_1 &= \sqrt[4]{16} \braces{\cos \frac{\pi + 2\pi}{4} + i \sin \frac{\pi + 2\pi}{4} } = 2 \braces{ -\frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} } = -\sqrt{2} + i \sqrt{2} \\
 			\intertext{Hier kann man prinzipiell die anderen beiden Lösungen sofort ablesen, da zu jeder Lösung $x + yi$ auch ihre konjugierte $x - yi$ eine Lösung ist.}
-			w_2 &= \sqrt[4]{16} \left(\cos \frac{\pi + 4\pi}{4} + i \sin \frac{\pi + 4\pi}{4} \right) = 2 \left( -\frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} \right) = -\sqrt{2} - i \sqrt{2} \\
-			w_3 &= \sqrt[4]{16} \left(\cos \frac{\pi + 6\pi}{4} + i \sin \frac{\pi + 6\pi}{4} \right) = 2 \left( \frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} \right) = \sqrt{2} - i \sqrt{2} \\
+			w_2 &= \sqrt[4]{16} \braces{\cos \frac{\pi + 4\pi}{4} + i \sin \frac{\pi + 4\pi}{4} } = 2 \braces{ -\frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} } = -\sqrt{2} - i \sqrt{2} \\
+			w_3 &= \sqrt[4]{16} \braces{\cos \frac{\pi + 6\pi}{4} + i \sin \frac{\pi + 6\pi}{4} } = 2 \braces{ \frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} } = \sqrt{2} - i \sqrt{2} \\
 		\end{align*}
 \end{enumerate}
 
@@ -749,7 +745,7 @@ Finde die explizite Darstellung von $a_n$. Gib auch den Grenzwert $\lim_{n \righ
 		Nun weiter wie bei \ref{DGLAufgabe1}:
 		\begin{align*}
 			a_n &= 1 \cdot 2^n + 2 \cdot \frac{1-2^n}{1-2} \\
-			a_n &= 2^n - 2 \cdot \left( 1-2^n \right) \\
+			a_n &= 2^n - 2 \cdot \braces{1-2^n} \\
 			a_n &= 2^n - 2 + 2 \cdot 2^n \\
 			a_n &= 3 \cdot 2^n - 2
 		\end{align*}
@@ -778,7 +774,7 @@ Finde die explizite Darstellung von $a_n$. Gib auch den Grenzwert $\lim_{n \righ
 		$b=3, c=4$ \\
 		Charakteristische Gleichung: $q^2 = 3q - 4 \Leftrightarrow 0 = q^2 - 3q + 4$ \\
 		$q_1=\frac{3}{2} + i \frac{\sqrt{7}}{2}, q_2=\frac{3}{2} - i \frac{\sqrt{7}}{2}$ \\
-		In Polarkoordinaten: $r^2 = \frac{3}{2}^2 + \frac{\sqrt{7}}{2}^2, \alpha = \acos \frac{\frac{3}{2}}{2} = \acos \frac{3}{4} \approx 0.72$ \\
+		In Polarkoordinaten: $r^2 = \frac{3}{2}^2 + \frac{\sqrt{7}}{2}^2, \alpha = \acos{\frac{\frac{3}{2}}{2}} = \acos{\frac{3}{4}} \approx 0.72$ \\
 		$a_n = C_1 \cdot 2^n \cos(n\cdot 0.72) + C_2 \cdot 2^n \sin(n \cdot 0.72)$ \\ \\
 		$C_1$, $C_2$ aus Anfangsbedingungen: \\
 		$a_0 = 3 = C_1 \cos(0) + C_2 \sin(0) \Leftrightarrow 3 = C_1$ \\
@@ -876,12 +872,12 @@ Konvergieren die folgenden Reihen? Wenn ja, berechne auch den Grenzwert:
 			&= \frac{\frac{-2^k}{2} - 5 \cdot 6^k}{4 \cdot 16^k} \\
 			&= \frac{\frac{-2^k}{2}}{4 \cdot 16^k} - \frac{5 \cdot 6^k}{4 \cdot 16^k} \\
 			&= \frac{1}{8} \cdot \frac{-2^k}{16^k} - \frac{5}{4} \cdot \frac{6^k}{16^k} \\
-			&= \frac{1}{8} \cdot \left( \frac{-2}{16} \right)^k - \frac{5}{4} \cdot \left( \frac{6}{16} \right)^k \\
-			&= \frac{1}{8} \cdot \underbrace{ \left( \frac{-1}{8} \right)^k}_{geom. Reihe} - \frac{5}{4} \cdot \underbrace{ \left( \frac{3}{8} \right)^k}_{geom. Reihe}
+			&= \frac{1}{8} \cdot \braces{\frac{-2}{16}}^k - \frac{5}{4} \cdot \braces{\frac{6}{16}}^k \\
+			&= \frac{1}{8} \cdot \underbrace{ \braces{\frac{-1}{8}}^k}_{geom. Reihe} - \frac{5}{4} \cdot \underbrace{ \braces{\frac{3}{8}}^k}_{geom. Reihe}
 		\end{align*}
 		Für $\abs{q}<1$ gilt die geometrische Reihne $\sum_{k=0}^\infty q^k = \frac{1}{1-q}$. Wir können also schreiben:
 		\begin{align*}
-			\sum_{k=0}^\infty a_k &= \frac{1}{8} \cdot \left( \frac{-1}{8} \right)^k - \frac{5}{4} \cdot \left( \frac{3}{8} \right)^k \\
+			\sum_{k=0}^\infty a_k &= \frac{1}{8} \cdot \braces{\frac{-1}{8}}^k - \frac{5}{4} \cdot \braces{\frac{3}{8}}^k \\
 			&= \frac{1}{8} \cdot \frac{1}{1-\frac{-1}{8}} - \frac{5}{4} \cdot \frac{1}{1-\frac{3}{8}} \\
 			&= \frac{1}{8+1} - \frac{5}{4-\frac{3}{2}} \\
 			&= \frac{1}{9} - 2 \\
@@ -908,15 +904,15 @@ Löse die folgenden Gleichungen:
 	Probe: -1 liegt nicht im Definitionsbereich von $\log$, 2: \\
 	$\frac{1}{2} \log 2 + \log \sqrt{1} = \log \sqrt{2}$ \\
 	$\log \sqrt{2} = \log \sqrt{2}$
-	\item $\log_{10} \left( 15 \cdot 50^x + 2 \cdot 2^x \right) = \log_{10} 15 + x$
+	\item $\log_{10} \braces{15 \cdot 50^x + 2 \cdot 2^x} = \log_{10} 15 + x$
 	\begin{align*}
-		\log_{10} \left( 15 \cdot 50^x + 2 \cdot 2^x \right) &= \log_{10} 15 + x \\
-		\log_{10} \left( 15 \cdot 50^x + 2 \cdot 2^x \right) &= \log_{10} 15 + \log_{10} 10^x \\
-		\log_{10} \left( 15 \cdot 50^x + 2 \cdot 2^x \right) &= \log_{10} (15 \cdot 10^x) \\
+		\log_{10} \braces{15 \cdot 50^x + 2 \cdot 2^x} &= \log_{10} 15 + x \\
+		\log_{10} \braces{15 \cdot 50^x + 2 \cdot 2^x} &= \log_{10} 15 + \log_{10} 10^x \\
+		\log_{10} \braces{15 \cdot 50^x + 2 \cdot 2^x} &= \log_{10} (15 \cdot 10^x) \\
 		15 \cdot 50^x + 2 \cdot 2^x &= 15 \cdot 10^x \\
 		15 \cdot 50^x + 2 \cdot 2^x - 15 \cdot 10^x &= 0 \\
 		15 \cdot 2^x \cdot (5^2)^x + 2 \cdot 2^x - 15 \cdot 2^x \cdot 5^x &= 0 \\
-		\underbrace{2^x}_{\neq 0} \left(15 \cdot (5^2)^x + 2 - 15 \cdot 5^x \right) &= 0 \\
+		\underbrace{2^x}_{\neq 0} \braces{15 \cdot (5^2)^x + 2 - 15 \cdot 5^x} &= 0 \\
 		15 \cdot (5^x)^2 - 15 \cdot 5^x + 2 &= 0
 		\shortintertext{Substitution: Sei $y = 5^x$}
 		15 \cdot y^2 - 15 \cdot y + 2 &= 0 \\
@@ -997,9 +993,9 @@ Berechne mittels Substitution:
 			\shortintertext{$\frac{dt}{dx} = \cos{x} \Leftrightarrow \intend{x} = \frac{\intend{t}}{\cos{x}}$}
 			\int_{-\pi}^\pi \sin{x} \cdot \cos{x} \intend{x} &= \int_{\sin{-\pi}}^{\sin{\pi}} t\ \cancel{\cos{x}}\ \frac{\intend{t}}{\cancel{\cos{x}}} \\
 			&= \int_{\sin{-\pi}}^{\sin{\pi}} t \intend{t} \\
-			&= \left[ \frac{1}{2} t^2 \right]_{\sin{-\pi}}^{\sin{\pi}} \\
-			&= \frac{1}{2} \left[ t^2 \right]_0^0 \\
-			&= \frac{1}{2} \left( 0^2 - 0^2 \right) \\
+			&= \brackets{\frac{1}{2} t^2}_{\sin{-\pi}}^{\sin{\pi}} \\
+			&= \frac{1}{2} \brackets{t^2}_0^0 \\
+			&= \frac{1}{2} \braces{0^2 - 0^2} \\
 			&= 0
 		\end{align*}
 	\item $\int_1^e \frac{\sqrt{\ln(x)}}{x} \intend{x}$
@@ -1008,10 +1004,10 @@ Berechne mittels Substitution:
 			\shortintertext{$\frac{\intend{t}}{\intend{x}} = \frac{1}{x} \Leftrightarrow \intend{x} = x \intend{t}$}
 			\int_1^e \frac{\sqrt{\ln(x)}}{x} dx &= \int_{\ln(1)}^{\ln(e)} \sqrt{z} \intend{t} \\
 			&= \int_0^1 \sqrt{z} \intend{t} \\
-			&= \left[ \frac{2}{3} z^{\frac{3}{2}} \right]_0^1 \\
+			&= \brackets{ \frac{2}{3} z^{\frac{3}{2}} }_0^1 \\
 			&= \frac{2}{3} - 0
 			\shortintertext{Oder: Rücksubstitution nach Integration}
-			\left[ \frac{2}{3} z^{\frac{3}{2}} \right]_0^1 &= \left[ \frac{2}{3} \ln(x)^{\frac{3}{2}} \right]_1^e \\
+			\brackets{ \frac{2}{3} z^{\frac{3}{2}} }_0^1 &= \brackets{ \frac{2}{3} \ln(x)^{\frac{3}{2}} }_1^e \\
 			&= \frac{2}{3} - 0
 		\end{align*}
 	\item $\int_\frac{\pi}{2}^\pi e^{3 \cos x} \cdot \sin x \intend{x}$
@@ -1021,30 +1017,30 @@ Berechne mittels Substitution:
 		\int_\frac{\pi}{2}^\pi e^{3 \cos x} \cdot \sin x \intend{x} &= \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t \cdot \cancel{\sin x} \ \frac{\intend{t}}{-3 \ \cancel{\sin x}} \\
 		&= \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t \frac{1}{-3} \intend{t} \\
 		&= -\frac{1}{3} \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t\intend{t} \\
-		&= -\frac{1}{3} \left[ e^t \right]_{t(\frac{\pi}{2})}^{t(\pi)} \\
-		&= -\frac{1}{3} \left[ e^t \right]_{3 \cos(\frac{\pi}{2})}^{3 \cos(\pi)} \\
-		&= -\frac{1}{3} \left[ e^t \right]_0^{-3} \\
-		&= -\frac{1}{3} \left( e^{-3} - \underbrace{e^0}_{= 1} \right) \\
+		&= -\frac{1}{3} \brackets{e^t}_{t(\frac{\pi}{2})}^{t(\pi)} \\
+		&= -\frac{1}{3} \brackets{e^t}_{3 \cos(\frac{\pi}{2})}^{3 \cos(\pi)} \\
+		&= -\frac{1}{3} \brackets{e^t}_0^{-3} \\
+		&= -\frac{1}{3} \braces{e^{-3} - \underbrace{e^0}_{= 1}} \\
 		&\approx 0.3167
 		\shortintertext{Oder: Rücksubstitution nach Integration}
 		-\frac{1}{3} \left[ e^t \right]_{t(\frac{\pi}{2})}^{t(\pi)} &= -\frac{1}{3} \left[ e^{3 \cos x} \right]_{\frac{\pi}{2}}^\pi \\
-		&= -\frac{1}{3} \left( e^{3 \cos \pi} - e^{3 \cos \frac{\pi}{2}} \right) \\
-		&= -\frac{1}{3} \left( e^{-3} - e^0 \right) \\
+		&= -\frac{1}{3} \braces{e^{3 \cos \pi} - e^{3 \cos \frac{\pi}{2}}} \\
+		&= -\frac{1}{3} \braces{e^{-3} - e^0} \\
 		&\approx 0.3167
 		\end{align*}
 \end{enumerate}
 
 \subsubsection{Partielle Integration}
-\[ \int \mathrm{f}(x) \ \mathrm{g}'(x) \intend{x} = \left[ \mathrm{f}(x) \ \mathrm{g}(x) \right] - \int \mathrm{f}'(x) \ \mathrm{g}(x) \intend{x} \]
+\[ \int \mathrm{f}(x) \ \mathrm{g}'(x) \intend{x} = \brackets{\mathrm{f}(x) \ \mathrm{g}(x)} - \int \mathrm{f}'(x) \ \mathrm{g}(x) \intend{x} \]
 Berechne mittels partieller Integration:
 \begin{enumerate}
 	\item $\int_0^1 3x^2 e^x \intend{x}$
 		\begin{align*}
-			\int_0^1 \underbrace{3x^2}_\mathrm{f} \underbrace{e^x}_\mathrm{g'} \intend{x} &= \left[ 3x^2 e^x \right]_0^1 - \int_0^1 \underbrace{6x}_\mathrm{f} \ \underbrace{e^x}_\mathrm{g'} \intend{x} \\
-			&= \left[ 3x^2 e^x \right]_0^1 - \left( \left[ 6x \ e^x \right]_0^1 - \int_0^1 6 e^x \intend{x} \right) \\
-			&= \left[ 3x^2 e^x \right]_0^1 - \left[ 6x \ e^x \right]_0^1 + 6 \int_0^1 e^x \intend{x} \\
-			&= \left[ 3x^2 e^x \right]_0^1 - \left[ 6x \ e^x \right]_0^1 + 6 \left[ e^x \right]_0^1 \\
-			&= \left( 3 e - 0 \right) - \left( 6 e - 0 \right) + 6 \left( e - 1 \right) \\
+			\int_0^1 \underbrace{3x^2}_\mathrm{f} \underbrace{e^x}_\mathrm{g'} \intend{x} &= \brackets{3x^2 e^x}_0^1 - \int_0^1 \underbrace{6x}_\mathrm{f} \ \underbrace{e^x}_\mathrm{g'} \intend{x} \\
+			&= \brackets{3x^2 e^x}_0^1 - \braces{ \brackets{6x \ e^x}_0^1 - \int_0^1 6 e^x \intend{x} } \\
+			&= \brackets{3x^2 e^x}_0^1 - \brackets{6x \ e^x}_0^1 + 6 \int_0^1 e^x \intend{x} \\
+			&= \brackets{3x^2 e^x}_0^1 - \brackets{6x \ e^x}_0^1 + 6 \brackets{e^x}_0^1 \\
+			&= \braces{3 e - 0} - \braces{6 e - 0} + 6 \braces{e - 1} \\
 			&= 3e - 6
 		\end{align*}
 \end{enumerate}
@@ -1418,7 +1414,7 @@ Ein Sonnensystem hat P Planeten, die allesammt bewohnt sind. Der innerste Planet
 	\item Wie viele Einwohner $E_{13}$ hat der 13. Planet, wenn der innerste Planet 16 Milliarden und 384 Millionen ($16.384.000.000$) Einwohner hat?
 \end{enumerate}
 \paragraph{Tipp} \texttt{int} hat einen Wertebereich von $-2^{31}$ bis $2^{31}-1$. Das entspricht etwa $-2$ Milliarden bis $+2$ Milliarden.
-\paragraph{Anmerkung} Es handelt sich hierbei um eine Folge, man könnte die Einwohnerzahl von Planet p auch direkt ausrechnen mit: $E_1 \cdot \left(\frac{1}{2}\right)^{p-1}$
+\paragraph{Anmerkung} Es handelt sich hierbei um eine Folge, man könnte die Einwohnerzahl von Planet p auch direkt ausrechnen mit: $E_1 \cdot \braces{\frac{1}{2}}^{p-1}$
 \lstinputlisting[language=Java]{src/rekursion.java}
 
 \newpage
