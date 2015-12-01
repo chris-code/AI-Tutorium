@@ -17,14 +17,28 @@
 \usepackage[normalem]{ulem} %Squiggly underline
 \usepackage{cancel} %Kürzen
 
+\newcommand\braces[1]{\left(#1\right)}
+\newcommand\brackets[1]{\left[#1\right]}
+\renewcommand{\vec}[1]{\underline{#1}}
+\newcommand{\mat}[1]{\underline{\underline{#1}}}
+%\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
 \newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+%\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand\tr[1]{\mathrm{tr}\br{#1}}
+\newcommand\average[1]{\left\langle#1\right\rangle}
+%\newcommand{\acos}[1]{\mathrm{acos}\braces{#1}}
 \newcommand{\acos}{\mathrm{acos}}
+%\newcommand{\asin}[1]{\mathrm{asin}\braces{#1}}
 \newcommand{\asin}{\mathrm{asin}}
-\newcommand{\dx}{\ \mathrm{dx}}
-\newcommand{\dt}{\ \mathrm{dt}}
+\newcommand{\intend}[1][]{\ \mathrm{d}#1}
+\newcommand{\derivative}[2][]{\ \frac{\mathrm{d}#1}{\mathrm{d}#2}} %\derivative[a]{b}
+\newcommand\expectedValue[1]{\mathbb{E}\braces{#1}}
+\newcommand\variance[1]{\mathbb{V}\braces{#1}}
+\newcommand\setequal{\overset{!}{=}}
+\newcommand{\gerquote}[1]{\glqq#1\grqq}
 
-\everymath{\displaystyle} %Force displaystyle everywhere
+%\everymath{\displaystyle} %Force displaystyle everywhere
 
 \lstset{
 	tabsize=4,
@@ -608,28 +622,35 @@ Betrag: $\abs{x+yi} = \sqrt{x^2+y^2}$
 \end{enumerate}
 
 \subsubsection{Polarkoordinaten und Exponentialdarstellung Umwandlung}
-Schreibe als Polarkoordinaten- und Exponentialdarstellung \\
+Schreibe als Polarkoordinaten- und Exponentialdarstellung
+
 Polarkoordinaten: $r(\cos \alpha + i \sin \alpha)$ mit $r=\sqrt{x^2+y^2}$ und $\acos \frac{x}{r} = \alpha = \asin \frac{y}{r}$
+
 \begin{enumerate}
 	\item $\sqrt{2}+\sqrt{2}i$ \\
 	$r = \sqrt{(\sqrt{2})^2 + (\sqrt{2})^2} = \sqrt{4} = 2$ \\
-	$\cos \alpha = \frac{\sqrt{2}}{2} = \frac{1}{\sqrt{2}} \quad \Rightarrow \quad \alpha = \acos \frac{1}{\sqrt{2}} \quad \Rightarrow \quad \alpha = \frac{\pi}{4}$ \\
+	$\cos \alpha = \frac{\sqrt{2}}{2} \quad \Rightarrow \quad \alpha = \acos \frac{\sqrt{2}}{2} \quad \Rightarrow \quad \alpha = \frac{\pi}{4} \lor \alpha = \frac{7\pi}{4}$ \\
+	$\sin \alpha = \frac{\sqrt{2}}{2} \quad \Rightarrow \quad \alpha = \asin \frac{\sqrt{2}}{2} \quad \Rightarrow \quad \alpha = \frac{\pi}{4} \lor \alpha = \frac{3\pi}{4}$ \\
 	Polarkoordinaten: $2 \left( \cos \frac{\pi}{4} + i \sin \frac{\pi}{4} \right)$ \\
 	Exponential: $2 e^{i \frac{\pi}{4}}$
+	
 	\item $-4i$ \\
 	$r = \sqrt{(-4)^2} = 4$ \\
-	$\sin \alpha = -\frac{4}{4} \quad \Rightarrow \quad \alpha = \asin -1 \quad \Rightarrow \quad \alpha = \frac{3\pi}{2}$ \\
+	$\cos \alpha = -\frac{0}{4} \quad \Rightarrow \quad \alpha = \acos{(0)} \quad \Rightarrow \quad \alpha = \frac{\pi}{2} \lor \alpha = \frac{3\pi}{2}$ \\
+	$\sin \alpha = -\frac{4}{4} \quad \Rightarrow \quad \alpha = \asin{(-1)} \quad \Rightarrow \quad \alpha = \frac{3\pi}{2}$ \\
 	Polarkoordinaten: $4 \left( \cos \frac{3\pi}{2} + i \sin \frac{3\pi}{2} \right)$ \\
 	Exponential: $4 e^{i \frac{3\pi}{2}}$
+	
 	\item $6+2\sqrt{3}i$ \\
 	$r = \sqrt{6^2 + (2\sqrt{3})^2} = \sqrt{36 + 4 \cdot 3} = \sqrt{48} = 4 \sqrt{3}$ \\
-	$\cos \alpha = \frac{6}{4\sqrt{3}} = \frac{\sqrt{3}}{2} \quad \Rightarrow \quad \alpha = \acos \frac{\sqrt{3}}{2} \quad \Rightarrow \quad \alpha = \frac{\pi}{6}$ \\
-	$\sin \alpha = \frac{2\sqrt{3}}{4\sqrt{3}} = \frac{1}{2} \quad \Rightarrow \quad \alpha = \asin \frac{1}{2} \quad \Rightarrow \quad \alpha = \frac{\pi}{6}$ \\
+	$\cos \alpha = \frac{6}{4\sqrt{3}} = \frac{\sqrt{3}}{2} \quad \Rightarrow \quad \alpha = \acos \frac{\sqrt{3}}{2} \quad \Rightarrow \quad \alpha = \frac{\pi}{6} \lor \alpha = \frac{11\pi}{6}$ \\
+	$\sin \alpha = \frac{2\sqrt{3}}{4\sqrt{3}} = \frac{1}{2} \quad \Rightarrow \quad \alpha = \asin \frac{1}{2} \quad \Rightarrow \quad \alpha = \frac{\pi}{6} \lor \alpha = \frac{5\pi}{6}$ \\
 	Polarkoordinaten: $4\sqrt{3} \left( \cos \frac{\pi}{6} + i \sin \frac{\pi}{6} \right)$ \\
 	Exponential: $4\sqrt{3} \cdot e^{i \frac{\pi}{6}}$
 \end{enumerate}
-Schreibe als Summe von Real- und Imaginärteil \\
-Karthesische Darstellung: x + yi
+
+Schreibe als Summe von Real- und Imaginärteil (karthesische Darstellung: $x + yi$)
+
 \begin{enumerate}
 	\item $7 \left( \cos \pi + i \sin \pi \right)$ \\
 	$7 \left( -1 + i 0 \right)$ \\
@@ -644,10 +665,13 @@ Karthesische Darstellung: x + yi
 \end{enumerate}
 
 \subsubsection{Rechnen in Polarkoordinaten}
-$r_1 \left( \cos \alpha_1 + i \sin \alpha_1 \right) \cdot r_2 \left( \cos \alpha_2 + i \sin \alpha_2 \right) = r_1 r_2 \left( \cos \left(\alpha_1 + \alpha_2\right) + i \sin \left(\alpha_1 + \alpha_2\right) \right)$ \\
-$r_1 \left( \cos \alpha_1 + i \sin \alpha_1 \right) \div r_2 \left( \cos \alpha_2 + i \sin \alpha_2 \right) = \frac{r_1}{r_2} \left( \cos \left(\alpha_1 - \alpha_2\right) + i \sin \left(\alpha_1 - \alpha_2\right) \right)$ \\
-$z^n = r^n \left( \cos n \alpha + i \sin n \alpha \right)$ \\
-$w_k = \sqrt[n]{r} \left( \cos \frac{\alpha+2k\pi}{n} + i \sin \frac{\alpha+2k\pi}{n} \right), k = 0, \dots n-1$ \\
+Für 2 komplexe Zahlen $z_1$, $z_2$ mit Polarkoordinatendarstellung $z_i = r_i \braces{\cos \alpha_i + i \sin \alpha_i}$ gilt:
+
+$z_1 \cdot z_2 = r_1 r_2 \braces{ \cos \braces{\alpha_1 + \alpha_2} + i \sin \braces{\alpha_1 + \alpha_2}}$ \\
+$z_1 \div z_2 = \frac{r_1}{r_2} \braces{\cos \braces{\alpha_1 - \alpha_2} + i \sin \braces{\alpha_1 - \alpha_2}}$ \\
+$z_1^n = r_1^n \braces{\cos (n \alpha_1) + i \sin (n \alpha_1)}$ \\
+$\sqrt[n]{z_1} = w_k$ mit $w_k = \sqrt[n]{r_1} \braces{\cos \frac{\alpha_1 + 2k\pi}{n} + i \sin \frac{\alpha_1 + 2k\pi}{n}}, k = 0, \dots n-1$
+
 Berechne in Polarkoordinaten:
 \begin{enumerate}
 	\item $3 \left( \cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3} \right) \cdot \sqrt{4} \left( \cos \pi + i \sin \pi \right)$ \\
@@ -663,16 +687,24 @@ Berechne in Polarkoordinaten:
 		$12^2 \left( \cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3} \right)$ \\
 		$12^2 \left( - \frac{1}{2} + i \frac{\sqrt{3}}{2} \right)$ \\
 		$72 + 72\sqrt{3}i$
+		
 	%TODO weitere Aufgabe zum Potenzieren und Wurzelziehen (mit besseren Zahlen)
 	\item $p^4 + 16 = 0$ \\
-		$p^4 = -16$ \\
-		$p = \sqrt[4]{-16}$ \\
-		$r=16, \quad \alpha = \acos \frac{-16}{16} = \acos -1 = \pi$ \\
-		$\sqrt[4]{16 (\cos \pi + i \sin \pi)}$ \\
-		$w_0 = \sqrt[4]{16} \left(\cos \frac{\pi + 0\pi}{4} + i \sin \frac{\pi + 0\pi}{4} \right) = 2 \left( \frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right) = \sqrt{2} + i \sqrt{2}$ \\
-		$w_1 = \sqrt[4]{16} \left(\cos \frac{\pi + 2\pi}{4} + i \sin \frac{\pi + 2\pi}{4} \right) = 2 \left( -\frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right) = -\sqrt{2} + i \sqrt{2}$ \\
-		$w_2 = \sqrt[4]{16} \left(\cos \frac{\pi + 4\pi}{4} + i \sin \frac{\pi + 4\pi}{4} \right) = 2 \left( -\frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} \right) = -\sqrt{2} - i \sqrt{2}$ \\
-		$w_3 = \sqrt[4]{16} \left(\cos \frac{\pi + 6\pi}{4} + i \sin \frac{\pi + 6\pi}{4} \right) = 2 \left( \frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} \right) = \sqrt{2} - i \sqrt{2}$ \\
+		% Dies lässt sich auch vereinfachen durch \sqrt[4]{-16} = \sqrt[4]{16 * i^2}
+		\begin{align*}
+			p^4 + 16 &= 0 \\
+			p^4 &= -16 \\
+			p &= \sqrt[4]{-16} \\
+			\intertext{Wandle Radikanten in Polarkoordinaten um}
+			r &= 16, \quad \alpha = \acos \frac{-16}{16} = \acos -1 = \pi \\
+			p &= \sqrt[4]{16 (\cos \pi + i \sin \pi)} \\
+			\intertext{Nun können mit der Formel von oben die 4 Nullstellen bestimmt werden}
+			w_0 &= \sqrt[4]{16} \left(\cos \frac{\pi + 0\pi}{4} + i \sin \frac{\pi + 0\pi}{4} \right) = 2 \left( \frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right) = \sqrt{2} + i \sqrt{2} \\
+			w_1 &= \sqrt[4]{16} \left(\cos \frac{\pi + 2\pi}{4} + i \sin \frac{\pi + 2\pi}{4} \right) = 2 \left( -\frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right) = -\sqrt{2} + i \sqrt{2} \\
+			\intertext{Hier kann man prinzipiell die anderen beiden Lösungen sofort ablesen, da zu jeder Lösung $x + yi$ auch ihre konjugierte $x - yi$ eine Lösung ist.}
+			w_2 &= \sqrt[4]{16} \left(\cos \frac{\pi + 4\pi}{4} + i \sin \frac{\pi + 4\pi}{4} \right) = 2 \left( -\frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} \right) = -\sqrt{2} - i \sqrt{2} \\
+			w_3 &= \sqrt[4]{16} \left(\cos \frac{\pi + 6\pi}{4} + i \sin \frac{\pi + 6\pi}{4} \right) = 2 \left( \frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} \right) = \sqrt{2} - i \sqrt{2} \\
+		\end{align*}
 \end{enumerate}
 
 \subsection{Folgen}
@@ -956,39 +988,39 @@ Berechne mittels PBZ:
 \end{enumerate}
 
 \subsubsection{Substitution}
-\[ \int_a^b \mathrm{f}( \ \underbrace{\mathrm{g}(x)}_t \ ) \dx = \int_{\mathrm{g}(a)}^{\mathrm{g(b)}} \mathrm{f}(t) \dt \]
+\[ \int_a^b \mathrm{f}( \ \underbrace{\mathrm{g}(x)}_t \ ) \intend{x} = \int_{\mathrm{g}(a)}^{\mathrm{g(b)}} \mathrm{f}(t) \intend{t} \]
 Berechne mittels Substitution:
 \begin{enumerate}
-	\item $\int_{-\pi}^\pi \sin{x} \cdot \cos{x} \dx$
+	\item $\int_{-\pi}^\pi \sin{x} \cdot \cos{x} \intend{x}$
 		\begin{align*}
 			\shortintertext{Substituiere: $\sin{x} = t$}
-			\shortintertext{$\frac{dt}{dx} = \cos{x} \Leftrightarrow \dx = \frac{\dt}{\cos{x}}$}
-			\int_{-\pi}^\pi \sin{x} \cdot \cos{x} \dx &= \int_{\sin{-\pi}}^{\sin{\pi}} t\ \cancel{\cos{x}}\ \frac{\dt}{\cancel{\cos{x}}} \\
-			&= \int_{\sin{-\pi}}^{\sin{\pi}} t \dt \\
+			\shortintertext{$\frac{dt}{dx} = \cos{x} \Leftrightarrow \intend{x} = \frac{\intend{t}}{\cos{x}}$}
+			\int_{-\pi}^\pi \sin{x} \cdot \cos{x} \intend{x} &= \int_{\sin{-\pi}}^{\sin{\pi}} t\ \cancel{\cos{x}}\ \frac{\intend{t}}{\cancel{\cos{x}}} \\
+			&= \int_{\sin{-\pi}}^{\sin{\pi}} t \intend{t} \\
 			&= \left[ \frac{1}{2} t^2 \right]_{\sin{-\pi}}^{\sin{\pi}} \\
 			&= \frac{1}{2} \left[ t^2 \right]_0^0 \\
 			&= \frac{1}{2} \left( 0^2 - 0^2 \right) \\
 			&= 0
 		\end{align*}
-	\item $\int_1^e \frac{\sqrt{\ln(x)}}{x} \dx$
+	\item $\int_1^e \frac{\sqrt{\ln(x)}}{x} \intend{x}$
 		\begin{align*}
 			\shortintertext{Substituiere: $\ln(x) = t$}
-			\shortintertext{$\frac{\dt}{\dx} = \frac{1}{x} \Leftrightarrow \dx = x \dt$}
-			\int_1^e \frac{\sqrt{\ln(x)}}{x} dx &= \int_{\ln(1)}^{\ln(e)} \sqrt{z} \dt \\
-			&= \int_0^1 \sqrt{z} \dt \\
+			\shortintertext{$\frac{\intend{t}}{\intend{x}} = \frac{1}{x} \Leftrightarrow \intend{x} = x \intend{t}$}
+			\int_1^e \frac{\sqrt{\ln(x)}}{x} dx &= \int_{\ln(1)}^{\ln(e)} \sqrt{z} \intend{t} \\
+			&= \int_0^1 \sqrt{z} \intend{t} \\
 			&= \left[ \frac{2}{3} z^{\frac{3}{2}} \right]_0^1 \\
 			&= \frac{2}{3} - 0
 			\shortintertext{Oder: Rücksubstitution nach Integration}
 			\left[ \frac{2}{3} z^{\frac{3}{2}} \right]_0^1 &= \left[ \frac{2}{3} \ln(x)^{\frac{3}{2}} \right]_1^e \\
 			&= \frac{2}{3} - 0
 		\end{align*}
-	\item $\int_\frac{\pi}{2}^\pi e^{3 \cos x} \cdot \sin x \dx$
+	\item $\int_\frac{\pi}{2}^\pi e^{3 \cos x} \cdot \sin x \intend{x}$
 		\begin{align*}
 		\shortintertext{Substituiere: $3 \cos x = t$}
-		\shortintertext{$\frac{\dt}{\dx} = -3 \sin x \Leftrightarrow \dx = \frac{\dt}{-3 \sin x}$}
-		\int_\frac{\pi}{2}^\pi e^{3 \cos x} \cdot \sin x \dx &= \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t \cdot \cancel{\sin x} \ \frac{\dt}{-3 \ \cancel{\sin x}} \\
-		&= \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t \frac{1}{-3} \dt \\
-		&= -\frac{1}{3} \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t\dt \\
+		\shortintertext{$\frac{\intend{t}}{\intend{x}} = -3 \sin x \Leftrightarrow \intend{x} = \frac{\intend{t}}{-3 \sin x}$}
+		\int_\frac{\pi}{2}^\pi e^{3 \cos x} \cdot \sin x \intend{x} &= \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t \cdot \cancel{\sin x} \ \frac{\intend{t}}{-3 \ \cancel{\sin x}} \\
+		&= \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t \frac{1}{-3} \intend{t} \\
+		&= -\frac{1}{3} \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t\intend{t} \\
 		&= -\frac{1}{3} \left[ e^t \right]_{t(\frac{\pi}{2})}^{t(\pi)} \\
 		&= -\frac{1}{3} \left[ e^t \right]_{3 \cos(\frac{\pi}{2})}^{3 \cos(\pi)} \\
 		&= -\frac{1}{3} \left[ e^t \right]_0^{-3} \\
@@ -1003,14 +1035,14 @@ Berechne mittels Substitution:
 \end{enumerate}
 
 \subsubsection{Partielle Integration}
-\[ \int \mathrm{f}(x) \ \mathrm{g}'(x) \dx = \left[ \mathrm{f}(x) \ \mathrm{g}(x) \right] - \int \mathrm{f}'(x) \ \mathrm{g}(x) \dx \]
+\[ \int \mathrm{f}(x) \ \mathrm{g}'(x) \intend{x} = \left[ \mathrm{f}(x) \ \mathrm{g}(x) \right] - \int \mathrm{f}'(x) \ \mathrm{g}(x) \intend{x} \]
 Berechne mittels partieller Integration:
 \begin{enumerate}
-	\item $\int_0^1 3x^2 e^x \dx$
+	\item $\int_0^1 3x^2 e^x \intend{x}$
 		\begin{align*}
-			\int_0^1 \underbrace{3x^2}_\mathrm{f} \underbrace{e^x}_\mathrm{g'} \dx &= \left[ 3x^2 e^x \right]_0^1 - \int_0^1 \underbrace{6x}_\mathrm{f} \ \underbrace{e^x}_\mathrm{g'} \dx \\
-			&= \left[ 3x^2 e^x \right]_0^1 - \left( \left[ 6x \ e^x \right]_0^1 - \int_0^1 6 e^x \dx \right) \\
-			&= \left[ 3x^2 e^x \right]_0^1 - \left[ 6x \ e^x \right]_0^1 + 6 \int_0^1 e^x \dx \\
+			\int_0^1 \underbrace{3x^2}_\mathrm{f} \underbrace{e^x}_\mathrm{g'} \intend{x} &= \left[ 3x^2 e^x \right]_0^1 - \int_0^1 \underbrace{6x}_\mathrm{f} \ \underbrace{e^x}_\mathrm{g'} \intend{x} \\
+			&= \left[ 3x^2 e^x \right]_0^1 - \left( \left[ 6x \ e^x \right]_0^1 - \int_0^1 6 e^x \intend{x} \right) \\
+			&= \left[ 3x^2 e^x \right]_0^1 - \left[ 6x \ e^x \right]_0^1 + 6 \int_0^1 e^x \intend{x} \\
 			&= \left[ 3x^2 e^x \right]_0^1 - \left[ 6x \ e^x \right]_0^1 + 6 \left[ e^x \right]_0^1 \\
 			&= \left( 3 e - 0 \right) - \left( 6 e - 0 \right) + 6 \left( e - 1 \right) \\
 			&= 3e - 6

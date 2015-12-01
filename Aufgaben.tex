@@ -16,12 +16,26 @@
 \usepackage[normalem]{ulem} %Squiggly underline
 \usepackage{cancel} %Kürzen
 
+\newcommand\braces[1]{\left(#1\right)}
+\newcommand\brackets[1]{\left[#1\right]}
+\renewcommand{\vec}[1]{\underline{#1}}
+\newcommand{\mat}[1]{\underline{\underline{#1}}}
+%\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
 \newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+%\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand\tr[1]{\mathrm{tr}\br{#1}}
+\newcommand\average[1]{\left\langle#1\right\rangle}
+%\newcommand{\acos}[1]{\mathrm{acos}\braces{#1}}
 \newcommand{\acos}{\mathrm{acos}}
+%\newcommand{\asin}[1]{\mathrm{asin}\braces{#1}}
 \newcommand{\asin}{\mathrm{asin}}
-\newcommand{\dx}{\ \mathrm{dx}}
-\newcommand{\dt}{\ \mathrm{dt}}
+\newcommand{\intend}[1][]{\ \mathrm{d}#1}
+\newcommand{\derivative}[2][]{\ \frac{\mathrm{d}#1}{\mathrm{d}#2}} %\derivative[a]{b}
+\newcommand\expectedValue[1]{\mathbb{E}\braces{#1}}
+\newcommand\variance[1]{\mathbb{V}\braces{#1}}
+\newcommand\setequal{\overset{!}{=}}
+\newcommand{\gerquote}[1]{\glqq#1\grqq}
 
 %\everymath{\displaystyle} %Force displaystyle everywhere
 
@@ -253,10 +267,13 @@ Karthesische Darstellung: x + yi
 \end{enumerate}
 
 \subsubsection{Rechnen in Polarkoordinaten}
-$r_1 \left( \cos \alpha_1 + i \sin \alpha_1 \right) \cdot r_2 \left( \cos \alpha_2 + i \sin \alpha_2 \right) = r_1 r_2 \left( \cos \left(\alpha_1 + \alpha_2\right) + i \sin \left(\alpha_1 + \alpha_2\right) \right)$ \\
-$r_1 \left( \cos \alpha_1 + i \sin \alpha_1 \right) \div r_2 \left( \cos \alpha_2 + i \sin \alpha_2 \right) = \frac{r_1}{r_2} \left( \cos \left(\alpha_1 - \alpha_2\right) + i \sin \left(\alpha_1 - \alpha_2\right) \right)$ \\
-$z^n = r^n \left( \cos n \alpha + i \sin n \alpha \right)$ \\
-$w_k = \sqrt[n]{r} \left( \cos \frac{\alpha+2k\pi}{n} + i \sin \frac{\alpha+2k\pi}{n} \right), k = 0, \dots n-1$ \\
+Für 2 komplexe Zahlen $z_1$, $z_2$ mit Polarkoordinatendarstellung $z_i = r_i \braces{\cos \alpha_i + i \sin \alpha_i}$ gilt:
+
+$z_1 \cdot z_2 = r_1 r_2 \braces{ \cos \braces{\alpha_1 + \alpha_2} + i \sin \braces{\alpha_1 + \alpha_2}}$ \\
+$z_1 \div z_2 = \frac{r_1}{r_2} \braces{\cos \braces{\alpha_1 - \alpha_2} + i \sin \braces{\alpha_1 - \alpha_2}}$ \\
+$z_1^n = r_1^n \braces{\cos (n \alpha_1) + i \sin (n \alpha_1)}$ \\
+$\sqrt[n]{z_1} = w_k$ mit $w_k = \sqrt[n]{r_1} \braces{\cos \frac{\alpha_1 + 2k\pi}{n} + i \sin \frac{\alpha_1 + 2k\pi}{n}}, k = 0, \dots n-1$
+
 Berechne in Polarkoordinaten:
 \begin{enumerate}
 	\item $3 \left( \cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3} \right) \cdot \sqrt{4} \left( \cos \pi + i \sin \pi \right)$
@@ -328,19 +345,19 @@ Berechne mittels Partialbruchzerlegung:
 \end{enumerate}
 
 \subsubsection{Substitution}
-\[ \int_a^b \mathrm{f}( \ \underbrace{\mathrm{g}(x)}_t \ ) \dx = \int_{\mathrm{g}(a)}^{\mathrm{g(b)}} \mathrm{f}(t) \dt \]
+\[ \int_a^b \mathrm{f}( \ \underbrace{\mathrm{g}(x)}_t \ ) \intend{x} = \int_{\mathrm{g}(a)}^{\mathrm{g(b)}} \mathrm{f}(t) \intend{t} \]
 Berechne mittels Substitution:
 \begin{enumerate}
-	\item $\int_{-\pi}^\pi \sin{x} \cdot \cos{x} \dx$
-	\item $\int_1^e \frac{\sqrt{\ln(x)}}{x} \dx$
-	\item $\int_\frac{\pi}{2}^\pi e^{3 \cos x} \cdot \sin x \dx$
+	\item $\int_{-\pi}^\pi \sin{x} \cdot \cos{x} \intend{x}$
+	\item $\int_1^e \frac{\sqrt{\ln(x)}}{x} \intend{x}$
+	\item $\int_\frac{\pi}{2}^\pi e^{3 \cos x} \cdot \sin x \intend{x}$
 \end{enumerate}
 
 \subsubsection{Partielle Integration}
-\[ \int \mathrm{f}(x) \ \mathrm{g}'(x) \dx = \left[ \mathrm{f}(x) \ \mathrm{g}(x) \right] - \int \mathrm{f}'(x) \ \mathrm{g}(x) \dx \]
+\[ \int \mathrm{f}(x) \ \mathrm{g}'(x) \intend{x} = \left[ \mathrm{f}(x) \ \mathrm{g}(x) \right] - \int \mathrm{f}'(x) \ \mathrm{g}(x) \intend{x} \]
 Berechne mittels partieller Integration:
 \begin{enumerate}
-	\item $\int_0^1 3x^2 e^x \dx$
+	\item $\int_0^1 3x^2 e^x \intend{x}$
 \end{enumerate}
 
 \newpage
