@@ -1046,8 +1046,10 @@ Berechne in Polarkoordinaten:
 
 Finde die explizite Darstellung von $a_n$. Gib auch den Grenzwert $\lim_{n \rightarrow \infty} a_n$ an.
 \begin{enumerate}
-	\item $a_{n+1} = 3 a_n + 6$ mit $n \in \mathbb{N}_0,\ a_0 = 4$ \label{DGLAufgabe1} \\
-		$q=3 (\neq 1), \quad d=6$ \\
+	\item $a_{n+1} = 3 a_n + 6$ mit $n \in \mathbb{N}_0,\ a_0 = 4$ \label{DGLAufgabe1}
+	
+	\ifshowsolution
+		$q=3 (\neq 1), \quad d=6$
 		\begin{align*}
 			a_n &= 4 \cdot 3^n + 6 \frac{1-3^n}{1-3} \\
 			a_n &= 4 \cdot 3^n - 3 (1-3^n) \\
@@ -1055,7 +1057,11 @@ Finde die explizite Darstellung von $a_n$. Gib auch den Grenzwert $\lim_{n \righ
 			a_n &= 7 \cdot 3^n - 3 \tag{Explizite Darstellung}
 		\end{align*}
 		$\lim_{n \rightarrow \infty} 7 \cdot 3^n - 3 = +\infty$
-	\item $a_{n+1} = 2 a_n +2$ mit $n \in \mathbb{N}_0,\ a_1 = 4$ \\
+	\fi
+		
+	\item $a_{n+1} = 2 a_n +2$ mit $n \in \mathbb{N}_0,\ a_1 = 4$
+	
+	\ifshowsolution
 		$q=2, \quad d=2 \quad a_0 = ?$ \\
 		Wir haben $a_1$ gegeben, brauchen aber $a_0$. Setze $n$ so ein, dass in der Formel sowohl $a_1$ als auch $a_0$ vorkommen. Dann kann nach $a_0$ umgestellt werden.
 		\begin{align*}
@@ -1071,7 +1077,11 @@ Finde die explizite Darstellung von $a_n$. Gib auch den Grenzwert $\lim_{n \righ
 			a_n &= 3 \cdot 2^n - 2
 		\end{align*}
 		$\lim_{n \rightarrow \infty} 3 \cdot 2^n - 2 = +\infty$
-	\item $a_{n+2} = 5 a_{n+1} - 3$ mit $n \in \mathbb{N}_0,\ a_0 = 1$ \\
+	\fi
+		
+	\item $a_{n+2} = 5 a_{n+1} - 3$ mit $n \in \mathbb{N}_0,\ a_0 = 1$
+	
+	\ifshowsolution
 		\begin{align*}
 			a_{n+1} &= 5 a_{n} - 3 \tag{Index-Shift} \\
 			q &= 5, \quad d = -3 \\
@@ -1080,7 +1090,11 @@ Finde die explizite Darstellung von $a_n$. Gib auch den Grenzwert $\lim_{n \righ
 			a_n &= \frac{5^n+3}{4}
 		\end{align*}
 		$\lim_{n \rightarrow \infty} \frac{5^n+3}{4} = +\infty$
-	\item $a_{n+1} = -6 a_{n} - 5 a_{n-1}$ mit $a_0=2, a_1=4$ \\
+	\fi
+		
+	\item $a_{n+1} = -6 a_{n} - 5 a_{n-1}$ mit $a_0=2, a_1=4$
+	
+	\ifshowsolution
 		$b=-6, c=-5$ \\
 		Charakteristische Gleichung: $q^2 = -6q -5 \ \Leftrightarrow \ 0 = q^2 + 6q + 5$ \\
 		Mit der PQ-Formel folgt $q_1=-1, q_2=-5$ \\
@@ -1091,7 +1105,11 @@ Finde die explizite Darstellung von $a_n$. Gib auch den Grenzwert $\lim_{n \righ
 		LGS Lösen: $C_1=\frac{7}{2}, C_2=-\frac{3}{2}$ \\
 		$a_n = \frac{7}{2} (-1)^n - \frac{3}{2} (-5)^n$ \\
 		$\lim_{n \rightarrow \infty} \frac{7}{2} (-1)^n - \frac{3}{2} (-5)^n = \tilde{\infty}$ (Alternierend, divergent)
-	\item $a_{n+1} = 3 a_n - 4 a_{n-1}$ mit $a_0=3, a_1=4$ \\
+	\fi
+		
+	\item $a_{n+1} = 3 a_n - 4 a_{n-1}$ mit $a_0=3, a_1=4$
+	
+	\ifshowsolution
 		$b=3, c=4$ \\
 		Charakteristische Gleichung: $q^2 = 3q - 4 \Leftrightarrow 0 = q^2 - 3q + 4$ \\
 		$q_1=\frac{3}{2} + i \frac{\sqrt{7}}{2}, q_2=\frac{3}{2} - i \frac{\sqrt{7}}{2}$ \\
@@ -1102,6 +1120,7 @@ Finde die explizite Darstellung von $a_n$. Gib auch den Grenzwert $\lim_{n \righ
 		$a_1 = 4 = C_1 \cdot 2 \cos(\cdot 0.72) + C_2 \cdot 2 \sin(\cdot 0.72) \Leftrightarrow 4 = 6 \cdot \frac{3}{4} + C_2 \cdot 2 \cdot 0.66 \Leftrightarrow C_2 \approx -\frac{25}{66}$ \\
 		Die Lösung lautet also: $a_n = 3 \cdot 2^n \cos(n\cdot 0.72) -\frac{25}{66} \cdot 2^n \sin(n \cdot 0.72)$ \\
 		$\lim_{n \rightarrow \infty} 3 \cdot 2^n \cos(n\cdot 0.72) -\frac{25}{66} \cdot 2^n \sin(n \cdot 0.72) = \tilde{\infty}$ (Alternierend, divergent)
+	\fi
 \end{enumerate}
 
 \subsection{Reihen}
@@ -1109,12 +1128,18 @@ Finde die explizite Darstellung von $a_n$. Gib auch den Grenzwert $\lim_{n \righ
 Konvergieren die folgenden Reihen?
 \begin{enumerate}
 	\item $\sum_{k=0}^\infty \frac{(2k+2)(3k-2)}{(2k-2)^2}$
+	
+	\ifshowsolution
 		\begin{align*}
 			a_k &= \frac{(2k+2)(3k-2)}{(2k-2)^2} \\
 			&= \frac{6k^2+2k-4}{4k^4-8k+4}
 		\end{align*}
 		$\lim_{k->\infty} a_k = \frac{3}{2} \neq 0$, die Reihe divergiert.
+	\fi
+		
 	\item $\sum_{k=0}^\infty \frac{(k-1)^2}{\sqrt{3^k}}$
+	
+	\ifshowsolution
 		\begin{align*}
 			\lambda &= \lim_{k->\infty} \abs{ \frac{\frac{k^2}{\sqrt{3^{k+1}}}}{\frac{(k-1)^2}{\sqrt{3^k}}} } \tag{Quotientenkriterium} \\
 			&= \lim_{k->\infty} \abs{ \frac{\frac{\sqrt{3^k} k^2}{\sqrt{3^{k+1}}}}{(k-1)^2} } \\
@@ -1125,7 +1150,11 @@ Konvergieren die folgenden Reihen?
 			\lambda &= \sqrt{\frac{1}{3}}
 		\end{align*}
 		Lambda ist $<1$, laut Quotientenkriterium ist die Reihe damit (absolut) konvergent.
+	\fi
+		
 	\item $\sum_{k=2}^\infty \frac{\sqrt{2k-1}}{k^2-k+\frac{1}{4}}$
+	
+	\ifshowsolution
 		\begin{align*}
 			\shortintertext{Die Konvergenz der Reihe $\sum_{k=1}^\infty \frac{1}{k^2}$ ist aus der Vorlesung bekannt}
 			\frac{\sqrt{2k-1}}{k^2-k+\frac{1}{4}} &\leq \frac{1}{k^2} \\
@@ -1134,6 +1163,7 @@ Konvergieren die folgenden Reihen?
 			\frac{2}{(k-\frac{1}{2})^3} &\leq \frac{1}{k^2}
 		\end{align*}
 		Nach dem Majorantenkriterium ist diese Reihe also (absolut) konvergent.
+	\fi
 \end{enumerate}
 
 \subsubsection{Grenzwerte}
@@ -1142,6 +1172,8 @@ Konvergieren die folgenden Reihen? Wenn ja, berechne auch den Grenzwert. Der fol
 Bei $\abs{q}<1$ gilt die für geometrische Reihe $\sum_{k=0}^\infty q^k = \frac{1}{1-q}$.
 \begin{enumerate}
 	\item $\sum_{k=4}^\infty \frac{1}{k^2-5k+6}$
+	
+	\ifshowsolution
 		\begin{align*}
 			\intertext{Zunächst formen wir die Reihenglieder $a_k$ um}
 			a_k &= \frac{1}{k^2-5k+6} \\
@@ -1163,7 +1195,11 @@ Bei $\abs{q}<1$ gilt die für geometrische Reihe $\sum_{k=0}^\infty q^k = \frac{
 			&= 1
 		\end{align*}
 		Damit konvergierte die Reihe also gegen 1.
+	\fi
+		
 	\item $\sum_{k=0}^\infty \frac{2}{k^2+6k+8}$
+	
+	\ifshowsolution
 		\begin{align*}
 			\intertext{Zunächst formen wir die Reihenglieder $a_k$ um}
 			a_k &= \frac{2}{k^2+6k+8} \\
@@ -1188,7 +1224,11 @@ Bei $\abs{q}<1$ gilt die für geometrische Reihe $\sum_{k=0}^\infty q^k = \frac{
 			&= \frac{5}{6}
 		\end{align*}
 		Damit ist $\sum_{k=0}^\infty \frac{2}{k^2+6k+8} = \frac{5}{6}$
+	\fi
+		
 	\item $\sum_{k=0}^\infty \frac{(-1)^k \cdot 2^{k-1} - 5 \cdot 6^k}{4^{2k+1}}$
+	
+	\ifshowsolution
 		\begin{align*}
 			\intertext{Zunächst formen wir die Reihenglieder um (unter Verwendung vieler Potenzgesetze)}
 			a_k &= \frac{(-1)^k \cdot 2^{k-1} - 5 \cdot 6^k}{4^{2k+1}} \\
@@ -1206,6 +1246,7 @@ Bei $\abs{q}<1$ gilt die für geometrische Reihe $\sum_{k=0}^\infty q^k = \frac{
 			\intertext{Dies lässt sich vereinfachen zum Grenzwert der Reihe}
 			&= -\frac{17}{9}
 		\end{align*}
+	\fi
 \end{enumerate}
 
 \subsection{Logarithmen}
@@ -1220,6 +1261,8 @@ Wichtige Rechenregeln für Logarithmen sind:
 Löse die folgenden Gleichungen:
 \begin{enumerate}
 	\item $\frac{1}{2} \log x + \log \sqrt{x-1} = \log \sqrt{2}$
+	
+	\ifshowsolution
 		\begin{align*}
 			\frac{1}{2} \log x + \log \sqrt{x-1} &= \log \sqrt{2} \\
 			\frac{1}{2} \log x + \log (x-1)^\frac{1}{2} &= \log 2^\frac{1}{2} \\
@@ -1239,7 +1282,11 @@ Löse die folgenden Gleichungen:
 			\frac{1}{2} \log 2 + \log \sqrt{1} = \log \sqrt{2} \\
 			\log \sqrt{2} = \log \sqrt{2}
 		\end{align*}
+	\fi
+	
 	\item $\log_{10} \braces{15 \cdot 50^x + 2 \cdot 2^x} = \log_{10} 15 + x$
+	
+	\ifshowsolution
 		\begin{align*}
 			\log_{10} \braces{15 \cdot 50^x + 2 \cdot 2^x} &= \log_{10} 15 + x \\
 			\log_{10} \braces{15 \cdot 50^x + 2 \cdot 2^x} &= \log_{10} 15 + \log_{10} 10^x \\
@@ -1258,76 +1305,88 @@ Löse die folgenden Gleichungen:
 			5^x = 0.8416 \Leftrightarrow \log_5 0.8416 = x \Leftrightarrow x &\approx -0.107175302 \\
 			5^x = 0.1584 \Leftrightarrow \log_5 0.1584 = x \Leftrightarrow x &\approx -1.14475433
 		\end{align*}
+	\fi
 \end{enumerate}
 
 \subsection{Analysis}
 \subsubsection{Partialbruchzerlegung}
 Berechne mittels PBZ:
 \begin{enumerate}
-	\item $\displaystyle \int_4^6 \frac{3x}{x^2 - 2x - 3} dx$ %(x+1)(x-3)
-	\begin{align*}
-		\int_4^6 \frac{3x}{x^2 - 2x - 3} dx &= \int_4^6 \frac{3x}{(x-3)(x+1)} dx \\
-		\intertext{Zunächst machen wir folgenden Ansatz}
-		\frac{3x}{(x-3)(x+1)} &= \frac{A}{x-3} + \frac{B}{x+1} \label{eq:pbz-ansatz} \\
-		&= \frac{A (x+1)}{(x-3)(x+1)} + \frac{B (x-3)}{(x-3)(x+1)} \\
-		&= \frac{A (x+1) + B (x-3)}{(x-3)(x+1)} \\
-		\intertext{Das gleichsetzen der Zähler ergibt}
-		3x &= A (x+1) + B (x-3) \\
-		\intertext{Der Koeffizientenvergleich führt dann zu einem Gleichungssystem}
-		\underline{3x} + \uwave{0} &= \underline{Ax + Bx} + \uwave{A -3B} \\
-		\rightarrow \begin{cases}
-			3 = A + B \\
-			0 = A - 3B
-		\end{cases}
-		\quad &\Leftrightarrow \quad A = \frac{9}{4}, \quad B = \frac{3}{4} \\
-		\intertext{Die so ausgerechneten $A$ und $B$ setzen wir nun wieder in den Ansatz ein}
-		\frac{3x}{(x-3)(x+1)} &= \frac{\frac{9}{4}}{x-3} + \frac{\frac{3}{4}}{x+1} \\
-		\intertext{Nun lässt sich das Integral leicht lösen}
-		\int_4^6 \frac{3x}{(x-3)(x+1)} dx &= \int_4^6 \frac{\frac{9}{4}}{x-3} + \frac{\frac{3}{4}}{x+1} dx \\
-		&= \int_4^6 \frac{\frac{9}{4}}{x-3} dx + \int_4^6 \frac{\frac{3}{4}}{x+1} dx \\
-		\intertext{Mit $\int \frac{1}{a} = \ln{a}$ folgt}
-		&= \frac{9}{4} \int_4^6 \frac{1}{x-3} dx + \frac{3}{4} \int_4^6 \frac{1}{x+1} dx \\
-		&= \frac{9}{4} \left. \ln(x-3) \right|_4^6 + \frac{3}{4} \left. \ln(x+1) \right|_4^6 \\
-		&\approx 2.7242
-	\end{align*}
+	\item $\displaystyle \int_4^6 \frac{3x}{x^2 - 2x - 3} dx$ % Faktorisierung (x+1)(x-3)
 	
-	\item $\displaystyle \int_2^3 \frac{x-1}{x^3 + 4x^2 + 5x + 2} dx$ %(x+1)^2(x+2)
-	\begin{align*}
-		\intertext{Polynom dritten Grades: eine Nullstelle raten, dann per Polynomdivision faktorisieren}
-		\int_2^3 \frac{x-1}{x^3 + 4x^2 + 5x + 2} dx &= \int_2^3 \frac{x-1}{(x+1)^2 (x+2)} dx \\
-		\intertext{Bei einem Polynom dritten Grades sieht der Ansatz folgendermaßen aus}
-		\frac{x-1}{(x+1)^2 (x+2)} &= \frac{A}{x+1} + \frac{B}{(x+1)^2} + \frac{C}{x+2} \\
-		&= \frac{A(x+1)(x+2) + B(x+2) + C(x+1)^2}{(x+1)^2 (x+2)} \\
-		\intertext{Wir setzen die Zähler gleich und erhalten durch Koeffizientenvergleich ein Gleichungssystem}
-		x-1 &= A(x+1)(x+2) + B(x+2) + C(x+1)^2 \\
-		\underline{\underline{0x^2}} + \underline{x} \ \uwave{- 1} &=
-		\underline{\underline{Ax^2}} + \underline{3Ax} + \uwave{2A} + \underline{Bx} + \uwave{2B} + \underline{\underline{Cx^2}} + \underline{2Cx} + \uwave{C} \\
-		\rightarrow \begin{cases}
-			0 = A + C \\
-			1 = 3A + B + 2C \\
-			-1 = 2A + 2B + C
-		\end{cases}
-		&\rightarrow \begin{cases}
-			C = -A \\
-			1 = A + B \\
-			-2 = B
-		\end{cases} \\
-		&\Rightarrow A=3, B=-2, C=-3 \\
-		\intertext{Einsetzen der Werte für $A$, $B$ und $C$ in den Ansatz ergibt}
-		\frac{x-1}{(x+1)^2 (x+2)} &= \frac{3}{x+1} - \frac{2}{(x+1)^2} - \frac{3}{x+2} \\
-		\intertext{Das Integral kann mit dieser Form gelöst werden.}
-		\int_2^3 \frac{x-1}{x^3 + 4x^2 + 5x + 2} dx &= \int_2^3 \frac{3}{x+1} - \frac{2}{(x+1)^2} - \frac{3}{x+2} dx \\
-		&= \int_2^3 \frac{3}{x+1} dx - \int_2^3 \frac{2}{(x+1)^2} dx - \int_2^3 \frac{3}{x+2} dx \\
-		&= 3 \left. \ln(x+1) \right|_2^3 + \left. \frac{2}{x+2} \right|_2^3 - 3 \left. \ln(x+2) \right|_2^3 \\
-		&\approx 0.0269
-	\end{align*}
+	\ifshowsolution
+		\begin{align*}
+			\int_4^6 \frac{3x}{x^2 - 2x - 3} dx &= \int_4^6 \frac{3x}{(x-3)(x+1)} dx \\
+			\intertext{Zunächst machen wir folgenden Ansatz}
+			\frac{3x}{(x-3)(x+1)} &= \frac{A}{x-3} + \frac{B}{x+1} \label{eq:pbz-ansatz} \\
+			&= \frac{A (x+1)}{(x-3)(x+1)} + \frac{B (x-3)}{(x-3)(x+1)} \\
+			&= \frac{A (x+1) + B (x-3)}{(x-3)(x+1)} \\
+			\intertext{Das gleichsetzen der Zähler ergibt}
+			3x &= A (x+1) + B (x-3) \\
+			\intertext{Der Koeffizientenvergleich führt dann zu einem Gleichungssystem}
+			\underline{3x} + \uwave{0} &= \underline{Ax + Bx} + \uwave{A -3B} \\
+			\rightarrow \begin{cases}
+				3 = A + B \\
+				0 = A - 3B
+			\end{cases}
+			\quad &\Leftrightarrow \quad A = \frac{9}{4}, \quad B = \frac{3}{4} \\
+			\intertext{Die so ausgerechneten $A$ und $B$ setzen wir nun wieder in den Ansatz ein}
+			\frac{3x}{(x-3)(x+1)} &= \frac{\frac{9}{4}}{x-3} + \frac{\frac{3}{4}}{x+1} \\
+			\intertext{Nun lässt sich das Integral leicht lösen}
+			\int_4^6 \frac{3x}{(x-3)(x+1)} dx &= \int_4^6 \frac{\frac{9}{4}}{x-3} + \frac{\frac{3}{4}}{x+1} dx \\
+			&= \int_4^6 \frac{\frac{9}{4}}{x-3} dx + \int_4^6 \frac{\frac{3}{4}}{x+1} dx \\
+			\intertext{Mit $\int \frac{1}{a} = \ln{a}$ folgt}
+			&= \frac{9}{4} \int_4^6 \frac{1}{x-3} dx + \frac{3}{4} \int_4^6 \frac{1}{x+1} dx \\
+			&= \frac{9}{4} \left. \ln(x-3) \right|_4^6 + \frac{3}{4} \left. \ln(x+1) \right|_4^6 \\
+			&\approx 2.7242
+		\end{align*}
+	\fi
+	
+	\item $\displaystyle \int_2^3 \frac{x-1}{x^3 + 4x^2 + 5x + 2} dx$ % Faktorisierung (x+1)^2(x+2)
+	
+	\ifshowsolution
+		\begin{align*}
+			\intertext{Polynom dritten Grades: eine Nullstelle raten, dann per Polynomdivision faktorisieren}
+			\int_2^3 \frac{x-1}{x^3 + 4x^2 + 5x + 2} dx &= \int_2^3 \frac{x-1}{(x+1)^2 (x+2)} dx \\
+			\intertext{Bei einem Polynom dritten Grades sieht der Ansatz folgendermaßen aus}
+			\frac{x-1}{(x+1)^2 (x+2)} &= \frac{A}{x+1} + \frac{B}{(x+1)^2} + \frac{C}{x+2} \\
+			&= \frac{A(x+1)(x+2) + B(x+2) + C(x+1)^2}{(x+1)^2 (x+2)} \\
+			\intertext{Wir setzen die Zähler gleich und erhalten durch Koeffizientenvergleich ein Gleichungssystem}
+			x-1 &= A(x+1)(x+2) + B(x+2) + C(x+1)^2 \\
+			\underline{\underline{0x^2}} + \underline{x} \ \uwave{- 1} &=
+			\underline{\underline{Ax^2}} + \underline{3Ax} + \uwave{2A} + \underline{Bx} + \uwave{2B} + \underline{\underline{Cx^2}} + \underline{2Cx} + \uwave{C} \\
+			\rightarrow \begin{cases}
+				0 = A + C \\
+				1 = 3A + B + 2C \\
+				-1 = 2A + 2B + C
+			\end{cases}
+			&\rightarrow \begin{cases}
+				C = -A \\
+				1 = A + B \\
+				-2 = B
+			\end{cases} \\
+			&\Rightarrow A=3, B=-2, C=-3 \\
+			\intertext{Einsetzen der Werte für $A$, $B$ und $C$ in den Ansatz ergibt}
+			\frac{x-1}{(x+1)^2 (x+2)} &= \frac{3}{x+1} - \frac{2}{(x+1)^2} - \frac{3}{x+2} \\
+			\intertext{Das Integral kann mit dieser Form gelöst werden.}
+			\int_2^3 \frac{x-1}{x^3 + 4x^2 + 5x + 2} dx &= \int_2^3 \frac{3}{x+1} - \frac{2}{(x+1)^2} - \frac{3}{x+2} dx \\
+			&= \int_2^3 \frac{3}{x+1} dx - \int_2^3 \frac{2}{(x+1)^2} dx - \int_2^3 \frac{3}{x+2} dx \\
+			&= 3 \left. \ln(x+1) \right|_2^3 + \left. \frac{2}{x+2} \right|_2^3 - 3 \left. \ln(x+2) \right|_2^3 \\
+			&\approx 0.0269
+		\end{align*}
+	\fi
 \end{enumerate}
 
 \subsubsection{Substitution}
-\[ \int_a^b \mathrm{f}( \ \underbrace{\mathrm{g}(x)}_t \ ) \intend{x} = \int_{\mathrm{g}(a)}^{\mathrm{g(b)}} \mathrm{f}(t) \intend{t} \]
+\begin{align*}
+	\int_a^b \mathrm{f}( \ \underbrace{\mathrm{g}(x)}_t \ ) g'(x) \intend{x} = \int_{\mathrm{g}(a)}^{\mathrm{g(b)}} \mathrm{f}(t) \intend{t}
+\end{align*}
+
 Berechne mittels Substitution:
 \begin{enumerate}
 	\item $\int_{-\pi}^\pi \sin{x} \cdot \cos{x} \intend{x}$
+	
+	\ifshowsolution
 		\begin{align*}
 			\shortintertext{Substituiere: $\sin{x} = t$}
 			\shortintertext{$\frac{dt}{dx} = \cos{x} \Leftrightarrow \intend{x} = \frac{\intend{t}}{\cos{x}}$}
@@ -1338,7 +1397,11 @@ Berechne mittels Substitution:
 			&= \frac{1}{2} \braces{0^2 - 0^2} \\
 			&= 0
 		\end{align*}
+	\fi
+	
 	\item $\int_1^e \frac{\sqrt{\ln(x)}}{x} \intend{x}$
+	
+	\ifshowsolution
 		\begin{align*}
 			\shortintertext{Substituiere: $\ln(x) = t$}
 			\shortintertext{$\frac{\intend{t}}{\intend{x}} = \frac{1}{x} \Leftrightarrow \intend{x} = x \intend{t}$}
@@ -1350,31 +1413,41 @@ Berechne mittels Substitution:
 			\brackets{ \frac{2}{3} z^{\frac{3}{2}} }_0^1 &= \brackets{ \frac{2}{3} \ln(x)^{\frac{3}{2}} }_1^e \\
 			&= \frac{2}{3} - 0
 		\end{align*}
+	\fi
+	
 	\item $\int_\frac{\pi}{2}^\pi e^{3 \cos x} \cdot \sin x \intend{x}$
+	
+	\ifshowsolution
 		\begin{align*}
-		\shortintertext{Substituiere: $3 \cos x = t$}
-		\shortintertext{$\frac{\intend{t}}{\intend{x}} = -3 \sin x \Leftrightarrow \intend{x} = \frac{\intend{t}}{-3 \sin x}$}
-		\int_\frac{\pi}{2}^\pi e^{3 \cos x} \cdot \sin x \intend{x} &= \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t \cdot \cancel{\sin x} \ \frac{\intend{t}}{-3 \ \cancel{\sin x}} \\
-		&= \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t \frac{1}{-3} \intend{t} \\
-		&= -\frac{1}{3} \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t\intend{t} \\
-		&= -\frac{1}{3} \brackets{e^t}_{t(\frac{\pi}{2})}^{t(\pi)} \\
-		&= -\frac{1}{3} \brackets{e^t}_{3 \cos(\frac{\pi}{2})}^{3 \cos(\pi)} \\
-		&= -\frac{1}{3} \brackets{e^t}_0^{-3} \\
-		&= -\frac{1}{3} \braces{e^{-3} - \underbrace{e^0}_{= 1}} \\
-		&\approx 0.3167
-		\shortintertext{Oder: Rücksubstitution nach Integration}
-		-\frac{1}{3} \left[ e^t \right]_{t(\frac{\pi}{2})}^{t(\pi)} &= -\frac{1}{3} \left[ e^{3 \cos x} \right]_{\frac{\pi}{2}}^\pi \\
-		&= -\frac{1}{3} \braces{e^{3 \cos \pi} - e^{3 \cos \frac{\pi}{2}}} \\
-		&= -\frac{1}{3} \braces{e^{-3} - e^0} \\
-		&\approx 0.3167
+			\shortintertext{Substituiere: $3 \cos x = t$}
+			\shortintertext{$\frac{\intend{t}}{\intend{x}} = -3 \sin x \Leftrightarrow \intend{x} = \frac{\intend{t}}{-3 \sin x}$}
+			\int_\frac{\pi}{2}^\pi e^{3 \cos x} \cdot \sin x \intend{x} &= \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t \cdot \cancel{\sin x} \ \frac{\intend{t}}{-3 \ \cancel{\sin x}} \\
+			&= \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t \frac{1}{-3} \intend{t} \\
+			&= -\frac{1}{3} \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t\intend{t} \\
+			&= -\frac{1}{3} \brackets{e^t}_{t(\frac{\pi}{2})}^{t(\pi)} \\
+			&= -\frac{1}{3} \brackets{e^t}_{3 \cos(\frac{\pi}{2})}^{3 \cos(\pi)} \\
+			&= -\frac{1}{3} \brackets{e^t}_0^{-3} \\
+			&= -\frac{1}{3} \braces{e^{-3} - \underbrace{e^0}_{= 1}} \\
+			&\approx 0.3167
+			\shortintertext{Oder: Rücksubstitution nach Integration}
+			-\frac{1}{3} \left[ e^t \right]_{t(\frac{\pi}{2})}^{t(\pi)} &= -\frac{1}{3} \left[ e^{3 \cos x} \right]_{\frac{\pi}{2}}^\pi \\
+			&= -\frac{1}{3} \braces{e^{3 \cos \pi} - e^{3 \cos \frac{\pi}{2}}} \\
+			&= -\frac{1}{3} \braces{e^{-3} - e^0} \\
+			&\approx 0.3167
 		\end{align*}
+	\fi
 \end{enumerate}
 
 \subsubsection{Partielle Integration}
-\[ \int \mathrm{f}(x) \ \mathrm{g}'(x) \intend{x} = \brackets{\mathrm{f}(x) \ \mathrm{g}(x)} - \int \mathrm{f}'(x) \ \mathrm{g}(x) \intend{x} \]
+\begin{align*}
+	\int \mathrm{f}(x) \ \mathrm{g}'(x) \intend{x} = \brackets{\mathrm{f}(x) \ \mathrm{g}(x)} - \int \mathrm{f}'(x) \ \mathrm{g}(x) \intend{x}
+\end{align*}
+
 Berechne mittels partieller Integration:
 \begin{enumerate}
 	\item $\int_0^1 3x^2 e^x \intend{x}$
+	
+	\ifshowsolution
 		\begin{align*}
 			\int_0^1 \underbrace{3x^2}_\mathrm{f} \underbrace{e^x}_\mathrm{g'} \intend{x} &= \brackets{3x^2 e^x}_0^1 - \int_0^1 \underbrace{6x}_\mathrm{f} \ \underbrace{e^x}_\mathrm{g'} \intend{x} \\
 			&= \brackets{3x^2 e^x}_0^1 - \braces{ \brackets{6x \ e^x}_0^1 - \int_0^1 6 e^x \intend{x} } \\
@@ -1383,6 +1456,7 @@ Berechne mittels partieller Integration:
 			&= \braces{3 e - 0} - \braces{6 e - 0} + 6 \braces{e - 1} \\
 			&= 3e - 6
 		\end{align*}
+	\fi
 \end{enumerate}
 
 \newpage
