@@ -52,6 +52,9 @@
 \maketitle
 \tableofcontents
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                   HöMa                                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Höhere Mathematik}
 \subsection{Wahrheitstabellen}
@@ -1459,37 +1462,68 @@ Berechne mittels partieller Integration:
 	\fi
 \end{enumerate}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                Statistik                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Statistik}
 \subsection{Klassische Wahrscheinlichkeitsrechnung}
 \subsubsection{Würfel}
 Ein fairer Würfel wird geworfen. Wie groß ist die Wahrscheinlichkeit, dass \dots \\
-$\Omega = \{1,2,3,4,5,6\}, \quad \abs{\Omega} = 6$
+
 \begin{enumerate}
-	\item eine 3 geworfen wird? \\
-	$\abs{\{3\}} = 1 \rightarrow P(3) = \frac{1}{6}$
-	\item eine 3 oder eine 4 geworfen wird? \\
-	$\abs{\{3, 4\}} = 2 \rightarrow P(3 \cup 4) = \frac{2}{6}$
-	\item eine Primzahl $> 3$ geworfen wird? \\
-	$\abs{\{5\}} = 1 \rightarrow P(\text{Primzahl} > 3) = \frac{1}{6}$
-	\item eine Primzahl oder eine Zahl $> 3$ geworfen wird? \\
-	Primzahlen: $\{2,3,5\}$, $\quad$ Zahlen $> 3: \{4,5,6\}$ \\
-	Vereinigung: $\{2,3,5\} \cup \{4,5,6\} = \{2,3,4,5,6\}$ \\
-	$\abs{\{2,3,4,5,6\}} = 5 \rightarrow P(\text{'prim' oder} >3) = \frac{5}{6}$
+	\item eine 3 geworfen wird?
+	
+	\ifshowsolution
+		Ereignisraum $\Omega = \{1,2,3,4,5,6\}, \quad \abs{\Omega} = 6$ \\
+		$\abs{\{3\}} = 1 \rightarrow P(3) = \frac{1}{6}$
+	\fi
+	
+	\item eine 3 oder eine 4 geworfen wird?
+	
+	\ifshowsolution
+		Ereignisraum $\Omega = \{1,2,3,4,5,6\}, \quad \abs{\Omega} = 6$ \\
+		$\abs{\{3, 4\}} = 2 \rightarrow P(3 \cup 4) = \frac{2}{6}$
+	\fi
+	
+	\item eine Primzahl $> 3$ geworfen wird?
+	
+	\ifshowsolution
+		Ereignisraum $\Omega = \{1,2,3,4,5,6\}, \quad \abs{\Omega} = 6$ \\
+		$\abs{\{5\}} = 1 \rightarrow P(\text{Primzahl} > 3) = \frac{1}{6}$
+	\fi
+	
+	\item eine Primzahl oder eine Zahl $> 3$ geworfen wird?
+	
+	\ifshowsolution
+		Ereignisraum $\Omega = \{1,2,3,4,5,6\}, \quad \abs{\Omega} = 6$ \\
+		Primzahlen: $\{2,3,5\}$, $\quad$ Zahlen $> 3: \{4,5,6\}$ \\
+		Vereinigung: $\{2,3,5\} \cup \{4,5,6\} = \{2,3,4,5,6\}$ \\
+		$\abs{\{2,3,4,5,6\}} = 5 \rightarrow P(\text{'prim' oder} >3) = \frac{5}{6}$
+	\fi
 \end{enumerate}
+
 Nun wird mit 2 Würfeln geworden. Wie groß ist die Wahrscheinlichkeit, dass \dots \\
-$\Omega = \left\{(1,1)\ (1,2)\dots (6,5)\ (6,6)\ (6,6)\ (5,6)\dots (2,1)\ (1,1)\right\}, \quad \abs{\Omega} = 36$
 \begin{enumerate}
-	\item die Augensumme 7 ist? \\
-	$E = \{(1,6)\ (6,1)\ (2,5)\ (5,2)\ (3,4)\ (4,3)\}, \quad \abs{E} = 6$ \\
-	$\frac{\abs{E}}{\abs{\Omega}} = \frac{6}{36} = \frac{1}{6}$
-	\item die Augensumme durch 4 teilbar ist? \\
-	Maximum: $6+6 = 12$, Vielfache $\leq 12$ von 4: $\{4, 8, 12\}$ \\
-	$E_4 = \{(1,3)\ (2,2)\ (3,1)\}, \quad \abs{E_4} = 3$ \\
-	$E_8 = \{(2,6)\ (3,5)\ (4,4)\ (5,3)\ (6,2)\}, \quad \abs{E_8} = 5$ \\
-	$E_{12} = \{(6,6)\}, \quad \abs{E_{12}} = 1$ \\
-	$\abs{E_{\text{gesammt}}} = \abs{E_4} + \abs{E_8} + \abs{E_{12}} = 9$ (Weil disjunkt) \\
-	$\frac{\abs{E_{\text{gesammt}}}}{\abs{\Omega}} = \frac{9}{36} = \frac{1}{4}$
+	\item die Augensumme 7 ist?
+	
+	\ifshowsolution
+		Ereignisraum $\Omega = \left\{(1,1)\ (1,2)\dots (6,5)\ (6,6)\ (6,6)\ (5,6)\dots (2,1)\ (1,1)\right\}, \quad \abs{\Omega} = 36$ \\
+		$E = \{(1,6)\ (6,1)\ (2,5)\ (5,2)\ (3,4)\ (4,3)\}, \quad \abs{E} = 6$ \\
+		$\frac{\abs{E}}{\abs{\Omega}} = \frac{6}{36} = \frac{1}{6}$
+	\fi
+	
+	\item die Augensumme durch 4 teilbar ist?
+	
+	\ifshowsolution
+		Ereignisraum $\Omega = \left\{(1,1)\ (1,2)\dots (6,5)\ (6,6)\ (6,6)\ (5,6)\dots (2,1)\ (1,1)\right\}, \quad \abs{\Omega} = 36$ \\
+		Maximum: $6+6 = 12$, Vielfache $\leq 12$ von 4: $\{4, 8, 12\}$ \\
+		$E_4 = \{(1,3)\ (2,2)\ (3,1)\}, \quad \abs{E_4} = 3$ \\
+		$E_8 = \{(2,6)\ (3,5)\ (4,4)\ (5,3)\ (6,2)\}, \quad \abs{E_8} = 5$ \\
+		$E_{12} = \{(6,6)\}, \quad \abs{E_{12}} = 1$ \\
+		$\abs{E_{\text{gesammt}}} = \abs{E_4} + \abs{E_8} + \abs{E_{12}} = 9$ (Weil disjunkt) \\
+		$\frac{\abs{E_{\text{gesammt}}}}{\abs{\Omega}} = \frac{9}{36} = \frac{1}{4}$
+	\fi
 \end{enumerate}
 
 \subsubsection{Das Urnenmodell}
@@ -1512,49 +1546,51 @@ In einer Urne liegen 12 Kugeln: 9 blaue und 3 rote. Aus dieser ziehen wir 3 Kuge
 	\item höchstens eine rote Kugel gezogen wird?
 \end{enumerate}
 
-\paragraph{Mit Reihenfolge, mit Zurücklegen}
-Mögliche Ereignisse: $n^k = 12^3 = 1728$
-\begin{description}
-	\item[alle blau] $n^k = 9^3 = 729$
-	\item[zwei blau, eine rot] \ 
-		\begin{itemize}
-			\item (BBR) $= 9 \cdot 9 \cdot 3 = 243$
-			\item (BRB) $= 9 \cdot 3 \cdot 9 = 243$
-			\item (RBB) $= 3 \cdot 9 \cdot 9 = 243$
-		\end{itemize}
-		$243 \cdot 3 = 729$
-	\item[höchstens eine rot] keine rot $\cup$ eine rot $= 729+729 = 1458$
-\end{description}
+\ifshowsolution
+	\paragraph{Mit Reihenfolge, mit Zurücklegen}
+	Mögliche Ereignisse: $n^k = 12^3 = 1728$
+	\begin{description}
+		\item[alle blau] $n^k = 9^3 = 729$
+		\item[zwei blau, eine rot] \ 
+			\begin{itemize}
+				\item (BBR) $= 9 \cdot 9 \cdot 3 = 243$
+				\item (BRB) $= 9 \cdot 3 \cdot 9 = 243$
+				\item (RBB) $= 3 \cdot 9 \cdot 9 = 243$
+			\end{itemize}
+			$243 \cdot 3 = 729$
+		\item[höchstens eine rot] keine rot $\cup$ eine rot $= 729+729 = 1458$
+	\end{description}
 
-\paragraph{Mit Reihenfolge, ohne Zurücklegen}
-Mögliche Ereignisse: $\frac{n!}{(n-k)!} = \frac{12!}{(12-3)!} = 1320$
-\begin{description}
-	\item[alle blau] $\frac{9!}{(9-3)!} = \frac{9!}{6!} = 504$
-	\item[zwei blau, eine rot] \
-		\begin{itemize}
-			\item (BBR) $\frac{9!}{(9-2)!} \cdot \frac{3!}{(3-1)!} = \frac{9!}{7!} \cdot \frac{3!}{2!} = 72 \cdot 3 = 216$
-			\item (BRB) $\frac{9!}{(9-2)!} \cdot \frac{3!}{(3-1)!} = \frac{9!}{7!} \cdot \frac{3!}{21} = 72 \cdot 3 = 216$
-			\item (RBB) $\frac{9!}{(9-2)!} \cdot \frac{3!}{(3-1)!} = \frac{9!}{7!} \cdot \frac{3!}{2!} = 72 \cdot 3 = 216$
-		\end{itemize}
-		$216 \cdot 3 = 648$
-	\item[höchstens eine rot] keine rot $\cup$ eine rot $= 504 + 648 = 1152$
-\end{description}
+	\paragraph{Mit Reihenfolge, ohne Zurücklegen}
+	Mögliche Ereignisse: $\frac{n!}{(n-k)!} = \frac{12!}{(12-3)!} = 1320$
+	\begin{description}
+		\item[alle blau] $\frac{9!}{(9-3)!} = \frac{9!}{6!} = 504$
+		\item[zwei blau, eine rot] \
+			\begin{itemize}
+				\item (BBR) $\frac{9!}{(9-2)!} \cdot \frac{3!}{(3-1)!} = \frac{9!}{7!} \cdot \frac{3!}{2!} = 72 \cdot 3 = 216$
+				\item (BRB) $\frac{9!}{(9-2)!} \cdot \frac{3!}{(3-1)!} = \frac{9!}{7!} \cdot \frac{3!}{21} = 72 \cdot 3 = 216$
+				\item (RBB) $\frac{9!}{(9-2)!} \cdot \frac{3!}{(3-1)!} = \frac{9!}{7!} \cdot \frac{3!}{2!} = 72 \cdot 3 = 216$
+			\end{itemize}
+			$216 \cdot 3 = 648$
+		\item[höchstens eine rot] keine rot $\cup$ eine rot $= 504 + 648 = 1152$
+	\end{description}
 
-\paragraph{Ohne Reihenfolge, ohne Zurücklegen}
-Mögliche Ereignisse: $\binom{n}{k} = \binom{12}{3} = 220$
-\begin{description}
-	\item[alle blau] $\binom{9}{3} = 84$
-	\item[zwei blau, eine rot] $\binom{9}{2} \cdot \binom{3}{1} = 36 \cdot 3 = 108$
-	\item[höchstens eine rot] keine rot $\cup$ eine rot $= 84 + 108 = 192$
-\end{description}
+	\paragraph{Ohne Reihenfolge, ohne Zurücklegen}
+	Mögliche Ereignisse: $\binom{n}{k} = \binom{12}{3} = 220$
+	\begin{description}
+		\item[alle blau] $\binom{9}{3} = 84$
+		\item[zwei blau, eine rot] $\binom{9}{2} \cdot \binom{3}{1} = 36 \cdot 3 = 108$
+		\item[höchstens eine rot] keine rot $\cup$ eine rot $= 84 + 108 = 192$
+	\end{description}
 
-\paragraph{Ohne Reihenfolge, mit Zurücklegen}
-Mögliche Ereignisse: $\binom{n+k-1}{k} = \binom{14}{3} = 364$
-\begin{description}
-	\item[alle blau] $\binom{11}{3} = 165$
-	\item[zwei blau, eine rot] $\binom{10}{2} \cdot \binom{3}{1} = 45 \cdot 3 = 135$
-	\item[höchstens eine rot] keine rot $\cup$ eine rot $= 165 + 135 = 300$
-\end{description}
+	\paragraph{Ohne Reihenfolge, mit Zurücklegen}
+	Mögliche Ereignisse: $\binom{n+k-1}{k} = \binom{14}{3} = 364$
+	\begin{description}
+		\item[alle blau] $\binom{11}{3} = 165$
+		\item[zwei blau, eine rot] $\binom{10}{2} \cdot \binom{3}{1} = 45 \cdot 3 = 135$
+		\item[höchstens eine rot] keine rot $\cup$ eine rot $= 165 + 135 = 300$
+	\end{description}
+\fi
 
 \subsection{Bedingte Wahrscheinlichkeit}
 Der \textit{TIOBE-Index} misst die Verbreitung verschiedener Programmiersprachen, z.B. auf Basis von öffentlichen Repositories (Quellcode-Speicherorte). Aktuell (Januar 2014) gilt unter den Top4 folgende Aufteilung (gerundet, sonstige nicht betrachtet, C++ gefittet):
@@ -1564,58 +1600,63 @@ Der \textit{TIOBE-Index} misst die Verbreitung verschiedener Programmiersprachen
 	\item[Objective-C] 19\%
 	\item[C++] 13\%
 \end{description}
-Ab hier wird es fiktiv: 63\% aller Programme werden unter Windows entwickelt. Von allen C++-Programmen werden 67\% unter Windows geschrieben, von den Java-Programmen sind es 93\%. Von den reinen C-Programmen werden 41\% unter sonstigen Betriebsystemen entwickelt. \\
-\\
-Gib eine vollständige Wahrscheinlichkeitstabelle an (auf 2 Nachkommastellen runden). \\
-\\
-Schritt 1: gegebene Werte eintragen \\
-\begin{tabular}{|c|cccc|c|}
-	\hline
-	& C & Java & Obj-C & C++ & \\
-	\hline
-	Windows & & & & & \textcolor{blue}{0.63} \\
-	Sonstige & & & & & \textcolor{blue}{0.37} \\
-	\hline
-	& \textcolor{blue}{0.37} & \textcolor{blue}{0.31} & \textcolor{blue}{0.19} & \textcolor{blue}{0.13} & 1 \\
-	\hline
-\end{tabular} \\
-\\
-Schritt 2: Gegebene Verhältnisse verrechnen. Beispielsweise werden 37\% aller Programme in C geschrieben, und davon wiederum 41\% unter sonstigen Betriebssystemen. Also \texttt{C-Programme geschrieben unter Sonstigen: $0.37 \cdot 0.41 \approx 0.15$} \\
-\begin{tabular}{|c|cccc|c|}
-	\hline
-	& C & Java & Obj-C & C++ & \\
-	\hline
-	Windows & & \textcolor{blue}{0.29} & & \textcolor{blue}{0.09} & 0.63 \\
-	Sonstige & \textcolor{blue}{0.15} & & & & 0.37 \\
-	\hline
-	& 0.37 & 0.31 & 0.19 & 0.13 & 1 \\
-	\hline
-\end{tabular} \\
-\\
-Schritt 3: Verbleibende Werte über Spalten- und Zeilensummen errechnen: \\
-\begin{tabular}{|c|cccc|c|}
-	\hline
-	& C & Java & Obj-C & C++ & \\
-	\hline
-	Windows & \textcolor{blue}{0.22} & 0.29 & \textcolor{blue}{0.03} & 0.09 & 0.63 \\
-	Sonstige & 0.15 & \textcolor{blue}{0.02} & \textcolor{blue}{0.16} & \textcolor{blue}{0.04} & 0.37 \\
-	\hline
-	& 0.37 & 0.31 & 0.19 & 0.13 & 1 \\
-	\hline
-\end{tabular}
+Ab hier wird es fiktiv: 63\% aller Programme werden unter Windows entwickelt. Von allen C++-Programmen werden 67\% unter Windows geschrieben, von den Java-Programmen sind es 93\%. Von den reinen C-Programmen werden 41\% unter sonstigen Betriebsystemen entwickelt.
+
+Gib eine vollständige Wahrscheinlichkeitstabelle an (auf 2 Nachkommastellen runden).
+
+\ifshowsolution
+	Schritt 1: gegebene Werte eintragen
+
+	\begin{tabular}{|c|cccc|c|}
+		\hline
+		& C & Java & Obj-C & C++ & \\
+		\hline
+		Windows & & & & & \textcolor{blue}{0.63} \\
+		Sonstige & & & & & \textcolor{blue}{0.37} \\
+		\hline
+		& \textcolor{blue}{0.37} & \textcolor{blue}{0.31} & \textcolor{blue}{0.19} & \textcolor{blue}{0.13} & 1 \\
+		\hline
+	\end{tabular}
+
+	Schritt 2: Gegebene Verhältnisse verrechnen. Beispielsweise werden 37\% aller Programme in C geschrieben, und davon wiederum 41\% unter sonstigen Betriebssystemen. Also \texttt{C-Programme geschrieben unter Sonstigen: $0.37 \cdot 0.41 \approx 0.15$}
+
+	\begin{tabular}{|c|cccc|c|}
+		\hline
+		& C & Java & Obj-C & C++ & \\
+		\hline
+		Windows & & \textcolor{blue}{0.29} & & \textcolor{blue}{0.09} & 0.63 \\
+		Sonstige & \textcolor{blue}{0.15} & & & & 0.37 \\
+		\hline
+		& 0.37 & 0.31 & 0.19 & 0.13 & 1 \\
+		\hline
+	\end{tabular}
+
+	Schritt 3: Verbleibende Werte über Spalten- und Zeilensummen errechnen:
+
+	\begin{tabular}{|c|cccc|c|}
+		\hline
+		& C & Java & Obj-C & C++ & \\
+		\hline
+		Windows & \textcolor{blue}{0.22} & 0.29 & \textcolor{blue}{0.03} & 0.09 & 0.63 \\
+		Sonstige & 0.15 & \textcolor{blue}{0.02} & \textcolor{blue}{0.16} & \textcolor{blue}{0.04} & 0.37 \\
+		\hline
+		& 0.37 & 0.31 & 0.19 & 0.13 & 1 \\
+		\hline
+	\end{tabular}
+\fi
 
 \subsection{Statistische Abhängigkeit}
-Prof. Müller liest die Vorlesung Thermodynamik zwei mal in der Woche, Montags um 8:30 und Donnerstags um 12:00. Er glaubt, dass sich Montags morgens wesentlich weniger Studenten aufraffen können zur Vorlesung zu kommen, und außerdem, dass bei Regen die Hörerzahlen ebenfalls zurück gehen. Darum hat er die Wahrscheinlichkeiten für die drei Ereignisse \emph{Wenig Hörer (W)}, \emph{Morgens (M)} und \emph{Regen (R)} und ihre Kombinationen in einer Tabelle festgehalten: \\
+Prof. Müller liest die Vorlesung Thermodynamik zwei mal in der Woche, Montags um 8:30 und Donnerstags um 12:00. Er glaubt, dass sich Montags morgens wesentlich weniger Studenten aufraffen können zur Vorlesung zu kommen, und außerdem, dass bei Regen die Hörerzahlen ebenfalls zurück gehen. Darum hat er die Wahrscheinlichkeiten für die drei Ereignisse \emph{Wenig Hörer (W)}, \emph{Morgens (M)} und \emph{Regen (R)} und ihre Kombinationen in einer Tabelle festgehalten:
 
 \vspace{\baselineskip}
 \begin{tabular}{c|c|c|c|c|c|c|c}
 	Normal & W & M & R & WM & WR & MR & WMR \\ \hline
 	0.25 & 0.05 & 0.2 & 0.08 & 0.402 & 0.002 & 0.015 & 0.002
-\end{tabular}\\
-\\
-Hängt die Hörerzahl tatsächlich von der Uhrzeit bzw. vom Regen ab? \\
-\\
-Statistische Unabhängigkeit ist gegeben genau dann wenn gilt: $W(X \cap Y) = W(X) \cdot W(Y)$
+\end{tabular}
+
+Statistische Unabhängigkeit ist gegeben genau dann wenn gilt: $W(X \cap Y) = W(X) \cdot W(Y)$. Hängt die Hörerzahl tatsächlich von der Uhrzeit bzw. vom Regen ab?
+
+\ifshowsolution
 \paragraph{Wenig Hörer und Morgens} Wir wählen also $W(W \cap M)$ als alle Fälle, in denen es sowohl Wenig Hörer gibt als auch die Vorlesungs Morgens statt findet. Dies wird mit den Einzelwahrscheinlichkeiten für $W(X) \cdot W(Y)$ gleich gesetzt.
 \begin{align*}
 	WM + WMR &\overset{!}{=} W \cdot M \\
@@ -1623,6 +1664,7 @@ Statistische Unabhängigkeit ist gegeben genau dann wenn gilt: $W(X \cap Y) = W(
 	0.404 &\neq 0.001
 \end{align*}
 Die Hörerzahl und die Uhrzeit sind also abhängig.
+
 \paragraph{Wenig Hörer und Regen} Selbes Spiel. Alle Fälle, in denen es Wenig Hörer und Regen gibt gleichsetzten mit dem Produkt der Einzelwahrscheinlichkeiten.
 \begin{align*}
 	WR + WMR &\overset{!}{=} W \cdot R \\
@@ -1630,6 +1672,7 @@ Die Hörerzahl und die Uhrzeit sind also abhängig.
 	0.004 &= 0,004
 \end{align*}
 Die Hörerzahl und das Wetter sind also unabhängig.
+\fi
 
 \subsection{Zufallsvariablen}
 Für die \emph{ganzzahlige} Zufallsvariable X seien folgende Wahrscheinlichkeiten bekannt, Werte $X > 4$ gibt es nicht:
@@ -1639,139 +1682,153 @@ Für die \emph{ganzzahlige} Zufallsvariable X seien folgende Wahrscheinlichkeite
 	\item $W(X \leq 3) = 0.8$
 	\item $W(X > 1) = 0.4$
 \end{itemize}
-Gib die Wahrscheinlichkeits- und die Verteilungsfunktion an.\\
-\\
-Aus der Aufgabenstellung ist bekannt:
-\[
-f(x) = 
-\begin{cases}
-	0.2, & x = 0 \\
-	& x = 1 \\
-	0.2, & x = 2 \\
-	& x = 3 \\
-	& x = 4 \\
-\end{cases}, \qquad
-F(y) =
-\begin{cases}
-	0, & y < 0 \\
-	0.2, & 0 \leq y < 1 \\
-	& 1 \leq y < 2 \\
-	& 2 \leq y < 3 \\
-	0.8, & 3 \leq y < 4 \\
-	1, & 4 \leq y \\
-\end{cases}
-\]
-Weiterhin können wir herleiten:
-\begin{align*}
-	W(X > 1) &= 1 - W(X \leq 1) \\
-	0.4 &= 1 - W(X \leq 1) \\
-	W(X \leq 1) &= 0.6
-\end{align*}
-\[
-f(x) = 
-\begin{cases}
-	0.2, & x = 0 \\
-	& x = 1 \\
-	0.2, & x = 2 \\
-	& x = 3 \\
-	& x = 4 \\
-\end{cases}, \qquad
-F(y) =
-\begin{cases}
-	0, & y < 0 \\
-	0.2, & 0 \leq y < 1 \\
-	0.6, & 1 \leq y < 2 \\
-	& 2 \leq y < 3 \\
-	0.8, & 3 \leq y < 4 \\
-	1, & 4 \leq y \\
-\end{cases}
-\]
-Damit ist folgende Berechnung möglich: $W(X == 1) = F(1) - F(0) = 0.6 - 0.2 = 0.4$
-\[
-f(x) = 
-\begin{cases}
-	0.2, & x = 0 \\
-	0.4, & x = 1 \\
-	0.2, & x = 2 \\
-	& x = 3 \\
-	& x = 4 \\
-\end{cases}, \qquad
-F(y) =
-\begin{cases}
-	0, & y < 0 \\
-	0.2, & 0 \leq y < 1 \\
-	0.6, & 1 \leq y < 2 \\
-	& 2 \leq y < 3 \\
-	0.8, & 3 \leq y < 4 \\
-	1, & 4 \leq y \\
-\end{cases}
-\]
-Um $F(2)$, also $W(X \leq 2)$ zu bekommen, können wir die Wahrscheinlichkeiten für $x = q \text{ mit } q \in \{0,1,2\}$ aufaddieren: $W(X \leq 2) = W(X = 0) + W(X = 1) + W(X = 2) = 0.2 + 0.4 + 0.2 = 0.8$
-\[
-f(x) = 
-\begin{cases}
-	0.2, & x = 0 \\
-	0.4, & x = 1 \\
-	0.2, & x = 2 \\
-	& x = 3 \\
-	& x = 4 \\
-\end{cases}, \qquad
-F(y) =
-\begin{cases}
-	0, & y < 0 \\
-	0.2, & 0 \leq y < 1 \\
-	0.6, & 1 \leq y < 2 \\
-	0.8, & 2 \leq y < 3 \\
-	0.8, & 3 \leq y < 4 \\
-	1, & 4 \leq y \\
-\end{cases}
-\]
-f(3) kann nun berechnet werden wie oben schon f(1):
-\begin{align*}
-	W(X == 3) = F(3) - F(2) = 0.8 - 0.8 = 0
-\end{align*}
-\[
-f(x) = 
-\begin{cases}
-	0.2, & x = 0 \\
-	0.4, & x = 1 \\
-	0.2, & x = 2 \\
-	0, & x = 3 \\
-	& x = 4 \\
-\end{cases}, \qquad
-F(y) =
-\begin{cases}
-	0, & y < 0 \\
-	0.2, & 0 \leq y < 1 \\
-	0.6, & 1 \leq y < 2 \\
-	0.8, & 2 \leq y < 3 \\
-	0.8, & 3 \leq y < 4 \\
-	1, & 4 \leq y \\
-\end{cases}
-\]
-Genau so könnten wir auf f(4) errechnen, aber da sich die Wahrscheinlichkeiten zu 1 addieren müssen, können wir auch rechnen: f(4) = 1 - (f(0) + f(1) + f(2) + f(3)) = 0.2
-\[
-f(x) = 
-\begin{cases}
-	0.2, & x = 0 \\
-	0.4, & x = 1 \\
-	0.2, & x = 2 \\
-	0, & x = 3 \\
-	0.2, & x = 4 \\
-\end{cases}, \qquad
-F(y) =
-\begin{cases}
-	0, & y < 0 \\
-	0.2, & 0 \leq y < 1 \\
-	0.6, & 1 \leq y < 2 \\
-	0.8, & 2 \leq y < 3 \\
-	0.8, & 3 \leq y < 4 \\
-	1, & 4 \leq y \\
-\end{cases}
-\]
+Gib die Wahrscheinlichkeits- und die Verteilungsfunktion an.
 
+\ifshowsolution
+	Aus der Aufgabenstellung ist bekannt:
+	\begin{align*}
+		f(x) = 
+		\begin{cases}
+			0.2, & x = 0 \\
+			& x = 1 \\
+			0.2, & x = 2 \\
+			& x = 3 \\
+			& x = 4 \\
+		\end{cases}, \qquad
+		F(y) =
+		\begin{cases}
+			0, & y < 0 \\
+			0.2, & 0 \leq y < 1 \\
+			& 1 \leq y < 2 \\
+			& 2 \leq y < 3 \\
+			0.8, & 3 \leq y < 4 \\
+			1, & 4 \leq y \\
+		\end{cases}
+	\end{align*}
+
+	Weiterhin können wir herleiten:
+	\begin{align*}
+		W(X > 1) &= 1 - W(X \leq 1) \\
+		0.4 &= 1 - W(X \leq 1) \\
+		W(X \leq 1) &= 0.6
+	\end{align*}
+
+	\begin{align*}
+		f(x) = 
+		\begin{cases}
+			0.2, & x = 0 \\
+			& x = 1 \\
+			0.2, & x = 2 \\
+			& x = 3 \\
+			& x = 4 \\
+		\end{cases}, \qquad
+		F(y) =
+		\begin{cases}
+			0, & y < 0 \\
+			0.2, & 0 \leq y < 1 \\
+			0.6, & 1 \leq y < 2 \\
+			& 2 \leq y < 3 \\
+			0.8, & 3 \leq y < 4 \\
+			1, & 4 \leq y \\
+		\end{cases}
+	\end{align*}
+
+	Damit ist folgende Berechnung möglich: $W(X == 1) = F(1) - F(0) = 0.6 - 0.2 = 0.4$
+	\begin{align*}
+		f(x) = 
+		\begin{cases}
+			0.2, & x = 0 \\
+			0.4, & x = 1 \\
+			0.2, & x = 2 \\
+			& x = 3 \\
+			& x = 4 \\
+		\end{cases}, \qquad
+		F(y) =
+		\begin{cases}
+			0, & y < 0 \\
+			0.2, & 0 \leq y < 1 \\
+			0.6, & 1 \leq y < 2 \\
+			& 2 \leq y < 3 \\
+			0.8, & 3 \leq y < 4 \\
+			1, & 4 \leq y \\
+		\end{cases}
+	\end{align*}
+
+	Um $F(2)$, also $W(X \leq 2)$ zu bekommen, können wir die Wahrscheinlichkeiten für $x = q \text{ mit } q \in \{0,1,2\}$ aufaddieren: $W(X \leq 2) = W(X = 0) + W(X = 1) + W(X = 2) = 0.2 + 0.4 + 0.2 = 0.8$
+
+	\begin{align*}
+		f(x) = 
+		\begin{cases}
+			0.2, & x = 0 \\
+			0.4, & x = 1 \\
+			0.2, & x = 2 \\
+			& x = 3 \\
+			& x = 4 \\
+		\end{cases}, \qquad
+		F(y) =
+		\begin{cases}
+			0, & y < 0 \\
+			0.2, & 0 \leq y < 1 \\
+			0.6, & 1 \leq y < 2 \\
+			0.8, & 2 \leq y < 3 \\
+			0.8, & 3 \leq y < 4 \\
+			1, & 4 \leq y \\
+		\end{cases}
+	\end{align*}
+
+	f(3) kann nun berechnet werden wie oben schon f(1):
+	\begin{align*}
+		W(X == 3) = F(3) - F(2) = 0.8 - 0.8 = 0
+	\end{align*}
+
+	\begin{align*}
+		f(x) = 
+		\begin{cases}
+			0.2, & x = 0 \\
+			0.4, & x = 1 \\
+			0.2, & x = 2 \\
+			0, & x = 3 \\
+			& x = 4 \\
+		\end{cases}, \qquad
+		F(y) =
+		\begin{cases}
+			0, & y < 0 \\
+			0.2, & 0 \leq y < 1 \\
+			0.6, & 1 \leq y < 2 \\
+			0.8, & 2 \leq y < 3 \\
+			0.8, & 3 \leq y < 4 \\
+			1, & 4 \leq y \\
+		\end{cases}
+	\end{align*}
+
+	Genau so könnten wir auf f(4) errechnen, aber da sich die Wahrscheinlichkeiten zu 1 addieren müssen, können wir auch rechnen: f(4) = 1 - (f(0) + f(1) + f(2) + f(3)) = 0.2
+
+	\begin{align*}
+		f(x) = 
+		\begin{cases}
+			0.2, & x = 0 \\
+			0.4, & x = 1 \\
+			0.2, & x = 2 \\
+			0, & x = 3 \\
+			0.2, & x = 4 \\
+		\end{cases}, \qquad
+		F(y) =
+		\begin{cases}
+			0, & y < 0 \\
+			0.2, & 0 \leq y < 1 \\
+			0.6, & 1 \leq y < 2 \\
+			0.8, & 2 \leq y < 3 \\
+			0.8, & 3 \leq y < 4 \\
+			1, & 4 \leq y \\
+		\end{cases}
+	\end{align*}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        Grundlagen der Informatik                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Informatik}
+\section{Grundlagen der Informatik}
 \subsection{Variablen und Zuweisungen}
 Schreibe ein Programm, dass die Daten zu einem Auto auf der Konsole ausgibt. Das Auto hat folgende Daten:
 \begin{description}
@@ -1831,6 +1888,9 @@ Ein Sonnensystem hat P Planeten, die allesammt bewohnt sind. Der innerste Planet
 \paragraph{Anmerkung} Es handelt sich hierbei um eine Folge, man könnte die Einwohnerzahl von Planet p auch direkt ausrechnen mit: $E_1 \cdot \braces{\frac{1}{2}}^{p-1}$
 \lstinputlisting[language=Java]{src/rekursion.java}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                            Programmieren in C                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Programmieren in C}
 \subsection{Syntax}
@@ -1891,6 +1951,10 @@ Wende die Funktion auf das folgende Array an:
 Das Keyword \texttt{const} dient dazu, Variablen als Konstant zu deklarieren, sie dürfen vom Programmierer also nicht verändert werden. Ergänze das Programm aus \ref{zeigerAufgabe} um \texttt{const}-Markierungen, wo es möglich ist. Was bewirkt es an den jeweiligen Stellen?
 \lstinputlisting[language=C]{src/constCorrectness.c}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                        Wirtschaftlichkeitsanalyse                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Wirtschaftlichkeitsanalyse}
 \subsection{Grundbegriffe}
@@ -2001,6 +2065,9 @@ Die Kosten, die auf einen Produkttyp entfallen, ergeben sich dann dadurch, dass 
 	$\sum$ & & & 146800 & 1.0001 & 318'
 \end{tabular}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                Sonstiges                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Sonstiges}
 \subsection{Binäre Zahlen}
