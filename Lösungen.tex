@@ -34,13 +34,15 @@
 \newcommand\setequal{\overset{!}{=}}
 \newcommand{\gerquote}[1]{\glqq#1\grqq}
 
-%\everymath{\displaystyle} %Force displaystyle everywhere
-
 \lstset{
 	tabsize=4,
 	breaklines=true,
 	showspaces=false
 }
+
+\newif\ifshowsolution
+\showsolutiontrue
+%\showsolutionfalse
 
 \title{Tutorium WS 15/16 \\ Lösungen}
 \author{Christian Mielers}
@@ -48,7 +50,7 @@
 
 \begin{document}
 \maketitle
-\tableofcontents	
+\tableofcontents
 
 \newpage
 \section{Höhere Mathematik}
@@ -57,134 +59,186 @@ Prüfe, ob folgende Aussagen gelten
 
 \begin{enumerate}
 	\item $(a \lor b) \lor (a \land b) \Leftrightarrow (a \lor b)$
-
-	\begin{tabular}{|c|c||c|c|c||c|}
-		\hline
-		a & b & $a \lor b$ & $a \land b$ & $(a \lor b) \lor (a \land b)$ & Gesammtterm \vphantom{\Big(}\\
-		\hline
-		0 & 0 & 0 & 0 & 0 & 1 \\
-		0 & 1 & 1 & 0 & 1 & 1 \\
-		1 & 0 & 1 & 0 & 1 & 1 \\
-		1 & 1 & 1 & 1 & 1 & 1 \\
-	   \hline
-	\end{tabular}
+	
+	\ifshowsolution
+		\begin{tabular}{|c|c||c|c|c||c|}
+			\hline
+			a & b & $a \lor b$ & $a \land b$ & $(a \lor b) \lor (a \land b)$ & Gesammtterm \vphantom{\Big(}\\
+			\hline
+			0 & 0 & 0 & 0 & 0 & 1 \\
+			0 & 1 & 1 & 0 & 1 & 1 \\
+			1 & 0 & 1 & 0 & 1 & 1 \\
+			1 & 1 & 1 & 1 & 1 & 1 \\
+		   \hline
+		\end{tabular}
+	\fi
 
 	\item $(a \lor b) \land (a \lor \lnot b) \Leftrightarrow a \lor (b \land \lnot a)$
 
-	\begin{tabular}{|c|c||c|c|c||c|c||c|}
-		\hline
-		a & b & $a \lor b$ & $a \lor \lnot b$ & $(a \lor b) \land (a \lor \lnot b)$ &
-		$b \land \lnot a$ & $a \lor (b \land \lnot a)$ & Gesammtterm \vphantom{\Big(} \\
-		\hline
-		0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\
-		0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 \\
-		1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 \\
-		1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 \\
-	  \hline
-	\end{tabular}
+	\ifshowsolution
+		\begin{tabular}{|c|c||c|c|c||c|c||c|}
+			\hline
+			a & b & $a \lor b$ & $a \lor \lnot b$ & $(a \lor b) \land (a \lor \lnot b)$ &
+			$b \land \lnot a$ & $a \lor (b \land \lnot a)$ & Gesammtterm \vphantom{\Big(} \\
+			\hline
+			0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\
+			0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 \\
+			1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 \\
+			1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 \\
+		  \hline
+		\end{tabular}
+	\fi
 
 	\item $\left((a \lor b) \Rightarrow (a \land b) \right) \Leftrightarrow (a \land b) \lor (\lnot a \land \lnot b)$
 
-	\begin{tabular}{|c|c||c|c|c||c|c||c|}
-		\hline
-		a & b & $a \lor b$ & $a \land b$ & $(a \lor b) \Rightarrow (a \land b)$ &
-		$(a \land b) \lor (\lnot a \land \lnot b)$ & $\lnot a \land \lnot b$ & Gesammtterm \vphantom{\Big(} \\
-		\hline
-		0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
-		0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 \\
-		1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 \\
-		1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 \\
-	  \hline
-	\end{tabular}
+	\ifshowsolution
+		\begin{tabular}{|c|c||c|c|c||c|c||c|}
+			\hline
+			a & b & $a \lor b$ & $a \land b$ & $(a \lor b) \Rightarrow (a \land b)$ &
+			$(a \land b) \lor (\lnot a \land \lnot b)$ & $\lnot a \land \lnot b$ & Gesammtterm \vphantom{\Big(} \\
+			\hline
+			0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+			0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 \\
+			1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 \\
+			1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 \\
+		  \hline
+		\end{tabular}
+	\fi
 \end{enumerate}
 
 \subsection{Mengenlehre}
 Gelten die folgenden Beziehungen für beliebige Mengen X, Y und Z?
 \begin{enumerate}
 	\item $X \setminus (Y \cap Z) = (X \setminus Y) \cap (X \setminus Z)$
-	\begin{figure}[h!]
-		\centering
-		\begin{subfigure}{3cm}
-			\includegraphics[height=3cm]{MengenlehreAufgabe1a}
-			\caption{Linke Seite}
-		\end{subfigure}
-		\hspace{2cm}
-		\begin{subfigure}{3cm}
-			\includegraphics[height=3cm]{MengenlehreAufgabe1b}
-			\caption{Rechte Seite}
-		\end{subfigure}
-	\end{figure} \\
-	Gegenbeispiel finden: $X \cup Y$ oder $X \cup Z$ darf nicht leer sein. \\
-	Sei $X = \{1,2,3\}, Y = \{2,4,6\}$ und $Z = \{7,8,9\}$ \\
-	Dann ist $X \setminus (Y \cap Z) = \{1,2,3\} \quad \neq \quad \{1,3\} = (X \setminus Y) \cap (X \setminus Z)$
+	
+	\ifshowsolution
+		\begin{figure}[h!]
+			\centering
+			\begin{subfigure}{3cm}
+				\includegraphics[height=3cm]{MengenlehreAufgabe1a}
+				\caption{Linke Seite}
+			\end{subfigure}
+			\hspace{2cm}
+			\begin{subfigure}{3cm}
+				\includegraphics[height=3cm]{MengenlehreAufgabe1b}
+				\caption{Rechte Seite}
+			\end{subfigure}
+		\end{figure}
+	
+		Gegenbeispiel finden: $X \cup Y$ oder $X \cup Z$ darf nicht leer sein. \\
+		Sei $X = \{1,2,3\}, Y = \{2,4,6\}$ und $Z = \{7,8,9\}$ \\
+		Dann ist $X \setminus (Y \cap Z) = \{1,2,3\} \quad \neq \quad \{1,3\} = (X \setminus Y) \cap (X \setminus Z)$
+	\fi
+	
 	\item $(X \cup Y) \setminus Z = \Big((X \setminus Z) \cup (Y \setminus Z)\Big) \setminus (Y \cap Z)$
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[height=3cm]{MengenlehreAufgabe2}
-		\caption{linke / rechte Seite}
-	\end{figure} \\
-	\begin{align*}
-		(X \cup Y) \setminus Z &= \Big((X \setminus Z) \cup (Y \setminus Z)\Big) \setminus (Y \cap Z) \\
-		(X \cup Y) \setminus Z &= \Big( (X \cup Y) \setminus Z \Big) \setminus (Y \cap Z) \\
-		(X \setminus Z) \cup (Y \setminus Z) &= (X \setminus Z) \cup (Y \setminus Z)
-	\end{align*}
+	
+	\ifshowsolution
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[height=3cm]{MengenlehreAufgabe2}
+			\caption{linke / rechte Seite}
+		\end{figure}
+		
+		\begin{align*}
+			(X \cup Y) \setminus Z &= \Big((X \setminus Z) \cup (Y \setminus Z)\Big) \setminus (Y \cap Z) \\
+			(X \cup Y) \setminus Z &= \Big( (X \cup Y) \setminus Z \Big) \setminus (Y \cap Z) \\
+			(X \setminus Z) \cup (Y \setminus Z) &= (X \setminus Z) \cup (Y \setminus Z)
+		\end{align*}
+	\fi
+	
 	\item $X \cup (Y \cap Z) = (X \cup Y) \cap (X \cup Z)$
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[height=3cm]{MengenlehreAufgabe3}
-		\caption{linke / rechte Seite}
-	\end{figure} \\
-	\begin{align*}
-		X \cup (Y \cap Z) &= (X \cup Y) \cap (X \cup Z) \\
-		X \cup (Y \cap Z) &= X \cup (Y \cap Z) \tag{Distributivitätsgesetz}
-	\end{align*}
+	\ifshowsolution
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[height=3cm]{MengenlehreAufgabe3}
+			\caption{linke / rechte Seite}
+		\end{figure}
+	
+		\begin{align*}
+			X \cup (Y \cap Z) &= (X \cup Y) \cap (X \cup Z) \\
+			X \cup (Y \cap Z) &= X \cup (Y \cap Z) \tag{Distributivitätsgesetz}
+		\end{align*}
+	\fi
 \end{enumerate}
 
 \subsection{Abbildungen}
 Sind die folgenden Funktionen injektiv, surjektiv, bijektiv?
 \begin{enumerate}
-	\item $\mathrm{f}(x) = x^4+2 \qquad \mathrm{f}: \mathrm{R} \mapsto \mathrm{R}$ \\
-	nicht injektiv: $\mathrm{f}(1) = \mathrm{f}(-1)$ \\
-	nicht surjektiv: $\forall x: \mathrm{f}(x) \geq 2$. Alternativ: $\nexists x: \mathrm{f}(x) = 0$ \\
-	Somit ist f nicht bijektiv.
-	\item $\mathrm{f}(x) = x^4+2 \qquad \mathrm{f}: \mathrm{R} \mapsto (2, + \infty)$ \\
-	nicht injektiv: $\mathrm{f}(1) = \mathrm{f}(-1)$ \\
-	surjektiv: $\mathrm{f}(x) = x^4 + 2 \Leftrightarrow \sqrt[4]{\mathrm{f}(x) - 2} = x$ \\
-	$\sqrt[4]{\mathrm{f(x)}-2}$ existiert eindeutig für $x \geq 2$ (und somit auch für $x > 0$) \\
-	Somit ist f nicht bijektiv.
-	\item $\mathrm{f}(x) = x^3+1 \qquad \mathrm{f}: \mathrm{R} \mapsto \mathrm{R}$ \\
-	injektiv: $x^3 + 1 = y^3 + 1 \Rightarrow x^3 = y^3 \Rightarrow x = y$ (Technischer: $\nexists x \neq y: x^3 + 1 \neq x^3 + 1$) \\
-	surjektiv: $\forall y \in \mathrm{R}: \exists x \in \mathrm{R}: y = x^3 + 1 \Leftrightarrow y - 1 = x^3 \Leftrightarrow \sqrt[3]{y-1} = x$
-	Somist ist f bijektiv.
-	\item $\mathrm{f}(x) = \sin(x) \qquad \mathrm{f}: \mathrm{R} \mapsto [-1, 1]$ \\
-	nicht injektiv: $\sin(\pi) = \sin(2 \pi)$ \\
-	surjektiv: $\sin \braces{-\frac{\pi}{2}} = -1$, $\sin \braces{\frac{\pi}{2}} = 1$ und $\sin(x)$ steigt auf dem stetigen Intervall $\brackets{-\frac{\pi}{2},-\frac{\pi}{2}}$ monoton. \\
-	Somit ist f nicht bijektiv.
-	\item $\mathrm{f}(x) = x^4 - x^2 \qquad \mathrm{f}: \mathrm{R} \mapsto \mathrm{R}$ \\
-	nicht injektiv: $\mathrm{f}(1) = \mathrm{f}(-1)$ \\
-	nicht surjektiv: $\nexists x: \mathrm{f}(x) = 0$ \\
-	Somit ist f nicht bijektiv.
-	\item $\mathrm{f}(x) = \frac{1}{x} \qquad \mathrm{f}: \mathrm{R} \mapsto \mathrm{R}$ \\
-	injektiv: Sei $x \neq y$. Dann $\frac{1}{x} \neq \frac{1}{x}$ \\
-	nicht surjektiv: $\nexists x \in \mathrm{R}: \frac{1}{x} = 0$ \\
-	Somit ist f nicht bijektiv.
+	\item $\mathrm{f}(x) = x^4+2 \qquad \mathrm{f}: \mathrm{R} \mapsto \mathrm{R}$
+	
+	\ifshowsolution
+		nicht injektiv: $\mathrm{f}(1) = \mathrm{f}(-1)$ \\
+		nicht surjektiv: $\forall x: \mathrm{f}(x) \geq 2$. Alternativ: $\nexists x: \mathrm{f}(x) = 0$ \\
+		Somit ist f nicht bijektiv.
+	\fi
+	
+	\item $\mathrm{f}(x) = x^4+2 \qquad \mathrm{f}: \mathrm{R} \mapsto (2, + \infty)$
+	\ifshowsolution
+		nicht injektiv: $\mathrm{f}(1) = \mathrm{f}(-1)$ \\
+		surjektiv: $\mathrm{f}(x) = x^4 + 2 \Leftrightarrow \sqrt[4]{\mathrm{f}(x) - 2} = x$ \\
+		$\sqrt[4]{\mathrm{f(x)}-2}$ existiert eindeutig für $x \geq 2$ (und somit auch für $x > 0$) \\
+		Somit ist f nicht bijektiv.
+	\fi
+	
+	\item $\mathrm{f}(x) = x^3+1 \qquad \mathrm{f}: \mathrm{R} \mapsto \mathrm{R}$
+	
+	\ifshowsolution
+		injektiv: $x^3 + 1 = y^3 + 1 \Rightarrow x^3 = y^3 \Rightarrow x = y$ (Technischer: $\nexists x \neq y: x^3 + 1 \neq x^3 + 1$) \\
+		surjektiv: $\forall y \in \mathrm{R}: \exists x \in \mathrm{R}: y = x^3 + 1 \Leftrightarrow y - 1 = x^3 \Leftrightarrow \sqrt[3]{y-1} = x$
+		Somist ist f bijektiv.
+	\fi
+	
+	\item $\mathrm{f}(x) = \sin(x) \qquad \mathrm{f}: \mathrm{R} \mapsto [-1, 1]$
+	
+	\ifshowsolution
+		nicht injektiv: $\sin(\pi) = \sin(2 \pi)$ \\
+		surjektiv: $\sin \braces{-\frac{\pi}{2}} = -1$, $\sin \braces{\frac{\pi}{2}} = 1$ und $\sin(x)$ steigt auf dem stetigen Intervall $\brackets{-\frac{\pi}{2},-\frac{\pi}{2}}$ monoton. \\
+		Somit ist f nicht bijektiv.
+	\fi
+	
+	\item $\mathrm{f}(x) = x^4 - x^2 \qquad \mathrm{f}: \mathrm{R} \mapsto \mathrm{R}$
+	
+	\ifshowsolution
+		nicht injektiv: $\mathrm{f}(1) = \mathrm{f}(-1)$ \\
+		nicht surjektiv: $\nexists x: \mathrm{f}(x) = 0$ \\
+		Somit ist f nicht bijektiv.
+	\fi
+	
+	\item $\mathrm{f}(x) = \frac{1}{x} \qquad \mathrm{f}: \mathrm{R} \mapsto \mathrm{R}$
+	
+	\ifshowsolution
+		injektiv: Sei $x \neq y$. Dann $\frac{1}{x} \neq \frac{1}{x}$ \\
+		nicht surjektiv: $\nexists x \in \mathrm{R}: \frac{1}{x} = 0$ \\
+		Somit ist f nicht bijektiv.
+	\fi
 \end{enumerate}
+
 Invertiere folgende Funktionen:
 
 Zum invertieren tausche x und f(x) bzw. x und y und löse nach f(x) bzw. y auf. Bei Schrittweise definierten Funktionen müssen auch die Grenzen angepasst werden!
 \begin{enumerate}
-	\item $\mathrm{f}(x) = x^3 \qquad \mathrm{f}: \mathrm{R} \mapsto \mathrm{R}$ \\
-	$x = {\mathrm{f}(x)}^3$ \\
-	$\sqrt[3]{x} = f(x)$
-	\item $\mathrm{f}(x) = \frac{1}{x} \qquad \mathrm{f}: \mathrm{R} \setminus \{0\} \mapsto \mathrm{R} \setminus \{0\}$ \\
-	$x = \frac{1}{\mathrm{f}(x)}$ (Vertauschen von f(x) und x)\\
-	$\mathrm{f}(x) = \frac{1}{x}$ (Aufgelöst nach f(x))
+	\item $\mathrm{f}(x) = x^3 \qquad \mathrm{f}: \mathrm{R} \mapsto \mathrm{R}$
+	
+	\ifshowsolution
+		$x = {\mathrm{f}(x)}^3$ \\
+		$\sqrt[3]{x} = f(x)$
+	\fi
+	
+	\item $\mathrm{f}(x) = \frac{1}{x} \qquad \mathrm{f}: \mathrm{R} \setminus \{0\} \mapsto \mathrm{R} \setminus \{0\}$
+	
+	\ifshowsolution
+		$x = \frac{1}{\mathrm{f}(x)}$ (Vertauschen von f(x) und x)\\
+		$\mathrm{f}(x) = \frac{1}{x}$ (Aufgelöst nach f(x))
+	\fi
+	
 	\item $\mathrm{f}(x) =
 		\begin{cases}
 			-\frac{1}{2}x + 3 & x \in (-\infty, 4) \\
 			-3x + 13 & x \in [4, +\infty)
 		\end{cases}
 		$
+		
+	\ifshowsolution
 		\begin{enumerate}
 			\item $\mathrm{f}(x) = -\frac{1}{2}x + 3$ invertieren \\
 				\begin{align*}
@@ -208,6 +262,7 @@ Zum invertieren tausche x und f(x) bzw. x und y und löse nach f(x) bzw. y auf. 
 			-2x+6, & x \in (-\infty,1) \\
 			\frac{-x + 13}{3} & x \in [1, +\infty)
 		\end{cases}$
+	\fi
 \end{enumerate}
 
 \subsection{Algebraische Strukturen}
@@ -228,32 +283,59 @@ Sind A1 - A4 erfüllt handelt es sich um eine Kommutative Gruppe, bei A1-M2 und 
 Sind folgende Mengen-Abbildungspaare Gruppen, Ringe, Körper oder nichts davon?
 
 \begin{enumerate}
-	\item $\braces{\mathbb{N}_0, +}$ ist nichts \\
-		Kein inverses Element bzgl. +: $\nexists x \in \mathbb{N}_0: 3+x=0$
-	\item $\braces{\mathbb{Z}, +}$ ist eine Gruppe \label{ZGruppe} \\
+	\item $\braces{\mathbb{N}_0, +}$
+	
+	\ifshowsolution
+		$\braces{\mathbb{N}_0, +}$ ist nichts von dem, da kein inverses Element bzgl. +: $\nexists x \in \mathbb{N}_0: 3+x=0$
+	\fi
+	
+	\item $\braces{\mathbb{Z}, +}$ \label{ZGruppe}
+	
+	\ifshowsolution
 		Addition ist Assoziativ \\
 		Addition ist Kommutativ \\
 		0 ist das neutrale Element der Addition und $0 \in \mathbb{Z}$ \\
 		Das inverse Element zu a ist $-a$
-	\item $\braces{\mathbb{Z}, +, \cdot}$ ist ein Ring \label{ZRing} \\
+		$\braces{\mathbb{Z}, +}$ ist somit eine Gruppe
+	\fi
+	
+	\item $\braces{\mathbb{Z}, +, \cdot}$
+	
+	\ifshowsolution
 		Axiome für die Addition gelten (siehe \ref{ZGruppe}.) \\
 		Multiplikation ist Assoziativ: $(a \cdot b) \cdot c = a \cdot (b \cdot c)$ \\
 		Multiplikation ist Kommutativ: $a \cdot b = b \cdot a$ \\
-		Das Distributivgesetzt gilt für Addition und Multiplikation: $a(b+c) = ab + ac$ \\ \\
+		Das Distributivgesetzt gilt für Addition und Multiplikation: $a(b+c) = ab + ac$ \\
+		$\braces{\mathbb{Z}, +, \cdot}$ ist somit ein Ring. \\ \\
 		Aber: $\braces{\mathbb{Z}, +, \cdot}$ ist kein Körper! \\
 		Es gibt zwar ein neutrales Element der Multiplikation (die 1), aber es gibt nicht für jedes Element eine Inverse, für die 3 z.B. nicht: $\nexists x \in \mathbb{Z}: 3\cdot x = 1$
-	\item $\braces{\mathbb{R}, +, \cdot}$ ist ein Körper \\
+	\fi
+	
+	\item $\braces{\mathbb{R}, +, \cdot}$
+	
+	\ifshowsolution
 		Axiome für Addition gelten (siehe \ref{ZGruppe}.) \\
 		Assoziativität und Kommutativität der Multiplikation gelten (siehe \ref{ZRing}.) \\
 		Distributivität gilt (siehe \ref{ZRing}.) \\
 		1 ist das neutrale Element der Multiplikation. \\
-		Das inverse Element zu a ist $\frac{1}{a}$ (und jeder Bruch ist $\in \mathbb{R}$).
+		Das inverse Element zu a ist $\frac{1}{a}$ (und jeder Bruch ist $\in \mathbb{R}$). \\
+		$\braces{\mathbb{R}, +, \cdot}$ ist somit ein Körper.
+	\fi
+	
 	\item $\braces{\mathrm{M}, +, \cdot}$ mit $\mathrm{M} = \{ -2,0,\frac{1
-	}{2},1,2 \}$ ist nichts \\
+	}{2},1,2 \}$
+	
+	\ifshowsolution
 		Verletzung der Abgeschlossenheit: $1+2 \notin \mathrm{M}$, somit gilt nicht: $\mathrm{M} \times \mathrm{M} \mapsto \mathrm{M}$ \\
 		Kein additives Inverses zu 1: $\nexists x \in \mathrm{M}: 1+x=0$ \\
-		Kein multiplikatives Inverses zu -2: $\nexists x \in \mathrm{M}: -2 \cdot x = 1$
-	\item $\braces{\mathbb{R}, +, \circ}$ mit $a \circ b = 3a + b$ ist nichts \\
+		Kein multiplikatives Inverses zu -2: $\nexists x \in \mathrm{M}: -2 \cdot x = 1$ \\
+		$\braces{\mathrm{M}, +, \cdot}$ mit $\mathrm{M} = \{ -2,0,\frac{1
+	}{2},1,2 \}$ ist somit nichts von alledem.
+	\fi
+	
+	\item $\braces{\mathbb{R}, +, \circ}$ mit $a \circ b = 3a + b$
+	
+	\ifshowsolution
 		$\circ$ ist nicht assoziativ:
 		\begin{align*}
 			(a \circ b) \circ c &= a \circ (b \circ c) \\
@@ -261,99 +343,182 @@ Sind folgende Mengen-Abbildungspaare Gruppen, Ringe, Körper oder nichts davon?
 			3(3a + b) + c &= 3a + (3b + c) \\
 			9a &\neq 3a
 		\end{align*}
+		
+		Somit ist $\braces{\mathbb{R}, +, \circ}$ mit $a \circ b = 3a + b$ nichts von alledem.
+	\fi
 \end{enumerate}
 
 \subsubsection{Kommutative Gruppen}
 Zeige, dass $(G,\circ)$ mit $G=\mathbb{R} \setminus \{1\}$ und $x \circ y = x+y-xy$ eine kommutative Gruppe ist. Was ist das neutrale Element, und wie bildet sich das inverse Element?
-\begin{enumerate}
-	\item[(A1)] $(x \circ y) \circ z = x \circ (y \circ z)$
-		\begin{align*}
-			(x+y-xy) \circ z &= x \circ (y+z-yz) \\
-			x+y-xy + z - z(x+y-xy) &= x+ y+z-yz - x(y+z-yz) \tag*{$-x-y-z$} \\
-			-xy - (zx+zy-xyz)&= -yz - (xy+xz-xyz) \\
-			-xy - zx - zy + xyz &= -yz - xy - xz + xyz \tag*{- xyz + xy} \\
-			- zx - zy &= -yz - xz \tag*{sichtbar gleich}
-		\end{align*}
-	\item[(A2)] $x \circ y = y \circ x$
-		\begin{align*}
-			x+y-xy &= y+x-xy \\
-			x+y-xy &= x+y-xy
-		\end{align*}
-	\item[(A3)] $"0" \circ x = x$ (neutrales Element, hier n)
-		\begin{align*}
-			n \circ x &= x \\
-			n+x-nx &= x \\
-			\underbrace{(1-n)}_{=1}x &= x \\
-			n &= 0
-		\end{align*}
-	\item[(A4)] $x \circ (-x) = 0$ bzw. $x \circ i = n$
-		\begin{align*}
-			x + i - xi &= 0 \\
-			i - xi &= -x \\
-			(1-x)i &= -x \\
-			i &= \frac{-x}{1-x} \tag*{$1 \notin G$} \\
-			i &= \frac{x}{x-1}
-		\end{align*}
-\end{enumerate}
+
+\ifshowsolution
+	\begin{enumerate}
+		\item[(A1)] $(x \circ y) \circ z = x \circ (y \circ z)$
+			\begin{align*}
+				(x+y-xy) \circ z &= x \circ (y+z-yz) \\
+				x+y-xy + z - z(x+y-xy) &= x+ y+z-yz - x(y+z-yz) \tag*{$-x-y-z$} \\
+				-xy - (zx+zy-xyz)&= -yz - (xy+xz-xyz) \\
+				-xy - zx - zy + xyz &= -yz - xy - xz + xyz \tag*{- xyz + xy} \\
+				- zx - zy &= -yz - xz \tag*{sichtbar gleich}
+			\end{align*}
+		\item[(A2)] $x \circ y = y \circ x$
+			\begin{align*}
+				x+y-xy &= y+x-xy \\
+				x+y-xy &= x+y-xy
+			\end{align*}
+		\item[(A3)] $"0" \circ x = x$ (neutrales Element, hier n)
+			\begin{align*}
+				n \circ x &= x \\
+				n+x-nx &= x \\
+				\underbrace{(1-n)}_{=1}x &= x \\
+				n &= 0
+			\end{align*}
+		\item[(A4)] $x \circ (-x) = 0$ bzw. $x \circ i = n$
+			\begin{align*}
+				x + i - xi &= 0 \\
+				i - xi &= -x \\
+				(1-x)i &= -x \\
+				i &= \frac{-x}{1-x} \tag*{$1 \notin G$} \\
+				i &= \frac{x}{x-1}
+			\end{align*}
+	\end{enumerate}
+\fi
 
 \subsubsection{Körper}
 Vervollständige folgende Tabellen für den Körper $K = \left\{\{0,1,a,b,c\right\}, +, \cdot\} $. 0 ist das neutrale Element der Addition, 1 der Multiplikation
-\begin{center}
-	\begin{tabular}{c|ccccc}
-		+ & 0 & 1 & a & b & c \\ \hline
-		0 & 0 & 1 & a & b & c \\
-		1 & 1 & a & b & c & 0 \\
-		a & a & b & c & 0 & 1 \\
-		b & b & c & 0 & 1 & a \\
-		c & c & 0 & 1 & a & b \\
-	\end{tabular}
-	\hspace{2cm}
-	\begin{tabular}{c|ccccc}
-		$\cdot$ & 0 & 1 & a & b & c \\ \hline
-		0 & 0 & 0 & 0 & 0 & 0 \\
-		1 & 0 & 1 & a & b & c \\
-		a & 0 & a & c & 1 & b \\
-		b & 0 & b & 1 & c & a \\
-		c & 0 & c & b & a & 1 \\
-	\end{tabular}
-\end{center}
-$a \equiv 2, \quad b \equiv 3, \quad c \equiv 4$ \\
-Was ist das inverse Element von b in K bzgl. der Multiplikation? \\
-Finde x so dass $a \cdot b \cdot x = a$ bzw. $b \cdot x = 1$. Die Inverse von $b$ ist also a: $b^{-1} = a$
 
-\begin{center}
+Was ist das inverse Element von b in K bzgl. der Multiplikation?
+
+\ifshowsolution
+	\begin{center}
+		\begin{tabular}{c|ccccc}
+			+ & 0 & 1 & a & b & c \\ \hline
+			0 & 0 & 1 & a & b & c \\
+			1 & 1 & a & b & c & 0 \\
+			a & a & b & c & 0 & 1 \\
+			b & b & c & 0 & 1 & a \\
+			c & c & 0 & 1 & a & b \\
+		\end{tabular}
+		\hspace{2cm}
+		\begin{tabular}{c|ccccc}
+			$\cdot$ & 0 & 1 & a & b & c \\ \hline
+			0 & 0 & 0 & 0 & 0 & 0 \\
+			1 & 0 & 1 & a & b & c \\
+			a & 0 & a & c & 1 & b \\
+			b & 0 & b & 1 & c & a \\
+			c & 0 & c & b & a & 1 \\
+		\end{tabular}
+	\end{center}
+	$a \equiv 2, \quad b \equiv 3, \quad c \equiv 4$
+
+	Finde x so dass $a \cdot b \cdot x = a$ bzw. $b \cdot x = 1$. Die Inverse von $b$ ist also a: $b^{-1} = a$
+\else
+	\begin{center}
 	\begin{tabular}{c|ccccc}
 		+ & 0 & 1 & a & b & c \\ \hline
-		0 & 0 & 1 & a & b & c \\
-		1 & 1 & b & 0 & c & a \\
-		a & a & 0 & c & 1 & b \\
-		b & b & c & 1 & a & 0 \\
-		c & c & a & b & 0 & 1 \\
+		0 &  &  &  &  & \\
+		1 &  &  &  &  & \\
+		a &  &  &  &  & \\
+		b &  &  &  &  & \\
+		c &  & 0 & 1 &  & \\
 	\end{tabular}
 	\hspace{2cm}
 	\begin{tabular}{c|ccccc}
 		$\cdot$ & 0 & 1 & a & b & c \\ \hline
-		0 & 0 & 0 & 0 & 0 & 0 \\
-		1 & 0 & 1 & a & b & c \\
-		a & 0 & a & 1 & c & b \\
-		b & 0 & b & c & a & 1\\
-		c & 0 & c & b & 1 & a \\
+		0 &  &  &  &  & \\
+		1 &  &  &  &  & \\
+		a &  &  &  &  & \\
+		b &  &  &  &  & \\
+		c &  &  &  &  & \\
 	\end{tabular}
 \end{center}
-$a \equiv 4, \quad b \equiv 2, \quad c \equiv 3$
+\fi
+
+\ifshowsolution
+	\begin{center}
+		\begin{tabular}{c|ccccc}
+			+ & 0 & 1 & a & b & c \\ \hline
+			0 & 0 & 1 & a & b & c \\
+			1 & 1 & b & 0 & c & a \\
+			a & a & 0 & c & 1 & b \\
+			b & b & c & 1 & a & 0 \\
+			c & c & a & b & 0 & 1 \\
+		\end{tabular}
+		\hspace{2cm}
+		\begin{tabular}{c|ccccc}
+			$\cdot$ & 0 & 1 & a & b & c \\ \hline
+			0 & 0 & 0 & 0 & 0 & 0 \\
+			1 & 0 & 1 & a & b & c \\
+			a & 0 & a & 1 & c & b \\
+			b & 0 & b & c & a & 1\\
+			c & 0 & c & b & 1 & a \\
+		\end{tabular}
+	\end{center}
+	$a \equiv 4, \quad b \equiv 2, \quad c \equiv 3$
+\else
+	\begin{center}
+		\begin{tabular}{c|ccccc}
+			+ & 0 & 1 & a & b & c \\ \hline
+			0 &  &  &  &  & \\
+			1 &  &  &  &  & \\
+			a &  & 0 & c &  & \\
+			b &  &  &  &  & \\
+			c &  &  &  &  & \\
+		\end{tabular}
+		\hspace{2cm}
+		\begin{tabular}{c|ccccc}
+			$\cdot$ & 0 & 1 & a & b & c \\ \hline
+			0 &  &  &  &  & \\
+			1 &  &  &  &  & \\
+			a &  &  &  &  & \\
+			b &  &  &  &  & \\
+			c &  &  &  &  & \\
+		\end{tabular}
+	\end{center}
+\fi
 
 \subsection{Summen und Produkte}
 Berechne folgende Summen:
 \begin{enumerate}
-	\item $\sum_{i=2}^{15} 4 = 56$
-	\item $\sum_{i=0}^5 i^3 = 0 + 1 + 8 + 27 + 64 + 125 = 225$
-	\item $\sum_{i=0}^5 (-1)^i (4i+3) = 3-7+11-15+19-23 = -12$
+	\item $\sum_{i=2}^{15} 4$
+	
+	\ifshowsolution
+		$\sum_{i=2}^{15} = 14 \cdot 4 = 56$
+	\fi
+	
+	\item $\sum_{i=0}^5 i^3$
+	
+	\ifshowsolution
+		$\sum_{i=0}^5 i^3 = 0 + 1 + 8 + 27 + 64 + 125 = 225$
+	\fi
+	
+	\item $\sum_{i=0}^5 (-1)^i (4i+3)$
+	
+	\ifshowsolution
+		$\sum_{i=0}^5 (-1)^i (4i+3) = 3-7+11-15+19-23 = -12$
+	\fi
 \end{enumerate}
+
 Berechne folgende Produkte:
 \begin{enumerate}
-	\item $\prod_{i=1}^7 i = 1 \cdot 2 \dots 6 \cdot 7 = 5040$
-	\item $\prod_{i=1}^4 \frac{i}{2} = \frac{1}{2} \cdot \frac{2}{2} \cdot \frac{3}{2} \cdot \frac{4}{2} = \frac{24}{2^4} = \frac{3}{2}$
-	\item $\prod_{i=1}^4 \frac{3i^2+2}{i} = \frac{5}{1} \cdot \frac{14}{2} \cdot \frac{29}{3} \cdot \frac{50}{4} = 5 \cdot 7 \cdot \frac{29}{3} \cdot \frac{25}{2} = \frac{25375}{6}$
+	\item $\prod_{i=1}^7 i$
+	
+	\ifshowsolution
+		$\prod_{i=1}^7 i = 1 \cdot 2 \dots 6 \cdot 7 = 5040$
+	\fi
+	
+	\item $\prod_{i=1}^4 \frac{i}{2}$
+	
+	\ifshowsolution
+		$\prod_{i=1}^4 \frac{i}{2} = \frac{1}{2} \cdot \frac{2}{2} \cdot \frac{3}{2} \cdot \frac{4}{2} = \frac{24}{2^4} = \frac{3}{2}$
+	\fi
+	
+	\item $\prod_{i=1}^4 \frac{3i^2+2}{i}$
+	
+	\ifshowsolution
+		$\prod_{i=1}^4 \frac{3i^2+2}{i} = \frac{5}{1} \cdot \frac{14}{2} \cdot \frac{29}{3} \cdot \frac{50}{4} = 5 \cdot 7 \cdot \frac{29}{3} \cdot \frac{25}{2} = \frac{25375}{6}$
+	\fi
+	
 \end{enumerate}
 
 \subsection{Binomialkoeffizient}
@@ -362,9 +527,20 @@ $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ \qquad $\binom{n}{n-k} = \binom{n}{k}$ (Sym
 
 Welchen Wert hat $n$ in den folgenden Gleichungen?
 \begin{enumerate}
-	\item $ n = \binom{6}{3} = \frac{6!}{3!(6-3)!} = \frac{\cancel{1\cdot2\cdot3}\cdot4\cdot5\cdot6}{\cancel{(1\cdot2\cdot3)}3!} = \frac{4\cdot5\cdot\cancel{6}}{1\cdot\cancel{2\cdot3}} = 4\cdot5 = 20$
-	\item $n = \binom{10}{7} = \frac{10!}{7!(10-7)!} = \frac{8 \cdot 9 \cdot 10}{3!} = \frac{720}{6} = 120$
+	\item $ n = \binom{6}{3}$
+	
+	\ifshowsolution
+		$ n = \binom{6}{3} = \frac{6!}{3!(6-3)!} = \frac{\cancel{1\cdot2\cdot3}\cdot4\cdot5\cdot6}{\cancel{(1\cdot2\cdot3)}3!} = \frac{4\cdot5\cdot\cancel{6}}{1\cdot\cancel{2\cdot3}} = 4\cdot5 = 20$
+	\fi
+	
+	\item $n = \binom{10}{7}$
+	
+	\ifshowsolution
+		$n = \binom{10}{7} = \frac{10!}{7!(10-7)!} = \frac{8 \cdot 9 \cdot 10}{3!} = \frac{720}{6} = 120$
+	\fi
+	
 	\item $\binom{n+3}{n+1} + \binom{n+4}{n+2} + \binom{n-1}{n-3} = 70$
+	\ifshowsolution
 		\begin{align*}
 			\binom{n+3}{2} + \binom{n+4}{2} + \binom{n-1}{2} &= 70 \\
 			\frac{(n+3)!}{2!(n+3-2)!} + \frac{(n+4)!}{2!(n+4-2)!} + \frac{(n-1)!}{2!(n-1-2)!} &= 70 \tag{Definition} \\
@@ -377,32 +553,54 @@ Welchen Wert hat $n$ in den folgenden Gleichungen?
 			x_1 = -8, \quad x_2 &= 5 \tag{Probe!}
 		\end{align*}
 		Der einfache Binomialkoeffizient ist nur für positive Zahlen definiert, die Lösung ist also $x=1$.
+	\fi
 \end{enumerate}
 
 \subsection{Ordnungsrelationen}
-Ergänze bei folgenden Ausdrücken die Relationszeichen $\subset, \subseteq, \supseteq, \supset,$ \\
-\begin{tabular}{|l|c|l|}
-	\hline
-	Menge 1 & \hspace{3mm} ? \hspace{3mm} & Menge 2 \\ \hline
-	$\{1,2,3\}$ & $\subseteq, \supseteq$ & $\{1,2,3\}$ \\
-	$\{5,6\}$ & $\subset$ & $\{5,6,7,8\}$ \\
-	$\{\sqrt{2}, \pi, 3\}$ & nichts & $\mathbb{R}$ \\
-	$\mathbb{R}$ & $\supset$ & $\mathbb{Q} \setminus {\pi, e}$ \\
-	$\mathbb{N}_0$ & $\supset$ & $\mathbb{N}$ \\
-	$\mathbb{I}$ & $\subset$ & $\mathbb{R}$ \\
-	$\mathbb{C} \setminus \mathbb{I}$ & nichts & $\braces{\mathbb{Q} \setminus \mathbb{N}} \cup \{2,4,6\}$ \\ \hline
-\end{tabular}
+Ergänze bei folgenden Ausdrücken die Relationszeichen $\subset, \subseteq, \supseteq, \supset,$ oder 'nichts' falls keines davon zutrifft
+
+\ifshowsolution
+	\begin{tabular}{|l|c|l|}
+		\hline
+		Menge 1 & \hspace{3mm} Relation \hspace{3mm} & Menge 2 \\ \hline
+		$\{1,2,3\}$ & $\subseteq, \supseteq$ & $\{1,2,3\}$ \\
+		$\{5,6\}$ & $\subset$ & $\{5,6,7,8\}$ \\
+		$\{\sqrt{2}, \pi, 3\}$ & nichts & $\mathbb{R}$ \\
+		$\mathbb{R}$ & $\supset$ & $\mathbb{Q} \setminus {\pi, e}$ \\
+		$\mathbb{N}_0$ & $\supset$ & $\mathbb{N}$ \\
+		$\mathbb{I}$ & $\subset$ & $\mathbb{R}$ \\
+		$\mathbb{C} \setminus \mathbb{I}$ & nichts & $\braces{\mathbb{Q} \setminus \mathbb{N}} \cup \{2,4,6\}$ \\ \hline
+	\end{tabular}
+\else
+	\begin{tabular}{|l|c|l|}
+		\hline
+		Menge 1 & \hspace{3mm} Relation \hspace{3mm} & Menge 2 \\ \hline
+		$\{1,2,3\}$ & & $\{1,2,3\}$ \\
+		$\{5,6\}$ & & $\{5,6,7,8\}$ \\
+		$\{\sqrt{2}, \pi, 3\}$ & & $\mathbb{R}$ \\
+		$\mathbb{R}$ & & $\mathbb{Q} \setminus {\pi, e}$ \\
+		$\mathbb{N}_0$ & & $\mathbb{N}$ \\
+		$\mathbb{I}$ & & $\mathbb{R}$ \\
+		$\mathbb{C} \setminus \mathbb{I}$ & & $\braces{\mathbb{Q} \setminus \mathbb{N}} \cup \{2,4,6\}$ \\ \hline
+	\end{tabular}
+\fi
 
 \subsection{Ungleichungen}
 Für welche Werte von $x$ gelten die folgenden Ungleichungen?
 \begin{enumerate}
 	\item $5x-3 < \dfrac{2x^2+3x}{x}$
+	
+	\ifshowsolution
 		\begin{align*}
 			5x-3 &< 2x+3 \\
 			3x &< 6 \\
 			x &< 2
 		\end{align*}
+	\fi
+	
 	\item $\dfrac{x+1}{2} \geq \abs{2x-3}$
+	
+	\ifshowsolution
 		\begin{align*}
 			\dfrac{x+1}{2} &\geq 2 \abs{x-\frac{3}{2}}
 			\shortintertext{Fall 1: $x \in \braces{-\infty, \frac{3}{2}}$}
@@ -421,7 +619,10 @@ Für welche Werte von $x$ gelten die folgenden Ungleichungen?
 			\intertext{Also Lösung im Fall 2: $x \in \left[ \frac{3}{2}, +\infty \right) \cap \left( -\infty, \frac{7}{3} \right] = \brackets{\frac{3}{2}, \frac{7}{3} }$}
 		\end{align*}
 		Das Gesammtergebnis ergibt sich also aus $\left[ 1, \frac{3}{2} \right) \cup \brackets{\frac{3}{2}, \frac{7}{3}} = \brackets{1, \frac{7}{3}}$
+	\fi
+	
 	\item $\sqrt{x^2-2x+1} > 3 - \abs{x-2}$
+	\ifshowsolution
 		\begin{align*}
 			\sqrt{(x-1)^2} &> 3 - \abs{x-2} \\
 			\abs{x-1} &> 3 - \abs{x-2}
@@ -444,7 +645,10 @@ Für welche Werte von $x$ gelten die folgenden Ungleichungen?
 			\intertext{Also Lösung im Fall 3: $x \in \left[ 2, +\infty \right) \cap \left( 3, +\infty \right) = \left( 3, +\infty \right)$}
 		\end{align*}
 		Das Gesammtergebnis ergibt sich also aus $\left( -\infty, 0 \right) \cup \left( 3, +\infty \right).$
+	\fi
+		
 	\item $\sqrt{x^2-8x+16} < \frac{\abs{x+2}}{2}$
+	\ifshowsolution
 		\begin{align*}
 			\sqrt{x^2-8x+16} &< \frac{\abs{x+2}}{2} \\
 			2 \abs{x-4} &< \abs{x+2}
@@ -466,18 +670,24 @@ Für welche Werte von $x$ gelten die folgenden Ungleichungen?
 			\intertext{Also Lösung im Fall 3: $x \in (-\infty, 10) \cap [4, +\infty) = [4,10)$}
 		\end{align*}
 		Das Gesammtergebnis ergibt sich also aus $(2,4) \cup [4,10) = (2,10).$
+	\fi
+		
 	\item $\sqrt{x^2-2x+1} > 3 + \abs{x-2}$
+	\ifshowsolution
 		\begin{align*}
 			\abs{x-1} &> 3 + \abs{x-2} \\
 			\abs{x-1} - \abs{x-2} &> 3
 		\end{align*}
 		Die Ungleichung hat keine Lösung.
+	\fi
 \end{enumerate}
 
 \subsection{Induktion}
 Beweise per vollständiger Induktion:
 \begin{enumerate}
 	\item $\forall n \geq 1 : \sum_{i=1}^n i = \frac{n(n+1)}{2}$ (Gauß'sche Summenformel)
+	
+	\ifshowsolution
 		\begin{description}
 			\item[Anfang] $n=1$
 				\begin{align*}
@@ -495,7 +705,11 @@ Beweise per vollständiger Induktion:
 				\frac{n^2 + 3n + 2}{2} &= \frac{n^2 + 3n + 2}{2}
 			\end{align*}
 		\end{description}
+	\fi
+	
 	\item $\forall n \geq 1 : \sum_{i=1}^n (2i-1) = n^2$ (Summe ungerader Zahlen)
+	
+	\ifshowsolution
 		\begin{description}
 			\item[Anfang] $n=1$
 				\begin{align*}
@@ -513,7 +727,11 @@ Beweise per vollständiger Induktion:
 					(n+1)^2 &= (n+1)^2
 				\end{align*}
 		\end{description}
+	\fi
+	
 	\item $\forall n \geq 1 : \sum_{i=1}^n (2i-1)^2 = \frac{n (2n-1)(2n+1)}{3}$
+	
+	\ifshowsolution
 		\begin{description}
 			\item[Anfang] $n=1$
 				\begin{align*}
@@ -533,7 +751,11 @@ Beweise per vollständiger Induktion:
 					4n^3+12n^2+11n+3 &= 4n^3+12n^2+11n+3
 				\end{align*}
 		\end{description}
+	\fi
+	
 	\item $\forall n \geq 1 : \quad 3 \mid (n^3 - n)$
+	
+	\ifshowsolution
 		\begin{description}
 			\item[Anfang] $n=1$
 				\begin{align*}
@@ -551,7 +773,11 @@ Beweise per vollständiger Induktion:
 			\end{align*}
 			Die Aussage gilt also, da von $3$ aufeinanderfolgenden Zahlen eine immer durch $3$ teilbar ist.
 		\end{description}
+	\fi
+	
 	\item $\forall n \geq 4 : \quad 2^n \geq n^2$
+	
+	\ifshowsolution
 		\begin{description}
 			\item[Anfang] $n=4$
 				\begin{align*}
@@ -569,6 +795,7 @@ Beweise per vollständiger Induktion:
 					(n-1-\sqrt{2})(n-1+\sqrt{2}) &\geq 0 \tag{Beide Terme $\geq 0$ weil $n \geq 4$}
 				\end{align*}
 		\end{description}
+	\fi
 \end{enumerate}
 
 \subsection{Einheitskreis}
@@ -580,41 +807,85 @@ Beweise per vollständiger Induktion:
 \end{figure}
 Lese aus dem Einheitskreis (Abbildung \ref{einheitskreis}) ab:
 \begin{enumerate}
-	\item $\cos \frac{\pi}{4} = \frac{\sqrt{2}}{2}$
-	\item $\sin \frac{5\pi}{4} = -\frac{\sqrt{2}}{2}$
-	\item $\acos{-\frac{\sqrt{3}}{2}} = \frac{5\pi}{6} \text{ bzw. } \frac{7\pi}{6}$
-	\item $\asin{-\frac{1}{2}} = \frac{7\pi}{6} \text{ bzw. } \frac{11\pi}{6}$
+	\item $\cos \frac{\pi}{4}$
+	
+	\ifshowsolution
+		$\cos \frac{\pi}{4} = \frac{\sqrt{2}}{2}$
+	\fi
+	
+	\item $\sin \frac{5\pi}{4}$
+	
+	\ifshowsolution
+		$\sin \frac{5\pi}{4} = -\frac{\sqrt{2}}{2}$
+	\fi
+	
+	\item $\acos{-\frac{\sqrt{3}}{2}}$
+	
+	\ifshowsolution
+		$\acos{-\frac{\sqrt{3}}{2}} = \frac{5\pi}{6} \text{ bzw. } \frac{7\pi}{6}$
+	\fi
+	
+	\item $\asin{-\frac{1}{2}}$
+	
+	\ifshowsolution
+		$\asin{-\frac{1}{2}} = \frac{7\pi}{6} \text{ bzw. } \frac{11\pi}{6}$
+	\fi
+	
 \end{enumerate}
 
 \subsection{Komplexe Zahlen}
 Gegeben seien folgende Zahlen aus $\mathbb{C}$. Bestimme den Real- und Imaginärteil, die komplex konjugierte so wie den Betrag: \\
 Betrag: $\abs{x+yi} = \sqrt{x^2+y^2}$
 \begin{enumerate}
-	\item $2i - (2 + i) + (7 - 4i) = i-2 + (7-4i) = 5-3i$ \\
+	\item $2i - (2 + i) + (7 - 4i)$
+	
+	\ifshowsolution
+		$2i - (2 + i) + (7 - 4i) = i-2 + (7-4i) = 5-3i$ \\
 		Realteil: $5$ \\
 		Imaginärteil: $-3$ \\
 		Komplex Konjugierte: $5+3i$ \\
 		Betrag: $\sqrt{5^2 + (-3)^2} = \sqrt{25+9} = \sqrt{34}$
-	\item $(1-i)^2 = 1-2i+i^2 = 1-2i-1 = -2i$ \\
+	\fi
+	
+	\item $(1-i)^2$
+	
+	\ifshowsolution
+		$(1-i)^2 = 1-2i+i^2 = 1-2i-1 = -2i$ \\
 		Realteil: $0$ \\
 		Imaginärteil: $-2$ \\
 		Komplex Konjugierte: $2i$ \\
 		Betrag: $\sqrt{(-2)^2} = \sqrt{4} = 2$
-	\item $\frac{3-i}{2+2i} = \frac{(3-i) \ \overline{(2+2i)}}{(2+2i) \ \overline{(2+2i)}} = \frac{(3-i)(2-2i)}{(2+2i)(2-2i)} = \frac{6-8i+2i^2}{4-4i^2} = \frac{6-8i-2}{4+4} = \frac{4-8i}{8} = \frac{1}{2}-i$ \\
+	\fi
+	
+	\item $\frac{3-i}{2+2i}$
+	
+	\ifshowsolution
+		$\frac{3-i}{2+2i} = \frac{(3-i) \ \overline{(2+2i)}}{(2+2i) \ \overline{(2+2i)}} = \frac{(3-i)(2-2i)}{(2+2i)(2-2i)} = \frac{6-8i+2i^2}{4-4i^2} = \frac{6-8i-2}{4+4} = \frac{4-8i}{8} = \frac{1}{2}-i$ \\
 		Realteil: $\frac{1}{2}$ \\
 		Imaginärteil: $-1$ \\
 		Komplex Konjugierte: $\frac{1}{2}+i$ \\
 		Betrag: $\sqrt{\braces{\frac{1}{2}}^2+(-1)^2} = \sqrt{\frac{1}{4}+1} = \frac{\sqrt{5}}{2}$
-	\item $(2-i) + (3+i)(3-i) = (2-i) + (9-3i+3i-i^2) = 12-i$ \\
+	\fi
+	
+	\item $(2-i) + (3+i)(3-i)$
+	
+	\ifshowsolution
+		$(2-i) + (3+i)(3-i) = (2-i) + (9-3i+3i-i^2) = 12-i$ \\
 		Realteil: $12$ \\
 		Imaginärteil: $-1$ \\
 		Komplex Konjugierte: $12+i$ \\
 		Betrag: $\sqrt{12^2 + (-1)^2} = \sqrt{145}$
-	\item $i^{\ 2015} = i^{\ 503 \cdot 4 + 3} = i^{503 \cdot 4} \cdot i^3 = i^4 \cdot i^3 = 1 \cdot (-i) = 0-i$ \\
+	\fi
+	
+	\item $i^{\ 2015}$
+	
+	\ifshowsolution
+		$i^{\ 2015} = i^{\ 503 \cdot 4 + 3} = i^{503 \cdot 4} \cdot i^3 = i^4 \cdot i^3 = 1 \cdot (-i) = 0-i$ \\
 		Realteil: $0$ \\
 		Imaginärteil: $-1$ \\
 		Komplex Konjugierte: $0+i$ \\
 		Betrag: $\sqrt{(-1)^2} = 1$
+	\fi
 \end{enumerate}
 
 \subsubsection{Polarkoordinaten und Exponentialdarstellung Umwandlung}
@@ -623,69 +894,116 @@ Schreibe als Polarkoordinaten- und Exponentialdarstellung
 Polarkoordinaten: $r(\cos \alpha + i \sin \alpha)$ mit $r=\sqrt{x^2+y^2}$ und $\acos{\frac{x}{r}} = \alpha = \asin{\frac{y}{r}}$
 
 \begin{enumerate}
-	\item $\sqrt{2}+\sqrt{2}i$ \\
-	$r = \sqrt{(\sqrt{2})^2 + (\sqrt{2})^2} = \sqrt{4} = 2$ \\
-	$\cos \alpha = \frac{\sqrt{2}}{2} \quad \Rightarrow \quad \alpha = \acos{\frac{\sqrt{2}}{2}} \quad \Rightarrow \quad \alpha = \frac{\pi}{4} \lor \alpha = \frac{7\pi}{4}$ \\
-	$\sin \alpha = \frac{\sqrt{2}}{2} \quad \Rightarrow \quad \alpha = \asin{\frac{\sqrt{2}}{2}} \quad \Rightarrow \quad \alpha = \frac{\pi}{4} \lor \alpha = \frac{3\pi}{4}$ \\
-	Polarkoordinaten: $2 \braces{\cos \frac{\pi}{4} + i \sin \frac{\pi}{4}}$ \\
-	Exponential: $2 e^{i \frac{\pi}{4}}$
+	\item $\sqrt{2}+\sqrt{2}i$
 	
-	\item $-4i$ \\
-	$r = \sqrt{(-4)^2} = 4$ \\
-	$\cos \alpha = -\frac{0}{4} \quad \Rightarrow \quad \alpha = \acos{(0)} \quad \Rightarrow \quad \alpha = \frac{\pi}{2} \lor \alpha = \frac{3\pi}{2}$ \\
-	$\sin \alpha = -\frac{4}{4} \quad \Rightarrow \quad \alpha = \asin{(-1)} \quad \Rightarrow \quad \alpha = \frac{3\pi}{2}$ \\
-	Polarkoordinaten: $4 \braces{\cos \frac{3\pi}{2} + i \sin \frac{3\pi}{2}}$ \\
-	Exponential: $4 e^{i \frac{3\pi}{2}}$
+	\ifshowsolution
+		$r = \sqrt{(\sqrt{2})^2 + (\sqrt{2})^2} = \sqrt{4} = 2$ \\
+		$\cos \alpha = \frac{\sqrt{2}}{2} \quad \Rightarrow \quad \alpha = \acos{\frac{\sqrt{2}}{2}} \quad \Rightarrow \quad \alpha = \frac{\pi}{4} \lor \alpha = \frac{7\pi}{4}$ \\
+		$\sin \alpha = \frac{\sqrt{2}}{2} \quad \Rightarrow \quad \alpha = \asin{\frac{\sqrt{2}}{2}} \quad \Rightarrow \quad \alpha = \frac{\pi}{4} \lor \alpha = \frac{3\pi}{4}$ \\
+		Polarkoordinaten: $2 \braces{\cos \frac{\pi}{4} + i \sin \frac{\pi}{4}}$ \\
+		Exponentialschreibweise: $2 e^{i \frac{\pi}{4}}$
+	\fi
 	
-	\item $6+2\sqrt{3}i$ \\
-	$r = \sqrt{6^2 + (2\sqrt{3})^2} = \sqrt{36 + 4 \cdot 3} = \sqrt{48} = 4 \sqrt{3}$ \\
-	$\cos \alpha = \frac{6}{4\sqrt{3}} = \frac{\sqrt{3}}{2} \quad \Rightarrow \quad \alpha = \acos{\frac{\sqrt{3}}{2}} \quad \Rightarrow \quad \alpha = \frac{\pi}{6} \lor \alpha = \frac{11\pi}{6}$ \\
-	$\sin \alpha = \frac{2\sqrt{3}}{4\sqrt{3}} = \frac{1}{2} \quad \Rightarrow \quad \alpha = \asin{\frac{1}{2}} \quad \Rightarrow \quad \alpha = \frac{\pi}{6} \lor \alpha = \frac{5\pi}{6}$ \\
-	Polarkoordinaten: $4\sqrt{3} \braces{\cos \frac{\pi}{6} + i \sin \frac{\pi}{6} }$ \\
-	Exponential: $4\sqrt{3} \cdot e^{i \frac{\pi}{6}}$
+	\item $-4i$
+	
+	\ifshowsolution
+		$r = \sqrt{(-4)^2} = 4$ \\
+		$\cos \alpha = -\frac{0}{4} \quad \Rightarrow \quad \alpha = \acos{(0)} \quad \Rightarrow \quad \alpha = \frac{\pi}{2} \lor \alpha = \frac{3\pi}{2}$ \\
+		$\sin \alpha = -\frac{4}{4} \quad \Rightarrow \quad \alpha = \asin{(-1)} \quad \Rightarrow \quad \alpha = \frac{3\pi}{2}$ \\
+		Polarkoordinaten: $4 \braces{\cos \frac{3\pi}{2} + i \sin \frac{3\pi}{2}}$ \\
+		Exponentialschreibweise: $4 e^{i \frac{3\pi}{2}}$
+	\fi
+	
+	\item $6+2\sqrt{3}i$
+	
+	\ifshowsolution
+		$r = \sqrt{6^2 + (2\sqrt{3})^2} = \sqrt{36 + 4 \cdot 3} = \sqrt{48} = 4 \sqrt{3}$ \\
+		$\cos \alpha = \frac{6}{4\sqrt{3}} = \frac{\sqrt{3}}{2} \quad \Rightarrow \quad \alpha = \acos{\frac{\sqrt{3}}{2}} \quad \Rightarrow \quad \alpha = \frac{\pi}{6} \lor \alpha = \frac{11\pi}{6}$ \\
+		$\sin \alpha = \frac{2\sqrt{3}}{4\sqrt{3}} = \frac{1}{2} \quad \Rightarrow \quad \alpha = \asin{\frac{1}{2}} \quad \Rightarrow \quad \alpha = \frac{\pi}{6} \lor \alpha = \frac{5\pi}{6}$ \\
+		Polarkoordinaten: $4\sqrt{3} \braces{\cos \frac{\pi}{6} + i \sin \frac{\pi}{6} }$ \\
+		Exponentialschreibweise: $4\sqrt{3} \cdot e^{i \frac{\pi}{6}}$
+	\fi
 \end{enumerate}
 
 Schreibe als Summe von Real- und Imaginärteil (karthesische Darstellung: $x + yi$)
 
 \begin{enumerate}
-	\item $7 \braces{\cos \pi + i \sin \pi}$ \\
-	$7 \braces{-1 + i 0}$ \\
-	$-7$
-	\item $\sqrt{3} \braces{\cos \frac{\pi}{3} + i \sin \frac{\pi}{3}}$ \\
-	$\sqrt{3} \braces{\frac{1}{2} + i \frac{\sqrt{3}}{2}}$ \\
-	$\frac{\sqrt{3}}{2} + i \frac{3}{2}$
-	\item $2 \cdot e^{i \frac{5 \pi}{3}}$ \\
-	$2 \braces{\cos \frac{5\pi}{3} + i \sin \frac{5\pi}{3}}$ \\
-	$2 \braces{\frac{1}{2} - i \frac{\sqrt{3}}{2}}$ \\
-	$1 - i \sqrt{3}$
+	\item $7 \braces{\cos \pi + i \sin \pi}$
+	
+	\ifshowsolution
+		\begin{align*}
+			7 \braces{\cos \pi + i \sin \pi} &= 7 \braces{-1 + i 0} \\
+			&= -7
+		\end{align*}
+	\fi
+	
+	\item $\sqrt{3} \braces{\cos \frac{\pi}{3} + i \sin \frac{\pi}{3}}$
+	
+	\ifshowsolution
+		\begin{align*}
+			\sqrt{3} \braces{\cos \frac{\pi}{3} + i \sin \frac{\pi}{3}} &= \sqrt{3} \braces{\frac{1}{2} + i \frac{\sqrt{3}}{2}} \\
+			&= \frac{\sqrt{3}}{2} + i \frac{3}{2}
+		\end{align*}
+	\fi
+	
+	\item $2 \cdot e^{i \frac{5 \pi}{3}}$
+	
+	\ifshowsolution
+		\begin{align*}
+			2 \cdot e^{i \frac{5 \pi}{3}} &= 2 \braces{\cos \frac{5\pi}{3} + i \sin \frac{5\pi}{3}} \\
+			&= 2 \braces{\frac{1}{2} - i \frac{\sqrt{3}}{2}} \\
+			&= 1 - i \sqrt{3}
+		\end{align*}
+	\fi
 \end{enumerate}
 
 \subsubsection{Rechnen in Polarkoordinaten}
 Für 2 komplexe Zahlen $z_1$, $z_2$ mit Polarkoordinatendarstellung $z_i = r_i \braces{\cos \alpha_i + i \sin \alpha_i}$ gilt:
 
-$z_1 \cdot z_2 = r_1 r_2 \braces{ \cos \braces{\alpha_1 + \alpha_2} + i \sin \braces{\alpha_1 + \alpha_2}}$ \\
-$z_1 \div z_2 = \frac{r_1}{r_2} \braces{\cos \braces{\alpha_1 - \alpha_2} + i \sin \braces{\alpha_1 - \alpha_2}}$ \\
-$z_1^n = r_1^n \braces{\cos (n \alpha_1) + i \sin (n \alpha_1)}$ \\
-$\sqrt[n]{z_1} = w_k$ mit $w_k = \sqrt[n]{r_1} \braces{\cos \frac{\alpha_1 + 2k\pi}{n} + i \sin \frac{\alpha_1 + 2k\pi}{n}}, k = 0, \dots n-1$
+\begin{align*}
+	z_1 \cdot z_2 &= r_1 r_2 \braces{ \cos \braces{\alpha_1 + \alpha_2} + i \sin \braces{\alpha_1 + \alpha_2}} \\
+z_1 \div z_2 &= \frac{r_1}{r_2} \braces{\cos \braces{\alpha_1 - \alpha_2} + i \sin \braces{\alpha_1 - \alpha_2}} \\
+z_1^n &= r_1^n \braces{\cos (n \alpha_1) + i \sin (n \alpha_1)} \\
+	\sqrt[n]{z_1} &= w_k \text{ mit } w_k = \sqrt[n]{r_1} \braces{\cos \frac{\alpha_1 + 2k\pi}{n} + i \sin \frac{\alpha_1 + 2k\pi}{n}}, k = 0, \dots n-1
+\end{align*}
 
 Berechne in Polarkoordinaten:
 \begin{enumerate}
-	\item $3 \braces{\cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3}} \cdot \sqrt{4} \braces{\cos \pi + i \sin \pi}$ \\
-		$3 \sqrt{4} \braces{ \cos \braces{\frac{2\pi}{3}+\pi} + i \sin \braces{\frac{2\pi}{3} + \pi} }$ \\
-		$6 \braces{ \cos \frac{5\pi}{3} + i \sin \frac{5\pi}{3} }$
-	\item $4 \braces{ \cos \frac{7\pi}{6} + i \sin \frac{7\pi}{6} } \div 2 \braces{ \cos \pi + i \sin \pi }$ \\
-		$\frac{4}{2} \braces{ \cos \braces{\frac{7\pi}{6} - \pi} + i \sin \braces{\frac{7\pi}{6} - \pi} }$ \\
-		$2 \braces{\cos \frac{\pi}{6} + i \sin \frac{\pi}{6}}$
-	\item $\braces{3+\sqrt{3}i}^4$ \\
+	\item $3 \braces{\cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3}} \cdot \sqrt{4} \braces{\cos \pi + i \sin \pi}$
+	
+	\ifshowsolution
+		\begin{align*}
+			3 \braces{\cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3}} \cdot \sqrt{4} \braces{\cos \pi + i \sin \pi} &= 3 \sqrt{4} \braces{ \cos \braces{\frac{2\pi}{3}+\pi} + i \sin \braces{\frac{2\pi}{3} + \pi} } \\
+			&= 6 \braces{ \cos \frac{5\pi}{3} + i \sin \frac{5\pi}{3} }
+		\end{align*}
+	\fi
+		
+	\item $4 \braces{ \cos \frac{7\pi}{6} + i \sin \frac{7\pi}{6} } \div 2 \braces{ \cos \pi + i \sin \pi }$
+	
+	\ifshowsolution
+		\begin{align*}
+			4 \braces{ \cos \frac{7\pi}{6} + i \sin \frac{7\pi}{6} } \div 2 \braces{ \cos \pi + i \sin \pi } &= \frac{4}{2} \braces{ \cos \braces{\frac{7\pi}{6} - \pi} + i \sin \braces{\frac{7\pi}{6} - \pi} } \\
+			&= 2 \braces{\cos \frac{\pi}{6} + i \sin \frac{\pi}{6}}
+		\end{align*}
+	\fi
+		
+	\item $\braces{3+\sqrt{3}i}^4$
+	
+	\ifshowsolution
 		$r = \sqrt{3^2 + \sqrt{3}^2} = \sqrt{12}, \quad \alpha = \acos{\frac{3}{\sqrt{12}}} = \acos {\frac{\sqrt{3}}{2}} = \frac{\pi}{6}$ \\
-		$\braces{ \sqrt{12} \braces{\cos \frac{\pi}{6} + i \sin \frac{\pi}{6}} }^4$ \\
-		$\sqrt{12}^4 \braces{ \cos \frac{4\pi}{6} + i \sin \frac{4\pi}{6} }$ \\
-		$12^2 \braces{ \cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3} }$ \\
-		$12^2 \braces{ - \frac{1}{2} + i \frac{\sqrt{3}}{2} }$ \\
-		$72 + 72\sqrt{3}i$
+		\begin{align*}
+			\braces{3+\sqrt{3}i}^4 &= \braces{ \sqrt{12} \braces{\cos \frac{\pi}{6} + i \sin \frac{\pi}{6}} }^4 \\
+			&= \sqrt{12}^4 \braces{ \cos \frac{4\pi}{6} + i \sin \frac{4\pi}{6} } \\
+			&= 12^2 \braces{ \cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3} } \\
+			&= 12^2 \braces{ - \frac{1}{2} + i \frac{\sqrt{3}}{2} } \\
+			&= 72 + 72\sqrt{3}i
+		\end{align*}
+	\fi
 		
 	%TODO weitere Aufgabe zum Potenzieren und Wurzelziehen (mit besseren Zahlen)
-	\item $p^4 + 16 = 0$ \\
+	\item $p^4 + 16 = 0$
+	
+	\ifshowsolution
 		% Dies lässt sich auch vereinfachen durch \sqrt[4]{-16} = \sqrt[4]{16 * i^2}
 		\begin{align*}
 			p^4 + 16 &= 0 \\
@@ -697,10 +1015,11 @@ Berechne in Polarkoordinaten:
 			\intertext{Nun können mit der Formel von oben die 4 Nullstellen bestimmt werden}
 			w_0 &= \sqrt[4]{16} \braces{\cos \frac{\pi + 0\pi}{4} + i \sin \frac{\pi + 0\pi}{4} } = 2 \braces{ \frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} } = \sqrt{2} + i \sqrt{2} \\
 			w_1 &= \sqrt[4]{16} \braces{\cos \frac{\pi + 2\pi}{4} + i \sin \frac{\pi + 2\pi}{4} } = 2 \braces{ -\frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} } = -\sqrt{2} + i \sqrt{2} \\
-			\intertext{Hier kann man prinzipiell die anderen beiden Lösungen sofort ablesen, da zu jeder Lösung $x + yi$ auch ihre konjugierte $x - yi$ eine Lösung ist.}
+			\intertext{Prinzipiell kann man nun die anderen beiden Lösungen sofort ablesen, da zu jeder Lösung $x + yi$ auch ihre konjugierte $x - yi$ eine Lösung ist.}
 			w_2 &= \sqrt[4]{16} \braces{\cos \frac{\pi + 4\pi}{4} + i \sin \frac{\pi + 4\pi}{4} } = 2 \braces{ -\frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} } = -\sqrt{2} - i \sqrt{2} \\
 			w_3 &= \sqrt[4]{16} \braces{\cos \frac{\pi + 6\pi}{4} + i \sin \frac{\pi + 6\pi}{4} } = 2 \braces{ \frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} } = \sqrt{2} - i \sqrt{2} \\
 		\end{align*}
+	\fi
 \end{enumerate}
 
 \subsection{Folgen}
