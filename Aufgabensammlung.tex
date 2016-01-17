@@ -41,6 +41,8 @@
 	showstringspaces=false
 }
 
+% Set showsolution to false to generate a file that just contains the exercises
+% Otherwise, solutions will be included.
 \newif\ifshowsolution
 \showsolutiontrue
 %\showsolutionfalse
@@ -1991,15 +1993,29 @@ Das Keyword \texttt{const} dient dazu, Variablen als Konstant zu deklarieren, si
 \subsection{Grundbegriffe}
 Ordne die Vorgänge dem jeweiligen Begriff zu. Eine Abrechnungsperiode entspricht einem Monat.
 
-\begin{tabularx}{\columnwidth}{X|c|c|c|c}
-	Vorgang & Auszahlung & Ausgabe & Aufwand & Kosten \\ \hline
-	Der Lieferdienst bringt eine Couch vorbei. Wir zahlen bar. & x & x &  &  \\ \hline
-	Bestellung eines Handwerkers, er kommt nächsten Monat. Wir werden bar zahlen. &  &  &  &  \\ \hline
-	Überweisung von 30 \euro \ für einen Laserpointer, der letzten Monat ankam. & x &  &  & \\ \hline
-	Wir essen 5 Tiefkühlpizzen, die unser Nachbar letzten Monat vorbei gebracht hat. Wir geben ihm dafür einen Fünfer. & x &  & x & x
-\end{tabularx}
+\ifshowsolution
+	\begin{tabularx}{\columnwidth}{X|c|c|c|c}
+		Vorgang & Auszahlung & Ausgabe & Aufwand & Kosten \\ \hline
+		Der Lieferdienst bringt eine Couch vorbei. Wir zahlen bar. & x & x &  &  \\ \hline
+		Bestellung eines Handwerkers, er kommt nächsten Monat. Wir werden bar zahlen. &  &  &  &  \\ \hline
+		Überweisung von 30 \euro \ für einen Laserpointer, der letzten Monat ankam. & x &  &  & \\ \hline
+		Wir essen 5 Tiefkühlpizzen, die unser Nachbar letzten Monat vorbei gebracht hat. Wir geben ihm dafür einen Fünfer. & x &  & x & x
+	\end{tabularx}
+\else
+	\begin{tabularx}{\columnwidth}{X|c|c|c|c}
+		Vorgang & Auszahlung & Ausgabe & Aufwand & Kosten \\ \hline
+		Der Lieferdienst bringt eine Couch vorbei. Wir zahlen bar. &  &  &  &  \\ \hline
+		Bestellung eines Handwerkers, er kommt nächsten Monat. Wir werden bar zahlen. &  &  &  &  \\ \hline
+		Überweisung von 30 \euro \ für einen Laserpointer, der letzten Monat ankam. &  &  &  & \\ \hline
+		Wir essen 5 Tiefkühlpizzen, die unser Nachbar letzten Monat vorbei gebracht hat. Wir geben ihm dafür einen Fünfer. &  &  &  & 
+	\end{tabularx}
+\fi
 
 \subsection{Kapitalwert}
+\begin{center}
+	\includegraphics[height=4cm]{RentenUndKapitalfaktoren.png}
+\end{center}
+
 Dem Karnevalsverein B.W.L (Bochumer Weißwurst Liga) steht durch den Abbau seiner Niederlassung in Querenburg die Summe von 300'\euro \ zur Verfügung, die langfristig investiert werden soll. Dafür hat sie folgende Optionen:
 \begin{enumerate}
 	\item Anheuern der talentierten Büttenrednerin Berta Wassermann. Diese erklärt sich bereit, für 200' \euro \ die nächsten 3 Jahre auf Prunksitzungen des Vereins aufzutreten. Der Verein erwartet dadurch zusätzliche Einnahmen von 120' \euro \ pro Jahr.
@@ -2008,20 +2024,19 @@ Dem Karnevalsverein B.W.L (Bochumer Weißwurst Liga) steht durch den Abbau seine
 \end{enumerate}
 Berechne den Kapitalwert der Anlagen. Für welche sollte sich B.W.L entscheiden?
 
-\includegraphics[height=4cm]{RentenUndKapitalfaktoren.png}
-
-\begin{description}
-	\item[Anlage 1] $- 200' + 120' \cdot \frac{1.10^3 - 1}{1.10^3 \cdot 0.1} \approx 98.4222'$
-	\item[Anlage 2] $- 220' + 480' \cdot \frac{1}{1.10^4} \approx 107.8465'$
-	\item[Anlage 3] 0, weil Standardoption (Interner Zinsfuß oder so)
-\end{description}
-Der Verein sollte sich also für Anlage 2 entscheiden.
+\ifshowsolution
+	\begin{description}
+		\item[Anlage 1] $- 200' + 120' \cdot \frac{1.10^3 - 1}{1.10^3 \cdot 0.1} \approx 98.4222'$
+		\item[Anlage 2] $- 220' + 480' \cdot \frac{1}{1.10^4} \approx 107.8465'$
+		\item[Anlage 3] 0, weil Standardoption (Interner Zinsfuß oder so)
+	\end{description}
+	Der Verein sollte sich also für Anlage 2 entscheiden.
+\fi
 
 \subsection{Investitionsrechnung}
 Helmut B. plant die Eröffnung einer Druckerei. Dafür ist die Anschaffung einer Buchpresse erforderlich. Nachdem er Angebote eingeholt hat, stehen folgende Pressen, die jeweils 5 Jahre genutzt werden sollen, in der engeren Auswahl:
 
-\vspace{\baselineskip}
-\begin{tabular}{l|r|r}
+\begin{tabular}{lrr}
 	& Presse 1 & Presse 2 \\ \hline
 	Anschaffungskosten (\euro) & 450.000 & 300.000 \\
 	sonstige fixe Kosten (\euro) p.a. & 15.000 & 12.000 \\
@@ -2029,11 +2044,12 @@ Helmut B. plant die Eröffnung einer Druckerei. Dafür ist die Anschaffung einer
 	Restverkaufserlös (\euro) & 80.000 & 50.000
 \end{tabular}
 
-\vspace{\baselineskip}
 Herr B. geht davon aus, 14.000 Verpackungseinheiten mit jeweils 20 Büchern verkaufen zu können und rechnet mit 5\% Zinsen.
 
 \begin{enumerate}
-	\item Welche Presse ist nach Kostenvergleichsrechnung die bessere Wahl? \\
+	\item Welche Presse ist nach Kostenvergleichsrechnung die bessere Wahl?
+	
+	\ifshowsolution
 		\begin{tabular}{lr|r}
 			Abschreibung & $\frac{450.000 - 80.000}{5} = 74.000$ & $\frac{300.000 - 50.000}{5} = 50.000$ \\
 			Kalkulatorischer Zins & $\frac{450.000 + 80.000}{2} \cdot 0.05 = 13.250$ & $\frac{300.000 + 50.000}{2} \cdot 0.05 = 8.750$ \\
@@ -2041,19 +2057,25 @@ Herr B. geht davon aus, 14.000 Verpackungseinheiten mit jeweils 20 Büchern verk
 			Variable Kosten & $14.000 \cdot 22 = 308.000$ & $14.000 \cdot 25 = 350.000$ \\ \hline
 			$\sum$ & 410.250 & 420.750
 		\end{tabular}
-		\vspace{\baselineskip} \\
+		
 		Er sollte sich also für Presse 1 entscheiden.
-	\item Bei welcher Produktionsmenge an Verpackungseinheiten sind beide Pressen gleich gut?
-		\begin{align*}
-		\underbrace{410.250}_{\text{Kosten pro Jahr}} - \underbrace{308.000}_{\text{variable Kosten}} &= \underbrace{102.250}_{\text{Fixe Kosten}} \tag{Maschine 1} \\
-		\underbrace{420.750}_{\text{Kosten pro Jahr}} - \underbrace{350.000}_{\text{variable Kosten}} &= \underbrace{70.750}_{\text{Fixe Kosten}} \tag{Maschine 2} \\
-		\text{Fixkosten}_1 + \text{variable Kosten}_1 &\overset{!}{=} \text{Fixkosten}_2 + \text{variable Kosten}_2 \\
-		102.250 + 22 \cdot x &= 70.750 + 25 \cdot x \\
-		x &= 10.500
-		\end{align*}
-	\item Da Presse 1 zusätzlich noch das Gesicht des Charmanten Herrn B. auf das Cover drucken kann, rechnet her hier mit einem Verkaufspreis von 18\euro \ je Buch, bei Presse 2 jedoch nur mit 16\euro \ je Buch. Für welche Presse entscheidet er sich nach einer Gewinnvergleichsrechnung? Wir nehmen dabei an, dass Presse 1 Kosten von 410.000 \euro \ und Presse 2 Kosten von 420.000 \euro \ verursacht (Vermeidung von Folgefehlern).
+	\fi
 	
-		\vspace{\baselineskip}
+	\item Bei welcher Produktionsmenge an Verpackungseinheiten sind beide Pressen gleich gut?
+	
+	\ifshowsolution
+		\begin{align*}
+			\underbrace{410.250}_{\text{Kosten pro Jahr}} - \underbrace{308.000}_{\text{variable Kosten}} &= \underbrace{102.250}_{\text{Fixe Kosten}} \tag{Maschine 1} \\
+			\underbrace{420.750}_{\text{Kosten pro Jahr}} - \underbrace{350.000}_{\text{variable Kosten}} &= \underbrace{70.750}_{\text{Fixe Kosten}} \tag{Maschine 2} \\
+			\text{Fixkosten}_1 + \text{variable Kosten}_1 &\setequal \text{Fixkosten}_2 + \text{variable Kosten}_2 \\
+			102.250 + 22 \cdot x &= 70.750 + 25 \cdot x \\
+			x &= 10.500
+		\end{align*}
+	\fi
+	
+	\item Da Presse 1 zusätzlich noch das Gesicht des charmanten Herrn B. auf das Cover drucken kann, rechnet her hier mit einem Verkaufspreis von 18\euro \ je Buch, bei Presse 2 jedoch nur mit 16\euro \ je Buch. Für welche Presse entscheidet er sich nach einer Gewinnvergleichsrechnung? Wir nehmen dabei an, dass Presse 1 Kosten von 410.000 \euro \ und Presse 2 Kosten von 420.000 \euro \ verursacht (zur Vermeidung von Folgefehlern).
+	
+	\ifshowsolution
 		\begin{tabular}{l|r|r}
 			& Presse 1 & Presse 2 \\ \hline
 			Erlös & $18 \cdot 20 \cdot 14.000 =5.040.000$ & $16 \cdot 20 \cdot 14.000 = 4.480.000$ \\
@@ -2061,8 +2083,8 @@ Herr B. geht davon aus, 14.000 Verpackungseinheiten mit jeweils 20 Büchern verk
 			Gewinn & 4.630.000 & 4.060.000
 		\end{tabular}
 		
-		\vspace{\baselineskip}
-		Die Presse 1 bietet einen höheren Gewinn, daher wird man sich für diese entscheiden.
+		Presse 1 bietet einen höheren Gewinn, daher wird man sich für diese entscheiden.
+	\fi
 \end{enumerate}
 
 \subsection{Äquivalenzziffernrechnung}
@@ -2076,25 +2098,24 @@ Der Lebensmittelhersteller Krafft vertreibt 4 Sorten Energy-Drinks. Die Kosten p
 	Rockikone & 2000 & 20
 \end{tabular}
 
-\vspace{\baselineskip}
 Wie groß sind die Herstellungskosten in vollen Tausend \euro \ pro Produkttyp, wenn man die einstufige Äquivalenzziffernrechnung anwendet?
 
-\vspace{\baselineskip}
-Da die Herstellungsdauer den Hauptanteil an den Kosten ausmachen, sind die die Kosten für einen Produkttyp proportional zur Herstellungsdauer pro Palette mal Anzahl der hergestellten Paletten. Diese rechnen wir zunächst aus ('Palettenminuten').
+\ifshowsolution
+	Da die Herstellungsdauer den Hauptanteil an den Kosten ausmacht, sind die die Kosten für einen Produkttyp proportional zur Herstellungsdauer pro Palette mal Anzahl der hergestellten Paletten. Diese rechnen wir zunächst aus ('Palettenminuten').
 
-Der Anteil der Kosten, den ein Produkttyp an den Gesammtkosten hat, entspricht nun dem Anteil der Palettenminuten an der Summe aller Palettenminuten. Diesen Anteil rechnen wir aus indem wir die Palettenminuten eines Produkttyps durch die Summe der Palettenminuten dividieren, das Ergebnis wird dann 'Äquivalenzziffer' genannt.
+	Der Anteil der Kosten, den ein Produkttyp an den Gesammtkosten hat, entspricht nun dem Anteil der Palettenminuten an der Summe aller Palettenminuten. Diesen Anteil rechnen wir aus indem wir die Palettenminuten eines Produkttyps durch die Summe der Palettenminuten dividieren, das Ergebnis wird dann 'Äquivalenzziffer' genannt.
 
-Die Kosten, die auf einen Produkttyp entfallen, ergeben sich dann dadurch, dass wir die Gesammtkosten mit der jeweiligen Äquivalenzziffer multiplizieren.
+	Die Kosten, die auf einen Produkttyp entfallen, ergeben sich dann dadurch, dass wir die Gesammtkosten mit der jeweiligen Äquivalenzziffer multiplizieren.
 
-\vspace{\baselineskip}
-\begin{tabular}{lrrrrr}
-	Energy-Drink & Paletten & Minuten & Palettenminuten & Äquivalenzziffer & Kosten \\ \hline
-	Ungehäuer & 2400 & 24 & 57600 & 0.3924 & 125' \\
-	Blue Donkey & 1200 & 32 & 38400 & 0.2616 & 83' \\
-	Rhinozeros & 600 & 18 & 10800 & 0.0736 & 23' \\
-	Rockikone & 2000 & 20 & 40000 & 0.2725 & 87' \\ \hline
-	$\sum$ & & & 146800 & 1.0001 & 318'
-\end{tabular}
+	\begin{tabular}{lrrrrr}
+		Energy-Drink & Paletten & Minuten & Palettenminuten & Äquivalenzziffer & Kosten \\ \hline
+		Ungehäuer & 2400 & 24 & 57600 & 0.3924 & 125' \\
+		Blue Donkey & 1200 & 32 & 38400 & 0.2616 & 83' \\
+		Rhinozeros & 600 & 18 & 10800 & 0.0736 & 23' \\
+		Rockikone & 2000 & 20 & 40000 & 0.2725 & 87' \\ \hline
+		$\sum$ & & & 146800 & 1.0001 & 318'
+	\end{tabular}
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                Sonstiges                                     %
@@ -2105,63 +2126,177 @@ Die Kosten, die auf einen Produkttyp entfallen, ergeben sich dann dadurch, dass 
 Welche Dezimalzahlen entsprechen den folgenden Binärzahlen?
 \begin{enumerate}
 	\item
-		\begin{tabular}{l|l|l}
-			110 & 1010 & 10001 \\ \hline
-			$6_d$ & $10_d$ & $17_d$
-		\end{tabular}
+		\ifshowsolution
+			\begin{tabular}{l|l|l}
+				110 & 1010 & 10001 \\ \hline
+				$6_d$ & $10_d$ & $17_d$
+			\end{tabular}
+		\else
+			\begin{tabular}{l|l|l}
+				110 & 1010 & 10001 \\ \hline
+				& &
+			\end{tabular}
+		\fi
 	\item
-		\begin{tabular}{l|l|l}
-			11101 & 100100 & 1110001101 \\ \hline
-			$29_d$ & $26_d$ & $909_d$
-		\end{tabular}
+		\ifshowsolution
+			\begin{tabular}{l|l|l}
+				11101 & 100100 & 1110001101 \\ \hline
+				$29_d$ & $26_d$ & $909_d$
+			\end{tabular}
+		\else
+			\begin{tabular}{l|l|l}
+				11101 & 100100 & 1110001101 \\ \hline
+				& &
+			\end{tabular}
+		\fi
 \end{enumerate}
+
 Schreibe folgende Dezimalzahlen im Binärsystem
 \begin{enumerate}
 	\item
-		\begin{tabular}{l|l|l|l|l}
-			1 & 2 & 4 & 8 & 16 \\ \hline
-			$1_b$ & $10_b$ & $100_b$ & $1000_b$ & $10000_b$
-		\end{tabular}
+		\ifshowsolution
+			\begin{tabular}{l|l|l|l|l}
+				1 & 2 & 4 & 8 & 16 \\ \hline
+				$1_b$ & $10_b$ & $100_b$ & $1000_b$ & $10000_b$
+			\end{tabular}
+		\else
+			\begin{tabular}{l|l|l|l|l}
+				1 & 2 & 4 & 8 & 16 \\ \hline
+				& & & &
+			\end{tabular}
+		\fi
 	\item
-		\begin{tabular}{l|l|l}
-			3 & 7 & 15 \\ \hline
-			$11_b$ & $111_b$ & $1111_b$
-		\end{tabular}
+		\ifshowsolution
+			\begin{tabular}{l|l|l}
+				3 & 7 & 15 \\ \hline
+				$11_b$ & $111_b$ & $1111_b$
+			\end{tabular}
+		\else
+			\begin{tabular}{l|l|l}
+				3 & 7 & 15 \\ \hline
+				& &
+			\end{tabular}
+		\fi
 	\item
-		\begin{tabular}{l|l|l|l}
-			5 & 11 & 28 & 42\\ \hline
-			$101_b$ & $1011_b$ & $11100_b$ & $101010_b$
-		\end{tabular}
+		\ifshowsolution
+			\begin{tabular}{l|l|l|l}
+				5 & 11 & 28 & 42\\ \hline
+				$101_b$ & $1011_b$ & $11100_b$ & $101010_b$
+			\end{tabular}
+		\else
+			\begin{tabular}{l|l|l|l}
+				5 & 11 & 28 & 42\\ \hline
+				& & &
+			\end{tabular}
+		\fi
 \end{enumerate}
 Führe folgende Berechnungen durch
 \begin{enumerate}
-	\item $1101_b + 110_b = 10011_b$
-	\item $1011101_b + 1001_b = 1100110_b$
-	\item $1011101_b - 1001_b = 1010100_b$
-	\item $1101_b - 110_b = 111_b$
-	\item $1101_b \cdot 110_b = 1001110_b$
-	\item $1011101_b \cdot 1001_b = 1101000101_b$
+	\item $1101_b + 110_b$
+	
+	\ifshowsolution
+		$1101_b + 110_b = 10011_b$
+	\fi
+	
+	\item $1011101_b + 1001_b$
+	
+	\ifshowsolution
+		$1011101_b + 1001_b = 1100110_b$
+	\fi
+	
+	\item $1011101_b - 1001_b$
+	
+	\ifshowsolution
+		$1011101_b - 1001_b = 1010100_b$
+	\fi
+	
+	\item $1101_b - 110_b$
+	
+	\ifshowsolution
+		$1101_b - 110_b = 111_b$
+	\fi
+	
+	\item $1101_b \cdot 110_b$
+	
+	\ifshowsolution
+		$1101_b \cdot 110_b = 1001110_b$
+	\fi
+	
+	\item $1011101_b \cdot 1001_b$
+	
+	\ifshowsolution
+		$1011101_b \cdot 1001_b = 1101000101_b$
+	\fi
 \end{enumerate}
 
 \subsection{Modulare Arithmetik}
 Was ist das Ergebnis folgender Rechnungen?
 \begin{enumerate}
-	\item $3 \bmod 3 \equiv 0$
-	\item $7 \bmod 3 \equiv 1$
-	\item $13 \bmod 5 \equiv 3$
+	\item $3 \bmod 3$
+	
+	\ifshowsolution
+		$3 \bmod 3 \equiv 0$
+	\fi
+	
+	\item $7 \bmod 3$
+	
+	\ifshowsolution
+		$7 \bmod 3 \equiv 1$
+	\fi
+	
+	\item $13 \bmod 5$
+	
+	\ifshowsolution
+		$13 \bmod 5 \equiv 3$
+	\fi
+	
 \end{enumerate}
-Wozu sind die folgenden Terme äquivalent?
+Zu welchem Wert sind die folgenden Terme äquivalent?
 \begin{enumerate}
-	\item $3 + 4 \pmod 2 \equiv 1$
-	\item $12 + 1 \pmod 5 \equiv 3$
-	\item $4 \cdot 5 \pmod 7 \equiv 6$
-	\item $3 \cdot 8 \pmod {11} \equiv 2$
+	\item $3 + 4 \pmod 2$
+	
+	\ifshowsolution
+		$3 + 4 \pmod 2 \equiv 1$
+	\fi
+	
+	\item $12 + 1 \pmod 5$
+	
+	\ifshowsolution
+		$12 + 1 \pmod 5 \equiv 3$
+	\fi
+	
+	\item $4 \cdot 5 \pmod 7$
+	
+	\ifshowsolution
+		$4 \cdot 5 \pmod 7 \equiv 6$
+	\fi
+	
+	\item $3 \cdot 8 \pmod {11}$
+	
+	\ifshowsolution
+		$3 \cdot 8 \pmod {11} \equiv 2$
+	\fi
+	
 \end{enumerate}
 Welches x löst die Gleichung?
 \begin{enumerate}
-	\item $0 + x \equiv 3 \pmod 5 \rightarrow x \equiv 3$
-	\item $1 + x \equiv 0 \pmod 5 \rightarrow x \equiv 4$
-	\item $4 + x \equiv 2 \pmod 5 \rightarrow x \equiv 3$
+	\item $0 + x \equiv 3 \pmod 5$
+	
+	\ifshowsolution
+		$x \equiv 3$
+	\fi
+	
+	\item $1 + x \equiv 0 \pmod 5$
+	
+	\ifshowsolution
+		$x \equiv 4$
+	\fi
+	
+	\item $4 + x \equiv 2 \pmod 5$
+	
+	\ifshowsolution
+		$x \equiv 3$
+	\fi
 \end{enumerate}
 
 \end{document}
