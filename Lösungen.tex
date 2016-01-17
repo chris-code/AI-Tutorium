@@ -37,7 +37,8 @@
 \lstset{
 	tabsize=4,
 	breaklines=true,
-	showspaces=false
+	showspaces=false,
+	showstringspaces=false
 }
 
 \newif\ifshowsolution
@@ -1844,7 +1845,9 @@ Schreibe ein Programm, dass die Daten zu einem Auto auf der Konsole ausgibt. Das
 	(Erinnerung aus der Physik: $\vec{F}=m\vec{a}$, Kraft = Masse $\cdot$ Beschleunigung)
 \end{enumerate}
 
-\lstinputlisting[language=Java]{src/variablenUndZuweisungen.java}
+\ifshowsolution
+	\lstinputlisting[language=Java]{src/variablenUndZuweisungen.java}
+\fi
 
 \subsection{Bedingte Ausführung}
 Es soll ein Login erstellt werden, bei dem ein Nutzer seinen Namen und sein Passwort eingeben muss. Das Programm soll dann ausgeben, ob die eingegebenen Daten akzeptiert werden oder nicht. Gültige Login-Daten sind:
@@ -1853,28 +1856,32 @@ Es soll ein Login erstellt werden, bei dem ein Nutzer seinen Namen und sein Pass
 	\item Name: foo, Passwort: bar
 \end{itemize}
 Nutze für die Namen eine Switch- und für die Passwörter eine if-Abfrage.
-\paragraph{Tipp} Zwei Strings können im if folgendermaßen auf Gleichheit geprüft werden:
+\paragraph{Tipp} Zwei Strings können folgendermaßen auf Gleichheit geprüft werden:
 \begin{lstlisting}[language=Java]
 	string1.equals(string2)
 \end{lstlisting}
 
-\lstinputlisting[language=Java]{src/bedingteAusfuehrung.java}
+\ifshowsolution
+	\lstinputlisting[language=Java]{src/bedingteAusfuehrung.java}
+\fi
 
 \subsection{Schleifen}
 Es soll ein Rätsel programmiert werden, bei dem der Computer eine Zufallszahl zwischen 1 und 100 generiert und der Nutzer diese erraten muss. Das Programm sagt einem dabei, ob die geratene Zahl zu groß, zu klein oder genau richtig ist.
-\begin{enumerate}
+\begin{itemize}
 	\item Ist sie richtig, beendet sich das Programm, ansonsten läuft es weiter.
 	\item Erweitere das Programm anschließend so, dass der Benutzer maximal 8 Versuche hat. Die Zahl des Versuchs soll mit ausgegeben werden.
-\end{enumerate}
+\end{itemize}
 \paragraph{Tipp} Eine Zufallszahl zwischen 1 und 100 kann erzeugt werden mit:
 \begin{lstlisting}[language=Java]
 	Random generator = new Random();
 	int geheim = generator.nextInt(100) + 1;
 \end{lstlisting}
 
-\lstinputlisting[language=Java]{src/schleifen1.java}
+\ifshowsolution
+	\lstinputlisting[language=Java]{src/schleifen1.java}
 
-\lstinputlisting[language=Java]{src/schleifen2.java}
+	\lstinputlisting[language=Java]{src/schleifen2.java}
+\fi
 
 \subsection{Aufruf}
 
@@ -1884,9 +1891,13 @@ Ein Sonnensystem hat P Planeten, die allesammt bewohnt sind. Der innerste Planet
 	\item Schreibe eine rekursive Funktion, die die Einwohnerzahl des p-ten Planeten ausrechnet.
 	\item Wie viele Einwohner $E_{13}$ hat der 13. Planet, wenn der innerste Planet 16 Milliarden und 384 Millionen ($16.384.000.000$) Einwohner hat?
 \end{enumerate}
-\paragraph{Tipp} \texttt{int} hat einen Wertebereich von $-2^{31}$ bis $2^{31}-1$. Das entspricht etwa $-2$ Milliarden bis $+2$ Milliarden.
+
+\paragraph{Hinweis} \texttt{int} hat einen Wertebereich von $-2^{31}$ bis $2^{31}-1$. Das entspricht in etwa $-2$ Milliarden bis $+2$ Milliarden.
 \paragraph{Anmerkung} Es handelt sich hierbei um eine Folge, man könnte die Einwohnerzahl von Planet p auch direkt ausrechnen mit: $E_1 \cdot \braces{\frac{1}{2}}^{p-1}$
-\lstinputlisting[language=Java]{src/rekursion.java}
+
+\ifshowsolution
+	\lstinputlisting[language=Java]{src/rekursion.java}
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                            Programmieren in C                                %
@@ -1895,7 +1906,10 @@ Ein Sonnensystem hat P Planeten, die allesammt bewohnt sind. Der innerste Planet
 \section{Programmieren in C}
 \subsection{Syntax}
 Schreibe das obligatorische \texttt{Hello World} Programm. Wie sieht der Funktionskopf der Main-Methode aus? Welche Methode ermöglicht die Ausgabe?
-\lstinputlisting[language=C]{src/helloWorld.c}
+
+\ifshowsolution
+	\lstinputlisting[language=C]{src/helloWorld.c}
+\fi
 
 \subsection{Altersabfrage}
 Ein Programm soll das Alter von Personen überprüfen. Dazu geben sie ihr Geburtsjahr ein (der Einfachheit halber betrachten wir nicht das genaue Datum). Das Programm gibt dann aus, ob sie jünger oder älter sind als 18.
@@ -1910,7 +1924,10 @@ Ein Programm soll das Alter von Personen überprüfen. Dazu geben sie ihr Geburt
 		return lTime->tm_year + 1900;
 	}
 \end{lstlisting}
-\lstinputlisting[language=C]{src/altersabfrage.c}
+
+\ifshowsolution
+	\lstinputlisting[language=C]{src/altersabfrage.c}
+\fi
 
 \subsection{Strings}
 Gegeben sei folgender Test:
@@ -1923,33 +1940,47 @@ Gegeben sei folgender Test:
 	\item Gib die Position aus, an der das erste \glqq AI\grqq\ im neuen Text beginnt.
 	\item Wie lang ist nun der ursprüngliche Text? Erkläre ggf. das Ergebnis.
 \end{enumerate}
-\lstinputlisting[language=C]{src/strings.c}
+
+\ifshowsolution
+	\lstinputlisting[language=C]{src/strings.c}
+\fi
 
 \subsection{Input, Output}
 
 \subsection{Zeiger 1}
 Im folgenden Programm sollen die Werte der Variablen \texttt{number1} und \texttt{number2} getauscht werden. Welche der \texttt{swap}-Funktionen leisten dies?
+
 \lstinputlisting[language=C]{src/zeigerVariablenTauschen.c}
-\begin{description}
-	\item[swap1] Funktioniert nicht. C arbeitet nach \emph{call-by-value}, d.h. es wird eine Kopie des \texttt{int}-Wertes übergeben. Die Funktion tauscht die Werte ihrer Kopien, der Rest des Programms bekommt davon nichts mit.
-	\item[swap2] Funktioniert. Hier werden die Adressen übergeben, und die Funktion verändert die ursprünglichen Variablen (mittels des Derefferenzierungsoperators \texttt{*}).
-	\item[swap3] Funktioniert nicht. Hier werden zwar die Adressen von \texttt{number1} und \texttt{number2} übergeben, allerdings werden hier die \emph{lokalen Kopieen der Adressen} getauscht.
-	\item[swap4] Funktioniert, ist allerdings sehr umständlich. Hier werden Zeiger auf die Adressen der Variablen übergeben. Davon ausgehend besorgt sich die Funktion die Adressen der Variablen, und arbeitet dann mit diesen wie es die Funktion \texttt{swap2} tut.
-\end{description}
+
+\ifshowsolution
+	\begin{description}
+		\item[swap1] Funktioniert nicht. C arbeitet nach \emph{call-by-value}, d.h. es wird eine Kopie des \texttt{int}-Wertes übergeben. Die Funktion tauscht die Werte ihrer Kopien, der Rest des Programms bekommt davon nichts mit.
+		\item[swap2] Funktioniert. Hier werden die Adressen übergeben, und die Funktion verändert die ursprünglichen Variablen (mittels des Derefferenzierungsoperators \texttt{*}).
+		\item[swap3] Funktioniert nicht. Hier werden zwar die Adressen von \texttt{number1} und \texttt{number2} übergeben, allerdings werden hier die \emph{lokalen Kopieen der Adressen} getauscht.
+		\item[swap4] Funktioniert, ist allerdings sehr umständlich. Hier werden Zeiger auf die Adressen der Variablen übergeben. Davon ausgehend besorgt sich die Funktion die Adressen der Variablen, und arbeitet dann mit diesen wie es die Funktion \texttt{swap2} tut.
+	\end{description}
+\fi
 
 \subsection{Zeiger 2}
 \label{zeigerAufgabe}
 Schreibe eine Funktion, die ein Array und seine Länge übergeben bekommt. Die Funktion soll das Minimum und das Maxium zurück geben. Das Array hat den Datentyp \texttt{short}.
 
 Wende die Funktion auf das folgende Array an:
+
 \begin{lstlisting}[language=C]
 	short numbers[] = { 7, 4, 1, 5, 9, 4 };
 \end{lstlisting}
-\lstinputlisting[language=C]{src/zeiger.c}
+
+\ifshowsolution
+	\lstinputlisting[language=C]{src/zeiger.c}
+\fi
 
 \subsection{Const Correctness}
 Das Keyword \texttt{const} dient dazu, Variablen als Konstant zu deklarieren, sie dürfen vom Programmierer also nicht verändert werden. Ergänze das Programm aus \ref{zeigerAufgabe} um \texttt{const}-Markierungen, wo es möglich ist. Was bewirkt es an den jeweiligen Stellen?
-\lstinputlisting[language=C]{src/constCorrectness.c}
+
+\ifshowsolution
+	\lstinputlisting[language=C]{src/constCorrectness.c}
+\fi
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -3,10 +3,11 @@
 #include "stdio.h"
 
 /*
- * Rueckgabewert: Der Zeiger soll nicht veraendert werden duerfen. Der Speicherbereich, auf
- * den er zeigt darf aber veraendert werden.
+ * Rueckgabewert: Der Zeiger soll nicht veraendert werden duerfen,
+ * der Speicherbereich, auf den er zeigt aber schon.
  *
- * Erster Parameter: Sowohl der Zeiger, als auch der Bereich auf den er zeigt sind konstant.
+ * Erster Parameter: Sowohl der Zeiger, als auch der Speicher auf
+ * den er zeigt sind konstant.
  *
  * Zweiter Parameter: Einfach eine konstante Zahl.
  */
