@@ -1404,7 +1404,6 @@ Berechne mittels Substitution:
 			&= \int_{\sin{-\pi}}^{\sin{\pi}} t \intend{t} \\
 			&= \brackets{\frac{1}{2} t^2}_{\sin{-\pi}}^{\sin{\pi}} \\
 			&= \frac{1}{2} \brackets{t^2}_0^0 \\
-			&= \frac{1}{2} \braces{0^2 - 0^2} \\
 			&= 0
 		\end{align*}
 	\fi
@@ -1418,10 +1417,10 @@ Berechne mittels Substitution:
 			\int_1^e \frac{\sqrt{\ln(x)}}{x} dx &= \int_{\ln(1)}^{\ln(e)} \sqrt{z} \intend{t} \\
 			&= \int_0^1 \sqrt{z} \intend{t} \\
 			&= \brackets{ \frac{2}{3} z^{\frac{3}{2}} }_0^1 \\
-			&= \frac{2}{3} - 0
+			&= \frac{2}{3}
 			\shortintertext{Oder: Rücksubstitution nach Integration}
 			\brackets{ \frac{2}{3} z^{\frac{3}{2}} }_0^1 &= \brackets{ \frac{2}{3} \ln(x)^{\frac{3}{2}} }_1^e \\
-			&= \frac{2}{3} - 0
+			&= \frac{2}{3}
 		\end{align*}
 	\fi
 	
@@ -1431,19 +1430,17 @@ Berechne mittels Substitution:
 		\begin{align*}
 			\shortintertext{Substituiere: $3 \cos x = t$}
 			\shortintertext{$\frac{\intend{t}}{\intend{x}} = -3 \sin x \Leftrightarrow \intend{x} = \frac{\intend{t}}{-3 \sin x}$}
-			\int_\frac{\pi}{2}^\pi e^{3 \cos x} \cdot \sin x \intend{x} &= \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t \cdot \cancel{\sin x} \ \frac{\intend{t}}{-3 \ \cancel{\sin x}} \\
-			&= \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t \frac{1}{-3} \intend{t} \\
-			&= -\frac{1}{3} \int_{t(\frac{\pi}{2})}^{t{\pi}} e^t\intend{t} \\
-			&= -\frac{1}{3} \brackets{e^t}_{t(\frac{\pi}{2})}^{t(\pi)} \\
+			\int_\frac{\pi}{2}^\pi e^{3 \cos x} \cdot \sin x \intend{x} &= \int_{t\braces{\frac{\pi}{2}}}^{t\braces{\pi}} e^t \cdot \cancel{\sin x} \ \frac{\intend{t}}{-3 \ \cancel{\sin x}} \\
+			&= \int_{t\braces{\frac{\pi}{2}}}^{t\braces{\pi}} e^t \frac{1}{-3} \intend{t} \\
+			&= -\frac{1}{3} \int_{t\braces{\frac{\pi}{2}}}^{t\braces{\pi}} e^t\intend{t} \\
+			&= -\frac{1}{3} \brackets{e^t}_{t\braces{\frac{\pi}{2}}}^{t\braces{\pi)}} \\
 			&= -\frac{1}{3} \brackets{e^t}_{3 \cos(\frac{\pi}{2})}^{3 \cos(\pi)} \\
 			&= -\frac{1}{3} \brackets{e^t}_0^{-3} \\
-			&= -\frac{1}{3} \braces{e^{-3} - \underbrace{e^0}_{= 1}} \\
-			&\approx 0.3167
+			&= -\frac{1}{3} \braces{e^{-3} - 1}
 			\shortintertext{Oder: Rücksubstitution nach Integration}
 			-\frac{1}{3} \left[ e^t \right]_{t(\frac{\pi}{2})}^{t(\pi)} &= -\frac{1}{3} \left[ e^{3 \cos x} \right]_{\frac{\pi}{2}}^\pi \\
 			&= -\frac{1}{3} \braces{e^{3 \cos \pi} - e^{3 \cos \frac{\pi}{2}}} \\
-			&= -\frac{1}{3} \braces{e^{-3} - e^0} \\
-			&\approx 0.3167
+			&= -\frac{1}{3} \braces{e^{-3} - 1}
 		\end{align*}
 	\fi
 \end{enumerate}
@@ -1463,7 +1460,6 @@ Berechne mittels partieller Integration:
 			&= \brackets{3x^2 e^x}_0^1 - \braces{ \brackets{6x \ e^x}_0^1 - \int_0^1 6 e^x \intend{x} } \\
 			&= \brackets{3x^2 e^x}_0^1 - \brackets{6x \ e^x}_0^1 + 6 \int_0^1 e^x \intend{x} \\
 			&= \brackets{3x^2 e^x}_0^1 - \brackets{6x \ e^x}_0^1 + 6 \brackets{e^x}_0^1 \\
-			&= \braces{3 e - 0} - \braces{6 e - 0} + 6 \braces{e - 1} \\
 			&= 3e - 6
 		\end{align*}
 	\fi
