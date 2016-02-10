@@ -1,0 +1,501 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage[ngerman]{babel}
+\usepackage{cancel}
+%\usepackage{comment}
+%\usepackage{color}
+%\usepackage{xcolor}
+\usepackage{tikz}
+
+\definecolor{DarkGreen}{rgb}{0,0.53,0}
+
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\acos}{\mathrm{acos}}
+\newcommand{\asin}{\mathrm{asin}}
+\newcommand{\intend}[1][]{\ \mathrm{d}#1}
+\newcommand{\derivative}[2][]{\ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand\braces[1]{\left(#1\right)}
+\newcommand\brackets[1]{\left[#1\right]}
+\newcommand\verts[1]{\left|#1\right|}
+\newcommand\setequal{\overset{!}{=}}
+\newcommand{\gerquote}[1]{\glqq#1\grqq}
+
+% Set showsolution to false to generate a file that just contains the exercises
+% Otherwise, solutions will be included.
+\newif\ifshowsolution
+\showsolutiontrue
+%\showsolutionfalse
+
+\ifshowsolution
+	\title{Klausurvorbereitung Höhere Mathematik \\ Lösungen}
+\else
+	\title{Klausurvorbereitung Höhere Mathematik \\ Aufgaben}
+\fi
+\author{Yannick Schrör \and Christian Mielers}
+\date{12. Februar 2016}
+
+\begin{document}
+\maketitle
+
+\section{Ungleichungen} %26 min (ohne ersten Aufgabenteil)
+Bestimme die Lösungen für folgende Ungleichungen
+\begin{enumerate}
+	\item $\frac{\abs{x+2}}{2} > \frac{x}{3} + 1$
+		\ifshowsolution
+			\begin{align*}
+				\frac{\abs{x+2}}{2} > \frac{x}{3} + 1 &\Leftrightarrow \abs{x+2} > \frac{2x}{3} + 2 \\
+				&\Leftrightarrow \abs{x+2} > \frac{2x+6}{3}
+				\intertext{Fall 1: $x \in \left( -\infty, -2 \right)$}
+				-(x+2) > \frac{2x + 6}{3} &\Leftrightarrow -x -2 > \frac{2x + 6}{3} \\
+				&\Leftrightarrow -3x -6 > 2x + 6 \\
+				&\Leftrightarrow -12 > 5x \\
+				&\Leftrightarrow \frac{-12}{5} > x
+				\intertext{Lösung im Fall 1: $\left( -\infty, -2 \right) \cap \left( -\infty, \frac{-12}{5} \right) = \left( -\infty, \frac{-12}{5} \right)$}
+				\intertext{Fall 2: $x \in \left[ -2, \infty \right)$}
+				(x+2) > \frac{2x + 6}{3} &\Leftrightarrow 3x + 6 > 2x + 6 \\
+				&\Leftrightarrow x > 0
+				\intertext{Lösung im Fall 3: $\left[ -2, \infty \right) \cap \left( 0, \infty \right) = \left( 0, \infty \right)$}
+			\end{align*}
+		\fi
+	\item $\sqrt{x^2 - 4x + 4} < \frac{\abs{x+1}}{2}$
+		\ifshowsolution
+			\begin{align*}
+				\sqrt{x^2 - 4x + 4} < \frac{\abs{x+1}}{2} &\Leftrightarrow \sqrt{(x-2)^2} < \frac{\abs{x+1}}{2} \\
+				&\Leftrightarrow \abs{x-2} < \frac{\abs{x+1}}{2}
+				\intertext{Fall 1: $x \in \left( -\infty, -1 \right)$}
+				-(x-2) < \frac{-(x+1)}{2} &\Leftrightarrow x-2 > \frac{x+1}{2} \\
+				&\Leftrightarrow 2x-4 > x+1 \\
+				&\Leftrightarrow x > 5
+				\intertext{Lösung im Fall 1: $\left( -\infty, -1 \right) \cap \left( 5, \infty \right) = \emptyset$}
+				\intertext{Fall 2: $x \in \left[ -1, 2 \right)$}
+				-(x-2) < \frac{(x+1)}{2} &\Leftrightarrow -x+2 < \frac{x+1}{2} \\
+				&\Leftrightarrow -2x+4 < x+1 \\
+				&\Leftrightarrow 3 < 3x \\
+				&\Leftrightarrow 1 < x
+				\intertext{Lösung im Fall 2: $\left[ -1, 2 \right) \cap \left( 1, \infty \right) = \left( 1,2 \right)$}
+				\intertext{Fall 3: $x \in \left[ 2, \infty \right)$}
+				(x-2) < \frac{(x+1)}{2} &\Leftrightarrow 2x-4 < x+1 \\
+				&\Leftrightarrow x < 5
+				\intertext{Lösung im Fall 3: $\left[ 2, \infty \right) \cap \left( -\infty, 5 \right) = \left[ 2,5 \right)$}
+			\end{align*}
+			Damit ist die Gesammtlösung: $\emptyset \cup \left( 1,2 \right) \cup \left[ 2,5 \right) = \left( 1, 5 \right)$
+		\fi
+	\item $\abs{x+5} > 4 + \sqrt{x^2 + 6x + 9}$
+		\ifshowsolution
+			\begin{align*}
+				\abs{x+5} > 4 + \sqrt{x^2 + 6x + 9} &\Leftrightarrow \abs{x+5} > 4 + \sqrt{(x+3)^2} \\
+				&\Leftrightarrow \abs{x+5} > 4 + \abs{x+3} \\
+				&\Leftrightarrow \abs{x+5} - \abs{x+3} > 4
+			\end{align*}
+			$\abs{x+5}$ and $\abs{x+3}$ sind maximal 2 voneinander entfernt, daher gibt es keine Lösung.
+		\fi
+\end{enumerate}
+
+\newpage
+\section{Vollständige Induktion} %13 min (Nur die b))
+\begin{enumerate}[label=\alph*)]
+	\item Zeige mittels vollständiger Induktion, dass die folgende Gleichung für alle $n \in \mathbb{N}$ gilt:
+		\begin{align*}
+			\sum_{i=1}^n 4i - 1 = 2n^2 + n
+		\end{align*}
+		
+		\ifshowsolution
+			\begin{align*}
+				\intertext{\textbf{Induktionsanfang:} Wir zeigen, dass die Gleichung für $n = 1$ gilt:}
+				\sum_{i=1}^1 4i - 1 &= 2 \cdot 1^2 + 1\\
+				4 \cdot 1 - 1 &= 2 + 1\\
+				3 &= 3 \ \textcolor{DarkGreen}{\checkmark}
+				\intertext{\textbf{Induktionsschritt:} Nun müssen wir zeigen, dass die Gleichung auch für $n + 1$ gilt:}
+				\sum_{i=1}^{n+1} 4i - 1 &= 2(n+1)^2 + (n+1)\\
+				\intertext{Die Summe bis $n+1$ können wir in die Summe bis $n$ und den $(n+1)$ten Summanden aufteilen:}
+				\braces{\sum_{i=1}^n 4i - 1} + \braces{4(n+1) - 1} &= 2(n+1)^2 + (n+1)\\
+				\intertext{Nach der Induktionsannahme (Aufgabenstellung) können wir die Summe bis $n$ wie folgt ersetzen:}
+				(2n^2 + n) + (4(n+1) -1) &= 2(n+1)^2 + (n+1)\\
+				\intertext{Nun erhalten wir durch Vereinfachen beider Seiten:}
+				2n^2 + n + 4n + 4 - 1 &= 2(n^2 + 2n + 1) + n + 1\\
+				2n^2 + 5n + 3 &= 2n^2 + 4n + 2 + n + 1\\
+				2n^2 + 5n + 3 &= 2n^2 + 5n + 3 \qquad \quad \textcolor{DarkGreen}{\checkmark}
+			\end{align*}
+		\fi
+	\item Zeige mittels vollständiger Induktion, dass folgende Gleichung für alle $n \in \mathbb{N}$ gilt:
+		\begin{align*}
+			\sum_{i=1}^n i \cdot (i + 1) = \frac{n\cdot(n+1)\cdot(n+2)}{3}
+		\end{align*}
+		
+		\ifshowsolution
+			\begin{align*}
+				\intertext{\textbf{Induktionsanfang:} Wir zeigen, dass die Gleichung für $n = 1$ gilt:}
+				\sum_{i=1}^1 i \cdot (i + 1) &= \frac{1 \cdot (1 + 1) \cdot (1 + 2)}{3}\\
+				1 \cdot 2 &= \frac{1 \cdot 2 \cdot \cancel{3}}{\cancel{3}}\\
+				2 &= 2 \qquad \quad \textcolor{DarkGreen}{\checkmark}
+				\intertext{\textbf{Induktionsschritt:} Nun müssen wir zeigen, dass die Gleichung auch für $n + 1$ gilt:}
+				\sum_{i=1}^{n+1} i \cdot (i + 1) &= \frac{(n + 1)\cdot((n+1) + 1)\cdot((n+1)+2)}{3}\\
+				\sum_{i=1}^{n+1} i \cdot (i + 1) &= \frac{(n + 1)\cdot(n + 2)\cdot(n + 3)}{3}\\
+				\intertext{Die Summe bis $n+1$ können wir in die Summe bis $n$ und den $(n+1)$ten Summanden aufteilen:}
+				\braces{\sum_{i=1}^{n} i \cdot (i + 1)} + (n+1) \cdot (n+2) &= \frac{(n + 1)\cdot(n + 2)\cdot(n + 3)}{3}\\
+				\intertext{Nach der Induktionsannahme (Aufgabenstellung) können wir die Summe bis $n$ wie folgt ersetzen:}
+				\frac{n \cdot (n + 1) \cdot (n + 2)}{3} + (n+1) \cdot (n+2) &= \frac{(n + 1)\cdot(n + 2)\cdot(n + 3)}{3}\\
+				\intertext{Durch Multiplikation mit Faktor 3 erhalten wir:}
+				%\frac{n \cdot (n + 1) \cdot (n + 2)}{3} + \frac{3 \cdot (n+1) \cdot (n+2)}{3} &= \frac{(n + 1)\cdot(n + 2)\cdot(n + 3)}{3}\\
+				n \cdot (n + 1) \cdot (n + 2) + 3 \cdot (n+1) \cdot (n+2) &= (n + 1)\cdot(n + 2)\cdot(n + 3)\\
+				\intertext{Da $n \geq 1$ können wir nun auf beiden Seiten durch $(n+1) \cdot (n+2)$ dividieren:}
+				n + 3 &= n + 3 \qquad \quad \textcolor{DarkGreen}{\checkmark}
+			\end{align*}
+		\fi
+\end{enumerate}
+
+\newpage
+\section{Komplexe Zahlen} %29 min
+	\begin{description}
+		\item[Betrag] $\abs{x+yi} = \sqrt{x^2 + y^2}$
+		\item[Polarkoordinatenform] $x+yi = r \braces{\cos{\alpha} + i \sin{\alpha}} \text{mit } r=\abs{x+yi}, \alpha = \acos{\frac{x}{r}} = \asin{\frac{y}{r}}$
+		\item[Polarkoordinaten potenzieren] $\braces{r \braces{\cos{\alpha} + i \sin{\alpha}}}^{p} = r^p \braces{\cos (p \alpha) + i \sin (p \alpha)}$
+		\item[Polarkoordinaten n-te Wurzel ziehen] $w_k = \sqrt[n]{r} \braces{\cos \frac{\alpha + 2k\pi}{n} + i \sin \frac{\alpha + 2k\pi}{n}}$ \\
+		für $k = 0 \dots n-1$
+	\end{description}
+	
+	\begin{enumerate}
+		\item Bestimme den Realteil, Imaginärteil, Betrag und die komplex Konjugierte von $\frac{2+i}{1-i}$
+			\ifshowsolution
+				\begin{align*}
+					\frac{2+i}{1-i} &= \frac{(2+i) \cdot (\overline{1-i})}{(1-i) \cdot (\overline{1-i})} \\
+					&= \frac{(2+i) \cdot (1+i)}{(1-i) \cdot (1+i)} \\
+					&= \frac{2 + 3i + i^2}{1 - i^2} \\
+					&= \frac{1 + 3i}{2} \\
+					&= \frac{1}{2} + \frac{3}{2} i
+				\end{align*}
+				Realteil: $\frac{1}{2}$, Imaginärteil: $\frac{3}{2}$ \\
+				Betrag: $\abs{\frac{1}{2} + \frac{3}{2} i} = \sqrt{(\frac{1}{2})^2 + (\frac{3}{2})^2} = \sqrt{\frac{1}{4} + \frac{9}{4}} = \sqrt{\frac{5}{2}}$ \\
+				Komplex Konjugierte: $\overline{\frac{1}{2} + \frac{3}{2} i} = \frac{1}{2} - \frac{3}{2} i$
+			\fi
+		\item Berechne $(1-i)^{32}$
+			\ifshowsolution
+				\begin{align*}
+					\intertext{Zunächst $1-i$ in Polarkoordinaten umrechnen.}
+					r &= \abs{1-i} = \sqrt{1^2 + (-1)^2} = \sqrt{2} \\
+					\alpha &= \acos{\frac{1}{\sqrt{2}}} = \asin{\frac{-1}{\sqrt{2}}} = \frac{7\pi}{4}
+					\intertext{Es gilt also: $1-i = \sqrt{2} \left( \cos{\frac{7\pi}{4} + i \sin{\frac{7\pi}{4}}} \right)$. Potenzieren ist mit Polarkoordinaten einfach:}
+					\left( \sqrt{2} \left( \cos{\frac{7\pi}{4} + i \sin{\frac{7\pi}{4}}} \right) \right)^{32} &= \sqrt{2}^{32} \left( \cos \left( 32 \cdot \frac{7\pi}{4} \right) + i \sin \left( 32 \cdot \frac{7\pi}{4} \right) \right) \\
+					&= 2^{16} \left( \cos \left( 56\pi \right) + i \sin \left( 56\pi \right) \right) \\
+					&= 2^{16} \left( \cos \left( 0 \right) + i \sin \left( 0 \right) \right) \\
+					&= 2^{16} \left( 1 + 0i \right) \\
+					&= 2^{16}
+				\end{align*}
+			\fi
+		\item Für welche $p\in\mathbb{C}$ gilt $p^4 + 4 = 0$?
+			\ifshowsolution
+				\begin{align*}
+					p^4 + 4 = 0 &\Leftrightarrow p^4 = -4 \\
+					&\Leftrightarrow p = \sqrt[4]{-4}
+					\intertext{Um die Wurzel zu ziehen, wandeln wir $-4$ in Polarkoordinaten um}
+					r &= 4 \\
+					\alpha &= \acos{\frac{-4}{4}} = \asin \frac{0}{4} = \pi
+					\intertext{Nun berechnen wir}
+					\sqrt[4]{4 \left( \cos \pi + i \sin \pi \right)} &\overset{k=0}{=} \sqrt[4]{4} \left( \cos \frac{\pi + 0\pi}{4} + i \sin \frac{\pi + 0\pi}{4} \right) = \sqrt{2} \left( \frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right) = 1+i \\
+					&\overset{k=1}{=} \sqrt[4]{4} \left( \cos \frac{\pi + 2\pi}{4} + i \sin \frac{\pi + 2\pi}{4} \right) = \sqrt{2} \left( -\frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right) = -1+i \\
+					\intertext{(An dieser Stelle könnten wir aufhören, die anderen beiden Lösungen sind die komplex konjugierten der bereits berechneten)}
+					&\overset{k=2}{=} \sqrt[4]{4} \left( \cos \frac{\pi + 4\pi}{4} + i \sin \frac{\pi + 4\pi}{4} \right) = \sqrt{2} \left( -\frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} \right) = -1-i \\
+					&\overset{k=3}{=} \sqrt[4]{4} \left( \cos \frac{\pi + 6\pi}{4} + i \sin \frac{\pi + 6\pi}{4} \right) = \sqrt{2} \left( \frac{\sqrt{2}}{2} - i \frac{\sqrt{2}}{2} \right) = 1-i 
+				\end{align*}
+			\fi
+	\end{enumerate}
+
+\newpage
+\section{Folgen}
+\begin{description}
+	\item[Folgen 1. Ordnung] $a_{n+1} = q \cdot a_n + d$
+		\begin{align*}
+			a_n = \begin{cases}
+				a_0 \cdot q^n + d \cdot \frac{1-q^n}{1-q}, &\text{ falls } q \in \mathbb{R} \setminus \{1\} \\
+				a_0 + d \cdot n &\text{ falls } q=1
+					\end{cases}
+		\end{align*}
+	\item[Folgen 2. Ordnung] $a_{n+1} = b a_n + c a_{n-1}$ \vspace{0.3cm} \\
+		Für das charakteristisches Polynom $q^2 = bq+c$ mit Nullstellen $q_1, q_2$ gibt die folgende Tablle in Abhängigkeit davon, ob bei der PQ-Formel der Teil unter der Wurzel positiv, $0$ oder negativ ist, die explizite Form an.
+		
+		\begin{tabular}{|c|l|}
+			\hline
+			Diskriminante & Explizite Darstellung \\ \hline
+			$>0$ & $a_n = C_1 q_1^n + C_2 q_2^n$ \\
+			$=0$ & $a_n = C_1 q_1^n + C_2 n \cdot q_2^n$ \\
+			$<0$ & $a_n = C_1 r^n \cos(n\alpha) + C_2 r^n \sin(n\alpha)$ \\ \hline
+		\end{tabular}
+\end{description}
+
+Finde die explizite Darstellung für $a_n$. Gib auch den Grenzwert $\lim_{n \mapsto \infty} a_n$ an.
+
+\begin{enumerate}
+	\item $2 \cdot a_{n+3} = 10 \cdot a_{n+2} + 16, \qquad a_1 = 28$
+		\ifshowsolution
+			\begin{align*}
+				\intertext{Zunächst ist die Gleichung in die Form $a_{n+1} = q \cdot a_n + d$ zu bringen}
+				2 \cdot a_{n+3} = 10 \cdot a_{n+2} + 16 &\Leftrightarrow a_{n+3} = 5 \cdot a_{n+2} + 8 \tag{:2} \\
+				&\Leftrightarrow a_{n+1} = 5 \cdot a_{n} + 8 \tag{Index-Shift}
+				\intertext{Nun ist $a_0$ auszurechnen. Dazu kann in diesem Fall $n=0$ gesetzt werden.}
+				a_1 &= 5 \cdot a_0 + 8 \\
+				\Leftrightarrow 28 &= 5 \cdot a_0 + 8 \\
+				\Leftrightarrow 4 &= a_0
+				\intertext{Die Gleichung hat also die Form $a_{n+1} = 5 \cdot a_{n} + 8, \qquad a_0 = 4$. Damit gehen wir in die Lösungsgleichung} \\
+				a_n &= a_0 \cdot q^n + d \cdot \frac{1-q^n}{1-q} \tag{da $q \neq 1$} \\
+				&= 4 \cdot 5^n + 8 \cdot \frac{1-5^n}{1-5} \\
+				&= 4 \cdot 5^n - 2 \cdot \left( 1-5^n \right) \\
+				&= 4 \cdot 5^n - 2 + 2 \cdot 5^n \\
+				&= 6 \cdot 5^n - 2
+			\end{align*}
+			Es gilt: $\lim_{n \mapsto \infty} 6 \cdot 5^n - 2 = +\infty$
+		\fi
+	\item $a_{n+1} = 0 \cdot a_n - 4 \cdot a_{n-1}, \qquad a_0 = 1, a_1 = 3$
+		\ifshowsolution
+			\begin{align*}
+				\intertext{Zunächst bilden wir das charakteristische Polynom mit $b=0, c=-4$}
+				q^2 &= 0q - 4 \\
+				q_{1,2} &= \sqrt{-4} \\
+				\intertext{Die Diskriminante ist also $< 0$. Wir bestimmen die komplexen Lösungen und bestimmen r und $\alpha$ der Polarkoordinaten.}
+				q_{1,2} &= \pm 2i \\
+				r &= \sqrt{0^2 + 2^2} = 2 \\
+				\alpha &= \acos \left( \frac{0}{r} \right) = \asin \left( \frac{2}{r} \right) = \frac{\pi}{2}
+				\intertext{Diese Werte für r und $\alpha$ setzen wir in die Formel ein}
+				a_n &= C_1 2^n \cos \left(n \frac{\pi}{2} \right) + C_2 2^n \sin \left( n \frac{\pi}{2} \right)
+				\intertext{Abschließend bestimmen wir $C_1$ und $C_2$ aus den Anfangsbedingungen}
+				&\begin{cases}
+					a_0 = C_1 r^0 \cos \left( 0 \cdot \frac{\pi}{2} \right) + C_2 r^0 \sin \left( 0 \cdot \frac{\pi}{2} \right) \\
+					a_1 = C_1 r^1 \cos \left( 1 \cdot \frac{\pi}{2} \right) + C_2 r^1 \sin \left( 1 \cdot \frac{\pi}{2} \right)
+				\end{cases} \tag{Variablen einsetzen} \\
+				&\begin{cases}
+					1 = C_1 \cos \left( 0 \right) + C_2 \sin \left( 0 \right) \\
+					3 = C_1 \cdot 2 \cdot \cos \left( \frac{\pi}{2} \right) + C_2 \cdot 2 \cdot \sin \left( \frac{\pi}{2} \right)
+				\end{cases} \tag{Manche Terme ergeben sich zu 0} \\
+				&\begin{cases}
+					1 = C_1 \\
+					\frac{3}{2} = C_2
+				\end{cases}
+				\intertext{Da wir nun $C_1$ und $C_2$ kennen, können wir die explizite Form angeben}
+				a_n &= 2^n \cos \left( n \frac{\pi}{2} \right) + \frac{3}{2} \cdot 2^n \sin \left( n \frac{\pi}{2} \right)
+			\end{align*}
+			Es gilt: $\lim_{n \mapsto \infty} 2^n \cos \left( n \frac{\pi}{2} \right) + \frac{3}{2} \cdot 2^n \sin \left( n \frac{\pi}{2} \right) = \tilde{\infty}$ (alternierend divergent)
+		\fi
+\end{enumerate}
+
+\newpage
+\section{Reihen} %25 min
+Sind die folgenden Reihen konvergent oder divergent?  Falls die Reihen konvergieren, gegen welchen Wert konvergieren sie?
+
+\begin{enumerate}
+	\item $\sum_{k=0}^\infty \frac{(k-1)(k+3)}{2(k-2)(k-4)}$
+		\ifshowsolution
+			\begin{align*}
+				\sum_{k=0}^\infty \frac{(k-1)(k+3)}{2(k-2)(k-4)} &= \sum_{k=0}^\infty \frac{k^2 + 2k - 3}{2(k^2 - 6k + 8)} \\
+				&= \sum_{k=0}^\infty \frac{k^2 + 2k - 3}{2k^2 - 12k + 16}
+			\end{align*}
+			Die Reihe ist divergent, da $\lim_{k \mapsto \infty} a_k = \frac{1}{2} \neq 0$, wobei $a_k$ die Reihenglieder sind.
+		\fi
+	\item $\sum_{k=0}^\infty \frac{(-1)^k 2^{k-1} - 3 \cdot 5^k}{3^{2k+1}}$
+		\ifshowsolution
+			\begin{align*}
+				\intertext{Wir konzentrieren uns zunächst auf die Reihenglieder}
+				a_k = \frac{(-1)^k 2^{k-1} - 3 \cdot 5^k}{3^{2k+1}} &= \frac{(-1)^k \frac{2^k}{2} - \frac{3\cdot2}{2} \cdot 5^k}{3^{2k} \cdot 3} \\
+				&= \frac{(-1)^k 2^k - 6 \cdot 5^k}{3^{2k} \cdot 6} \\
+				&= \frac{(-2)^k - 6 \cdot 5^k}{9^k \cdot 6} \\
+				&= \frac{(-2)^k}{9^k \cdot 6} - \frac{\cancel{6} \cdot 5^k}{9^k \cdot \cancel{6}} \\
+				&= \frac{1}{6} \cdot \left(\frac{-2}{9}\right)^k - \left(\frac{5}{9}\right)^k
+				\intertext{Zurück zur Reihe}
+				\sum_{k=0}^\infty \frac{(-1)^k 2^{k-1} - 6 \cdot 5^k}{3^{2k+1}} &= \sum_{k=0}^\infty \frac{1}{6} \cdot \left(\frac{-2}{9}\right)^k - \left(\frac{5}{9}\right)^k \\
+				&= \frac{1}{6} \underbrace{\sum_{k=0}^\infty \left(\frac{-2}{9}\right)^k}_{\text{geom. Reihe}} - \underbrace{\sum_{k=0}^\infty \left(\frac{5}{9}\right)^k}_{\text{geom. Reihe}}
+				\intertext{Für die geometrische Reihe gilt $\sum_{k=0}^\infty q^k = \frac{1}{1-q}$ bei $\abs{q} < 1$}
+				= \frac{1}{6} \sum_{k=0}^\infty \left(\frac{-2}{9}\right)^k - \sum_{k=0}^\infty \left(\frac{5}{9}\right)^k &= \frac{1}{6} \cdot \frac{1}{1 - \frac{-2}{9}} - \frac{1}{1 - \frac{5}{9}} \\
+				&= \frac{1}{6} \cdot \frac{1}{\frac{11}{9}} - \frac{1}{\frac{4}{9}} \\
+				&= - \frac{93}{44}
+			\end{align*}
+		\fi
+\end{enumerate}
+
+\newpage
+\section{Differentialrechnung} %45 min
+Bestimme den maximalen Definitionsbereich in $\mathbb{R}$, die Nullstellen, die Grenzwerte an den Randpunkten des Definitionsbereichs, die lokalen und globalen Extrema sowie die Monotonie folgender Funktion:
+
+\begin{align*}
+	f(x) &= (x+4) \cdot (2-x^2)^{-\frac{1}{2}} - 3
+\end{align*}
+
+\ifshowsolution
+	\begin{align*}
+		\intertext{Zur Bestimmung des maximalen Definitionsbereichs vereinfachen wir die Funktion zunächst:}
+		&= (x+4) \cdot \frac{1}{(2-x^2)^\frac{1}{2}} - 3\\
+		&= (x+4) \cdot \frac{1}{\sqrt{2 - x^2}} - 3
+		\intertext{Zunächst betrachten wir $\sqrt{2-x^2}$. Die Wurzel darf nicht negativ werden, da wir sonst komplexe Zahlen erhalten. Somit können wir den maximalen Definitionsbereich zunächst auf $D = [-\sqrt{2},\sqrt{2}]$ einschränken. Hierbei lassen wir jedoch $0$ als Ergebnis der Wurzel zu. Da die Wurzel jedoch im Nenner steht, müssen wir $0$ ausschließen. Somit erhalten wir $D = (-\sqrt{2},\sqrt{2})$.}
+		 \intertext{Als nächstes bestimmen wir die Nullstellen durch Gleichsetung von $f(x)$ mit $0$:}
+		 0 &\setequal f(x)\\
+		 0 &= (x+4) \cdot \frac{1}{\sqrt{2 - x^2}} - 3\\
+		 3 &= (x+4) \cdot \frac{1}{\sqrt{2 - x^2}}\\
+		 3\sqrt{2 - x^2} &= x + 4 \tag{Nun quadrieren wir!}\\
+		 9 (2 - x^2) &= (x + 4)^2\\
+		 18 - 9x^2 &= x^2 + 8x + 16\\
+		 0 &= 10x^2 + 8x -2
+		 \intertext{Zur Ermittlung der Nullstellen wenden wir die Mitternachtsformel an:}
+		 x_{1,2} &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\\
+		 &= \frac{-8 \pm \sqrt{8^2 - 4 \cdot 10 \cdot (-2)}}{2 \cdot 10}\\
+		 &= \frac{-8 \pm \sqrt{64 + 80}}{20}\\
+		 &= \frac{-8 \pm \sqrt{144}}{20}\\
+		 &= \frac{-8 \pm 12}{20}\\
+		 x_1 &= -1 \qquad \qquad x_2 = \frac{1}{5}\\
+		 \intertext{Beide Werte liegen innerhalb des Definitionsbereichs. Durch Einsetzen sieht man ein, dass beide Werte gültige Lösungen sind:}
+		 f(x_1) = f(-1) &= (-1+4) \cdot (2-(-1)^2)^{-\frac{1}{2}} - 3\\
+		 &= 3 \cdot 1 - 3\\
+		 &= 0\\
+		 f(x_1) = f\braces{\frac{1}{5}} &= \braces{\frac{1}{5} + 4} \cdot \braces{2-\braces{\frac{1}{5}}^2}^{-\frac{1}{2}} - 3\\
+		 &= \frac{21}{5} \cdot \braces{\frac{49}{25}}^{-\frac{1}{2}} - 3\\
+		 &= \frac{21}{5} \cdot \sqrt{\frac{25}{49}} - 3 \\
+		 &= \frac{21}{5} \cdot \frac{5}{7} - 3 \\
+		 &= 0
+		 \\
+		 \intertext{Als nächstes berechnen wir die Grenzwerte an den Randpunkten des Definitionsbereichs}
+		 \lim_{x \rightarrow {-\sqrt{2}}_+} f(x) &= \lim_{x \rightarrow {-\sqrt{2}}_+} (x+4) \cdot \frac{1}{\sqrt{2 - x^2}} - 3\\
+		 &= (-\sqrt{2} + 4) \cdot \frac{1}{0_+} - 3\\
+		 &= +\infty - 3\\
+		 &= +\infty\\
+		 \lim_{x \rightarrow {\sqrt{2}}_-} f(x) &= \lim_{x \rightarrow {\sqrt{2}}_-} (x+4) \cdot \frac{1}{\sqrt{2 - x^2}} - 3\\
+		 &= (\sqrt{2} + 4) \cdot \frac{1}{0_+} - 3\\
+		 &= +\infty - 3\\
+		 &= +\infty
+		 \intertext{Als nächstes berechnen wir die lokalen und globalen Extrema. Dazu berechnen wir die Ableitung von $f(x)$ und setzen sie gleich $0$:}
+		 \frac{\text{d}}{\intend{x}} f(x) &= \frac{\text{d}}{\intend{x}} \braces{(x+4) \cdot (2-x^2)^{-\frac{1}{2}} - 3}\\
+		 &= \frac{\text{d}}{\intend{x}} \braces{(x+4) \cdot (2-x^2)^{-\frac{1}{2}}}\\
+		 \intertext{Wir wenden nun die Produktregel $(f(x)\cdot g(x))' = f'(x)g(x) + f(x)g'(x)$ an:} %TODO hart kürzen
+		 &= 1 \cdot (2-x^2)^{-\frac{1}{2}} + (x+4) \cdot \braces{-\frac{1}{2}} \cdot (2-x^2)^{-\frac{3}{2}} \cdot (-2x)\\
+		 &= (2-x^2)^{-\frac{1}{2}} + (x^2+4x) \cdot \braces{(2-x^2)^{-\frac{1}{2}}}^3\\
+		 &= (2-x^2)^{-\frac{1}{2}} + (x^2+4x) \cdot \braces{(2-x^2)^{-\frac{1}{2}}}^2 \cdot (2-x^2)^{-\frac{1}{2}}\\
+		 &= (2-x^2)^{-\frac{1}{2}} \cdot \braces{1 + (x^2+4x) \cdot \braces{(2-x^2)^{-\frac{1}{2}}}^2}\\
+		 &= (2-x^2)^{-\frac{1}{2}} \cdot \braces{1 + (x^2+4x) \cdot \frac{1}{2-x^2}}\\
+		 &= \frac{1}{\sqrt{2-x^2}} \cdot \braces{1 + \frac{x^2 + 4x}{2-x^2}}\\
+		 &= \frac{1}{\sqrt{2-x^2}} \cdot \braces{\frac{4x + 2}{2-x^2}}\\
+		 \intertext{Nun setzen wir die Ableitung gleich 0:}
+		 0 &\setequal \frac{1}{\sqrt{2-x^2}} \cdot \braces{\frac{4x + 2}{2-x^2}}\\
+		 \intertext{Wir stellen fest, dass der linke Faktor nicht 0 werden kann. Somit erhalten wir:}
+		 0 &= \frac{4x + 2}{2-x^2}
+		 \intertext{Setzt man einen Bruch gleich 0, muss nur der Zähler betrachtet werden:}
+		 0 &= 4x + 2\\
+		 x &= -\frac{1}{2}
+		 \intertext{Nun kennen wir also alle Kandidaten für lokale oder globale Extrema. Da das Berechnen der zweiten Ableitung von $f(x)$ recht aufwändig wäre, betrachten wir den Globalverlauf von $f(x)$.}
+	\end{align*}
+	\begin{figure}[h!]
+	\centering
+	\begin{tabular}{c|ccccc} %TODO wie ist die f'-Zeile zu lesen?
+		$x$ & $-\sqrt{2}$ &  & $-\frac{1}{2}$ &   & $\sqrt{2}$\\ \hline
+		$f(x)$ & $+\infty$ & $\searrow$ & $\approx -2,0646$ & $\nearrow$ & $+\infty$\\
+		$f'(x)$ & & $-$ & 0 & $+$ & \\
+	\end{tabular}
+	\end{figure}\\
+	Wir stellen fest, dass am linken Rand von $D$ $f(x)$ sehr groß ist und monoton fällt, bis wir bei $x = -\frac{1}{2}$ das globale Minimum erreicht haben. Anschließend steigt die Funktion monoton bis zum rechten Rand von $D$.
+
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzpicture}[yscale=0.24,xscale=3.0]
+			\draw[->] (-2,0) -- (2,0) node[right] {$x_1$};
+			\draw[shift={(1.41,0)},color=black] (0pt,3pt) -- (0pt,-3pt) node[below] {$\sqrt{2}$};
+			\draw[shift={(-1.41,0)},color=black] (0pt,3pt) -- (0pt,-3pt) node[below] {$-\sqrt{2}$};
+			\draw[shift={(-0.5,0)},color=black] (0pt,3pt) -- (0pt,-3pt) node[below] {$-\frac{1}{2}$};
+			\draw[shift={(-1,0)},color=black] (0pt,3pt) -- (0pt,-3pt) node[below] {$-1$};
+			\draw[shift={(0.2,0)},color=black] (0pt,3pt) -- (0pt,-3pt) node[below] {$\frac{1}{5}$};
+			\draw[shift={(-0.5,0)},color=blue] (0pt,40pt) -- (0pt,-40pt) node[above] {};
+			\node at (-0.5,3) [draw=none,color=blue] {Minimum};
+			\draw[->] (0,-4) --(0,28) node[above] {$f(x)$};
+			\draw[domain=-1.412:1.405,samples=1000,variable=\x,red] plot ({\x},{((\x + 4) * (1/(sqrt(2 - (\x * \x)))) - 3});
+		\end{tikzpicture}
+	\end{figure}
+\fi
+
+\newpage
+\section{Partialbruchzerlegung und Substitution} %28 min
+Die Substitutionsformel erlaubt es, unliebsame Terme im Integral durch einfache zu ersetzen. Sie ist unter Anderem für Verkettungen von Funktionen gut geeignet. Die Formel lautet:
+\begin{align}
+	\int_a^b \mathrm{f}( \ \underbrace{\mathrm{g}(x)}_t \ ) g'(x) \intend{x} = \int_{\mathrm{g}(a)}^{\mathrm{g(b)}} \mathrm{f}(t) \intend{t}
+	\label{eq:substitution}
+\end{align}
+
+Berechne
+\begin{align*}
+	\int_2^3 \frac{6 \sin(x) \cos(x)}{\sin^2(x) + \sin(x) - 2 } \intend{x}
+\end{align*}
+
+\ifshowsolution
+	\begin{align*}
+		\intertext{Zunächst substituieren wir $\sin(x)$.}
+		t &= \sin(x) \\
+		\frac{\intend{t}}{\intend{x}} &= \cos(x) \Leftrightarrow \intend{x} = \frac{\intend{t}}{\cos(x)} \\
+		\int_2^3 \frac{6 \sin(x) \cos(x)}{\sin^2(x) + \sin(x) - 2 } \intend{x} &= \int_{\sin(2)}^{\sin(3)} \frac{6 \ t \ \cancel{\cos(x)}}{t^2 + t - 2} \ \frac{\intend{t}}{\cancel{\cos(x)}} \\
+		&= \int_{\sin(2)}^{\sin(3)} \frac{6 \ t}{t^2 + t - 2} \intend{t} \tag{PQ-Formel} \\
+		&= \int_{\sin(2)}^{\sin(3)} \frac{6 \ t}{(t-1)(t+2)} \intend{t} \\
+		\intertext{Nun wenden wir den Ansatz der PBZ auf den Integranden an}
+		\frac{6 \ t}{(t-1)(t+2)} &= \frac{A}{t-1} + \frac{B}{t+2} \\
+		&= \frac{A (t+2)}{(t-1)(t+2)} + \frac{B (t-1)}{(t-1)(t+2)} \\
+		&= \frac{A (t+2) + B (t-1)}{(t-1)(t+2)} \tag{Zähler gleichsetzen} \\
+		6t &= A (t+2) + B (t-1) \\
+		\intertext{Diese Gleichung soll für alle $t$ gelten, und damit insbesondere auch für die Nullstellen. Diese einzusetzen liefert ein recht simples Gleichungssystem, aus dem wir $A$ und $B$ bestimmen können.}
+		6 \cdot 1 &= A (1+2) + B (1-1) \Leftrightarrow A = 2 \tag{t=1} \\
+		6 \cdot (-2) &= A ((-2)+2) + B ((-2)-1) \Leftrightarrow B = 4 \tag{t=-2} \\
+		\intertext{Jetzt wo wir A und B kennen, wissen wir aus dem Ansatz der PBZ}
+		\frac{6 \ t}{(t-1)(t+2)} &= \frac{2}{t-1} + \frac{4}{t+2} \\
+		\intertext{Diese Gleichung wenden wir auf das Integral an}
+		 \int_{\sin(2)}^{\sin(3)} \frac{6 \ t}{(t-1)(t+2)} \intend{t} &=  \int_{\sin(2)}^{\sin(3)} \frac{2}{t-1} + \frac{4}{t+2} \intend{t} \\
+		 &= \int_{\sin(2)}^{\sin(3)} \frac{2}{t-1} \intend{t} + \int_{\sin(2)}^{\sin(3)} \frac{4}{t+2} \intend{t} \\
+		 &= 2 \int_{\sin(2)}^{\sin(3)} \frac{1}{t-1} \intend{t} + 4 \int_{\sin(2)}^{\sin(3)} \frac{1}{t+2} \intend{t} \\
+		 &= 2 \brackets{\ln\abs{t-1}}_{\sin(2)}^{\sin(3)} + 4 \brackets{\ln\abs{t+2}}_{\sin(2)}^{\sin(3)} \\
+		 &= 2 \braces{\ln\abs{\sin(3)-1} - \ln\abs{\sin(2)-1}} + 4 \braces{\ln\abs{\sin(3) + 2} - \ln\abs{\sin(2) + 2}} \\
+		 &= 2 \braces{\ln \frac{\abs{\sin(3)-1}}{\abs{\sin(2)-1}}} + 4 \braces{\ln \frac{\abs{\sin(3) + 2}}{\abs{\sin(2) + 2}}} \\
+		 &= \ln \brackets{\braces{\frac{\sin(3)-1}{\sin(2)-1}}^2} + \ln \brackets{\braces{\frac{\sin(3) + 2}{\sin(2) + 2}}^4}
+	\end{align*}
+\fi
+
+\newpage
+\section{Partielle Integration} %15 min
+Die Formel zur partiellen Integration kann helfen, wenn man ein Produkt integrieren muss. Sie lautet:
+\begin{align}
+	\int_a^b f'(x) \cdot g(x) \intend{x} =& f(x) \cdot g(x)\vert_a^b - \int_a^b f(x) \cdot g'(x) \intend{x}
+	\label{eq:partielleIntegration}
+\end{align}
+
+\newcommand{\lowerBorder}{{0}}
+\newcommand{\upperBorder}{{\frac{1}{3}}}
+Berechne folgendes Integral
+\begin{align*}
+	\int_\lowerBorder^\upperBorder e^{3x} \cdot (2x - 5) \intend{x}
+\end{align*}
+
+\ifshowsolution
+	\begin{align*}
+		\intertext{Wähle $f'$ so, dass es leicht zu integrieren ist und $g$ so, dass es beim Ableiten \gerquote{kleiner wird} oder \gerquote{verschwindet}, wie z.b. ein Polynom:}
+		& \int_\lowerBorder^\upperBorder \underbrace{e^{3x}}_{f'} \cdot \underbrace{\braces{2x - 5}}_{g}\intend{x}\\
+		\intertext{Um die Formel anwenden zu können, benötigen wir die Stammfunktion $f$ von $f'$ und die Ableitung $g'$ von $g$.}
+		f &= \int f' \intend{x} =\int e^{3x} \intend{x} =\frac{1}{3} e^{3x}\\
+		g' &= \derivative{x} (2x - 5) = 2\\
+		\intertext{In Formel \eqref{eq:partielleIntegration} müssen wir nur noch die entsprechenden Ersetzungen machen:}
+		& f(x) \cdot g(x)\vert_a^b - \int_a^b f(x) \cdot g'(x) \intend{x}\\
+		&= \brackets{\frac{1}{3} e^{3x} \cdot \braces{2x - 5}}_\lowerBorder^\upperBorder - \int_\lowerBorder^\upperBorder \frac{1}{3} e^{3x} \cdot 2 \intend{x}\\
+		&= \braces{\frac{1}{3} e^1 \cdot \braces{2\cdot \frac{1}{3} - 5} - \frac{1}{3}e^0 \cdot \braces{0 - 5}} - \frac{2}{3} \int_\lowerBorder^\upperBorder e^{3x} \intend{x}\\
+		&= \braces{{\frac{1}{3}e \cdot \braces{-\frac{13}{3}}} - \braces{-\frac{5}{3}}} - \frac{2}{3}\brackets{\frac{1}{3}e^{3x}}_\lowerBorder^\upperBorder\\
+		&= \braces{-\frac{13}{9}e + \frac{5}{3}} - \frac{2}{9} \brackets{e^{3x}}\lowerBorder^\upperBorder\\
+		&= -\frac{13}{9}e + \frac{5}{3} - \frac{2}{9} \braces{e^1 - e^0}\\
+		&= -\frac{15}{9}e + \frac{17}{9}
+	\end{align*}
+\fi
+
+\end{document}
+
+
+
+
+
+
+
+
+
